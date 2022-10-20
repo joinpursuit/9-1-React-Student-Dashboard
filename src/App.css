@@ -1,0 +1,21 @@
+.wrapper {
+    /* grid-column-gap: 25px; */
+    /* grid-row-gap: 25px; */
+    /* -webkit-column-gap: 25px; */
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns:  1fr 2fr;
+    grid-template-rows: 120px auto;
+    /* row-gap: 25px; */
+}
+.header {
+    grid-column: 3fr;
+    text-align: center;
+    background-color: green;
+}
+.aside{
+    grid-column:  1fr;
+}
+.main{
+    
+}
