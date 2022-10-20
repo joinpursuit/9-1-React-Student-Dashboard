@@ -1,0 +1,16 @@
+div {
+    display: grid;
+}
+
+header {
+  background-color: #60946c;
+  color: #ffffff;
+  text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 10px;
+    padding: 20px;
+}
