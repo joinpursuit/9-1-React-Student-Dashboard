@@ -4,13 +4,12 @@ header{
     height: 100px;
     text-align: center;
     color:white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     padding:16px;
     grid-column: left/end;
-    /* grid-row: header; */
-    /* grid-row-start: header;
-    grid-row-end: header; */
+    grid-row: header; 
+    grid-row-start: header;
+    grid-row-end: header;
 }
 
 header h1{
