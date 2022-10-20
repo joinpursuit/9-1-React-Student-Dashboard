@@ -3,8 +3,8 @@ import './Header.css'
 
 export default function Header(){
     return(
-        <nav>
+        <header>
             <h1>Student Dashboard</h1>
-        </nav>
+        </header>
     )
 }

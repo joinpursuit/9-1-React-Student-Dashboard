@@ -1,0 +1,13 @@
+.root{
+    display:block
+}
+
+.wrap{
+    display: grid;
+    grid-column-gap: 25px; 
+    grid-row-gap: 25px;
+    column-gap: 25px;
+    grid-template-columns: [left] 1fr [right] 2fr [end] ;
+    grid-template-rows: [header] 120px [main] auto [end];
+    row-gap:25px
+}

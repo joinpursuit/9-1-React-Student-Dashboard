@@ -1,4 +1,5 @@
-nav{
+header{
+    display: block;
     background-color: #5c946e;
     height: 100px;
     text-align: center;
@@ -6,9 +7,13 @@ nav{
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     padding:16px;
+    grid-column: left/end;
+    /* grid-row: header; */
+    /* grid-row-start: header;
+    grid-row-end: header; */
 }
 
-nav h1{
+header h1{
     display: block;
     padding:1%
 }
