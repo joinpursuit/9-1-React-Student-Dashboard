@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    border: black 1px solid;
+}
+
+/* .container{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+} */
+
+aside{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+header{
+    border: 1px black solid;
+    background-color: green;
+}
