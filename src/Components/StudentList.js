@@ -16,10 +16,12 @@ function StudentList({data}) {
                         <div 
                         className='student'
                         key={id}>
-                            <img src = {profilePhoto} alt = 'profilePhoto'></img>
+                            
                             <div className='studentInfo'>
+                            <img src = {profilePhoto} alt = 'profilePhoto'></img>
+                            <span>
                                 <h4>{firstName} {middleInitial} {lastName}</h4>
-                                <span className='userName'>{username}</span>
+                                {username}</span>
                             </div>
                
             </div>

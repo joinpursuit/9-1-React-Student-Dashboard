@@ -6,3 +6,49 @@
 img {
     width: 100px;
 }
+
+.topLevel {
+    display: grid;
+    grid-template-rows: .5fr 5fr .5fr;
+    row-gap: 15px;
+}
+
+header {
+    justify-self: center;
+}
+
+main {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.studentList {
+    grid-column: 2;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 15px;
+    border: 1px solid black;
+
+
+}
+
+.student {
+   display: grid;
+   justify-items: center;
+}
+
+.studentInfo {
+    display: block;
+    text-align: center;
+}
+.cohortList {
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 20px;
+}
+
+footer {
+    justify-self: center;
+}
