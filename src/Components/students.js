@@ -1,6 +1,8 @@
+import "./student.css"
 
+const students = ({student, Additionalinfo}) => {
+    
 
-const students = ({student}) => {
     return (
         <section>
             <h3>All Students</h3>
@@ -9,11 +11,11 @@ const students = ({student}) => {
                 <ul>
                     {student.map((info) => {
                         return (
-                            <li>
+                            <li className="student-details"key={info.id}>
                                 <p>{info.names.preferredName} {info.names.middleName.slice(0, 1)}. {info.names.surname}</p>
                                 <p>{info.username}</p>
                                 <p>Birthdate: {info.dob}</p>
-                                <button>Show More...</button>
+                                <Additionalinfo info={info}/>
                             </li>
                         )
                     })}

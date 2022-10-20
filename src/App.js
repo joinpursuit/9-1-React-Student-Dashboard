@@ -2,6 +2,7 @@ import data from "./data/data.json"
 import Header from "./Components/Header"
 import Classes from "./Components/Classes"
 import Students from "./Components/students"
+import Additionalinfo from "./Components/AdditionalInfo"
 import {useState} from "react"
 import "./App.css"
 
@@ -29,7 +30,7 @@ function handleCohort(classes){
       <aside>
         <Classes student={student}handleCohort={handleCohort} cohort={cohort}></Classes>
         <main>
-        <Students student={student}/>
+        <Students Additionalinfo={Additionalinfo} student={student}/>
         </main>
       </aside>
     </div>

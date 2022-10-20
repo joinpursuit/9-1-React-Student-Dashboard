@@ -18,7 +18,7 @@ const Classes = ({handleCohort, cohort, student}) => {
         <li className="cohort-dates"><button>All the Students</button></li>
        {cohort.map((classes) => {
         return (
-          <li className="cohort-dates"><button>{classes}</button></li>
+          <li key={classes}className="cohort-dates"><button>{classes}</button></li>
         )
        })}
     </ul>
