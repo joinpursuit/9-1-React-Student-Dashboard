@@ -1,0 +1,14 @@
+nav{
+    background-color: #5c946e;
+    height: 100px;
+    text-align: center;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    padding:16px;
+}
+
+nav h1{
+    display: block;
+    padding:1%
+}
