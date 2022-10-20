@@ -14,3 +14,18 @@ export function sortCohort(arrOfObj) {
     })
     return array
 }
+
+// function to take in cohort name (id value) and filter students by cohortcode 
+
+
+
+
+
+
+// function date -> month 
+export function getMonthName(monthNumber) {
+    const date = new Date();
+    date.setMonth(monthNumber - 1);
+  
+    return date.toLocaleString('en-US', { month: 'long' });
+  }
