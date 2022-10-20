@@ -1,13 +1,26 @@
 import './Cohort.css'
-export default function Cohort(){
-    //Should map through to find all the years then should display it in multiples
+export default function Cohort({student}){
+    const cohortList =[
+        ...new Set(student
+            .map((students) => students.cohort.cohortCode))
+    ]
+    //CREDIT TO BRANDON FOR SET
+
+    const space = (e) => {
+        return e.split('').slice(0, -4).join('') + " " + e.slice(1).slice(-4)
+    }
+
+    //THIS IS ADDING THE SPACE IN THE DATA. FIND A BETTER WAY TO DO THIS 
     return(
         <div className='classDate'>
             <h2>Choose a Class by Start Date</h2>
             <ul>
-                <li><button>math for student buttons</button></li>
-                <li><button>math for student buttons</button></li>
-                <li><button>math for student buttons</button></li>
+                {cohortList.map((cohorts, index)=>(
+                    <li key={index}>
+                    <button onClick={cohorts}>{space(cohorts)}
+                    </button>
+                    </li>
+                ))}
             </ul>
         </div>
     )

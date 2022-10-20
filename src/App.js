@@ -9,12 +9,22 @@ function App() {
   const [student, setStudent] = useState(data)
   const [cohorts, setCohorts] = useState('All Students')
 
-  
   return (
     <div className="wrap">
      <Header/>
-     <Cohort/>
-     <Students/>
+     <Cohort
+    //  data={data}
+     student={student}
+     setStudent={setStudent}
+     cohorts={cohorts}
+     setCohorts={setCohorts}
+     />
+     <Students
+     data={data}
+     student={student}
+     setStudent={setStudent}
+     cohorts={cohorts}
+     />
     </div>
   );
 }
