@@ -1,0 +1,33 @@
+.all {
+  display: grid;
+  /* grid-template-rows: max-content; */
+  /* grid-template-columns: 1fr 3fr; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.header {
+  background-color: rgb(66, 66, 234);
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  text-align: center;
+  font-size: larger;
+  margin: 0;
+  width: 100%;
+}
+
+.cohort {
+  border: 20px;
+  border-color: red;
+  padding: 20px;
+  /* text-align: center; */
+}
+
+li {
+  list-style-type: none;
+  font-size: larger;
+}
+
+hr {
+  width: 10%;
+  margin-left: 0;
+}
