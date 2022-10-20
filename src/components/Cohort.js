@@ -4,7 +4,7 @@ export default function Cohort({student}){
         ...new Set(student
             .map((students) => students.cohort.cohortCode))
     ]
-    //CREDIT TO BRANDON FOR SET
+    //CREDIT TO BRANDON FOR USE
 
     const space = (e) => {
         return e.split('').slice(0, -4).join('') + " " + e.slice(1).slice(-4)

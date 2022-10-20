@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Cohort from './components/Cohort'
-import Students from './components/Students'
+import StudentCard from './components/StudentCard'
 import "./App.css"
 import { useState } from "react";
 import data from './data/data.json'
@@ -19,7 +19,7 @@ function App() {
      cohorts={cohorts}
      setCohorts={setCohorts}
      />
-     <Students
+     <StudentCard
      data={data}
      student={student}
      setStudent={setStudent}
