@@ -7,8 +7,9 @@ export function middleName(value) {
 export function sortCohort(arrOfObj) {
     const array = []
     arrOfObj.forEach(({cohort}) => {
-        if(!array.includes(cohort.cohortCode)){
-            array.push(cohort.cohortCode)
+        const split = cohort.cohortCode.replace(`2`, ` 2`)
+        if(!array.includes(split)){
+            array.push(split)
         }
     })
     return array
