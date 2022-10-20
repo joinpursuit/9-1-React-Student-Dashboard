@@ -1,0 +1,26 @@
+body {
+  display: block;
+  display: grid;
+}
+.Main {
+  margin-top: 25px;
+  grid-template-columns: 1fr 2fr;
+  display: grid;
+}
+.Header {
+  padding: 10px;
+  font-weight: 900;
+  cursor: crosshair;
+  color: ghostwhite;
+  text-align: center;
+  background-color: #5c946e;
+}
+.Cohort {
+  border: 3px solid green;
+  margin-right: 20px;
+}
+.StudentList {
+  border: 3px solid #5c946e;
+
+  margin-right: 30px;
+}
