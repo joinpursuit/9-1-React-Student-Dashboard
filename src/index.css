@@ -10,17 +10,29 @@ body {
 .Header {
   padding: 10px;
   font-weight: 900;
-  cursor: crosshair;
+  cursor: pointer;
   color: ghostwhite;
   text-align: center;
   background-color: #5c946e;
 }
 .Cohort {
+  margin-left: 10px;
   border: 3px solid green;
   margin-right: 20px;
 }
 .StudentList {
-  border: 3px solid #5c946e;
-
+  /* border: 3px solid #5c946e; */
+  display: grid;
   margin-right: 30px;
+}
+img {
+  width: 100px;
+  padding-left: 25px;
+  padding-top: 25px;
+  padding-right: 25px;
+}
+.Cards {
+  border: 3px solid #5c946e;
+  display: grid;
+  margin-bottom: 10px;
 }
