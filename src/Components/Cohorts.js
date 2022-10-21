@@ -1,9 +1,11 @@
-export default function Cohorts({ uniqueCohorts }) {
+export default function Cohorts({ uniqueCohorts, chooseCohort }) {
   return (
     <ul>
-      <li>All Courses</li>
+      <li onClick={() => chooseCohort("All Courses")}>All Courses</li>
       {uniqueCohorts.map((cohort, idx) => (
-        <li key={idx}>{cohort}</li>
+        <li key={idx} onClick={() => chooseCohort(cohort)}>
+          {cohort}
+        </li>
       ))}
     </ul>
   );

@@ -14,13 +14,17 @@ function App() {
 
   const [cohort, setCohort] = useState(["All cohorts"]);
 
+  function chooseCohort(cohort) {
+    setCohort(cohort);
+  }
+
   return (
     <div className="app">
       <header>Student Dashboard</header>
       <main className="main">
         <aside className="cohortsList">
           <h2>Choose a Class by Start date</h2>
-          <Cohorts uniqueCohorts={uniqueCohorts} />
+          <Cohorts uniqueCohorts={uniqueCohorts} chooseCohort={chooseCohort} />
         </aside>
         <div className="students">
           <h2>All Students</h2>
