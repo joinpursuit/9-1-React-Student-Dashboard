@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Cohorts from "./Components/Cohorts";
 import "./App.css";
 
 import data from "./data/data.json";
@@ -19,12 +20,7 @@ function App() {
       <main className="main">
         <aside className="cohortsList">
           <h2>Choose a Class by Start date</h2>
-          <ul>
-            <li>All coursed</li>
-            {uniqueCohorts.map((cohort) => (
-              <li>{cohort}</li>
-            ))}
-          </ul>
+          <Cohorts uniqueCohorts={uniqueCohorts} />
         </aside>
         <div className="students">
           <h2>All Students</h2>
