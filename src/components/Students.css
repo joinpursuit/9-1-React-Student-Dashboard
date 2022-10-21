@@ -23,7 +23,7 @@ main{
   grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
 }
 
-.student-cards .student-details h3{
+.student-cards .student-details h2{
  margin: 0;
 }
 
@@ -34,6 +34,7 @@ main{
 .student-cards img{
     width:100px;
     border-radius:5px;
+    
 }
 
 .student-cards p{

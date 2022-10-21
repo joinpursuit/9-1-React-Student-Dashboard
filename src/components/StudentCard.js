@@ -5,7 +5,7 @@ export default function StudentCard ({student, cohorts}){
     return(
         <ul className='card'>
             <h2>{cohorts}</h2>
-            <p>Total Students: {student.length}</p>
+            <p>Total Students: <div>{student.length}</div></p>
             {student.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort}) => {
         return (
           <div key={id}>
