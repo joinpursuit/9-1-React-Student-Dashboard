@@ -1,15 +1,15 @@
 import "./student.css"
 
-const students = ({student, Additionalinfo}) => {
+const students = ({student, studentClass, Additionalinfo}) => {
     
 
     return (
         <section>
             <h3>All Students</h3>
-            <p>Total Students: {student.length}</p>
+            <p>Total Students: {studentClass.length}</p>
             <div className="student-info">
                 <ul className="student-list">
-                    {student.map((info) => {
+                    {studentClass.map((info) => {
                          const date = new Date(info.dob).toDateString()
                         return (
                             <li className="student-details"key={info.id}>

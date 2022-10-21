@@ -1,7 +1,7 @@
 
 import "./Classes.css"
 
-const Classes = ({handleCohort, cohort, student}) => {
+const Classes = ({handleCohort, cohort, student, handleStudents, studentClass}) => {
 
     student.forEach((students) => {
         let cohorts = students.cohort.cohortCode.replace(/\d+/g, '') + " " + students.cohort.cohortCode.replace(/\D/g,'')
@@ -10,6 +10,17 @@ const Classes = ({handleCohort, cohort, student}) => {
         }
       })
 
+    function filterStudents(sc){
+         const filter = student.filter((s) => s.cohort.cohortCode.replace(/\d+/g, '') + " " + s.cohort.cohortCode.replace(/\D/g,'') === sc);
+       
+         handleStudents(filter)
+
+        
+        // const index = student.findAll((s) => s.cohort.cohortCode.replace(/\d+/g, '') + " " + s.cohort.cohortCode.replace(/\D/g,'') === sc)
+        // handleStudents(student[index])
+        
+    }
+console.log(studentClass)
     return(
 <section className="choose-class">
     <h2>Choose a Class by Start Date</h2>
@@ -18,7 +29,7 @@ const Classes = ({handleCohort, cohort, student}) => {
         <li className="cohort-dates"><button className="class-name">All the Students</button></li>
        {cohort.map((classes) => {
         return (
-          <li key={classes}className="cohort-dates"><button className="class-name">{classes}</button></li>
+          <li key={classes}className="cohort-dates"><button onClick={() => filterStudents(classes)}className="class-name">{classes}</button></li>
         )
        })}
     </ul>

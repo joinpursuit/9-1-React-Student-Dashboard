@@ -9,7 +9,14 @@ import "./App.css"
 
 function App() {
  
-const [student ,setStudent] = useState(data)
+const [student] = useState(data)
+
+const [studentClass , setStudentClass] = useState([])
+
+function handleStudents(students){
+  setStudentClass([...students])
+}
+
 const [cohort, setChort] = useState([])
 
 function handleCohort(classes){
@@ -28,9 +35,9 @@ function handleCohort(classes){
         <Header/>
       </header>
       <aside>
-        <Classes student={student}handleCohort={handleCohort} cohort={cohort}></Classes>
+        <Classes handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
         <main>
-        <Students Additionalinfo={Additionalinfo} student={student}/>
+        <Students cohort={cohort} Additionalinfo={Additionalinfo} studentClass={studentClass} student={student}/>
         </main>
       </aside>
     </div>
