@@ -1,7 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
+import ShowMoreButton from './ShowMoreButton';
+import StudentHiddenInfo from './StudentHiddenInfo';
 function StudentList({data}) {
-   
+//    // declare state for toggling hidden class
+//    const [clicked, setClicked] = useState(false)
     
     
     return (
@@ -18,10 +22,15 @@ function StudentList({data}) {
                         key={id}>
                             
                             <div className='studentInfo'>
-                            <img src = {profilePhoto} alt = 'profilePhoto'></img>
-                            <span>
-                                <h4>{firstName} {middleInitial} {lastName}</h4>
-                                {username}</span>
+                                <img src = {profilePhoto} alt = 'profilePhoto' />
+                                <p>
+                                    <h4>{firstName} {middleInitial} {lastName}</h4>
+                                    {username}<br></br>
+                                    <ShowMoreButton 
+                                    id = {id}
+                                    data = {data}
+                                    />
+                                </p>
                             </div>
                
             </div>

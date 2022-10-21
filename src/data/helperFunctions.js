@@ -6,12 +6,14 @@ export function middleName(value) {
 
 export function sortCohort(arrOfObj) {
     const array = []
+
     arrOfObj.forEach(({cohort}) => {
         const split = cohort.cohortCode.replace(`2`, ` 2`)
         if(!array.includes(split)){
             array.push(split)
         }
     })
+    // sort descending .sort(function(a, b){return b-a})
     return array
 }
 

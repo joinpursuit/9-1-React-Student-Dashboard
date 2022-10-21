@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import data from './data/data.json'
 import StudentList from "./Components/StudentList";
 import CohortList from './Components/CohortList';
@@ -7,7 +8,10 @@ import CohortList from './Components/CohortList';
 
 
 function App() {
-
+  // Declare state for selected students
+  const [students, setStudents] = useState(data)
+// Declare state for showMoreButton
+const [showMore, SetShowMore] = useState()
 
 
 

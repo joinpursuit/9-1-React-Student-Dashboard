@@ -58,3 +58,10 @@ aside {
 footer {
     justify-self: center;
 }
+
+.showMore {
+    visibility: visible;
+}
+.showMoreHidden {
+    display: none;
+}
