@@ -8,8 +8,16 @@ function Students({ students, setStudents }) {
         Total Students: <span>{students.length}</span>
       </p>
       <section>
-        {students.map(({id, profilePhoto, names}) => {
-          return <Student key={id} photo={profilePhoto} names={names}/>;
+        {students.map(({ id, profilePhoto, names, username, dob }) => {
+          return (
+            <Student
+              key={id}
+              photo={profilePhoto}
+              names={names}
+              username={username}
+              dob={dob}
+            />
+          );
         })}
       </section>
     </div>

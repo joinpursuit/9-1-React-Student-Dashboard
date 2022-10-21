@@ -7,13 +7,14 @@ import "./App.css";
 
 function App() {
   const [students, setStudents] = useState([...studentData]);
+  
   return (
     <div>
       <header>
         <h1>Student Dashboard</h1>
       </header>
       <main>
-        <Classes />
+        <Classes studentData={studentData}/>
         <Students students={students} setStudents={setStudents} />
       </main>
     </div>

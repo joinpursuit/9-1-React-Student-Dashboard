@@ -11,8 +11,24 @@ header {
 main {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 10px;
+    column-gap: 30px;
     padding: 20px;
+}
+
+.Classes {
+  height: fit-content;
+}
+
+.Classes ul li {
+  list-style: none;
+}
+
+.Student {
+  border: 2px solid #60946c;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 span {

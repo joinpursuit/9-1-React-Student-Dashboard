@@ -1,11 +1,27 @@
-function Student({ photo, names }) {
+function Student({ photo, names, username, dob }) {
+  const formatDate = (dob) => {
+    let newDate = dob.split("/");
+    const month = new Date()
+    month.setMonth(newDate[0] - 1)
+    newDate[0] = month.toLocaleString([], { month: "long" })
+    newDate[1] += ","
+   
+    return newDate.join(" ")
+  };
   return (
     <div className="Student">
       <img src={photo} height="120px"></img>
-      <p>
-        {names.preferredName} {names.preferredName.charAt(0) + "."}{" "}
-        {names.surname}
-      </p>
+      <section>
+        <h3>
+          {names.preferredName} {names.preferredName.charAt(0) + "."}{" "}
+          {names.surname}
+        </h3>
+        <p>{username}</p>
+        <p>
+          <span id="birthday">Birthday: </span>
+          {formatDate(dob)}
+        </p>
+      </section>
     </div>
   );
 }
