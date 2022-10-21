@@ -1,0 +1,20 @@
+body {
+  font-family: "Raleway", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+header {
+  background-color: #9de2f3;
+  padding: 15px;
+  text-align: center;
+}
+
+.info {
+  margin: 8px;
+  display: grid;
+  grid-template-rows: 120px auto;
+  row-gap: 25px;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 25px;
+}

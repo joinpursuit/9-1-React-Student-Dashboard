@@ -1,0 +1,15 @@
+ul {
+  display: block;
+  list-style: none;
+}
+button {
+  background: none;
+  border: none;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px;
+  font-weight: 700;
+  border-bottom: 2px solid rgb(138, 76, 138);
+  width: 100%;
+}

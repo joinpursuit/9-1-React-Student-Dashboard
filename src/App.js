@@ -1,8 +1,34 @@
+import { useState } from "react";
+
+import "./App.css";
+import data from "./data/data.json";
+import StudentList from "./Components/StudentList";
+import CohortList from "./Components/CohortList";
+
+// const fs = require("fs");
+// fs.readFile("./data/data.json", (err) => {
+//   if (err) {
+//     console.log("File read failed:", err);
+//     return;
+//   }
+//   console.log("File data:",'./data/data.json' );
+// });
 
 function App() {
+  const [selected, setSelected] = useState("All Students");
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <header>
+        <h1>Student Dashboard</h1>
+      </header>
+      <div className="info">
+        <aside>
+          <CohortList data={data} setSelected={setSelected} />
+        </aside>
+        <main>
+          <StudentList data={data} selected={selected} />
+        </main>
+      </div>
     </div>
   );
 }
