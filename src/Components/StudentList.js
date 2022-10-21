@@ -1,8 +1,12 @@
-export default function StudentList({ Records }) {
+export default function StudentList({ Records, totalOption, setTotalOption }) {
+  //! DOB Format function
+
   return (
     <div className="StudentList">
       <h3>All Students</h3>
-      <p>Total Students:{}</p>
+      <p>Total Students: {Records.length} </p>
+      {/* //!function with conditiont to update the state of student count in total */}
+      {/* {console.log(Records.length)} */}
       <div className="List">
         {Records.map((record) => {
           return (
@@ -17,8 +21,9 @@ export default function StudentList({ Records }) {
                     {record.names.middleName.charAt(0)}. {record.names.surname}{" "}
                   </b>
                   <br /> {/* </h5> */}
-                  {record.username} <br /> Birthday:{record.dob}
+                  {record.username} <br /> Birthday: {record.dob}
                 </p>
+
                 <br />
                 {/* onClick event to link */}
                 <a style={{ color: "green" }} href="http://">

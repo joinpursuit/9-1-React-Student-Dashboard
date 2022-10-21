@@ -16,11 +16,12 @@ body {
   text-align: center;
   background-color: #5c946e;
 }
-.Cohort {
+.CohortList {
   margin-left: 10px;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   margin-right: 20px;
 }
+
 .StudentList {
   /* text-transform: inherit; */
   /* border: 3px solid #5c946e; */
@@ -34,7 +35,7 @@ img {
   /* padding-bottom: 15px; */
 }
 .Cards {
-  border: 3px solid #5c946e;
+  border: 2px solid #5c946e;
   display: grid;
   padding-bottom: 25px;
   grid-template-columns: 1fr 2fr;
