@@ -12,5 +12,5 @@
 }
 
 .card div{
-    color:#5c946e;
+   color: var(--pretty);
 }

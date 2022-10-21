@@ -10,6 +10,7 @@ export default function Cohort({student}){
         return e.split('').slice(0, -4).join('') + " " + e.slice(1).slice(-4)
     }
 
+
     //THIS IS ADDING THE SPACE IN THE DATA. FIND A BETTER WAY TO DO THIS 
     return(
         <div className='classDate'>

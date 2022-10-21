@@ -1,6 +1,6 @@
 header{
     display: block;
-    background-color: #5c946e;
+    background: var(--testing);
     height: 100px;
     text-align: center;
     color:white;
@@ -10,9 +10,16 @@ header{
     grid-row: header; 
     grid-row-start: header;
     grid-row-end: header;
+    /* box-shadow:  */
 }
 
 header h1{
     display: block;
-    padding:1%
+    padding:1%;
 }
+
+
+
+
+
+

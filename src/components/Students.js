@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './Students.css'
 export default function Students({names, profilePhoto, username, dob, certifications, codewars, cohort}){
-
-    //WEIRD BIRTHDAY GAP FOUND HERE
     const [toggle, setToggle] = useState(false)
 
     const handleClick = () => {
@@ -54,9 +52,9 @@ export default function Students({names, profilePhoto, username, dob, certificat
 }
     return (
     <main>
-        <div class='student-cards'>
+        <div className='student-cards'>
          <img src={profilePhoto}></img>
-        <h2><span>{`${names.preferredName} ${names.middleName} ${names.surname}`}</span>
+        <h2 className='h2'><span>{`${names.preferredName} ${names.middleName} ${names.surname}`}</span>
         </h2>
         <p>{info()}</p>
         <p><span>{username}</span></p>

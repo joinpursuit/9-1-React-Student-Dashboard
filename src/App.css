@@ -1,6 +1,10 @@
-#root{
+:root{
     display: block;
     font-family: "Raleway", sans-serif;
+    --testing: linear-gradient(to left, #553c9a, rgb(140, 93, 184), #b393d3);
+    --pretty: rgb(140, 93, 184);
+    --darkPurple: #553c9a;
+    --lightPurple: #b393d3;
 }
 .wrap{
     display: grid;
