@@ -3,12 +3,6 @@
   margin: 0 auto;
 }
 
-.body {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-top: 30px;
-}
-
 .header {
   background-color: rgb(66, 66, 234);
   color: rgb(255, 255, 255);
@@ -18,30 +12,38 @@
   width: 100%;
 }
 
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 30px;
+  font-size: larger;
+}
+
 .cohort {
-  border: 5px solid;
+  border: 2px solid;
   border-color: black;
   text-align: center;
   margin-left: 50px;
 }
 
 .students {
-  border: 5px solid;
+  border: 2px solid;
   border-color: black;
-  margin-left: 90px;
-  padding-left: 50px;
+  margin-left: 70px;
   margin-right: 50px;
+  padding-left: 50px;
 }
 
-li {
+.cohort li {
   list-style-type: none;
-  padding-left: 15px;
+  padding-left: 20px;
   text-align: left;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 23px;
+  padding: 5px;
+  font-weight: bold;
 }
 
-hr {
+.cohort hr {
   background-color: rgb(66, 66, 234);
   height: 2px;
 }
