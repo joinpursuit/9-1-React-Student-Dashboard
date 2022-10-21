@@ -8,7 +8,8 @@ function App() {
   const mappedStudentsToCohortCode = studentsData.map(
     (student) => student.cohort.cohortCode
   );
-  const uniqueCohorts = [new Set(...mappedStudentsToCohortCode)];
+  const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
+  console.log(uniqueCohorts);
 
   const [cohort, setCohort] = useState(["All cohorts"]);
 
@@ -20,7 +21,9 @@ function App() {
           <h2>Choose a Class by Start date</h2>
           <ul>
             <li>All coursed</li>
-            {studentsData.map((student) => {})}
+            {uniqueCohorts.map((cohort) => (
+              <li>{cohort}</li>
+            ))}
           </ul>
         </aside>
         <div className="students">
