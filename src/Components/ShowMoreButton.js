@@ -11,10 +11,10 @@ function ShowMoreButton({id,data}) {
 
     function handleShowMoreOnClick(e) {
         // value = student id#
-        const value = e.target.value
-        setStudentId(e.target.value)
+        const value = e.target.name
+        setStudentId(value)
         setClicked(!clicked)
-        console.log(value)
+        
         }
    
     return (
@@ -22,7 +22,7 @@ function ShowMoreButton({id,data}) {
         <a
         href= "#"
         className='showMore'
-        value={id}
+        name={id}
         onClick = {(event) => {handleShowMoreOnClick(event)}}
         >Show More...
         </a>
