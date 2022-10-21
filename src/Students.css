@@ -1,0 +1,26 @@
+article {
+  display: flex;
+  border: 3px solid blue;
+  padding: 2rem;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.studentCards {
+  margin: 5px 50px;
+}
+
+.divReturn {
+  padding: 20px;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+span {
+  color: rgb(66, 66, 234);
+}
