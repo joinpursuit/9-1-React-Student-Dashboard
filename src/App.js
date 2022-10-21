@@ -10,7 +10,6 @@ function App() {
     (student) => student.cohort.cohortCode
   );
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
-  console.log(uniqueCohorts);
 
   const [cohort, setCohort] = useState(["All cohorts"]);
 
