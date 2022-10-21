@@ -1,8 +1,12 @@
 .all {
-  display: grid;
-  /* grid-template-rows: max-content; */
-  /* grid-template-columns: 1fr 3fr; */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 30px;
 }
 
 .header {
@@ -11,23 +15,18 @@
   padding: 30px;
   text-align: center;
   font-size: larger;
-  margin: 0;
   width: 100%;
 }
 
 .cohort {
-  border: 20px;
+  border: 5px solid;
   border-color: red;
-  padding: 20px;
-  /* text-align: center; */
+  text-align: center;
 }
 
-li {
-  list-style-type: none;
-  font-size: larger;
-}
-
-hr {
-  width: 10%;
-  margin-left: 0;
+.students {
+  border: 5px solid;
+  border-color: aqua;
+  margin-left: 100px;
+  padding-left: 50px;
 }
