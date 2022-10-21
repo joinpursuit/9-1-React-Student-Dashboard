@@ -1,12 +1,12 @@
 function Student({ photo, names, username, dob }) {
   const formatDate = (dob) => {
     let newDate = dob.split("/");
-    const month = new Date()
-    month.setMonth(newDate[0] - 1)
-    newDate[0] = month.toLocaleString([], { month: "long" })
-    newDate[1] += ","
-   
-    return newDate.join(" ")
+    const month = new Date();
+    month.setMonth(newDate[0] - 1);
+    newDate[0] = month.toLocaleString([], { month: "long" });
+    newDate[1] += ",";
+
+    return newDate.join(" ");
   };
   return (
     <div className="Student">
@@ -21,6 +21,8 @@ function Student({ photo, names, username, dob }) {
           <span id="birthday">Birthday: </span>
           {formatDate(dob)}
         </p>
+        <br></br>
+        <button className="more">Show More...</button>
       </section>
     </div>
   );

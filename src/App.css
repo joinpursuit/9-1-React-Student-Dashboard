@@ -1,5 +1,5 @@
 div {
-    display: grid;
+  display: grid;
 }
 
 header {
@@ -9,18 +9,30 @@ header {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 30px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+  padding: 20px;
 }
 
 .Classes {
   height: fit-content;
 }
 
+.Classes ul {
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
 .Classes ul li {
   list-style: none;
+  line-height: 10px;
+}
+
+.Classes ul li:hover {
+  list-style: none;
+  color: #60946c;
+  cursor: pointer;
 }
 
 .Student {
@@ -28,9 +40,29 @@ main {
   margin-bottom: 10px;
   padding: 20px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  font-size: 18px;
+  line-height: 10px;
+}
+
+img {
+  border-radius: 10px;
 }
 
 span {
   color: #60946c;
+}
+
+.more {
+  border: none;
+  background-color: #ffffff;
+  color: #60946c;
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.more:hover {
+  color: black;
+  cursor: pointer;
 }
