@@ -1,4 +1,5 @@
 import Students from './Students'
+import "./StudentCard.css"
 
 export default function StudentCard ({student, cohorts}){
     return(

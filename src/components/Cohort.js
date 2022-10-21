@@ -13,7 +13,7 @@ export default function Cohort({student}){
     //THIS IS ADDING THE SPACE IN THE DATA. FIND A BETTER WAY TO DO THIS 
     return(
         <div className='classDate'>
-            <h2>Choose a Class by Start Date</h2>
+            <h2 className="other">Choose a Class by Start Date</h2>
             <ul>
                 {cohortList.map((cohorts, index)=>(
                     <li key={index}>

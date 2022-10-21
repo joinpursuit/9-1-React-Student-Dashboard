@@ -14,34 +14,37 @@ export default function Students({names, profilePhoto, username, dob, certificat
     const info = () =>{
         if(certifications.resume === true && certifications.linkedin === true && certifications.github === true && certifications.mockInterview === true){
             return (
-              <p>On track to Graduate</p>
+              <p className='onTrack'>On track to Graduate</p>
             )
         }
     }
     const showMore = () =>{
         if(toggle){ 
             return(
-                <div>
-                <section>
+                <div className="student-details">
+                <section className='1'>
                 <h3><span>CODEWARS:</span></h3>
-                <p>Current total:{codewars.current.total}</p>
-                <p>Last Week:{codewars.current.lastWeek}</p>
-                <p>Goal: {codewars.goal.total}</p>
-                <p>Percent of Goal Achieved: {((codewars.current.total/codewars.goal.total)*100).toFixed(0)}%</p>
+                <p>Current total:
+                <span>
+                {codewars.current.total}
+                </span></p>
+                <p>Last Week:<span>{codewars.current.lastWeek}</span></p>
+                <p>Goal: <span>{codewars.goal.total}</span></p>
+                <p>Percent of Goal Achieved:  <span>{((codewars.current.total/codewars.goal.total)*100).toFixed(0)}%</span></p>
                 </section>
-                <section>
+                <section className='2'>
                 <h3><span>Scores</span></h3>
-                <p>Assignments:{(cohort.scores.assignments)*100}%</p>
-                <p>Projects:{(cohort.scores.projects)*100}%</p>
-                <p>Goal:</p>
-                <p>Assessments:{(cohort.scores.assessments)*100}%</p>
+                <p>Assignments: <span>{(cohort.scores.assignments)*100}%</span></p>
+                <p>Projects: <span>{(cohort.scores.projects)*100}%</span></p>
+                <p>Goal: <span>{(codewars.goal.total)}</span></p>
+                <p>Assessments: <span>{(cohort.scores.assessments)*100}%</span></p>
                 </section>
-                <section>
+                <section className='3'>
                 <h3><span>Certifications</span></h3>
-                <p>resume:{certifications.resume ? "✓" : "x"}</p>
-                <p>LinkeIn:{certifications.resume ? "✓" : "x"}</p>
-                <p>Mock Interview:{certifications.mockInterview ? "✓" : "x"}</p>
-                <p>Github:{certifications.github ? "✓" : "x"}</p>
+                <p>Resume:{certifications.resume ? "✅" : "❌"}</p>
+                <p>LinkeIn:{certifications.resume ? "✅" : "❌"}</p>
+                <p>Mock Interview:{certifications.mockInterview ? "✅" : "❌"}</p>
+                <p>Github:{certifications.github ? "✅" : "❌"}</p>
                 </section>
              </div>
     )
@@ -51,14 +54,13 @@ export default function Students({names, profilePhoto, username, dob, certificat
     <main>
         <div class='student-cards'>
          <img src={profilePhoto}></img>
-        <h3>
-        Name: {`${names.preferredName} ${names.middleName} ${names.surname}`}
+        <h3>{`${names.preferredName} ${names.middleName} ${names.surname}`}
         </h3>
         <p>{info()}</p>
-        <p>Email: {username}</p>
-        <p>Birthday: {dob}</p>
+        <p><span>{username}</span></p>
+        <p>Birthday:<span>{dob}</span></p>
         <br></br>
-        <button onClick={handleClick}>Show more...</button>
+        <button className="show" onClick={handleClick}>Show more...</button>
         <section>{showMore()}</section>
         </div>
     </main>
