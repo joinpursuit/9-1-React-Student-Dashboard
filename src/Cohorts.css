@@ -1,0 +1,12 @@
+button {
+  color: mediumspringgreen;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  border: none;
+  background: none;
+}
+
+button:hover {
+  color: aqua;
+}
