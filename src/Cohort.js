@@ -1,24 +1,24 @@
 function Cohort() {
   return (
     <div className="cohort-list">
-      <h2>Choose a Class by Start Date</h2>
-      <li>All Students</li>
+      <h2 className="cohort-title">Choose a Class by Start Date</h2>
+      <button>All Students</button>
       <hr></hr>
-      <li>Winter 2026</li>
+      <button>Winter 2026</button>
       <hr></hr>
-      <li>Fall 2026</li>
+      <button>Fall 2026</button>
       <hr></hr>
-      <li>Summer 2026</li>
+      <button>Summer 2026</button>
       <hr></hr>
-      <li>Spring 2026</li>
+      <button>Spring 2026</button>
       <hr></hr>
-      <li>Winter 2025</li>
+      <button>Winter 2025</button>
       <hr></hr>
-      <li>Fall 2025</li>
+      <button>Fall 2025</button>
       <hr></hr>
-      <li>Summer 2025</li>
+      <button>Summer 2025</button>
       <hr></hr>
-      <li>Spring 2025</li>
+      <button>Spring 2025</button>
     </div>
   );
 }

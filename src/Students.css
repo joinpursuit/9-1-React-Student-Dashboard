@@ -24,3 +24,32 @@ img {
 span {
   color: rgb(66, 66, 234);
 }
+
+#showMore {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: blue;
+  padding-left: 0;
+  font-size: 20px;
+}
+
+#showMore:hover {
+  color: black;
+}
+
+button {
+  background: none;
+  border: none;
+  color: blue;
+  font-size: 30px;
+  padding-left: 20px;
+  text-align: center;
+  font-size: 23px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+button:hover {
+  color: black;
+}

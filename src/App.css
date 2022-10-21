@@ -20,8 +20,10 @@
 }
 
 .cohort {
-  border: 2px solid;
-  border-color: black;
+  margin-left: 40px;
+}
+
+.cohort-title {
   text-align: center;
   margin-left: 50px;
 }
@@ -34,16 +36,7 @@
   padding-left: 50px;
 }
 
-.cohort li {
-  list-style-type: none;
-  padding-left: 20px;
-  text-align: left;
-  font-size: 23px;
-  padding: 5px;
-  font-weight: bold;
-}
-
-.cohort hr {
+hr {
   background-color: rgb(66, 66, 234);
   height: 2px;
 }

@@ -17,13 +17,13 @@ function Students({ Data }) {
             <span>Birthday: </span>
             {el.dob}
           </p>
-          <button>Show More ...</button>
+          <button id="showMore">Show More ...</button>
         </div>
       </article>
     );
   });
 
-  return <div className="div">{studentData}</div>;
+  return <div className="divReturn">{studentData}</div>;
 }
 
 export default Students;
