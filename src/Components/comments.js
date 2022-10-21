@@ -1,4 +1,4 @@
-
+import "./comments.css"
 
 const comments = ({info, newComment}) => {
   return(
@@ -6,12 +6,12 @@ const comments = ({info, newComment}) => {
         <ul>
             {info.notes.map((comments) =>{
                 return(
-                    <li>{comments.commenter} {comments.comment}</li>
+                    <li className="comments">{comments.commenter} {comments.comment}</li>
                 )
             })}
             {newComment.map(({commenter, comment}) => {
               return (
-                <li>{commenter} {comment}</li>
+                <li className="comments">{commenter} {comment}</li>
               )
             })}
         </ul>

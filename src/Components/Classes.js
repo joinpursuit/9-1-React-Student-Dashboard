@@ -14,11 +14,11 @@ const Classes = ({handleCohort, cohort, student}) => {
 <section className="choose-class">
     <h2>Choose a Class by Start Date</h2>
 <section className="list">
-    <ul>
-        <li className="cohort-dates"><button>All the Students</button></li>
+    <ul className="class-list">
+        <li className="cohort-dates"><button className="class-name">All the Students</button></li>
        {cohort.map((classes) => {
         return (
-          <li key={classes}className="cohort-dates"><button>{classes}</button></li>
+          <li key={classes}className="cohort-dates"><button className="class-name">{classes}</button></li>
         )
        })}
     </ul>

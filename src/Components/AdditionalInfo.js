@@ -18,7 +18,7 @@ const Additionalinfo = ({info}) => {
     }
     return(
         <div>
-        <button onClick={toggleInfo}>{!showInfo ? "Show More...": "Show Less..."}</button>
+        <button className="show-more"onClick={toggleInfo}>{!showInfo ? "Show More...": "Show Less..."}</button>
             {showInfo ? (
                 <div className="student-info">
                     <section className="codewars">
@@ -44,6 +44,7 @@ const Additionalinfo = ({info}) => {
                     <h3>1-on-1 Note:</h3>
                     <br></br>
                      <Form newComment={newComment} handleComment={handleComment}/>
+                     <br></br>
                     <Comments newComment={newComment} info={info}/>
                 </div>
             ): null}
