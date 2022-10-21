@@ -1,7 +1,16 @@
 import { useState } from "react"
 import "./Additionalinfo.css"
+import Comments from "./comments"
+import Addcomment from "./Addcomment"
+import Form from "./form"
 
 const Additionalinfo = ({info}) => {
+
+     const [newComment, setNewComment] = useState(Addcomment)
+     function handleComment(comments){
+         setNewComment([newComment, comments])
+     }
+
     const [showInfo, setShowInfo] = useState(false)
 
     function toggleInfo(){
@@ -32,6 +41,10 @@ const Additionalinfo = ({info}) => {
                         <p>Github: {info.certifications.github ? "✅" : "❌"}</p>
                         <p>MockInterview: {info.certifications.mockInterview ? "✅" : "❌"}</p>
                     </section>
+                    <h3>1-on-1 Note:</h3>
+                    <br></br>
+                     <Form newComment={newComment} handleComment={handleComment}/>
+                    <Comments newComment={newComment} info={info}/>
                 </div>
             ): null}
         </div>
