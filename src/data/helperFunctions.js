@@ -17,6 +17,11 @@ export function sortCohort(arrOfObj) {
     return array
 }
 
+// function for Calculating Codewar Goal
+export function goalPercent(num1,num2) {
+    return Math.round((num1 / num2) *100)
+}
+
 // function to take in cohort name (id value) and filter students by cohortcode 
 
 

@@ -26,12 +26,12 @@ function ShowMoreButton({id,data}) {
         onClick = {(event) => {handleShowMoreOnClick(event)}}
         >Show More...
         </a>
-        <StudentHiddenInfo
+        { clicked && <StudentHiddenInfo
         id = {id}
         studentId = {studentId}
         clicked = {clicked}
         data = {data}
-        />
+        />}
         </>
         
     );

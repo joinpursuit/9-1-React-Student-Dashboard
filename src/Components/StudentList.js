@@ -26,11 +26,11 @@ function StudentList({data}) {
                                 <p>
                                     <h4>{firstName} {middleInitial} {lastName}</h4>
                                     {username}<br></br>
-                                    <ShowMoreButton 
+                                </p>
+                                <ShowMoreButton 
                                     id = {id}
                                     data = {data}
                                     />
-                                </p>
                             </div>
                
             </div>
