@@ -9,22 +9,28 @@ function ShowMoreButton({id,data}) {
     // Declare state for value of button clicked/ id#
     const [studentId, setStudentId] = useState("")
 
+    // Declare state for mouse over `show more`
+    const [showMore, setShowMore] = useState(false)
+
+    // Declare state for mouseOver
+    const[cursor, setCursor] = useState(false)
+    
     function handleShowMoreOnClick(e) {
         // value = student id#
         const value = e.target.name
         setStudentId(value)
         setClicked(!clicked)
+        setShowMore(!showMore)
         
         }
    
     return (
         <>
         <a
-        href= "#"
         className='showMore'
         name={id}
         onClick = {(event) => {handleShowMoreOnClick(event)}}
-        >Show More...
+        >{showMore ? "Show Less..." : "Show More..."}
         </a>
         { clicked && <StudentHiddenInfo
         id = {id}

@@ -26,8 +26,8 @@ main {
 .studentList {
     grid-column: 2;
     margin-left: 20px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
     row-gap: 15px;
     border: 1px solid black;
 
@@ -59,9 +59,20 @@ footer {
     justify-self: center;
 }
 
+a {
+    text-decoration: underline;
+    color: rgb(61, 128, 61);
+}
+a:hover{
+    cursor: pointer;
+}
 .showMore {
     visibility: visible;
 }
 .showMoreHidden {
     display: none;
+}
+.studentStats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
