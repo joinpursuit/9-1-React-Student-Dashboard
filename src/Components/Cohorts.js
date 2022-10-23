@@ -5,14 +5,13 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
     <div className="cohorts">
       {"<Cohorts />"}
       <h2>Choose a Class by Start date</h2>
-      <ul>
-        <li onClick={() => chooseCohort("All Courses")}>All Courses</li>
-        {uniqueCohorts.map((cohort, idx) => (
-          <li key={idx} onClick={() => chooseCohort(cohort)}>
-            {cohort}
-          </li>
-        ))}
-      </ul>
+
+      <li onClick={() => chooseCohort("All Courses")}>All Courses</li>
+      {uniqueCohorts.map((cohort, idx) => (
+        <li key={idx} onClick={() => chooseCohort(cohort)}>
+          {cohort}
+        </li>
+      ))}
     </div>
   );
 }
