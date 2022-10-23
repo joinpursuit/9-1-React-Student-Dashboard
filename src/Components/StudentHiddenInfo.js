@@ -1,11 +1,13 @@
 import React from 'react';
 import Certifications from './Certifications';
 import CodeWars from './CodeWars';
+import Notes from './Notes';
 import Scores from './Scores';
 
 function StudentHiddenInfo({studentId, clicked, id, data}) {
-    // find student obj that matches student Id
+    // filter student  that matches student Id
     const thisStudent = data.filter(({id}) => id === studentId)
+    
 
     return (
         <div className ={`${id} ${clicked ? "" : "showMoreHidden"}`}>
@@ -22,6 +24,10 @@ function StudentHiddenInfo({studentId, clicked, id, data}) {
                     )
                 })
             }
+            <hr />
+            {/* notes component here */}
+            <Notes 
+            thisStudent= {thisStudent} />
         </div>
     );
 }
