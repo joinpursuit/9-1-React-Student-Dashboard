@@ -24,6 +24,9 @@ const [showMore, SetShowMore] = useState()
       <main>
       
       <div className="studentList">
+        <h2
+        style={{margin: "0"}}>Cohort</h2>
+        Total Students:
         {/* <div>
         <h4>Li item Name</h4>
         <span>total :</span>
@@ -33,7 +36,13 @@ const [showMore, SetShowMore] = useState()
       </div>
 
       <aside className="cohortList">
-        <h3>Choose Class</h3>
+        <h2
+        style={{
+          marginTop:"0",
+          // top: "-80px",
+          // position: "relative",
+        }}
+        >Choose Class by Start Date</h2>
         <CohortList
         data = {data} />
       </aside>

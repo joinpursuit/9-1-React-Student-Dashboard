@@ -9,11 +9,16 @@ const cohorts = sortCohort(data)
        <>
        {cohorts.map(el =>{
        const code = el.split(` `).join(``)
-        return <div className='cohort' key = {el}>
-           <h3
-           value = {code} 
-           >{el}</h3>
-        </div>})} 
+        return <h4
+        className='cohort' 
+        key = {el}
+        value = {code} 
+        >{el} 
+         <hr />
+        
+        </h4>
+         })} 
+        
        </>
 
     );

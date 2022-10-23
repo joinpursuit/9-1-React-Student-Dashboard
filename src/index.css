@@ -5,6 +5,9 @@
 
 img {
     width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
 }
 
 .topLevel {
@@ -29,23 +32,27 @@ main {
     /* display: grid;
     grid-template-columns: repeat(3,1fr); */
     row-gap: 15px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    display: grid;
 
 
 }
 
 .student {
-   display: grid;
+   display: block;
    justify-items: center;
+   width: 90%;
+   margin-left: 20px;
+   margin-top: 10px;
+   border: 2px solid rgb(88, 191, 88);
 }
 
 .studentInfo {
-    display: block;
-    text-align: center;
+    display: flex;
 }
 
 aside {
-    display: grid;
+    display: block;
     justify-items: center;
     align-items: center;
 }
@@ -53,6 +60,10 @@ aside {
     grid-column: 1;
     grid-row: 1;
     margin-left: 20px;
+    
+}
+.cohortList h2 {
+    text-align: center;
 }
 
 footer {
@@ -62,16 +73,12 @@ footer {
 a {
     text-decoration: underline;
     color: rgb(61, 128, 61);
+    margin-left: 40%;
 }
 a:hover{
     cursor: pointer;
 }
-.showMore {
-    visibility: visible;
-}
-.showMoreHidden {
-    display: none;
-}
+
 .studentStats {
     display: grid;
     grid-template-columns: repeat(3,1fr);
