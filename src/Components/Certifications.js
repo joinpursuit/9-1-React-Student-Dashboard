@@ -10,7 +10,7 @@ function Certifications({certifications}) {
     const greenCheck = <span role="img" aria-label="greenCheckMark">✅</span>
     
     return (
-        <div>
+        <div className='certifications'>
             <h4>Certifications </h4>
             <p>
                 <span>Resume: </span>

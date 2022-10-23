@@ -5,14 +5,15 @@ function Notes({thisStudent}) {
     const notesObj = thisStudent[0].notes
     // Declare state for comments/ notes
     const [comment, setComment] = useState(notesObj)
-    // Decalre state for new comment
+    // Declare state for new comment
     const [newComment, setNewComment] = useState(
         {
             commenter: "",
             comment: ""
         }
     )
-
+    // Declare state for mouse over button
+    const [button, setButton] = useState(false)
     // function for handling user comments
     function handleUserComment(e) {
         setNewComment({...newComment, [e.target.name] : e.target.value})
@@ -47,7 +48,7 @@ function Notes({thisStudent}) {
             <h4>1-on-1 Notes</h4>
             <div className='form'>
                 <form onSubmit={(event) => {handleSubmit(event)}}>
-                    <label htmlFor='commenter'>Commenter: </label>
+                    <label htmlFor='commenter'>Commenter Name: </label>
                     <input 
                     type= "text"
                     id = "commenter"
@@ -66,18 +67,28 @@ function Notes({thisStudent}) {
                     onChange = {(event) => {handleUserComment(event)}}/>
                     <br></br>
 
-                    <input 
+                    <input
+                    className = "submitButton"
                     type= "submit"
                     value = " Add Note"
+                    style = {{
+                        color: button ? "black" : "white", 
+                        backgroundColor: button ? "white" : "rgb(61, 128, 61)",
+                    }}
+                    onMouseEnter = {() => {setButton(true)}}
+                    onMouseLeave = {() => {setButton(false)}}
                      />
                 </form>
 
             </div>
+            <ul>
             {
                 comment.map(({comment, commenter}) => 
                     <li>{commenter} says, "{comment}"</li>
                 )
             }
+            </ul>
+            
             
         </div>
     );

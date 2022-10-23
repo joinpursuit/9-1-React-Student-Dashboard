@@ -5,7 +5,7 @@ function Scores({scores}) {
     const projects = scores.scores.projects * 100
     const assessments = scores.scores.assessments * 100
     return (
-        <div>
+        <div className='scores'>
             <h4>Scores:</h4>
             <p>
                 <span>Assignments: </span>

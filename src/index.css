@@ -85,3 +85,30 @@ hr {
     background: rgb(61, 128, 61);
     width: 90%;
 }
+
+.Notes {
+    display: grid;
+    justify-items: flex-start;
+    margin-left: 20px;
+}
+.form {
+    border: 1px solid black;
+    width: 90%;
+}
+form {
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+}
+input {
+    margin-top: 10px;
+}
+.submitButton {
+    border-radius: 5px;
+    font-family: "serif";
+    border: 1px solid rgb(61, 128, 61) ;
+}
+.submitButton:hover {
+    cursor: pointer;
+}
