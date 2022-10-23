@@ -6,7 +6,7 @@ import Scores from './Scores';
 function StudentHiddenInfo({studentId, clicked, id, data}) {
     // find student obj that matches student Id
     const thisStudent = data.filter(({id}) => id === studentId)
-    console.log(thisStudent)
+
     return (
         <div className ={`${id} ${clicked ? "" : "showMoreHidden"}`}>
             {

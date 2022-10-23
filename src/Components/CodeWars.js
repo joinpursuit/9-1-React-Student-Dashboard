@@ -12,10 +12,17 @@ function CodeWars({codewars}) {
     return (
         <div className='codewars'>
             <h4>CodeWars:</h4>
-            <p>Current Total: {total}</p>
-            <p>Last Week: {lastWeek}</p>
-            <p>Goal: {goal}</p>
-            <p>Percent of Goal Achieved: {percentAchieved}%</p>
+            <p>
+                <span>Current Total: </span>
+                {total}</p>
+            <p>
+                <span>Last Week: </span>
+                {lastWeek}</p>
+            <p>
+                <span>Goal: </span>
+                {goal}</p>
+            <p>
+                <span>Percent of Goal Achieved: </span>{percentAchieved}%</p>
         </div>
     );
 }

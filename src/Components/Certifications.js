@@ -12,10 +12,17 @@ function Certifications({certifications}) {
     return (
         <div>
             <h4>Certifications </h4>
-            <p>Resume: {resume ? greenCheck : redX} </p>
-            <p>LinkedIn: {linkedIn ? greenCheck : redX}</p>
-            <p>GitHub: {github ? greenCheck : redX}</p>
-            <p>Mock Interview: {mockInterview ? greenCheck : redX}</p>
+            <p>
+                <span>Resume: </span>
+                {resume ? greenCheck : redX} </p>
+            <p>
+                <span>LinkedIn: </span>
+                {linkedIn ? greenCheck : redX}</p>
+            <p>
+                <span>GitHub: </span>
+                {github ? greenCheck : redX}</p>
+            <p>
+                <span>Mock Interview: </span>{mockInterview ? greenCheck : redX}</p>
         </div>
     );
 }

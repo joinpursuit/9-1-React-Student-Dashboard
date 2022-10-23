@@ -76,3 +76,6 @@ a:hover{
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+.studentStats span {
+    color: rgb(61, 128, 61);
+}

@@ -7,9 +7,16 @@ function Scores({scores}) {
     return (
         <div>
             <h4>Scores:</h4>
-            <p>Assignments: {assignments}%</p>
-            <p>Projects: {projects}%</p>
-            <p>Assessments: {assessments}% </p>
+            <p>
+                <span>Assignments: </span>
+                {assignments}%</p>
+            <p>
+                <span>
+                Projects: </span>
+                {projects}%</p>
+            <p>
+                <span>Assessments: </span>
+                {assessments}% </p>
         </div>
     );
 }
