@@ -1,6 +1,4 @@
 export default function StudentList({ Records, totalOption, setTotalOption }) {
-  //! DOB Format function
-
   return (
     <div className="StudentList">
       <h3>All Students</h3>
@@ -9,6 +7,10 @@ export default function StudentList({ Records, totalOption, setTotalOption }) {
       {/* {console.log(Records.length)} */}
       <div className="List">
         {Records.map((record) => {
+          //! DOB Format
+          const dateFormat = new Date(record.dob);
+          // console.log(dateFormat);
+
           return (
             <div className="UserInfo">
               <div className="Cards" key={record.id}>
@@ -21,7 +23,10 @@ export default function StudentList({ Records, totalOption, setTotalOption }) {
                     {record.names.middleName.charAt(0)}. {record.names.surname}{" "}
                   </b>
                   <br /> {/* </h5> */}
-                  {record.username} <br /> Birthday: {record.dob}
+                  {record.username} <br /> Birthday:{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    dateStyle: "long",
+                  }).format(dateFormat)}
                 </p>
 
                 <br />
