@@ -19,7 +19,7 @@ function App() {
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
 
   // State for App
-  const [cohort, setCohort] = useState(["All cohorts"]);
+  const [cohort, setCohort] = useState(null);
 
   function chooseCohort(cohort) {
     setCohort(cohort);
@@ -38,9 +38,17 @@ function App() {
         <div className="students">
           <h2>All Students</h2>
           <p>Total: 250</p>
-          {studentsData.map((student) => (
-            <Student key={student.id} student={student} />
-          ))}
+          {!cohort
+            ? studentsData.map((student) => (
+                <Student key={student.id} student={student} />
+              ))
+            : studentsData
+                .filter((student) => {
+                  return student.cohort.cohortCode === cohort;
+                })
+                .map((student) => (
+                  <Student key={student.id} student={student} />
+                ))}
         </div>
       </main>
     </div>
