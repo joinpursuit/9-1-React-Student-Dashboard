@@ -1,8 +1,8 @@
 import { useState } from "react";
+import data from "./data/data.json";
+import Student from "./Components/Student";
 import Cohorts from "./Components/Cohorts";
 import "./App.css";
-
-import data from "./data/data.json";
 
 function App() {
   const studentsData = [...data];
@@ -28,10 +28,9 @@ function App() {
         <div className="students">
           <h2>All Students</h2>
           <p>Total: 250</p>
-          <div>Student1</div>
-          <div>Student1</div>
-          <div>Student1</div>
-          <div>Student1</div>
+          {studentsData.map((student) => (
+            <Student key={student.id} student={student} />
+          ))}
         </div>
       </main>
     </div>
