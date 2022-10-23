@@ -6,6 +6,7 @@ body {
 .Main {
   margin-top: 25px;
   grid-template-columns: 1fr 2fr;
+  column-gap: 25px;
   display: grid;
 }
 .Header {
@@ -17,7 +18,8 @@ body {
   background-color: #5c946e;
 }
 .CohortList {
-  margin-left: 10px;
+  text-align: left;
+  /* margin-left: 10px; */
   /* border: 3px solid green; */
   margin-right: 20px;
 }
@@ -39,4 +41,17 @@ img {
   display: grid;
   padding-bottom: 25px;
   grid-template-columns: 1fr 2fr;
+}
+
+button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+
+  text-align: none;
 }

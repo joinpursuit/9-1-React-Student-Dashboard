@@ -18,12 +18,16 @@ function App() {
     <div className="App">
       <Header />
       <div className="Main">
+        <aside>
         <Cohort
           // removeDuplicates={removeDuplicates}
           cohortOption={cohortOption}
           Records={Records}
         />
+         </aside>
+         <main>
         <StudentList Records={Records} />
+        </main>
       </div>
       <Footer></Footer>
     </div>
