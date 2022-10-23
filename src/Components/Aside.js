@@ -1,22 +1,24 @@
-export default function Aside(cohorts) {
+export default function Aside({updatedCohortCodes, handleUpdatedCohort,}) {
+
     return(
         <div className="aside">
             <h2>Choose a Class by Start Date</h2>
             <ul>
                 <li>
-                    <button>
+                    <button onClick={()=>{handleUpdatedCohort()}}>
                         All Students
+                       
                         </button>
                         </li>
-                {/* {cohorts.map(cohort => {
+                {updatedCohortCodes.map(cohort => {
                     return(
                         <li>
-                            <button>
+                            <button onClick={() =>{handleUpdatedCohort(cohort.split(' ').join(''))}}>
                                 {cohort}
                             </button>
                         </li>
                     )
-                })} */}
+                })}
             </ul>
         </div>
     )
