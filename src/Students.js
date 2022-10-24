@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import StudentScoreCard from './StudentScoreCard';
 import './Students.css';
 
 function Students({ Data }) {
@@ -29,7 +29,7 @@ function Students({ Data }) {
             </p>
             <button className="student-show-more">Show more ...</button>
           </aside>
-          <Form Data={Data} />
+          <StudentScoreCard el={el} />
         </div>
       </article>
     );
