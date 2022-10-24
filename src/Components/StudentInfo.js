@@ -1,4 +1,9 @@
 export default function StudentInfo({ student }) {
+  const { certifications } = student;
+  const { resume, linkedin, mockInterview, github } = certifications;
+  const onTrackToGrad = resume && linkedin && mockInterview && github;
+  console.log(onTrackToGrad);
+
   function formatDob(date) {
     let newDate = new Date(date);
     const newDateArray = newDate.toDateString().split(" ");
@@ -22,6 +27,7 @@ export default function StudentInfo({ student }) {
         <p>{student.username}</p>
         <p>Birthday: {formatDob(student.dob)}</p>
       </div>
+      {onTrackToGrad && <p>On Track to Graduate</p>}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 
 export default function Student({ student }) {
-  const [showMore, setShowMore] = useState(true);
+  const [showMore, setShowMore] = useState(false);
 
   const { codewars, cohort, certifications } = student;
   const { current } = codewars;
@@ -43,11 +43,11 @@ export default function Student({ student }) {
               <section>
                 <h4>Certifications</h4>
                 <p>Resume: {certifications.resume ? "✅" : "❌"}</p>
-                <p>LinkedIn: {certifications.linkedIn ? "✅" : "❌"}</p>
+                <p>LinkedIn: {certifications.linkedin ? "✅" : "❌"}</p>
                 <p>
                   Mock Interview: {certifications.mockInterview ? "✅" : "❌"}
                 </p>
-                <p>GitHub: {certifications.gitHub ? "✅" : "❌"}</p>
+                <p>GitHub: {certifications.github ? "✅" : "❌"}</p>
               </section>
             </div>
             <hr></hr>
