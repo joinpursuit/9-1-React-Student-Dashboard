@@ -17,10 +17,15 @@ function App() {
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
 
   // State for App
-  const [cohort, setCohort] = useState(null);
+  const [cohort, setCohort] = useState("All Courses");
+  const [totalStudents, setTotalStudents] = useState(250);
 
   function chooseCohort(cohort) {
     setCohort(cohort);
+    setTimeout(
+      () => setTotalStudents(document.getElementsByClassName("student").length),
+      1
+    );
   }
 
   return (
@@ -35,8 +40,8 @@ function App() {
         </aside>
         <div className="students">
           <h2>All Students</h2>
-          <p>Total: 250</p>
-          {!cohort
+          <p>Total: {totalStudents}</p>
+          {cohort === "All Courses"
             ? studentsData.map((student) => (
                 <Student key={student.id} student={student} />
               ))
