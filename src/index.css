@@ -18,4 +18,5 @@ main {
   margin: auto;
   display: grid;
   justify-content: space-between;
+  border: 1px solid black;
 }
