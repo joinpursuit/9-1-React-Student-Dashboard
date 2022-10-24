@@ -24,7 +24,7 @@ function getCohortCode() {
 }
 
 //to do list
-// 1. fix show more button
+// 1. show more button when clicked 
 // 2. fix notes
 // 3. add percent goals
 // 4. change Font
@@ -62,7 +62,7 @@ function handleUpdatedCohort(cohort) {
 }
 
 
-console.log(allCohortCodes.sort((a, b) => a-b))
+// console.log(allCohortCodes.sort((a, b) => a-b))
 
 
   return (
