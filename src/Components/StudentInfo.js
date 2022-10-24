@@ -1,8 +1,12 @@
 export default function StudentInfo({ student }) {
   const { certifications } = student;
   const { resume, linkedin, mockInterview, github } = certifications;
-  const onTrackToGrad = resume && linkedin && mockInterview && github;
-  console.log(onTrackToGrad);
+  const onTrackToGrad =
+    resume &&
+    linkedin &&
+    mockInterview &&
+    github &&
+    student.codewars.current.total > 600;
 
   function formatDob(date) {
     let newDate = new Date(date);
@@ -27,7 +31,7 @@ export default function StudentInfo({ student }) {
         <p>{student.username}</p>
         <p>Birthday: {formatDob(student.dob)}</p>
       </div>
-      {onTrackToGrad && <p>On Track to Graduate</p>}
+      {onTrackToGrad && <p style={{ color: "green" }}>On Track to Graduate</p>}
     </div>
   );
 }
