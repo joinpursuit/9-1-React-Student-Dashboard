@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import uuid from 'react-uuid';
 
 function Notes({thisStudent}) {
-    const notesObj = thisStudent[0].notes
+   
+    const notesArr = thisStudent[0].notes
     // Declare state for comments/ notes
-    const [comment, setComment] = useState(notesObj)
+    const [comment, setComment] = useState(notesArr)
     
     // Declare state for new comment
     const [newComment, setNewComment] = useState(
@@ -28,7 +30,7 @@ function Notes({thisStudent}) {
             commenter: newComment.commenter,
             comment: newComment.comment
         }
-        notesObj.push(lastestComment)
+        notesArr.push(lastestComment)
         // setComment([lastestComment, ...thisStudent[0].notes])
     }
 
@@ -88,7 +90,7 @@ function Notes({thisStudent}) {
             <ul>
             {
                 comment.map(({comment, commenter}) => 
-                    <li>{commenter} says, "{comment}"</li>
+                    <li key = {uuid()}>{commenter} says, "{comment}"</li>
                 )
             }
             </ul>
