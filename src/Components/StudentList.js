@@ -11,12 +11,12 @@ export default function StudentList({
     <div className="StudentList">
       <h2>{titleOption}</h2>
       <p>
-        Total Students: <span>{Records.length}</span>
+        Total Students: <span>{totalOption}</span>
       </p>
-      {/* //!function with conditiont to update the state of student count in total */}
-      {/* {console.log(Records.length)} */}
+      {/* //!function with condition to update the state of student count in total */}
       <div className="List">
         {Records.map((record) => {
+          // console.log(record.notes);
           //! DOB Format
           const dateFormat = new Date(record.dob);
 

@@ -3,7 +3,8 @@ export default function Cohort({
   setStudentListOption,
   setTitleOption,
   cohort,
-  totalOption,
+  studentListOPtion,
+  titleOption,
   setTotalOption,
 }) {
   //? function for new title when clicking all student from cohort list, resets list to full list
@@ -12,20 +13,12 @@ export default function Cohort({
     setTitleOption("All Students");
   };
   //?---------------
-  //-----
-  const handleTotalChange = () => {
-    setTotalOption(1200);
-    console.log("TOTAL");
-  };
+
   //* Filter cohort list for those matching option
-  const filterCohort = (cohort) => {
-    setStudentListOption(
-      Records.filter((el) => {
-        return el.cohort.cohortCode === cohort;
-      })
-    );
-    console.log("CLicked Date");
-  };
+  let filterCohort = Records.filter((el) => {
+    return el.cohort.cohortCode === titleOption.split(" ").join("");
+  });
+  // console.log(filterCohort.length);
   //*---------------
   //!-------------------- USED NEW SET to remove duplicates
 
@@ -51,8 +44,7 @@ export default function Cohort({
                 {
                   <li
                     onClick={() => {
-                      handleTotalChange();
-                      filterCohort(cohort);
+                      setTotalOption(filterCohort.length);
                       setTitleOption(
                         //! Sepearting the dates using Slice by targeting years, years contain 4 numbers
                         record.slice(0, -4) + " " + record.slice(-4)

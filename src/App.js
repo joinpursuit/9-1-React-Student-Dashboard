@@ -19,6 +19,9 @@ function App() {
         <aside>
           <Cohort
             Records={Records}
+            titleOption={titleOption}
+            totalOption={totalOption}
+            setTotalOption={setTotalOption}
             // cohortOption={cohortOption}
             setTitleOption={setTitleOption}
             // setCohortOPtion={setCohortOption}
