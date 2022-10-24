@@ -2,7 +2,7 @@ import React from 'react';
 import { sortCohort } from '../data/helperFunctions';
 
 
-function CohortList({data, students, setStudents}) {
+function CohortList({data, students, setStudents, setCohortName}) {
 const cohorts = sortCohort(data)
 
 function filterStudents(string) {
@@ -14,6 +14,7 @@ function filterStudents(string) {
 // function for onClick cohort
 function cohortFilter(e) {
    const cohortName = e.target.id
+   setCohortName(e.target.innerText)
    if(cohortName === "AllStudents"){
       setStudents(data)
    }

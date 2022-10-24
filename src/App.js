@@ -10,6 +10,8 @@ import CohortList from './Components/CohortList';
 function App() {
   // Declare state for selected students
   const [students, setStudents] = useState(data)
+  // Declare State for CohortName
+  const [cohortName, setCohortName] = useState("All Students")
   // Declare state for showMoreButton
   const [showMore, SetShowMore] = useState()
 
@@ -25,12 +27,9 @@ function App() {
       
       <div className="studentList">
         <h2
-        style={{margin: "0"}}>Cohort</h2>
-        Total Students:
-        {/* <div>
-        <h4>Li item Name</h4>
-        <span>total :</span>
-        </div> */}
+        style={{margin: "0"}}>{cohortName}</h2>
+        Total Students: {students.length}
+        
       <StudentList
       students = {students} />
       </div>
@@ -44,7 +43,8 @@ function App() {
         <CohortList
         data = {data}
         student = {students}
-        setStudents = {setStudents} />
+        setStudents = {setStudents}
+        setCohortName = {setCohortName} />
       </aside>
       
       </main>
