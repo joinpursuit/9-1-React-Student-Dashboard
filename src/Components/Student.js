@@ -2,7 +2,7 @@ import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 
 export default function Student({ student }) {
-  const [showMore, setShowMore] = useState(true);
+  const [showMore, setShowMore] = useState(false);
 
   const { codewars } = student;
   const { current } = codewars;
