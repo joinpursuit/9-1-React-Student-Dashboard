@@ -137,3 +137,9 @@ input {
 .submitButton:hover {
     cursor: pointer;
 }
+
+/* Graduation */
+.Graduate {
+    color: rgb(61, 128, 61) ;
+    margin-top: 20px;
+}

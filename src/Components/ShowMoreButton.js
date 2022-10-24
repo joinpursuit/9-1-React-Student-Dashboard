@@ -30,6 +30,7 @@ function ShowMoreButton({id,students}) {
         >{showMore ? "Show Less..." : "Show More..."}
         </a>
         { clicked && <StudentHiddenInfo
+        clicked = {clicked}
         id = {id}
         studentId = {studentId}
         students = {students}

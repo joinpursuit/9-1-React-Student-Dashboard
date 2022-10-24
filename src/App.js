@@ -2,9 +2,7 @@ import { useState } from 'react';
 import data from './data/data.json'
 import StudentList from "./Components/StudentList";
 import CohortList from './Components/CohortList';
-
-
-
+import Header from './Components/Header';
 
 
 function App() {
@@ -19,9 +17,7 @@ function App() {
 
   return (
     <div className='topLevel'>
-      <header>
-        <h1>Destiny's Student Dashboard</h1>
-      </header>
+     <Header />
       
       <main>
       
@@ -29,18 +25,17 @@ function App() {
         <h2
         style={{margin: "0"}}>{cohortName}</h2>
         <p>Total Students: 
-          <span style={{color: "green"}}> {students.length}</span></p> 
-        
-      <StudentList
-      students = {students} />
-      </div>
+          <span style={{color: "green"}}> {students.length}</span>
+        </p> 
+        <StudentList
+        students = {students} />
+        </div>
 
       <aside className="cohortList">
         <h2
         style={{
           marginTop:"0",
-        }}
-        >Choose Class by Start Date</h2>
+        }}>Choose Class by Start Date</h2>
         <CohortList
         data = {data}
         student = {students}
@@ -49,9 +44,7 @@ function App() {
       </aside>
       
       </main>
-
       
-
       <footer>FOOTER</footer>
      
     </div>

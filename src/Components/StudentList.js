@@ -2,18 +2,19 @@ import React from 'react';
 import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
 import Birthday from './Birthday';
+import Graduate from './Graduate';
 import ShowMoreButton from './ShowMoreButton';
 import StudentHiddenInfo from './StudentHiddenInfo';
 function StudentList({students}) {
-    
+   
     return (
         <>
         {
-            students.map(({id,names,username,profilePhoto,dob},i) => {
+            students.map(({id,names,username,profilePhoto,dob,notes},i) => {
                 const firstName = names.preferredName
                 const middleInitial = middleName(names.middleName)
                 const lastName = names.surname
-                if(i<10){
+                if(i<100){
                     return(
                         <div 
                         className='student'
@@ -33,10 +34,10 @@ function StudentList({students}) {
                                     dob = {dob} />
                                     
                                 </div>
-                                {/* <ShowMoreButton 
-                                    id = {id}
-                                    data = {data}
-                                    /> */}
+                                <Graduate
+                                    thisId = {id}
+                                    students = {students} />
+                               
                             </div>
                             <ShowMoreButton 
                                     id = {id}

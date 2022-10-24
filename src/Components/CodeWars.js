@@ -1,10 +1,7 @@
 import React from 'react';
 import { goalPercent } from '../data/helperFunctions';
 import { codeWarsColor } from '../data/helperFunctions';
-// "codewars": {
-//     "current": { "total": 1804, "lastWeek": 144 },
-//     "goal": { "total": 850, "lastWeek": 75 }
-//   }
+
 function CodeWars({codewars}) {
     
     const total = codewars.current.total
@@ -31,6 +28,7 @@ function CodeWars({codewars}) {
                 style={
                     {color: `${color}`}
                     }>{percentAchieved}%</span></p>
+            
         </div>
     );
 }
