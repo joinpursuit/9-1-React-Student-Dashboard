@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid black;
+  /* /* border: 1px solid black; */
 }
 
 body {
@@ -10,6 +10,7 @@ body {
 
 header {
   text-align: center;
+  background-color: darkcyan;
 }
 
 main {

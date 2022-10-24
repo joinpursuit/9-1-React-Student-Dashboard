@@ -10,7 +10,7 @@ function App() {
       <Header />
       <main>
         <StartDate />
-        <AllStudents />
+        <AllStudents data={data} />
       </main>
     </div>
   )
