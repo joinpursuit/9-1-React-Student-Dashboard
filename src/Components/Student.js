@@ -1,6 +1,9 @@
 import "./Student.css";
 
-export default function Student({ person }) {
+export default function Student({ person, date, data }) {
+  let bday = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "long",
+  }).format(date);
   return (
     <article className="card">
       <img src={person.profilePhoto} alt={person.names.preferredName}></img>
@@ -12,7 +15,7 @@ export default function Student({ person }) {
           </h3>
           <p>{person.username}</p>
           <p>
-            <span>Birthday:</span> {person.dob}
+            <span>Birthday:</span> {bday}
           </p>
         </aside>
         <button className="toggle-details">Show more...</button>

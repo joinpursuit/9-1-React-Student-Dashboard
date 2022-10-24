@@ -16,5 +16,9 @@ img {
   background: none;
   border: none;
   text-decoration: underline;
-  color: rgb(60, 86, 163);
+  color: rgb(6, 7, 10);
+}
+
+.card:hover {
+  background-color: rgb(217, 217, 241);
 }

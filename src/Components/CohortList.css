@@ -13,3 +13,8 @@ button {
   border-bottom: 2px solid rgb(138, 76, 138);
   width: 100%;
 }
+
+button:hover {
+  border-bottom: 5px solid rgb(138, 76, 138);
+  font-size: 110%;
+}

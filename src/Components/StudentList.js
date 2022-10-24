@@ -1,14 +1,46 @@
 import Student from "./Student";
 
-export default function StudentList({ data }) {
+export default function StudentList({ data, selected }) {
+  let cohortArr = data.filter((el) => {
+    return el.cohort.cohortCode === selected.split(" ").join("");
+  });
+  //   console.log(cohortArr);
+
   return (
     <section className="student-list">
-      <h2>All Students</h2>
-      <p>Total Students: {data.length}</p>
+      <h2>{selected}</h2>
+      <p>
+        Total Students:{" "}
+        {selected === "All Students" ? data.length : cohortArr.length}
+      </p>
       <div>
-        {data.map((person) => {
-          return <Student key={person.id} data={data} person={person} />;
-        })}
+        {selected === "All Students"
+          ? data.map((person) => {
+              let date = new Date(person.dob);
+
+              return (
+                <Student
+                  key={person.id}
+                  data={data}
+                  person={person}
+                  date={date}
+                  selected={selected}
+                />
+              );
+            })
+          : cohortArr.map((person) => {
+              let date = new Date(person.dob);
+
+              return (
+                <Student
+                  key={person.id}
+                  data={cohortArr}
+                  person={person}
+                  date={date}
+                  selected={selected}
+                />
+              );
+            })}
       </div>
     </section>
   );
