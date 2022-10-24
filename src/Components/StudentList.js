@@ -1,8 +1,18 @@
-export default function StudentList({ Records, totalOption, setTotalOption }) {
+import "./studentList.css";
+
+export default function StudentList({
+  Records,
+  totalOption,
+  setTotalOption,
+  studentListOPtion,
+  titleOption,
+}) {
   return (
     <div className="StudentList">
-      <h3>All Students</h3>
-      <p>Total Students: {Records.length} </p>
+      <h2>{titleOption}</h2>
+      <p>
+        Total Students: <span>{studentListOPtion.length}</span>
+      </p>
       {/* //!function with conditiont to update the state of student count in total */}
       {/* {console.log(Records.length)} */}
       <div className="List">
@@ -12,7 +22,7 @@ export default function StudentList({ Records, totalOption, setTotalOption }) {
           // console.log(dateFormat);
 
           return (
-            <div className="UserInfo">
+            <article className="UserInfo" key={record.id}>
               <div className="Cards" key={record.id}>
                 <img src={record.profilePhoto} alt={record.names} />
                 {/* <h5> */}
@@ -37,7 +47,7 @@ export default function StudentList({ Records, totalOption, setTotalOption }) {
               </div>
 
               <p></p>
-            </div>
+            </article>
           );
         })}
       </div>

@@ -1,0 +1,25 @@
+.Cards {
+    border: 2px solid #5c946e;
+    display: grid;
+    padding-bottom: 25px;
+    grid-template-columns: 1fr 2fr;
+  }
+  .Cards:hover {
+    background-color: greenyellow;
+    background-color: transparent;
+    border: 2px solid #799be6;
+    box-shadow: 0 0 10px 0 green inset, 0 0 10px 4px greenyellow;
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 100vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 100vw;
+  }

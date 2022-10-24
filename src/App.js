@@ -5,10 +5,10 @@ import Header from "./Components/Header";
 import Cohort from "./Components/Cohort";
 import Footer from "./Components/Footer";
 function App() {
-  const [heading, setHeading] = useState("All Students");
-  const [showOption, setShowOption] = useState(""); //
-  const [studentOption, setStudentOption] = useState([]);
-  const [cohortOption, setCohortOption] = useState(""); //
+  const [titleOption, setTitleOption] = useState("All Students");
+  const [showMoreOption, setShowMoreOption] = useState(false); //
+  const [studentListOption, setStudentListOption] = useState(Records);
+  const [cohortOption, setCohortOption] = useState("All students"); //
   const [totalOption, setTotalOption] = useState("");
 
   return (
@@ -17,13 +17,15 @@ function App() {
       <div className="Main">
         <aside>
           <Cohort
-            // removeDuplicates={removeDuplicates}
-            cohortOption={cohortOption}
             Records={Records}
+            cohortOption={cohortOption}
+            setTitleOption={setTitleOption}
+          setCohortOPtion={setCohortOption}
+            setStudentListOption={ setStudentListOption}
           />
         </aside>
         <main>
-          <StudentList Records={Records} />
+          <StudentList titleOption={titleOption} Records={Records} studentListOPtion={studentListOption}  />
         </main>
       </div>
       <Footer></Footer>

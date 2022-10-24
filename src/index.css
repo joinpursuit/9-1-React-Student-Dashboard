@@ -3,12 +3,16 @@ body {
   text-align: justify;
   margin: 0;
 }
+/* //! _____________________________________ */
+
 .Main {
   margin-top: 25px;
   grid-template-columns: 1fr 2fr;
   column-gap: 25px;
   display: grid;
 }
+/* //! _____________________________________ */
+
 .Header {
   padding: 10px;
   font-weight: 900;
@@ -17,12 +21,15 @@ body {
   text-align: center;
   background-color: #5c946e;
 }
+/* //! _____________________________________ */
+
 .CohortList {
   text-align: left;
   /* margin-left: 10px; */
   /* border: 3px solid green; */
   margin-right: 20px;
 }
+/* //! _____________________________________ */
 
 .StudentList {
   /* text-transform: inherit; */
@@ -36,13 +43,7 @@ img {
   padding-top: 25px;
   /* padding-bottom: 15px; */
 }
-.Cards {
-  border: 2px solid #5c946e;
-  display: grid;
-  padding-bottom: 25px;
-  grid-template-columns: 1fr 2fr;
-}
-
+/* //! _____________________________________ */
 button {
   background: none;
   border: none;
@@ -55,3 +56,31 @@ li {
 
   text-align: none;
 }
+
+/* //! _____________________________________ */
+/* .Cards {
+  border: 2px solid #5c946e;
+  display: grid;
+  padding-bottom: 25px;
+  grid-template-columns: 1fr 2fr;
+}
+.Cards:hover {
+  background-color: greenyellow;
+  background-color: transparent;
+  border: 2px solid #799be6;
+  box-shadow: 0 0 10px 0 green inset, 0 0 10px 4px greenyellow;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(232, 232, 218);
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(72, 18, 18);
+  border-radius: 100vw;
+} */
+/* //! _____________________________________ */
