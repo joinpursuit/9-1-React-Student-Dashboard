@@ -1,11 +1,24 @@
+import "./Stats.css";
+
 export default function Stats({ student }) {
   const { codewars, cohort, certifications } = student;
   const { current } = codewars;
   const { goal } = codewars;
 
-  function formatCodeWarsPercentage(current, goal) {
-    let res = (current.total / goal.total) * 100;
+  function formatCodeWarsPercentage() {
+    const res = (current.total / goal.total) * 100;
     return res.toFixed(0);
+  }
+
+  function colorCodeWarsPercent() {
+    const res = (current.total / goal.total) * 100;
+    if (res < 50) {
+      return "red";
+    } else if (res >= 50 && res < 100) {
+      return "yellow";
+    } else if (res >= 100) {
+      return "green";
+    }
   }
 
   return (
@@ -16,7 +29,10 @@ export default function Stats({ student }) {
         <p>Last Week: {current.lastWeek}</p>
         <p>Goal: {goal.total}</p>
         <p>
-          Percent of Goal Achieved: {formatCodeWarsPercentage(current, goal)}%
+          Percent of Goal Achieved:{" "}
+          <span className={colorCodeWarsPercent()}>
+            {formatCodeWarsPercentage()}%
+          </span>
         </p>
       </section>
       <section>
