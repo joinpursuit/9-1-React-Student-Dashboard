@@ -9,7 +9,10 @@ import "./App.css"
 
 function App() {
  
-const [student] = useState(data)
+const [student, setStudent] = useState(data)
+
+const [allStudent, setAllStudent] = useState([])
+
 
 const [studentClass , setStudentClass] = useState([])
 
@@ -23,11 +26,7 @@ function handleCohort(classes){
   setChort([...cohort, classes])
 }
 
-//  student.forEach((students) => {
-//   if(students.cohort.cohortCode.includes("Winter2025")){
-//     console.log(students.names.preferredName)
-//   }
-//  })
+
 
   return (
     <div className="container">
@@ -35,9 +34,9 @@ function handleCohort(classes){
         <Header/>
       </header>
       <aside>
-        <Classes handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
+        <Classes   setAllStudent={setAllStudent}setStudent={setStudent}handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
         <main>
-        <Students cohort={cohort} Additionalinfo={Additionalinfo} studentClass={studentClass} student={student}/>
+        <Students   Additionalinfo={Additionalinfo} studentClass={studentClass} student={student} cohort={cohort}/>
         </main>
       </aside>
     </div>
