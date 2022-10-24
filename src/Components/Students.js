@@ -2,7 +2,7 @@ import { useState } from "react";
 import Student from "./Student";
 const Students = ({ students }) => {
   return (
-    <div className={students}>
+    <div className="main">
       <h2>All Students</h2>
       <h4>{students.length}</h4>
 
