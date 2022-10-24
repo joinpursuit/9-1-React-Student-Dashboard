@@ -32,7 +32,7 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
   return (
     <div className="cohorts">
       {"<Cohorts />"}
-      <h2>Choose a Class by Start date</h2>
+      <h2>Choose a Class by Start Date</h2>
       <li onClick={() => chooseCohort("All Students")}>All Students</li>
       {orderedCohorts.map((cohort, idx) => (
         <li key={idx} onClick={() => chooseCohort(cohort)}>
