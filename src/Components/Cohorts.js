@@ -34,7 +34,7 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
       {"<Cohorts />"}
       <h2>Choose a Class by Start date</h2>
 
-      <li onClick={() => chooseCohort("All Courses")}>All Courses</li>
+      <li onClick={() => chooseCohort("All Students")}>All Students</li>
       {orderedCohorts.map((cohort, idx) => (
         <li key={idx} onClick={() => chooseCohort(cohort)}>
           {formatCohortName(cohort)}

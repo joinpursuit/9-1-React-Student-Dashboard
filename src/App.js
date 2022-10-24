@@ -17,7 +17,7 @@ function App() {
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
 
   // State for App
-  const [cohort, setCohort] = useState("All Courses");
+  const [cohort, setCohort] = useState("All Students");
   const [totalStudents, setTotalStudents] = useState(250);
 
   function chooseCohort(cohort) {
@@ -41,7 +41,7 @@ function App() {
         <div className="students">
           <h2>All Students</h2>
           <p>Total: {totalStudents}</p>
-          {cohort === "All Courses"
+          {cohort === "All Students"
             ? studentsData.map((student) => (
                 <Student key={student.id} student={student} />
               ))
