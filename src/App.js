@@ -15,8 +15,8 @@ function App() {
           <Cohort />
         </div>
         <div className="students">
-          <h2>All Students</h2>
-          <h3>Total Students:</h3>
+          <h2 className="studentText">All Students</h2>
+          <h3 className="studentText">Total Students: {Data.length}</h3>
           <Students Data={Data} />
         </div>
       </div>

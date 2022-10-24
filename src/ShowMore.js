@@ -1,3 +1,4 @@
+import "./ShowMore.css";
 function ShowMore({ el }) {
   return (
     <section className="studentsDetails">

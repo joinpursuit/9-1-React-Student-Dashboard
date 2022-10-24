@@ -15,6 +15,7 @@
 .body {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  /* grid-template-rows: 0.1fr 1fr; */
   padding-top: 30px;
   font-size: larger;
 }
@@ -39,4 +40,8 @@
 hr {
   background-color: rgb(66, 66, 234);
   height: 2px;
+}
+
+.studentText {
+  margin-left: 20px;
 }

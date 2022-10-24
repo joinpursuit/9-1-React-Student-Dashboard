@@ -10,7 +10,7 @@ function Students({ Data }) {
       dateStyle: "long",
     }).format(dob);
     return (
-      <article key={el.id}>
+      <article className="studentsArticle" key={el.id}>
         <img src={el.profilePhoto} alt={el.names.preferredName}></img>
         <div className="studentCards">
           <h3>
@@ -22,9 +22,9 @@ function Students({ Data }) {
             <span>Birthday: </span>
             {birthday}
           </p>
-          <button id="showMore">Show More ...</button>
-          <ShowMore el={el} />
+          <button id="showMoreButton">Show More ...</button>
         </div>
+        <ShowMore el={el} />
       </article>
     );
   });
