@@ -12,6 +12,7 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
     Spring2025: 8,
   };
 
+  // Sorting Algorithm for Cohorts list
   const orderedCohorts = uniqueCohorts
     .map((cohort) => {
       return seasons[cohort];
@@ -22,6 +23,8 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
     .map((a) => {
       return Object.keys(seasons).find((key) => seasons[key] === a);
     });
+
+  // Formatting Algorithm
   function formatCohortName(cohort) {
     return cohort.split(20).join(" 20");
   }
