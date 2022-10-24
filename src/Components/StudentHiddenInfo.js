@@ -9,12 +9,14 @@ function StudentHiddenInfo({studentId, id, students,setGraduation,clicked}) {
     const thisStudent = students.filter(({id}) => id === studentId)
 
     return (
-        <div className= {id} >
+        <div className = {id} >
             {
                 thisStudent.map(({codewars, certifications, cohort}) => {
                     // return individual, codewars, scores and certification components
                     return(
-                        <div className='studentStats'>
+                        <div 
+                        className='studentStats'
+                        key = {id}>
                             <CodeWars codewars={codewars} />
                             <Scores scores = {cohort} />
                             <Certifications certifications = {certifications}/>
@@ -24,7 +26,7 @@ function StudentHiddenInfo({studentId, id, students,setGraduation,clicked}) {
                 })
             }
             <hr />
-            {/* notes component here */}
+
             <Notes 
             thisStudent= {thisStudent} />
 

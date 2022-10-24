@@ -1,12 +1,12 @@
 
-// function to conver middle Name
-export function middleName(value) {
+// function to convert middle Name
+ function middleName(value) {
     const arr = value.split(``)
     return `${arr[0].toUpperCase()}.`
 }
 
 // function to sort Cohort List
-export function sortCohort(arrOfObj) {
+ function sortCohort(arrOfObj) {
     const array = ["All Students"]
     const seasonOrder = [`Winter`, `Fall`, `Summer`,`Spring`]
     const arr2026 = []
@@ -33,17 +33,16 @@ export function sortCohort(arrOfObj) {
     )
     
     return array.concat(arr2026,arr2025)
- 
     
 }
 
 // function for Calculating Codewar Goal percent
-export function goalPercent(num1,num2) {
+ function goalPercent(num1,num2) {
     return Math.round((num1 / num2) *100)
 }
 
 // function for determining codewar percent color
-export function codeWarsColor(percentage) {
+ function codeWarsColor(percentage) {
         if(percentage < 50){
             return `red`
         }
@@ -56,9 +55,18 @@ export function codeWarsColor(percentage) {
 }
 
 // function number -> month equivalent for birthday
-export function getMonthName(monthNumber) {
+ function getMonthName(monthNumber) {
     const date = new Date();
     date.setMonth(monthNumber - 1);
   
     return date.toLocaleString('en-US', { month: 'long' });
+  }
+
+  
+  export {
+    middleName,
+    sortCohort,
+    goalPercent,
+    codeWarsColor,
+    getMonthName
   }
