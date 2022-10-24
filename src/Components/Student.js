@@ -17,7 +17,7 @@ export default function Student({ student }) {
     <li className="student">
       <StudentInfo student={student} />
       <p className="showMoreButton" onClick={() => setShowMore(!showMore)}>
-        Show more...
+        {showMore ? "Show Less..." : "Show More..."}
       </p>
       {showMore && (
         <>
