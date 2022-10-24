@@ -2,7 +2,7 @@ import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 
 export default function Student({ student }) {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   const { codewars } = student;
   const { current } = codewars;
@@ -10,7 +10,6 @@ export default function Student({ student }) {
 
   function formatCodeWarsPercentage(current, goal) {
     let res = (current.total / goal.total) * 100;
-    console.log(goal);
     return res.toFixed(0);
   }
 
@@ -28,7 +27,21 @@ export default function Student({ student }) {
               <section>
                 <h4>CodeWars</h4>
                 <p>Current Total: {current.total}</p>
-                <p>Last Week: {student.codewars.current.lastWeek}</p>
+                <p>Last Week: {current.lastWeek}</p>
+                <p>Goal: {goal.total}</p>
+                <p>
+                  Percent of Goal Achieved:{" "}
+                  {formatCodeWarsPercentage(current, goal)}%
+                </p>
+              </section>
+              <section>
+                <h4>Scores</h4>
+                <p>Assignments: {current.total}</p>
+              </section>
+              <section>
+                <h4>Certifications</h4>
+                <p>Current Total: {current.total}</p>
+                <p>Last Week: {current.lastWeek}</p>
                 <p>Goal: {goal.total}</p>
                 <p>
                   Percent of Goal Achieved:{" "}
