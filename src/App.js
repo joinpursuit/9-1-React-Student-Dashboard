@@ -22,9 +22,7 @@ function App() {
             titleOption={titleOption}
             totalOption={totalOption}
             setTotalOption={setTotalOption}
-            // cohortOption={cohortOption}
             setTitleOption={setTitleOption}
-            // setCohortOPtion={setCohortOption}
             setStudentListOption={setStudentListOption}
           />
         </aside>
