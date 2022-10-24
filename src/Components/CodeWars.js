@@ -28,7 +28,9 @@ function CodeWars({codewars}) {
             <p>
                 <span>Percent of Goal Achieved: </span>
                 <span 
-                style={{color: `${color}`}}>{percentAchieved}%</span></p>
+                style={
+                    {color: `${color}`}
+                    }>{percentAchieved}%</span></p>
         </div>
     );
 }

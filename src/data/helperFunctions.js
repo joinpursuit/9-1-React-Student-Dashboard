@@ -1,9 +1,11 @@
 
+// function to conver middle Name
 export function middleName(value) {
     const arr = value.split(``)
     return `${arr[0].toUpperCase()}.`
 }
 
+// function to sort Cohort List
 export function sortCohort(arrOfObj) {
     const array = ["All Students"]
 
@@ -17,12 +19,12 @@ export function sortCohort(arrOfObj) {
     return array
 }
 
-// function for Calculating Codewar Goal
+// function for Calculating Codewar Goal percent
 export function goalPercent(num1,num2) {
     return Math.round((num1 / num2) *100)
 }
 
-// function for determining percent color
+// function for determining codewar percent color
 export function codeWarsColor(percentage) {
         if(percentage < 50){
             return `red`
@@ -35,8 +37,7 @@ export function codeWarsColor(percentage) {
         }
 }
 
-
-// function date -> month for birthday
+// function number -> month equivalent for birthday
 export function getMonthName(monthNumber) {
     const date = new Date();
     date.setMonth(monthNumber - 1);

@@ -12,18 +12,29 @@ img {
 
 .topLevel {
     display: grid;
-    grid-template-rows: .5fr 5fr .5fr;
-    row-gap: 15px;
+    grid-template-rows: .5fr 5fr .2fr;
+    row-gap: 40px;
 }
 
 header {
     justify-self: center;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    background-color:  rgb(108, 162, 108) ;
+    color: white;
+
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 main {
     grid-row: 2;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.2fr 2fr;
 }
 
 .studentList {
@@ -65,6 +76,10 @@ aside {
 .cohortList h2 {
     text-align: center;
 }
+.cohortList h4:hover {
+    cursor: pointer;
+}
+
 
 footer {
     justify-self: center;
