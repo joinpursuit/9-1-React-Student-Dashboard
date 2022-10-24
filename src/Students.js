@@ -1,9 +1,14 @@
 import React from "react";
 import "./Students.css";
+// import ShowMore from "./ShowMore";
 
 function Students({ Data }) {
   //   console.log(Data);
   const studentData = Data.map((el) => {
+    const dob = new Date(el.dob);
+    const birthday = new Intl.DateTimeFormat("en-US", {
+      dateStyle: "long",
+    }).format(dob);
     return (
       <article key={el.id}>
         <img src={el.profilePhoto} alt={el.names.preferredName}></img>
@@ -15,9 +20,10 @@ function Students({ Data }) {
           <p>{el.username}</p>
           <p>
             <span>Birthday: </span>
-            {el.dob}
+            {birthday}
           </p>
           <button id="showMore">Show More ...</button>
+          {/* <ShowMore details={details} /> */}
         </div>
       </article>
     );
