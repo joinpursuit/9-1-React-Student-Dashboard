@@ -28,6 +28,11 @@ function App() {
     );
   }
 
+  // Formatting Algorithm
+  function formatCohortName(cohort) {
+    return cohort.split(20).join(" 20");
+  }
+
   return (
     <div className="app">
       <header>
@@ -36,10 +41,14 @@ function App() {
       <main className="main">
         <aside>
           {"<aside />"}
-          <Cohorts uniqueCohorts={uniqueCohorts} chooseCohort={chooseCohort} />
+          <Cohorts
+            formatCohortName={formatCohortName}
+            uniqueCohorts={uniqueCohorts}
+            chooseCohort={chooseCohort}
+          />
         </aside>
         <div className="students">
-          <h2>All Students</h2>
+          <h2>{formatCohortName(cohort)}</h2>
           <p>Total: {totalStudents}</p>
           {cohort === "All Students"
             ? studentsData.map((student) => (

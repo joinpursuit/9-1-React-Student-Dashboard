@@ -1,6 +1,10 @@
 import "./Cohorts.css";
 
-export default function Cohorts({ uniqueCohorts, chooseCohort }) {
+export default function Cohorts({
+  formatCohortName,
+  uniqueCohorts,
+  chooseCohort,
+}) {
   const seasons = {
     Winter2026: 1,
     Fall2026: 2,
@@ -23,11 +27,6 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
     .map((a) => {
       return Object.keys(seasons).find((key) => seasons[key] === a);
     });
-
-  // Formatting Algorithm
-  function formatCohortName(cohort) {
-    return cohort.split(20).join(" 20");
-  }
 
   return (
     <div className="cohorts">
