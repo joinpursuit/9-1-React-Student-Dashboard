@@ -2,7 +2,7 @@ import Data from '../data/data.json'
 import React, {useState} from 'react';
 
 const Cohorts = () => {
-    const cohortYears = Data.map((data) => data.cohort.cohortCode)
+    const cohortYears = Data.map((data) => data.cohort.cohortCode.replace('2', ' 2'))
     const uniqueYears = [...new Set(cohortYears)]
 
     // const [cohortName, setCohortName] = useState(uniqueYears)
