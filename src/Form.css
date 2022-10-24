@@ -1,0 +1,9 @@
+.form-article {
+  border: 2px solid palegreen;
+  color: aqua;
+}
+
+.add-note :hover {
+  color: darkblue;
+  background-color: beige;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import StudentScoreCard from './StudentScoreCard';
 import './Students.css';
+import Form from './Form';
 
 function Students({ Data }) {
   const studentDetails = Data.map((el) => {
@@ -30,6 +31,8 @@ function Students({ Data }) {
             <button className="student-show-more">Show more ...</button>
           </aside>
           <StudentScoreCard el={el} />
+          <hr />
+          <Form />
         </div>
       </article>
     );
