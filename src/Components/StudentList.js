@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
 import Birthday from './Birthday';
 import Graduate from './Graduate';
 import ShowMoreButton from './ShowMoreButton';
-import StudentHiddenInfo from './StudentHiddenInfo';
 function StudentList({students}) {
    
     return (
@@ -37,7 +35,6 @@ function StudentList({students}) {
                                 <Graduate
                                     thisId = {id}
                                     students = {students} />
-                               
                             </div>
                             <ShowMoreButton 
                                     id = {id}
@@ -45,16 +42,11 @@ function StudentList({students}) {
                                     />
                                     <br></br>
                                     <br></br>
-               
-            </div>
+                            </div>
                     )
-                
-                
             })
         }
         </>
-        
-        
     );
 }
 

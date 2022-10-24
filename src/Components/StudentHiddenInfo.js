@@ -4,7 +4,7 @@ import CodeWars from './CodeWars';
 import Notes from './Notes';
 import Scores from './Scores';
 
-function StudentHiddenInfo({studentId, id, students,setGraduation,clicked}) {
+function StudentHiddenInfo({studentId, id, students}) {
     // filter student  that matches student Id
     const thisStudent = students.filter(({id}) => id === studentId)
 

@@ -92,8 +92,6 @@ function Notes({thisStudent}) {
                 )
             }
             </ul>
-            
-            
         </div>
     );
 }

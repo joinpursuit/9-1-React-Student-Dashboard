@@ -10,11 +10,8 @@ function App() {
   const [students, setStudents] = useState(data)
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
-  // Declare state for showMoreButton
-  const [showMore, SetShowMore] = useState()
 
-
-
+  
   return (
     <div className='topLevel'>
      <Header />
@@ -38,7 +35,6 @@ function App() {
         }}>Choose Class by Start Date</h2>
         <CohortList
         data = {data}
-        student = {students}
         setStudents = {setStudents}
         setCohortName = {setCohortName} />
       </aside>

@@ -1,23 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
 import { sortCohort } from '../data/helperFunctions';
 
 
-function CohortList({data, students, setStudents, setCohortName}) {
-// Declare state for seasons
-const [winter, setWinter] = useState(false)
-const [fall, setFall] = useState(false)
-const [summer, setSummer] = useState(false)
-const [spring, setSpring] = useState(false)
+function CohortList({data, setStudents, setCohortName}) {
 
+// get array of sorted cohorts
 const cohorts = sortCohort(data)
 
+// function to filter students based on cohort
 function filterStudents(string) {
    const filteredStudentArray = data.filter(({cohort}) => 
       cohort.cohortCode === string
    )
    setStudents(filteredStudentArray)
 }
+
 // function for onClick cohort
 function cohortFilter(e) {
    const cohortName = e.target.id
@@ -28,7 +25,6 @@ function cohortFilter(e) {
    else{
       filterStudents(cohortName)
    }
-
 }
 
     return (
@@ -36,8 +32,6 @@ function cohortFilter(e) {
        {
        cohorts.map(el =>{
        const code = el.split(` `).join(``)
-       const season = el.split(` `)[0]
-       const year = el.split(` `)[1]
       
         return <h4
         className='cohort' 
@@ -51,7 +45,6 @@ function cohortFilter(e) {
          })} 
         
        </>
-
     );
 }
 

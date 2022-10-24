@@ -24,7 +24,7 @@
             arr2025.push(split)
         }
     })
-    // Sort each array by referencing the ordered season array (descending a-b) (ascending b-a)
+    // Sort each array by referencing the index of the selected season in the ordered season array (descending a-b) (ascending b-a)
     arr2026.sort((a,b) => 
         seasonOrder.indexOf(a.split(` `)[0]) - seasonOrder.indexOf(b.split(` `)[0])
     )
@@ -55,10 +55,19 @@
 }
 
 // function number -> month equivalent for birthday
+// https://codingbeautydev.com/blog/javascript-convert-month-number-to-name/#:~:text=To%20convert%20a%20month%20number%20to%20a%20month%20name%2C%20create,a%20specified%20locale%20and%20options.&text=Our%20getMonthName()%20function%20takes,the%20month%20with%20that%20position
  function getMonthName(monthNumber) {
+    // gives today's date
     const date = new Date();
+    
+    // change month of todays date to inputted param (monthNumber)
+    // jan = 0, feb = 1 (index values so subtract 1 from input month num, returns abbrev. month)
     date.setMonth(monthNumber - 1);
-  
+    
+    // toLocaleString(locales, options) -> locales `en-US` US format
+    // "long" (e.g., March) or "short" (e.g., Mar) <- values for month key for conversion
+    // object for options parameter {month: 'long' } <-
+    
     return date.toLocaleString('en-US', { month: 'long' });
   }
 
