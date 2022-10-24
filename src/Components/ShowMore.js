@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Notes from "./Notes"
 
 export default function ShowMore({student}) {
     const [notes, setNotes] = useState({commenter:'',comment:''})
@@ -8,7 +9,7 @@ export default function ShowMore({student}) {
       }
       const handleSubmit =(e)=>{
         e.preventDefault()
-        return <li>{`${student.notes.commenter} says, '${student.notes.comment}'`}</li>
+        // setNotes({commenter:'',comment:''})
       }
 
     return(
@@ -59,13 +60,18 @@ export default function ShowMore({student}) {
                                     <h4>1-on-1 Notes</h4>
                                     <form onSubmit={handleSubmit}>
                                         <label>Commenter names<input id="commenter" type='text' name="commenter" value={notes.commenter} onChange={handleChange}></input>
-                                        </label>
+                                        </label><br></br>
                                         <label>Comment<input id="comment" type='text' name="comment" value={notes.comment} onChange={handleChange}></input>
                                         </label>
                                         <button type="submit">Add Note</button>
                                         <ul>
-                                        {!student.notes ? <li>{`${student.notes[0].commenter} says, '${student.notes[0].comment}'`}</li> : null}
-                                        {console.log(student.notes)}
+                                            {/* {console.log()} */}
+                                            {student.notes.map((note)=>{
+                                                 if(note.commenter && note.comment){
+                                                    return <li>{`${note.commenter} says, '${note.comment}'`}</li>
+                                                }
+                                            })}
+                                            <Notes notes={notes}/>
                                         </ul>
                                     </form>
                                 </article>

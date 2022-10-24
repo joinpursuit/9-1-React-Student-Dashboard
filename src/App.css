@@ -45,8 +45,8 @@
     padding: 25px;
 }
 .student-card img {
+    border: 2px solid rosybrown;
     border-radius: 5px;
-    border-style: none;
     width: 100%;
 }
 .student-card button {
@@ -63,4 +63,9 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-column:left/end;
+}
+.student-card .on-track {
+    color: rosybrown;
+    margin-top: 20px;
+    text-align: right;
 }

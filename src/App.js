@@ -20,9 +20,8 @@ function getCohortCode() {
       arr.push(students[i].cohort.cohortCode)
     } 
   }
-  return arr
+  return arr.sort()
 }
-
 //to do list
 // 1. show more button when clicked 
 // 2. fix notes
@@ -31,10 +30,11 @@ function getCohortCode() {
 // 5. sort aside
 
 function handleCohortCodesSpace() {
-    for (let i = 0; i < allCohortCodes.length; i++) {
-        let split = allCohortCodes[i].split('')
-        let year = split.splice(split.length - 4)
-        updatedCohortCodes.push(split.join('') + " " + year.join(''))
+  for (let i = 0; i < allCohortCodes.length; i++) {
+    let split = allCohortCodes[i].split('')
+    let year = split.splice(split.length - 4)
+    updatedCohortCodes.push(split.join('') + " " + year.join(''))
+    console.log(updatedCohortCodes)
     }
     return updatedCohortCodes
 }
@@ -79,7 +79,7 @@ function handleUpdatedCohort(cohort) {
      students={students} 
      cohorts={cohorts}
      selected={selected}
-     updatedCohortCodes={updatedCohortCodes}/>
+     />
     </div>
   );
 }
