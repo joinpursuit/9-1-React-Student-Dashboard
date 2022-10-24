@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='topLevel'>
       <header>
-        <h1>Student Dashboard</h1>
+        <h1>Destiny's Student Dashboard</h1>
       </header>
       
       <main>
@@ -28,7 +28,8 @@ function App() {
       <div className="studentList">
         <h2
         style={{margin: "0"}}>{cohortName}</h2>
-        Total Students: {students.length}
+        <p>Total Students: 
+          <span style={{color: "green"}}> {students.length}</span></p> 
         
       <StudentList
       students = {students} />

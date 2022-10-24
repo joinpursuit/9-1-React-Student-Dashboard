@@ -8,7 +8,8 @@ function Birthday({dob}) {
     const year = dobArr[2]
     return (
         <>
-            Birthday: {month} {day}, {year} 
+            <span
+            style={{color: "green"}}>Birthday:</span> {month} {day}, {year} 
         </>
     );
 }
