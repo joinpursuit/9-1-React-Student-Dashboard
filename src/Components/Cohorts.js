@@ -17,15 +17,12 @@ export default function Cohorts({ uniqueCohorts, chooseCohort }) {
       return seasons[cohort];
     })
     .sort((a, b) => {
-      return b - a;
+      return a - b;
     })
     .map((a) => {
       return Object.keys(seasons).find((key) => seasons[key] === a);
-    })
-    .reverse();
-
+    });
   function formatCohortName(cohort) {
-    let idx = cohort.indexOf(20);
     return cohort.split(20).join(" 20");
   }
 
