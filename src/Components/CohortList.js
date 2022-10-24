@@ -2,8 +2,27 @@ import React from 'react';
 import { sortCohort } from '../data/helperFunctions';
 
 
-function CohortList({data}) {
+function CohortList({data, students, setStudents}) {
 const cohorts = sortCohort(data)
+
+function filterStudents(string) {
+   const filteredStudentArray = data.filter(({cohort}) => 
+      cohort.cohortCode === string
+   )
+   setStudents(filteredStudentArray)
+}
+// function for onClick cohort
+function cohortFilter(e) {
+   const cohortName = e.target.id
+   if(cohortName === "AllStudents"){
+      setStudents(data)
+   }
+   else{
+      filterStudents(cohortName)
+   }
+   
+
+}
 
     return (
        <>
@@ -12,7 +31,8 @@ const cohorts = sortCohort(data)
         return <h4
         className='cohort' 
         key = {el}
-        value = {code} 
+        id = {code} 
+        onClick = {(event) => {cohortFilter(event)}}
         >{el} 
          <hr />
         

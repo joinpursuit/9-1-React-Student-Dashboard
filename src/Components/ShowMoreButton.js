@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import StudentHiddenInfo from './StudentHiddenInfo';
 
-function ShowMoreButton({id,data}) {
+function ShowMoreButton({id,students}) {
     // declare state for toggling hidden class
     const [clicked, setClicked] = useState(false)
 
@@ -36,7 +36,7 @@ function ShowMoreButton({id,data}) {
         id = {id}
         studentId = {studentId}
         clicked = {clicked}
-        data = {data}
+        students = {students}
         />}
         </>
         

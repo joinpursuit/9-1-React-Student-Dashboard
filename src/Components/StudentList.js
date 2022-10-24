@@ -4,15 +4,12 @@ import { middleName } from '../data/helperFunctions';
 import Birthday from './Birthday';
 import ShowMoreButton from './ShowMoreButton';
 import StudentHiddenInfo from './StudentHiddenInfo';
-function StudentList({data}) {
-//    // declare state for toggling hidden class
-//    const [clicked, setClicked] = useState(false)
-    
+function StudentList({students}) {
     
     return (
         <>
         {
-            data.map(({id,names,username,profilePhoto,notes,dob},i) => {
+            students.map(({id,names,username,profilePhoto,dob},i) => {
                 const firstName = names.preferredName
                 const middleInitial = middleName(names.middleName)
                 const lastName = names.surname
@@ -43,7 +40,7 @@ function StudentList({data}) {
                             </div>
                             <ShowMoreButton 
                                     id = {id}
-                                    data = {data}
+                                    students = {students}
                                     />
                                     <br></br>
                                     <br></br>

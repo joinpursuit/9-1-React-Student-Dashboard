@@ -5,7 +5,7 @@ export function middleName(value) {
 }
 
 export function sortCohort(arrOfObj) {
-    const array = []
+    const array = ["All Students"]
 
     arrOfObj.forEach(({cohort}) => {
         const split = cohort.cohortCode.replace(`2`, ` 2`)

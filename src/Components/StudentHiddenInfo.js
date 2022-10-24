@@ -4,9 +4,9 @@ import CodeWars from './CodeWars';
 import Notes from './Notes';
 import Scores from './Scores';
 
-function StudentHiddenInfo({studentId, clicked, id, data}) {
+function StudentHiddenInfo({studentId, clicked, id, students}) {
     // filter student  that matches student Id
-    const thisStudent = data.filter(({id}) => id === studentId)
+    const thisStudent = students.filter(({id}) => id === studentId)
     
 
     return (
