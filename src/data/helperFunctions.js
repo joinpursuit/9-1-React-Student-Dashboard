@@ -8,18 +8,33 @@ export function middleName(value) {
 // function to sort Cohort List
 export function sortCohort(arrOfObj) {
     const array = ["All Students"]
-
+    const seasonOrder = [`Winter`, `Fall`, `Summer`,`Spring`]
+    const arr2026 = []
+    const arr2025 = []
+    
+    // Seperate cohorts in 2 array of 4's for each year
     arrOfObj.forEach(({cohort}) => {
+        const cohortCode = cohort.cohortCode
         const split = cohort.cohortCode.replace(`2`, ` 2`)
-        if(!array.includes(split)){
-            array.push(split)
+
+        if(cohortCode.includes(`2026`) && !arr2026.includes(split)){
+                arr2026.push(split)       
+        }
+        else if(cohortCode.includes(`2025`) && !arr2025.includes(split)){
+            arr2025.push(split)
         }
     })
-    // sort descending .sort(function(a, b){return b-a})
-    const sortedArr = array.sort((a,b) => 
-        (b.split(` `)[1] ) - (a.split(` `)[1])
+    // Sort each array by referencing the ordered season array (descending a-b) (ascending b-a)
+    arr2026.sort((a,b) => 
+        seasonOrder.indexOf(a.split(` `)[0]) - seasonOrder.indexOf(b.split(` `)[0])
     )
-    return sortedArr
+    arr2025.sort((a,b) => 
+        seasonOrder.indexOf(a.split(` `)[0]) - seasonOrder.indexOf(b.split(` `)[0])
+    )
+    
+    return array.concat(arr2026,arr2025)
+ 
+    
 }
 
 // function for Calculating Codewar Goal percent
