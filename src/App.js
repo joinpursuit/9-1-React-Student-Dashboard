@@ -1,8 +1,13 @@
+import Cohorts from "./Components/Cohorts";
+import Form from "./Components/Form";
+import Student from "./Components/Student";
 
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <Student />
+      <Cohorts />
+      <Form />
     </div>
   );
 }
