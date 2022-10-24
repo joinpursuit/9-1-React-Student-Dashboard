@@ -1,6 +1,6 @@
 import React from "react";
 import "./Students.css";
-// import ShowMore from "./ShowMore";
+import ShowMore from "./ShowMore";
 
 function Students({ Data }) {
   //   console.log(Data);
@@ -23,7 +23,7 @@ function Students({ Data }) {
             {birthday}
           </p>
           <button id="showMore">Show More ...</button>
-          {/* <ShowMore details={details} /> */}
+          <ShowMore el={el} />
         </div>
       </article>
     );
