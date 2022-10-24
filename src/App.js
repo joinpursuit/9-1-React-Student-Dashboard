@@ -34,9 +34,9 @@ function handleCohort(classes){
         <Header/>
       </header>
       <aside>
-        <Classes   setAllStudent={setAllStudent}setStudent={setStudent}handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
+        <Classes setAllStudent={setAllStudent}setStudent={setStudent}handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
         <main>
-        <Students   Additionalinfo={Additionalinfo} studentClass={studentClass} student={student} cohort={cohort}/>
+        <Students Additionalinfo={Additionalinfo} studentClass={studentClass} student={student} cohort={cohort}/>
         </main>
       </aside>
     </div>

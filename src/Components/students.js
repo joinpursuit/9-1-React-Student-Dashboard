@@ -4,13 +4,13 @@ const students = ({studentClass, Additionalinfo}) => {
  
     return (
         <section>
-             <h3>{studentClass.map((map , i) => {
+             <h3>{studentClass.length === 250 ? "All Students" : 
+             studentClass.map((map , i) => {
                 if(i === 0){
                     return (
                         map.cohort.cohortCode.replace(/\d+/g, '') + " " + map.cohort.cohortCode.replace(/\D/g,'')
                     )
                 }
-                
              })}</h3> 
             <p>Total Students: {studentClass.length}</p>
             <div className="student-info">
