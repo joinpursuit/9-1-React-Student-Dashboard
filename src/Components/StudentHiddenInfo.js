@@ -10,7 +10,7 @@ function StudentHiddenInfo({studentId, clicked, id, students}) {
     
 
     return (
-        <div className ={`${id} ${clicked ? "" : "showMoreHidden"}`}>
+        <div className = {id}>
             {
                 thisStudent.map(({codewars, certifications, cohort}) => {
                     // return individual, codewars, scores and certification components

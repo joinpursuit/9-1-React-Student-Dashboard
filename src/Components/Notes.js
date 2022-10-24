@@ -4,7 +4,8 @@ import { useState } from 'react';
 function Notes({thisStudent}) {
     const notesObj = thisStudent[0].notes
     // Declare state for comments/ notes
-    const [comment, setComment] = useState([...thisStudent[0].notes])
+    // [...thisStudent[0].notes]
+    const [comment, setComment] = useState(notesObj)
     
     // Declare state for new comment
     const [newComment, setNewComment] = useState(
@@ -28,7 +29,8 @@ function Notes({thisStudent}) {
             commenter: newComment.commenter,
             comment: newComment.comment
         }
-        setComment([lastestComment, ...thisStudent[0].notes])
+        notesObj.unshift(lastestComment)
+        // setComment([lastestComment, ...thisStudent[0].notes])
     }
 
     // function for form rest
