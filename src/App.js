@@ -1,5 +1,5 @@
 import data from "./data/data.json"
-import AllStudents from "./components/AllStudents"
+import StudentsList from "./components/StudentsList"
 import StartDate from "./components/StartDate"
 import Header from "./components/Header"
 
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <main>
         <StartDate />
-        <AllStudents data={data} />
+        <StudentsList data={data} />
       </main>
     </div>
   )

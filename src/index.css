@@ -19,4 +19,20 @@ main {
   display: grid;
   justify-content: space-between;
   border: 1px solid black;
+  justify-items: center;
+}
+
+.students {
+  grid-row: 2;
+  margin-left: 58%;
+}
+
+li {
+  border: 1px solid green;
+
+  width: 255px;
+}
+
+img {
+  height: 100px;
 }
