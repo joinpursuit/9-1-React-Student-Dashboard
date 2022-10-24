@@ -21,3 +21,7 @@ img{
     display: grid;
     grid-template-rows: repeat(auto-fill, 3fr);
 }  */
+
+.total{
+    margin-left: 40px;
+}

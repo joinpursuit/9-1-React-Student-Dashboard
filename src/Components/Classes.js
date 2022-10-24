@@ -26,7 +26,7 @@ let sort = cohort.sort(new Intl.Collator().localeCompare)
     <h2>Choose a Class by Start Date</h2>
 <section className="list">
     <ul className="class-list">
-        <li className="cohort-dates"><button  onClick={() => {handleStudents(student); }}className="class-name">All Students</button></li>
+        <li className="cohort-dates"><button  onClick={() => {handleStudents(student)}}className="class-name">All Students</button></li>
        {sort.map((classes) => {
            return (
           <li key={classes}className="cohort-dates"><button onClick={() => {filterStudents(classes)}}className="class-name">{classes}</button></li>

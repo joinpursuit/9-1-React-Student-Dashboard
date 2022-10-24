@@ -33,6 +33,7 @@ function handleCohort(classes){
       <header>
         <Header/>
       </header>
+      <br></br>
       <aside>
         <Classes setAllStudent={setAllStudent}setStudent={setStudent}handleStudents={handleStudents} studentClass={studentClass} student={student} handleCohort={handleCohort} cohort={cohort}></Classes>
         <main>

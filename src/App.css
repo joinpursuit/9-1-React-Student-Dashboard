@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-/* .container{
-    display: grid;
-    grid-template-rows: 1fr 3fr;
-} */
 
 aside{
     display: grid;

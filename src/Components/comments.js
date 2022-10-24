@@ -1,20 +1,13 @@
 import "./comments.css"
 
-const comments = ({info, newComment}) => {
+const comments = ({comment}) => {
   return(
     <div>
-        <ul>
-            {info.notes.map((comments) =>{
-                return(
-                    <li className="comments">{comments.commenter} {comments.comment}</li>
-                )
-            })}
-            {newComment.map(({commenter, comment}) => {
-              return (
-                <li className="comments">{commenter} {comment}</li>
-              )
-            })}
-        </ul>
+    {comment.map(({comment, commenter}) => {
+      return(
+        <li>{commenter} says, "{comment}"</li>
+      )
+    })}
     </div>
   )
 }
