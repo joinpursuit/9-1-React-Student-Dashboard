@@ -4,7 +4,7 @@ import StudentInfo from "./StudentInfo";
 export default function Student({ student }) {
   const [showMore, setShowMore] = useState(false);
 
-  const { codewars } = student;
+  const { codewars, cohort, certifications } = student;
   const { current } = codewars;
   const { goal } = codewars;
 
@@ -36,17 +36,19 @@ export default function Student({ student }) {
               </section>
               <section>
                 <h4>Scores</h4>
-                <p>Assignments: {current.total}</p>
+                <p>Assignments: {cohort.scores.assignments * 100}%</p>
+                <p>Projects: {cohort.scores.projects * 100}%</p>
+                <p>Assessments: {cohort.scores.assessments * 100}%</p>
               </section>
               <section>
                 <h4>Certifications</h4>
-                <p>Current Total: {current.total}</p>
-                <p>Last Week: {current.lastWeek}</p>
-                <p>Goal: {goal.total}</p>
+                <p>Resume: {certifications.resume ? "true" : "false"}</p>
+                <p>LinkedIn: {certifications.linkedIn ? "true" : "false"}</p>
                 <p>
-                  Percent of Goal Achieved:{" "}
-                  {formatCodeWarsPercentage(current, goal)}%
+                  Mock Interview:{" "}
+                  {certifications.mockInterview ? "true" : "false"}
                 </p>
+                <p>GitHub: {certifications.gitHub ? "true" : "false"}</p>
               </section>
             </div>
             <hr></hr>
