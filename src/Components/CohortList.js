@@ -21,7 +21,6 @@ function cohortFilter(e) {
    else{
       filterStudents(cohortName)
    }
-   
 
 }
 

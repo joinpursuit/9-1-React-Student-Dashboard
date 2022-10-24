@@ -16,7 +16,10 @@ export function sortCohort(arrOfObj) {
         }
     })
     // sort descending .sort(function(a, b){return b-a})
-    return array
+    const sortedArr = array.sort((a,b) => 
+        (b.split(` `)[1] ) - (a.split(` `)[1])
+    )
+    return sortedArr
 }
 
 // function for Calculating Codewar Goal percent
