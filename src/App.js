@@ -9,8 +9,6 @@ import "./App.css";
 function App() {
   // Create shallow copy of data
   const studentsData = [...data];
-
-  // Map method returns array of cohortCodes for all students
   const mappedStudentsToCohortCode = studentsData.map(
     (student) => student.cohort.cohortCode
   );
@@ -43,9 +41,7 @@ function App() {
                 <Student key={student.id} student={student} />
               ))
             : studentsData
-                .filter((student) => {
-                  return student.cohort.cohortCode === cohort;
-                })
+                .filter((student) => student.cohort.cohortCode === cohort)
                 .map((student) => (
                   <Student key={student.id} student={student} />
                 ))}
