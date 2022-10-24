@@ -12,7 +12,7 @@ img {
 
 .topLevel {
     display: grid;
-    grid-template-rows: .5fr 5fr .2fr;
+    grid-template-rows: 10vh 5fr 10vh;
     row-gap: 40px;
 }
 

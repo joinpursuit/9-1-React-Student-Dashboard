@@ -14,7 +14,7 @@ function StudentList({students}) {
                 const firstName = names.preferredName
                 const middleInitial = middleName(names.middleName)
                 const lastName = names.surname
-                if(i<100){
+                
                     return(
                         <div 
                         className='student'
@@ -48,7 +48,7 @@ function StudentList({students}) {
                
             </div>
                     )
-                }
+                
                 
             })
         }
