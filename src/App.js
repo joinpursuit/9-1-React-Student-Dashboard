@@ -1,10 +1,19 @@
+import data from "./data/data.json"
+import AllStudents from "./components/AllStudents"
+import StartDate from "./components/StartDate"
+import Header from "./components/Header"
 
 function App() {
+  console.log(data)
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <Header />
+      <main>
+        <StartDate />
+        <AllStudents />
+      </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
