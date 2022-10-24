@@ -6,12 +6,12 @@ export default function Stats({ student }) {
   const { goal } = codewars;
 
   function formatCodeWarsPercentage() {
-    const res = (current.total / goal.total) * 100;
-    return res.toFixed(0);
+    const res = ((current.total / goal.total) * 100).toFixed(0);
+    return res;
   }
 
   function colorCodeWarsPercent() {
-    const res = (current.total / goal.total) * 100;
+    const res = ((current.total / goal.total) * 100).toFixed(0);
     if (res < 50) {
       return "red";
     } else if (res >= 50 && res < 100) {
