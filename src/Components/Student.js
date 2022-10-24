@@ -6,7 +6,7 @@ const Student = () => {
         return (
             <div className="cards" style={{boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)", margin: "8px", padding: "20px", borderRadius: "8px"}}>
                     <div className='students'>
-                        {/* <h3>{data.names.map((name) => Object.values(name))}</h3> */}
+                        <h4>{data.names.preferredName} {`${data.names.middleName[0].toUpperCase()}.`} {data.names.surname}</h4>
                         <p>{data.username}</p>
                         <p>Birthday: {data.dob}</p>
                         <img className="photo" src={data.profilePhoto} alt="" style={{height: "140px", width:"140px"}} />
