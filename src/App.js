@@ -1,8 +1,13 @@
+import { useState } from "react";
+import Header from "./Components/Header";
+import Students from "./Components/Students";
+import data from "./data/data";
 
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <Header />
+      <Students students={data} />
     </div>
   );
 }
