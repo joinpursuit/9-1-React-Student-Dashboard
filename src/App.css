@@ -1,0 +1,37 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr,1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "cohortList studentList"
+        ;
+}
+.header{
+    display: grid;
+    grid-area: "header";
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+    grid-column: span 2;
+}
+
+.cohortList{
+    display: grid;
+    grid-area: "cohortList";
+    background-color: brown;
+    grid-row: 2;
+    grid-column: 1;
+    height: fit-content;
+}
+
+.studentList{
+    display: grid;
+    background-color: green;
+    grid-area: "studentList";
+    grid-row: 2;
+    grid-column: 2;
+    height: fit-content;
+}
