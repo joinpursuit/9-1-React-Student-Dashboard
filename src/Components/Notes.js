@@ -4,7 +4,6 @@ import { useState } from 'react';
 function Notes({thisStudent}) {
     const notesObj = thisStudent[0].notes
     // Declare state for comments/ notes
-    // [...thisStudent[0].notes]
     const [comment, setComment] = useState(notesObj)
     
     // Declare state for new comment
@@ -29,7 +28,7 @@ function Notes({thisStudent}) {
             commenter: newComment.commenter,
             comment: newComment.comment
         }
-        notesObj.unshift(lastestComment)
+        notesObj.push(lastestComment)
         // setComment([lastestComment, ...thisStudent[0].notes])
     }
 

@@ -22,14 +22,21 @@ export function goalPercent(num1,num2) {
     return Math.round((num1 / num2) *100)
 }
 
-// function to take in cohort name (id value) and filter students by cohortcode 
+// function for determining percent color
+export function codeWarsColor(percentage) {
+        if(percentage < 50){
+            return `red`
+        }
+        else if(percentage > 50 && percentage < 100 ){
+            return `yellow`
+        }
+        else {
+            return 'blue'
+        }
+}
 
 
-
-
-
-
-// function date -> month 
+// function date -> month for birthday
 export function getMonthName(monthNumber) {
     const date = new Date();
     date.setMonth(monthNumber - 1);

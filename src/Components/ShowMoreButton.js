@@ -3,7 +3,7 @@ import React from 'react';
 import StudentHiddenInfo from './StudentHiddenInfo';
 
 function ShowMoreButton({id,students}) {
-    // declare state for toggling hidden class
+    // declare state for toggling  stats
     const [clicked, setClicked] = useState(false)
 
     // Declare state for value of button clicked/ id#
@@ -11,9 +11,6 @@ function ShowMoreButton({id,students}) {
 
     // Declare state for mouse over `show more`
     const [showMore, setShowMore] = useState(false)
-
-    // Declare state for mouseOver
-    const[cursor, setCursor] = useState(false)
     
     function handleShowMoreOnClick(e) {
         // value = student id#
@@ -35,7 +32,6 @@ function ShowMoreButton({id,students}) {
         { clicked && <StudentHiddenInfo
         id = {id}
         studentId = {studentId}
-        clicked = {clicked}
         students = {students}
         />}
         </>
