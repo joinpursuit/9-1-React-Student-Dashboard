@@ -1,8 +1,15 @@
 import React from 'react';
+import Form from './Form';
 import './Students.css';
 
 function Students({ Data }) {
   const studentDetails = Data.map((el) => {
+    const dob = new Date(el.dob);
+    const birthday = new Intl.DateTimeFormat('en-US', {
+      dateStyle: 'long',
+    }).format(dob);
+
+    // console.log(birthday);
     return (
       <article key={el.id} className="article">
         <img
@@ -10,16 +17,19 @@ function Students({ Data }) {
           src={el.profilePhoto}
           alt={el.names.preferredName}
         />
-        <div className="individual-card">
-          <h3>
-            {el.names.preferredName} {el.names.middleName.charAt(0)}.{' '}
-            {el.names.surname}
-          </h3>
-          <p>{el.username}</p>
-          <p>
-            <span>Birthday:</span> {el.dob}
-          </p>
-          <button className="student-show-more">Show more ...</button>
+        <div>
+          <aside className="individual-card">
+            <h3>
+              {el.names.preferredName} {el.names.middleName.charAt(0)}.{' '}
+              {el.names.surname}
+            </h3>
+            <p>{el.username}</p>
+            <p>
+              <span>Birthday:</span> {birthday}
+            </p>
+            <button className="student-show-more">Show more ...</button>
+          </aside>
+          <Form Data={Data} />
         </div>
       </article>
     );

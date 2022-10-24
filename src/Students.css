@@ -23,6 +23,8 @@ img {
 .student-show-more {
   color: greenyellow;
   font-size: 20px;
+  border: none;
+  background: none;
 }
 
 .student-show-more:hover {
