@@ -11,7 +11,7 @@ export default function StudentList({
     <div className="StudentList">
       <h2>{titleOption}</h2>
       <p>
-        Total Students: <span>{studentListOPtion.length}</span>
+        Total Students: <span>{Records.length}</span>
       </p>
       {/* //!function with conditiont to update the state of student count in total */}
       {/* {console.log(Records.length)} */}
@@ -19,7 +19,6 @@ export default function StudentList({
         {Records.map((record) => {
           //! DOB Format
           const dateFormat = new Date(record.dob);
-          // console.log(dateFormat);
 
           return (
             <article className="UserInfo" key={record.id}>
@@ -46,7 +45,7 @@ export default function StudentList({
                 </a>
               </div>
 
-              <p></p>
+              {/* <p></p> */}
             </article>
           );
         })}

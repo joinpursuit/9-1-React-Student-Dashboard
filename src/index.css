@@ -24,10 +24,10 @@ body {
 /* //! _____________________________________ */
 
 .CohortList {
-  text-align: left;
+  /* text-align: left; */
   /* margin-left: 10px; */
   /* border: 3px solid green; */
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 /* //! _____________________________________ */
 
@@ -53,7 +53,6 @@ button {
 
 li {
   list-style: none;
-
   text-align: none;
 }
 
