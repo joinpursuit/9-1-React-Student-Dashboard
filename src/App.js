@@ -23,7 +23,9 @@ function App() {
       // setTitleOption={setTitleOption}
       // setStudentListOption={setStudentListOption}
       />
-      <div className="Main">
+{/* {Records.map((record)=>{ */}
+<div className="Main">
+
         <aside>
           <Cohort
             Records={Records}
@@ -35,15 +37,11 @@ function App() {
           />
         </aside>
         <main>
-          {/* //! */}
-          {/* <Student
-            Records={Records}
-            setTotalOption={setTotalOption}
-            totalOption={totalOption}
-            titleOption={titleOption}
-            // Records={Records}
-            studentListOPtion={studentListOption}
-           /> */}
+    
+         
+           {/* <Student
+            record={record} dateFormat={dateFormat}
+            setShowMore={setShowMore}  />  */}
           <StudentList
             setTotalOption={setTotalOption}
             totalOption={totalOption}
@@ -53,6 +51,8 @@ function App() {
           />
         </main>
       </div>
+{/* })} */}
+      
       {/* <Footer></Footer> */}
     </div>
   );

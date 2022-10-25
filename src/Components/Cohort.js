@@ -16,7 +16,7 @@ export default function Cohort({
   let filterCohort = Records.filter((el) => {
     return el.cohort.cohortCode === titleOption.split(" ").join("");
   });
-  // console.log(filterCohort); // lists student in each cohort
+ 
   //*---------------
 
   //!-------------------- USED NEW SET to remove duplicates
