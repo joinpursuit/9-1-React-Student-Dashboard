@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StudentInfo from "./StudentInfo";
+import CommentsForm from "./CommentsForm";
 import Stats from "./Stats";
 
 export default function Student({ student }) {
@@ -17,8 +18,11 @@ export default function Student({ student }) {
           <section className="showMoreSection">
             <Stats student={student} />
             <hr></hr>
-            <form className="form"></form>
-            <div className="commenets">Comments</div>
+            <div>
+              <h4>1-on-1 Notes</h4>
+              <CommentsForm />
+              <div className="commenets">Comments</div>
+            </div>
           </section>
         </>
       )}
