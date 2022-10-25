@@ -5,7 +5,10 @@ import Comments from "./Comments";
 import Stats from "./Stats";
 
 export default function Student({ student }) {
+  const commentsArray = student.notes;
+
   const [showMore, setShowMore] = useState(false);
+  const [comments, setComments] = useState([...commentsArray]);
 
   return (
     <li className="student">
@@ -25,7 +28,7 @@ export default function Student({ student }) {
               <br></br>
               <hr></hr>
               <h4>Comments</h4>
-              <Comments student={student} />
+              <Comments comments={comments} />
             </div>
           </section>
         </>

@@ -1,10 +1,10 @@
-export default function Comments({ student }) {
+export default function Comments({ comments }) {
   return (
     <ul className="comments">
-      {student.notes.map((note, idx) => {
+      {comments.map((comment, idx) => {
         return (
           <li key={idx}>
-            {note.commenter} says, "{note.comment}"
+            {comment.commenter} says, "{comment.comment}"
           </li>
         );
       })}
