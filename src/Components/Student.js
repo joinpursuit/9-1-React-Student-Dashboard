@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
+import Comments from "./Comments";
 import Stats from "./Stats";
 
 export default function Student({ student }) {
@@ -18,19 +19,14 @@ export default function Student({ student }) {
           <section className="showMoreSection">
             <Stats student={student} />
             <hr></hr>
-            <div className="commentsFormContainer">
+            <div className="commentsContainer">
               <h4>1-on-1 Notes</h4>
               <CommentsForm />
+              <br></br>
+              <hr></hr>
+              <h4>Comments</h4>
+              <Comments student={student} />
             </div>
-            <ul className="comments">
-              {student.notes.map((note, idx) => {
-                return (
-                  <li key={idx}>
-                    {note.commenter} says, "{note.comment}"
-                  </li>
-                );
-              })}
-            </ul>
           </section>
         </>
       )}
