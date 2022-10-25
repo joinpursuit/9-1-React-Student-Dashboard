@@ -4,6 +4,7 @@ import StudentList from "./Components/StudentList";
 import CohortList from './Components/CohortList';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import NavBar from './Components/NavBar';
 
 
 function App() {
@@ -15,7 +16,11 @@ function App() {
 
   return (
     <div className='topLevel'>
-     <Header />
+      <header>
+        <Header />
+        <NavBar />
+      </header>
+     
       
       <main>
       
