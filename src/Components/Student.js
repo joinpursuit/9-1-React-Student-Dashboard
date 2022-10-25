@@ -18,11 +18,19 @@ export default function Student({ student }) {
           <section className="showMoreSection">
             <Stats student={student} />
             <hr></hr>
-            <div>
+            <div className="commentsFormContainer">
               <h4>1-on-1 Notes</h4>
               <CommentsForm />
-              <div className="commenets">Comments</div>
             </div>
+            <ul className="comments">
+              {student.notes.map((note, idx) => {
+                return (
+                  <li key={idx}>
+                    {note.commenter} says, "{note.comment}"
+                  </li>
+                );
+              })}
+            </ul>
           </section>
         </>
       )}
