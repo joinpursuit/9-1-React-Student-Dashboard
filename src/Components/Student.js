@@ -10,6 +10,10 @@ export default function Student({ student }) {
   const [showMore, setShowMore] = useState(false);
   const [comments, setComments] = useState([...commentsArray]);
 
+  function addComment(newComment) {
+    setComments([...comments, newComment]);
+  }
+
   return (
     <li className="student">
       <StudentInfo student={student} />
@@ -24,7 +28,7 @@ export default function Student({ student }) {
             <hr></hr>
             <div className="commentsContainer">
               <h4>1-on-1 Notes</h4>
-              <CommentsForm />
+              <CommentsForm addComment={addComment} />
               <br></br>
               <hr></hr>
               <h4>Comments</h4>
