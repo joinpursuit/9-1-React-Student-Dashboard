@@ -1,0 +1,38 @@
+body {
+  border: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --skyblue: #7df9ff;
+}
+
+.app {
+  border: none;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 0.1fr 1fr;
+  column-gap: 25px;
+  row-gap: 25px;
+  font-family: sans-serif;
+}
+
+.header {
+  border: 1px solid black;
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* .side {
+  border: 1px solid black;
+} */
+
+.main {
+  margin: 0 auto;
+  width: 90%;
+}

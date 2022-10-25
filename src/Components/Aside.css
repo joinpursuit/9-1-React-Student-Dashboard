@@ -1,0 +1,22 @@
+aside.select ul {
+  padding-left: 0;
+  display: block;
+}
+
+.sideUl li {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sideUl li button {
+  border: none;
+  background: none;
+  display: block;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  border-bottom: 2px solid var(--black);
+  margin-bottom: 10px;
+  padding: 10px;
+}
