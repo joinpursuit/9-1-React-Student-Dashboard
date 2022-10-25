@@ -30,7 +30,11 @@ function Students({ Data }) {
             <span>Birthday: </span>
             {birthday}
           </p>
-          <button id="showMoreButton" onClick={() => toggleShowMore()}>
+          <button
+            key={el.id}
+            id="showMoreButton"
+            onClick={() => toggleShowMore(el.id)}
+          >
             {!showMore ? "Show More ..." : "Show Less ..."}
           </button>
         </div>

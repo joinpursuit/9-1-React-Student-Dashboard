@@ -60,6 +60,15 @@ function ShowMore({ el }) {
         </p>
       </article>
       <Form />
+      <ul className="notes">
+        {el.notes.map((comments) => {
+          return (
+            <li>
+              {comments.commenter} says, {comments.comment}
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }
