@@ -3,6 +3,7 @@ import data from './data/data.json'
 import StudentList from "./Components/StudentList";
 import CohortList from './Components/CohortList';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
       
       </main>
       
-      <footer>FOOTER</footer>
+      <Footer />
      
     </div>
   );
