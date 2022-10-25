@@ -2,12 +2,17 @@ import { useState } from "react";
 
 function Classes({ studentData }) {
   const [classList, setClassList] = useState(() => {
-    let cohorts = studentData.map(({ cohort }) =>
-      cohort.cohortCode.split("20").join(" 20")
+    const cohortData = studentData.map(({ cohort }) => cohort);
+    // how to sort by date
+    cohortData.sort(
+      (a, b) => new Date(b.cohortStartDate) - new Date(a.cohortStartDate)
     );
+
+    let cohorts = cohortData.map((e) => e.cohortCode.split("20").join(" 20"));
     cohorts = [...new Set(cohorts)];
-    return cohorts.sort();
+    return cohorts;
   });
+
   return (
     <div className="Classes">
       <h2>Choose a Class by Start Date</h2>
@@ -16,7 +21,6 @@ function Classes({ studentData }) {
           <h3>All Students</h3>
           <hr />
         </li>
-
         {classList.map((e) => {
           return (
             <li key={e.split(" ").join("")}>
