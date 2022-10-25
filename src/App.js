@@ -1,14 +1,17 @@
 import { useState } from "react";
 import data from "./data/data.json";
 
-// Components
+// Primary Components
 import Student from "./Components/Student";
 import Cohorts from "./Components/Cohorts";
+
 import "./App.css";
 
 function App() {
   // Create shallow copy of data
   const studentsData = [...data];
+
+  // Map data array into an array of each student's cohortCode
   const mappedStudentsToCohortCode = studentsData.map(
     (student) => student.cohort.cohortCode
   );
@@ -18,13 +21,13 @@ function App() {
 
   // State for App
   const [cohort, setCohort] = useState("All Students");
-  const [totalStudents, setTotalStudents] = useState(250);
+  const [totalStudents, setTotalStudents] = useState(studentsData.length);
 
   function chooseCohort(cohort) {
     setCohort(cohort);
     setTimeout(
       () => setTotalStudents(document.getElementsByClassName("student").length),
-      1
+      250
     );
   }
 
