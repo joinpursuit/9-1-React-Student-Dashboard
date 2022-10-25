@@ -151,3 +151,8 @@ input {
     color: rgb(61, 128, 61) ;
     margin-top: 20px;
 }
+
+.cohortButton {
+    background-color:rgb(108, 162, 108);
+    color: white;
+}

@@ -1,20 +1,14 @@
 import React from 'react';
+import { useState } from 'react';
 import { sortCohort } from '../data/helperFunctions';
 import { filterStudents } from '../data/helperFunctions';
+import CohortOrderButton from './CohortOrderButton';
 
 
 function CohortList({data, setStudents, setCohortName}) {
+// Declare state for cohort List
+const [cohortList, setCohortList] = useState(sortCohort(data))
 
-// get array of sorted cohorts
-const cohorts = sortCohort(data)
-
-// function to filter students based on cohort
-// function filterStudents(string) {
-//    const filteredStudentArray = data.filter(({cohort}) => 
-//       cohort.cohortCode === string
-//    )
-//    setStudents(filteredStudentArray)
-// }
 
 // function for onClick cohort
 function cohortFilter(e) {
@@ -30,8 +24,12 @@ function cohortFilter(e) {
 
     return (
        <>
+       <CohortOrderButton
+       cohortList = {cohortList}
+       setCohortList = {setCohortList} />
+       
        {
-       cohorts.map(el =>{
+       cohortList.map(el =>{
        const code = el.split(` `).join(``)
       
         return <h4
