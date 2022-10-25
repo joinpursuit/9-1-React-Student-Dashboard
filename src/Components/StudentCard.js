@@ -1,12 +1,11 @@
 import { useState } from "react";
 import ShowMore from "./ShowMore";
 
-export default function StudentCard({student}) {
+export default function StudentCard({student,students,setStudents}) {
     const [showDetail, setShowDetail] = useState(false);
      
     function toggleStudentDetail() {
       setShowDetail(!showDetail);
-    //   return showDetail ? ( <ShowMore student={student} handleSubmit={handleSubmit} notes={notes} handleChange={handleChange}/> ) : null
     }
 
     return(
@@ -21,7 +20,7 @@ export default function StudentCard({student}) {
                 <button onClick={()=>{toggleStudentDetail()}}>{!showDetail ? "Show More..." : "Show Less..."}</button>
             </div>
             <p className="on-track">{student.certifications.resume === true && student.certifications.linkedin === true && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total > 600 ? 'On Track to Graduate' : null}</p>
-            {showDetail ? ( <ShowMore student={student}/> ) : null}
+            {showDetail ? ( <ShowMore setStudents={setStudents} students={students}  student={student}/> ) : null}
         </article>
         </>
     )

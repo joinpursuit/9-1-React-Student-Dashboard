@@ -22,20 +22,14 @@ function getCohortCode() {
   }
   return arr.sort()
 }
-//to do list
-// 1. show more button when clicked 
-// 2. fix notes
-// 3. add percent goals
-// 4. change Font
-// 5. sort aside
 
 function handleCohortCodesSpace() {
   for (let i = 0; i < allCohortCodes.length; i++) {
+    console.log(allCohortCodes[i].indexOf())
     let split = allCohortCodes[i].split('')
     let year = split.splice(split.length - 4)
     updatedCohortCodes.push(split.join('') + " " + year.join(''))
-    console.log(updatedCohortCodes)
-    }
+  }
     return updatedCohortCodes
 }
 
@@ -76,9 +70,11 @@ function handleUpdatedCohort(cohort) {
      handleUpdatedCohort={handleUpdatedCohort}
      />
      <Main 
+     setStudents={setStudents}
      students={students} 
      cohorts={cohorts}
      selected={selected}
+     allCohortCodes={allCohortCodes}
      />
     </div>
   );

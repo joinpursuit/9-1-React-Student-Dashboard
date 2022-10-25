@@ -13,6 +13,7 @@ export default function Aside({updatedCohortCodes, handleUpdatedCohort,}) {
                 {updatedCohortCodes.map(cohort => {
                     return(
                         <li>
+                            {console.log(cohort)}
                             <button onClick={() =>{handleUpdatedCohort(cohort.split(' ').join(''))}}>
                                 {cohort}
                             </button>
