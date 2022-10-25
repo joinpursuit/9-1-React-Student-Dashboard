@@ -2,7 +2,7 @@ ul {
   display: block;
   list-style: none;
 }
-button {
+.cohortButton {
   background: none;
   border: none;
   display: block;
@@ -14,7 +14,7 @@ button {
   width: 100%;
 }
 
-button:hover {
+.cohortButton:hover {
   border-bottom: 5px solid rgb(138, 76, 138);
   font-size: 110%;
 }
