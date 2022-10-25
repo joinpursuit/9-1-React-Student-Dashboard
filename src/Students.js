@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Students.css";
 import ShowMore from "./ShowMore";
-import Form from "./Form";
 // import "./Form.css";
 
 function Students({ Data }) {
   //   console.log(Data);
+
+  const [showMore, setShowMore] = useState(false);
+
+  function toggleShowMore() {
+    setShowMore(!showMore);
+  }
+
   const studentData = Data.map((el) => {
     const dob = new Date(el.dob);
     const birthday = new Intl.DateTimeFormat("en-US", {
@@ -24,15 +30,11 @@ function Students({ Data }) {
             <span>Birthday: </span>
             {birthday}
           </p>
-          <button id="showMoreButton">Show More ...</button>
+          <button id="showMoreButton" onClick={() => toggleShowMore()}>
+            {!showMore ? "Show More ..." : "Show Less ..."}
+          </button>
         </div>
-        <ShowMore el={el} />
-        <div className="form">
-          <Form />
-          {/* <ul>
-            {el.notes.commenter}: {el.notes.comment}
-          </ul> */}
-        </div>
+        {showMore && <ShowMore el={el} />}
       </article>
     );
   });

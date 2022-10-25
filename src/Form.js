@@ -1,4 +1,4 @@
-import "./Form.css";
+// import "./Form.css";
 import Data from "./data/data.json";
 function Form({ Data }) {
   return (

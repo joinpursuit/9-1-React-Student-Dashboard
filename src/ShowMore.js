@@ -1,4 +1,6 @@
 import "./ShowMore.css";
+import Form from "./Form";
+import "./Form.css";
 function ShowMore({ el }) {
   return (
     <section className="studentsDetails">
@@ -57,6 +59,7 @@ function ShowMore({ el }) {
           {el.certifications.github === false ? "❌" : "✅"}
         </p>
       </article>
+      <Form />
     </section>
   );
 }
