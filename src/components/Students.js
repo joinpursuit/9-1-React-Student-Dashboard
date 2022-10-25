@@ -1,9 +1,9 @@
 import Student from "./Student";
 
-function Students({ students, setStudents }) {
+function Students({ students, cohortName }) {
   return (
     <div className="Students">
-      <h2>All Students</h2>
+      <h2>{cohortName}</h2>
       <p>
         Total Students: <span>{students.length}</span>
       </p>
