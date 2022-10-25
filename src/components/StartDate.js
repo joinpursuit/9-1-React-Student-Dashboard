@@ -1,12 +1,15 @@
 import React from "react"
 
-function StartDate(props) {
+function StartDate({ dataList }) {
   return (
     <div>
-      <aside className="Choose">
+      <aside className="class-selection">
         <h2>Choose a Class by Start Date</h2>
-        <br></br>
-        <h3>All Students</h3>
+        <ul>
+          <li>
+            <button>All Students</button>
+          </li>
+        </ul>
       </aside>
     </div>
   )

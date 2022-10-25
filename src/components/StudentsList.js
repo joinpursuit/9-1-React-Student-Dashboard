@@ -1,28 +1,40 @@
 import React from "react"
 
-function StudentsList({ data }) {
-  console.log(data.names)
+function StudentsList({ dataList }) {
+  console.log(dataList.names)
   return (
-    <div className="students">
+    <div className="student-cards">
       <h2>All Students</h2>
-      <h3>Total Students: {data.length}</h3>
-
-      {data.map((dataList) => {
-        return (
-          <div key={dataList.id}>
-            <img src={dataList.profilePhoto} alt={dataList.id} />
-            <strong>
-              {dataList.names.preferredName} {dataList.names.middleName}.{" "}
-              {dataList.names.surname}
-            </strong>
-            <br></br>
-            {dataList.username}
-            <br></br>
-            Birthday: {dataList.dob}
-            <button>Show me</button>
-          </div>
-        )
-      })}
+      <p>
+        Total Students:
+        <span>{dataList.length}</span>
+      </p>
+      <div className="student-cards">
+        {dataList.map((datainfo) => {
+          return (
+            <article className="student-card">
+              <div key={datainfo.id}>
+                <img src={datainfo.profilePhoto} alt={datainfo.id} />
+                <div className="student-info">
+                  <aside>
+                    <h3>
+                      {datainfo.names.preferredName} {datainfo.names.middleName}
+                      . {datainfo.names.surname}
+                    </h3>
+                    <p>{datainfo.username}</p>
+                    <p>
+                      <span>Birthday:</span>
+                      {datainfo.dob}
+                    </p>
+                  </aside>
+                  <button>Show me...</button>
+                </div>
+                <p className="on-track"></p>
+              </div>
+            </article>
+          )
+        })}
+      </div>
     </div>
   )
 }

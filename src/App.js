@@ -2,15 +2,20 @@ import data from "./data/data.json"
 import StudentsList from "./components/StudentsList"
 import StartDate from "./components/StartDate"
 import Header from "./components/Header"
+import { useState } from "react"
 
 function App() {
-  console.log(data)
+  const [dataList, setData] = useState(data)
+
+  console.log(dataList)
   return (
     <div>
       <Header />
-      <main>
+      <aside>
         <StartDate />
-        <StudentsList data={data} />
+      </aside>
+      <main>
+        <StudentsList dataList={dataList} />
       </main>
     </div>
   )
