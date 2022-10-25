@@ -62,8 +62,8 @@ li {
   display: grid;
   padding-bottom: 25px;
   grid-template-columns: 1fr 2fr;
-}
-.Cards:hover {
+} */
+/* .Cards:hover {
   background-color: greenyellow;
   background-color: transparent;
   border: 2px solid #799be6;

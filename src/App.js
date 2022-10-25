@@ -14,7 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header
+      // Records={Records}
+      // titleOption={titleOption}
+      // totalOption={totalOption}
+      // setTotalOption={setTotalOption}
+      // setTitleOption={setTitleOption}
+      // setStudentListOption={setStudentListOption}
+      />
       <div className="Main">
         <aside>
           <Cohort

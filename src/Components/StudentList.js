@@ -1,36 +1,13 @@
 import "./studentList.css";
 
 export default function StudentList({
-  Records,
+  // Records,
   totalOption,
-  setTotalOption,
   studentListOPtion,
   titleOption,
 }) {
-  // //!------
-  // //? function for new title when clicking all student from cohort list, resets list to full list
-  // const handleTitleClick = () => {
-  //   setStudentListOption(Records);
-  //   setTitleOption("All Students");
-  // };
-  // //?---------------
+  // //!------ on track
 
-  // //*---------------
-  // const handleCohortList = (event) => {
-  //   const { value } = event.target; //!
-  //   if (value === "All Students") {
-  //     handleTitleClick();
-  //   } else {
-  //     // setCohortOption(filterCohort);
-  //     //* Filter cohort list for those matching optionb --------
-  //     let filterCohort = Records.filter((el) => {
-  //       return el.cohort.cohortCode === titleOption.split(" ").join("");
-  //     });
-  //     setStudentListOption(filterCohort);
-  //     setTotalOption(filterCohort.length);
-  //     console.log(filterCohort); // lists student in each cohort
-  //   }
-  // };
   //!------
   return (
     <div className="StudentList">

@@ -2,12 +2,8 @@ export default function Cohort({
   Records,
   setStudentListOption,
   setTitleOption,
-  cohort,
-  setCohortOption,
-  studentListOPtion,
   titleOption,
   setTotalOption,
-  totalOption,
 }) {
   //? function for new title when clicking all student from cohort list, resets list to full list
   const handleTitleClick = () => {
@@ -27,6 +23,14 @@ export default function Cohort({
   let newCohortList = [
     ...new Set(Records.map((record) => record.cohort.cohortCode)),
   ];
+  console.log(newCohortList);
+  //!Sorting cohorts list
+  let sortList = newCohortList.sort((a, b) => {
+    var aa = a.split(" "),
+      bb = b.split(" ");
+    return aa[1] - bb[1] || newCohortList[aa[0]] - newCohortList[bb[0]];
+  });
+  // console.log(sortList);
 
   //!-------------------------------
   return (
@@ -48,8 +52,8 @@ export default function Cohort({
                     onClick={() => {
                       setStudentListOption(filterCohort);
                       setTotalOption(filterCohort.length);
+                      //! Separating the dates using Slice by targeting years, years contain 4
                       setTitleOption(
-                        //! Separating the dates using Slice by targeting years, years contain 4 numbers
                         record.slice(0, -4) + " " + record.slice(-4)
                       );
                     }}
