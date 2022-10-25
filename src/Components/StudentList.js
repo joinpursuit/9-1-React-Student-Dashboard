@@ -3,12 +3,13 @@ import { middleName } from '../data/helperFunctions';
 import Birthday from './Birthday';
 import Graduate from './Graduate';
 import ShowMoreButton from './ShowMoreButton';
-function StudentList({students}) {
+import StudentCohortLink from './StudentCohortLink';
+function StudentList({students,setStudents,data,setCohortName}) {
    
     return (
         <>
         {
-            students.map(({id,names,username,profilePhoto,dob,notes},i) => {
+            students.map(({id,names,username,profilePhoto,dob,notes,cohort},i) => {
                 const firstName = names.preferredName
                 const middleInitial = middleName(names.middleName)
                 const lastName = names.surname
@@ -30,6 +31,13 @@ function StudentList({students}) {
                                     <br></br>
                                     <Birthday
                                     dob = {dob} />
+                                    <br></br>
+                                    <StudentCohortLink
+                                    id = {id}
+                                    setStudents = {setStudents}
+                                    cohort = {cohort} 
+                                    data = {data}
+                                    setCohortName = {setCohortName}/>
                                     
                                 </div>
                                 <Graduate

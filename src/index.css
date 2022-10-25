@@ -85,10 +85,18 @@ footer {
     justify-self: center;
 }
 
+.showMore {
+    margin-left: 40%;
+}
+
+.studentCohortLink {
+    color: rgb(33, 68, 144);
+    font-weight: bolder;
+}
 a {
     text-decoration: underline;
     color: rgb(61, 128, 61);
-    margin-left: 40%;
+    
 }
 a:hover{
     cursor: pointer;

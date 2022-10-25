@@ -50,7 +50,7 @@
             return `yellow`
         }
         else {
-            return 'blue'
+            return 'green'
         }
 }
 
@@ -71,11 +71,20 @@
     return date.toLocaleString('en-US', { month: 'long' });
   }
 
+//   function for filtering students by cohort name
+function filterStudents(string, setFunction, arrOfObj) {
+    const filteredStudentArray = arrOfObj.filter(({cohort}) => 
+       cohort.cohortCode === string
+    )
+    setFunction(filteredStudentArray)
+ }
+
   
   export {
     middleName,
     sortCohort,
     goalPercent,
     codeWarsColor,
-    getMonthName
+    getMonthName,
+    filterStudents
   }

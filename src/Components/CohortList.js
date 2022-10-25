@@ -1,5 +1,6 @@
 import React from 'react';
 import { sortCohort } from '../data/helperFunctions';
+import { filterStudents } from '../data/helperFunctions';
 
 
 function CohortList({data, setStudents, setCohortName}) {
@@ -8,12 +9,12 @@ function CohortList({data, setStudents, setCohortName}) {
 const cohorts = sortCohort(data)
 
 // function to filter students based on cohort
-function filterStudents(string) {
-   const filteredStudentArray = data.filter(({cohort}) => 
-      cohort.cohortCode === string
-   )
-   setStudents(filteredStudentArray)
-}
+// function filterStudents(string) {
+//    const filteredStudentArray = data.filter(({cohort}) => 
+//       cohort.cohortCode === string
+//    )
+//    setStudents(filteredStudentArray)
+// }
 
 // function for onClick cohort
 function cohortFilter(e) {
@@ -23,7 +24,7 @@ function cohortFilter(e) {
       setStudents(data)
    }
    else{
-      filterStudents(cohortName)
+      filterStudents(cohortName,setStudents,data)
    }
 }
 

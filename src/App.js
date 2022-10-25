@@ -11,7 +11,7 @@ function App() {
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
 
-  
+
   return (
     <div className='topLevel'>
      <Header />
@@ -25,7 +25,10 @@ function App() {
           <span style={{color: "green"}}> {students.length}</span>
         </p> 
         <StudentList
-        students = {students} />
+        students = {students}
+        setStudents = {setStudents}
+        data = {data}
+        setCohortName = {setCohortName} />
         </div>
 
       <aside className="cohortList">
