@@ -1,6 +1,8 @@
 import React from "react";
 import "./Students.css";
 import ShowMore from "./ShowMore";
+import Form from "./Form";
+// import "./Form.css";
 
 function Students({ Data }) {
   //   console.log(Data);
@@ -25,6 +27,12 @@ function Students({ Data }) {
           <button id="showMoreButton">Show More ...</button>
         </div>
         <ShowMore el={el} />
+        <div className="form">
+          <Form />
+          {/* <ul>
+            {el.notes.commenter}: {el.notes.comment}
+          </ul> */}
+        </div>
       </article>
     );
   });

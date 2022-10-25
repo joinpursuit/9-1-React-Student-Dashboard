@@ -38,7 +38,7 @@ function ShowMore({ el }) {
           {el.cohort.scores.assessments * 100}%
         </p>
       </article>
-      <article>
+      <article className="certifications">
         <h3>Certifications</h3>
         <p>
           <span>Resume: </span>
