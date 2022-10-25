@@ -31,7 +31,7 @@
 
 .aside-div {
   text-align: center;
-  border: 2px solid lawngreen;
+  /* border: 2px solid lawngreen; */
   padding: 10px;
   margin-top: 20px;
 }
@@ -40,7 +40,7 @@
 }
 .main-div {
   text-align: left;
-  border: 2px solid magenta;
+  /* border: 2px solid magenta; */
   padding: 10px;
   margin-top: 20px;
 }

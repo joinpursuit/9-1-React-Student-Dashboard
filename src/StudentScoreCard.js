@@ -1,9 +1,12 @@
-import React from 'react';
-import './StudentScoreCard.css';
+import React, { useState } from 'react';
 import Form from './Form';
+import './StudentScoreCard.css';
+
 function StudentScoreCard({ el }) {
+  const [showData, setShowData] = useState(false);
   return (
     <section key={el.id} className="individual-details">
+      {showData && <StudentScoreCard el={el} />}
       <article className="code-wars">
         <h3>Codewars:</h3>
         <p>
@@ -56,6 +59,7 @@ function StudentScoreCard({ el }) {
           {el.certifications.GitHub === false ? '❌' : '✅'}
         </p>
       </article>
+      <Form />
     </section>
   );
 }

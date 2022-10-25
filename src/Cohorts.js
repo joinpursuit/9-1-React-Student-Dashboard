@@ -2,7 +2,9 @@ import React from 'react';
 import './Cohorts.css';
 
 function Cohorts({ Data }) {
-  //   console.log(Data);
+  // const filterData = Data.filter((el) => el === el.cohort.cohortCode);
+
+  // console.log(filterData);
   return (
     <aside className="cohorts">
       <ul>
@@ -18,11 +20,11 @@ function Cohorts({ Data }) {
         <hr></hr>
         <button id="winter-2025">Winter 2025 </button>
         <hr></hr>
-        <button id="fall-2025">Fall 2025 </button>
-        <hr></hr>
         <button id="summer-2025">Summer 2025 </button>
         <hr></hr>
         <button id="spring-2025">Spring 2025 </button>
+        <hr></hr>
+        <button id="fall-2025">Fall 2025 </button>
         <hr></hr>
       </ul>
     </aside>
