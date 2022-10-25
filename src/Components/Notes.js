@@ -5,6 +5,7 @@ import uuid from 'react-uuid';
 function Notes({thisStudent}) {
    
     const notesArr = thisStudent[0].notes
+    
     // Declare state for comments/ notes
     const [comment, setComment] = useState(notesArr)
     
@@ -34,7 +35,7 @@ function Notes({thisStudent}) {
         // setComment([lastestComment, ...thisStudent[0].notes])
     }
 
-    // function for form rest
+    // function for form reset
     function resetForm() {
         setNewComment({
             commenter: "",
