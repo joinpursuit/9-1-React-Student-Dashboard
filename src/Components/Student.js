@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Data from '../data/data.json'
+import StudentDetails from './StudentDetails';
 
 const Student = () => {
 
@@ -39,29 +40,7 @@ const Student = () => {
                         <p>{data.username}</p>
                         <p>Birthday: {getBirthday(data.dob)}</p>
                         <img className="photo" src={data.profilePhoto} alt="" style={{height: "140px", width:"140px"}} />
-                        <div>
-                            <a href="#"  onClick={()=>{toggleStudentDetails(data)}}>{!showDetails ? "Show More..." : "Show Less..."}</a>
-                                {showDetails ? (
-                                <div className="student-details">
-                                <section>
-                                    <h4>Codewars</h4>
-                                    <p>Current Total: {data.codewars.current.total}</p>
-                                    <p>Last Week: {data.codewars.current.lastWeek}</p>
-                                    <p>Goal: {data.codewars.goal.total}</p>
-                                    <p>Percent of Goal Achieved: {percentScore(data.codewars.current.total, data.codewars.goal.total)}%</p>
-                                    <h4>Scores</h4>
-                                    <p>Assignments: {data.cohort.scores.assignments * 100}%</p>
-                                    <p>Projects: {data.cohort.scores.projects * 100}%</p>
-                                    <p>Assessments: {data.cohort.scores.assessments * 100}%</p>
-                                    <h4>Certifications</h4>
-                                    <p>Resume: {checkCertificate(data.certifications.resume)}</p>
-                                    <p>LinkedIn: {checkCertificate(data.certifications.linkedin)}</p>
-                                    <p>Mock Interview: {checkCertificate(data.certifications.mockInterview)}</p>
-                                    <p>Github: {checkCertificate(data.certifications.github)}</p>
-                                </section>
-                            </div>
-                        ) : null}
-                        </div>
+                        <StudentDetails data={data} />
                     </div>
                 </div>
         )

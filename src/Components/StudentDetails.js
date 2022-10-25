@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Data from '../data/data.json'
 
-const StudentDetails = () => {
+const StudentDetails = ({ data }) => {
     const [showDetails, setShowDetails] = useState(false)
 
     function toggleStudentDetails() {
@@ -30,7 +30,6 @@ const StudentDetails = () => {
         })
     }
 
-    Data.map((data) => {
         return (
             <div>
                 <a href="#"  onClick={toggleStudentDetails}>{!showDetails ? "Show More..." : "Show Less..."}</a>
@@ -56,7 +55,6 @@ const StudentDetails = () => {
                 ) : null}
             </div>
         )
-    })
        
 };
 
