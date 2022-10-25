@@ -1,13 +1,27 @@
+import Student from "./Student";
 import "./studentList.css";
-
+import { useState } from "react";
 export default function StudentList({
-  // Records,
   totalOption,
   studentListOPtion,
   titleOption,
-}) {
-  // //!------ on track
 
+  clickShowMore,
+})
+{
+  const [showMore, setShowMore] = useState(false);
+
+  // console.log(certifications.resume)
+  // //!------ on track
+  // if (
+  //   certifications.resume &&
+  //   certifications.linkedin &&
+  //   certifications.github &&
+  //   certifications.mockInterview
+  // ) {
+  //   console.log("yes");
+  //   return <div className="ONtrack"></div>;
+  // }
   //!------
   return (
     <div className="StudentList">
@@ -20,11 +34,13 @@ export default function StudentList({
         {studentListOPtion.map((record) => {
           //! DOB Format
           const dateFormat = new Date(record.dob);
-
           return (
             <article className="UserInfo" key={record.id}>
               <div className="Cards" key={record.id}>
-                <img src={record.profilePhoto} alt={record.names} />
+                <img src={record.profilePhoto} alt={record.names} />{" "}
+                <span className="Ontrack">
+                  <p>on track here</p>{" "}
+                </span>
                 {/* <h5> */}
                 <p>
                   <b>
@@ -38,21 +54,24 @@ export default function StudentList({
                     dateStyle: "long",
                   }).format(dateFormat)}
                 </p>
-
                 <br />
                 {/* onClick event to link */}
-                <a style={{ color: "green" }} href="http://">
-                  Show More...
-                </a>
+                <button onClick={()=> setShowMore(!showMore)}>
+                  {" "}
+                  {!showMore ? "Show More..." : "Show Less..."}
+                </button>
+                
+                <Student />
               </div>
-
               {/* <p></p> */}
             </article>
           );
+          //PASS student Component
         })}
       </div>
       <br />
       <br />
+      {/* <Student handleShowMoreBtn={handleShowMoreBtn}></Student> */}
     </div>
   );
 }

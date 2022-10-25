@@ -23,13 +23,13 @@ export default function Cohort({
   let newCohortList = [
     ...new Set(Records.map((record) => record.cohort.cohortCode)),
   ];
-  console.log(newCohortList);
+  // console.log(newCohortList);
   //!Sorting cohorts list
-  let sortList = newCohortList.sort((a, b) => {
-    var aa = a.split(" "),
-      bb = b.split(" ");
-    return aa[1] - bb[1] || newCohortList[aa[0]] - newCohortList[bb[0]];
-  });
+  // let sortList = newCohortList.sort((a, b) => {
+  //   var aa = a.split(" "),
+  //     bb = b.split(" ");
+  //   return aa[1] - bb[1] || newCohortList[aa[0]] - newCohortList[bb[0]];
+  // });
   // console.log(sortList);
 
   //!-------------------------------
@@ -49,7 +49,7 @@ export default function Cohort({
               <div className="Cohort" key={record.id}>
                 {
                   <li
-                    onClick={() => {
+                   onClick={ () => {
                       setStudentListOption(filterCohort);
                       setTotalOption(filterCohort.length);
                       //! Separating the dates using Slice by targeting years, years contain 4

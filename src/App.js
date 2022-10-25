@@ -5,9 +5,10 @@ import Header from "./Components/Header";
 import Cohort from "./Components/Cohort";
 import Footer from "./Components/Footer";
 import Student from "./Components/Student";
+// import Student from "./Components/Student";
+// import ShowMore from "./Components/ShowMore";
 function App() {
   const [titleOption, setTitleOption] = useState("All Students");
-  const [showMoreOption, setShowMoreOption] = useState(false); //
   const [studentListOption, setStudentListOption] = useState(Records);
   // const [cohortOption, setCohortOption] = useState("All students"); //
   const [totalOption, setTotalOption] = useState(Records.length);
@@ -34,6 +35,15 @@ function App() {
           />
         </aside>
         <main>
+          {/* //! */}
+          {/* <Student
+            Records={Records}
+            setTotalOption={setTotalOption}
+            totalOption={totalOption}
+            titleOption={titleOption}
+            // Records={Records}
+            studentListOPtion={studentListOption}
+           /> */}
           <StudentList
             setTotalOption={setTotalOption}
             totalOption={totalOption}
@@ -43,7 +53,7 @@ function App() {
           />
         </main>
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }
