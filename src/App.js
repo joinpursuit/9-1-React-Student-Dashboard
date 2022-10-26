@@ -23,9 +23,8 @@ function App() {
       // setTitleOption={setTitleOption}
       // setStudentListOption={setStudentListOption}
       />
-{/* {Records.map((record)=>{ */}
-<div className="Main">
 
+      <div className="Main">
         <aside>
           <Cohort
             Records={Records}
@@ -37,9 +36,7 @@ function App() {
           />
         </aside>
         <main>
-    
-         
-           {/* <Student
+          {/* <Student
             record={record} dateFormat={dateFormat}
             setShowMore={setShowMore}  />  */}
           <StudentList
@@ -51,8 +48,7 @@ function App() {
           />
         </main>
       </div>
-{/* })} */}
-      
+
       {/* <Footer></Footer> */}
     </div>
   );

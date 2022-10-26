@@ -1,13 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
 body {
+  line-height: 25px;
+  background-color: #303032;
   display: grid;
   text-align: justify;
-  margin: 0;
 }
 /* //! _____________________________________ */
 
 .Main {
   margin-top: 25px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 40px;
   column-gap: 25px;
   display: grid;
 }
@@ -23,18 +29,11 @@ body {
 }
 /* //! _____________________________________ */
 
-.CohortList {
-  /* text-align: left; */
-  /* margin-left: 10px; */
-  /* border: 3px solid green; */
-  /* margin-right: 20px; */
-}
 /* //! _____________________________________ */
 
 .StudentList {
   /* text-transform: inherit; */
   /* border: 3px solid #5c946e; */
-  display: grid;
   margin-right: 30px;
 }
 img {
@@ -50,12 +49,19 @@ button {
   text-decoration: underline;
   width: 100%;
 }
+#showMoreBtn {
+  background-color: aqua;
+  border-radius: 25px;
+  font-weight: 900px;
+  /* padding: ; */
+}
 
 li {
   list-style: none;
   text-align: none;
 }
-
+.ShowMore {
+}
 /* //! _____________________________________ */
 /* .Cards {
   border: 2px solid #5c946e;
