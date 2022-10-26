@@ -29,7 +29,6 @@ function Article({ el, birthday }) {
           </button>
         </aside>
         {showData && <StudentScoreCard el={el} />}
-        {/* {showData && <Form />}/ */}
       </div>
     </article>
   );

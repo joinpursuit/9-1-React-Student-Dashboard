@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import './StudentScoreCard.css';
 
-function StudentScoreCard({ el }) {
-  const [showData, setShowData] = useState(false);
+function StudentScoreCard({ el, showData }) {
   return (
     <section key={el.id} className="individual-details">
       {showData && <StudentScoreCard el={el} />}
