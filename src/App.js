@@ -32,7 +32,7 @@ function App() {
           <span style={{color: "green"}}> {students.length}</span>
         </p> 
         <SearchBar
-        students = {students}
+        data = {data}
         setStudents = {setStudents} />
         <StudentList
         students = {students}
