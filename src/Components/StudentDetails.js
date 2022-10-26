@@ -79,7 +79,7 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
                   {newNotes.map((note) => {
                     return (
                       <li>
-                        {note.comment} {note.commenter}
+                        {note.commenter} {note.comment}
                       </li>
                     );
                   })}

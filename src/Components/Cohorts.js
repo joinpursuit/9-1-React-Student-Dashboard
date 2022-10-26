@@ -8,9 +8,24 @@ const Cohorts = ({
 }) => {
   // console.log(cohorts);
 
+  const formattedCohorts = cohorts.map((el) => {
+    let sliceLetters = el.slice(0, -4);
+    let sliceNums = el.slice(-4);
+    return sliceLetters + " " + sliceNums;
+  });
+
+  const [formattedCohortsInvoked, setFormattedCohortsInvoked] =
+    useState(formattedCohorts);
+
+  console.log(formattedCohorts);
+
+  // let cohortId = cohorts.map((cohort) => {
+  //   setCohortInfo.cohortID(cohort.id);
+  //   console.log(cohortInfo);
+  // });
+
   let searchCohort = (e) => {
     setCohortClicked(e.target.id);
-    setShowStudentDetailsBool(false);
     console.log(e.target.id);
   };
 
@@ -21,7 +36,7 @@ const Cohorts = ({
           All Students
         </li>
         <hr></hr>
-        {cohorts.map((cohort) => {
+        {cohorts.map((cohort, i) => {
           return (
             <li id={cohort} onClick={searchCohort}>
               {cohort}

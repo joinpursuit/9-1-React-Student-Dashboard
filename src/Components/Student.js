@@ -1,11 +1,9 @@
 import { useState } from "react";
 import StudentDetails from "./StudentDetails";
 
-const Student = ({
-  student,
-  showStudentDetailsBool,
-  setShowStudentDetailsBool,
-}) => {
+const Student = ({ student }) => {
+  const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
+
   const showStudentDetails = () => {
     setShowStudentDetailsBool(!showStudentDetailsBool);
   };
