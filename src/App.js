@@ -28,21 +28,27 @@ function App() {
       <main>
       
       <div className="studentList">
-        <h2
-        style={{margin: "0"}}>{cohortName}</h2>
-        <p>Total Students: 
+        <div className='studentListHeader'>
+          <h2
+          style={{margin: "0"}}>{cohortName}</h2>
+          <p>Total Students: 
           <span style={{color: "green"}}> {students.length}</span>
-        </p> 
-        <SearchBar
-        data = {data}
-        setStudents = {setStudents}
-        setCohortName = {setCohortName} />
+          </p> 
+          <SearchBar
+          data = {data}
+          setStudents = {setStudents}
+          setCohortName = {setCohortName} />
+        </div>
+        
+        <div className='scrollStudents'>
         <StudentList
         students = {students}
         setStudents = {setStudents}
         data = {data}
         setCohortName = {setCohortName} />
         </div>
+      
+      </div>
 
       <aside className="cohortList">
         <h2
