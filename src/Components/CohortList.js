@@ -5,7 +5,7 @@ import { filterStudents } from '../data/helperFunctions';
 import CohortOrderButton from './CohortOrderButton';
 
 
-function CohortList({data, setStudents, setCohortName,setClickReset}) {
+function CohortList({data, setStudents, setCohortName, setReset}) {
 // Declare state for cohort List
 const [cohortList, setCohortList] = useState(sortCohort(data))
 
@@ -20,7 +20,8 @@ function cohortFilter(e) {
       filterStudents(cohortName,setStudents,data)
    }
   // *****clear searchbar and dropdown if cohort is clicked******
-  setClickReset(false)
+  setReset(true)
+
   
 }
 

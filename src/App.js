@@ -14,8 +14,10 @@ function App() {
   const [students, setStudents] = useState(data)
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
-  // Declare state for toggling searchbar/dropdown resets
-  const [clickReset, setClickReset] = useState(false)
+
+  // Declare state for rest on cohort click 
+  const [reset, setReset] = useState("")
+
 
 
   return (
@@ -38,9 +40,11 @@ function App() {
           
           <p>
             <SearchBar
-          data = {data}
-          setStudents = {setStudents}
-          setCohortName = {setCohortName}
+            data = {data}
+            setStudents = {setStudents}
+            setCohortName = {setCohortName}
+            reset = {reset}
+            setReset = {setReset}
             />
           </p>
 
@@ -48,8 +52,9 @@ function App() {
           students = {students}
           setStudents = {setStudents}
           data = {data} 
-          clickReset = {clickReset}
-          setClickReset = {setClickReset}/>
+          reset = {reset}
+          setReset = {setReset}
+         />
         </div>
         
         <div className='scrollStudents'>
@@ -67,12 +72,14 @@ function App() {
         style={{
           marginTop:"0",
         }}>Choose Class by Start Date</h2>
+        
         <CohortList
         data = {data}
         setStudents = {setStudents}
         setCohortName = {setCohortName}
-        setClickReset = {setClickReset}
+        setReset = {setReset}
         />
+
       </aside>
       
       </main>
