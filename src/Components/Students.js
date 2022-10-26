@@ -21,10 +21,25 @@ export default function Students ({ students, cohort, comments, handleSubmit }){
                             <div className="student" key={student.id}>
                                 <div className="info">
                                     <img src={student.profilePhoto}/>
-                                    <aside>
+                                    <section>
                                         <h4>{fullName}</h4>
                                         <p>{student.username}</p>
                                         <p><span>Birthday: </span>{student.dob}</p>
+                                    </section>
+                                    <aside>
+                                        {
+                                            student.certifications.resume
+                                            &&
+                                            student.certifications.linkedin
+                                            &&
+                                            student.certifications.github
+                                            &&
+                                            student.certifications.mockInterview
+                                            &&
+                                            student.codewars.current.total > 600
+                                            &&
+                                            <p style={{color:"green"}}>On Track to Graduate</p>
+                                        }
                                     </aside>
                                 </div>
                                 <Details
