@@ -60,3 +60,7 @@ img{
 article{
     display: block;
 }
+
+hr {
+    width: 100px;
+}

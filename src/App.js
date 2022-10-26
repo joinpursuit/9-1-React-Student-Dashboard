@@ -8,20 +8,13 @@ function App() {
   //********* STATES *********/
   const [cohorts, setCohorts] = useState([]);
 
-  // const [studentInfo, setStudentInfo] = useState({
-  //   all: [...data],
-  //   byCohortCode: {},
-  //   selected: [],
-  // });
-
   let [cohortClicked, setCohortClicked] = useState("All Students");
 
-  // console.log("STUDENT INFO", studentInfo);
+  const [resetStudentDetails, setResetStudentDetails] = useState(null);
 
   //********* NON-STATE VARS *********/
 
   let cohortArr = [];
-  let cohortsFormatted = [];
 
   //********* HELPERS *********/
 
@@ -38,17 +31,15 @@ function App() {
     const arrOfCohorts = Array.from(cohortSet);
 
     //Formats arrOfCohorts so that the state is set with a space between season and year
-    arrOfCohorts.forEach((cohort) => {
-      if (cohort.length === 10) {
-        cohort.slice(5);
-        cohortsFormatted = [cohort];
-      }
-      if (cohort.length === 8) {
-        cohort.slice(3);
-        cohortsFormatted = [cohort];
-      }
+    arrOfCohorts.map((cohort) => {
+      setCohorts(arrOfCohorts);
     });
-    setCohorts(arrOfCohorts);
+  };
+
+  const splitString = (el) => {
+    let sliceLetters = el.slice(0, -4);
+    let sliceNums = el.slice(-4);
+    return sliceLetters + " " + sliceNums;
   };
 
   // Filter for each cohort array based on click event on each cohort li in Cohorts
@@ -72,11 +63,14 @@ function App() {
         cohorts={cohorts}
         cohortListAside={cohortListAside}
         setCohortClicked={setCohortClicked}
+        splitString={splitString}
+        setResetStudentDetails={setResetStudentDetails}
       />
       <Students
         students={data}
         filteredCohortInfoData={filteredCohortInfoData}
         cohortClicked={cohortClicked}
+        splitString={splitString}
       />
     </div>
   );

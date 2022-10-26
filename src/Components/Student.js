@@ -1,15 +1,23 @@
 import { useState } from "react";
 import StudentDetails from "./StudentDetails";
 
-const Student = ({ student }) => {
+const Student = ({ student, resetStudentDetails }) => {
   const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
 
   const showStudentDetails = () => {
     setShowStudentDetailsBool(!showStudentDetailsBool);
   };
 
+  //**********testing */
+
+  const resetStudent = () => {
+    setShowStudentDetailsBool(resetStudentDetails);
+  };
+
+  //************** */
+
   return (
-    <div id={student.id}>
+    <div id={student.id} onLoad={resetStudent}>
       <img src={student.profilePhoto} alt={student.profilePhoto}></img>
       <h4>
         {student.names.preferredName} {student.names.middleName}{" "}

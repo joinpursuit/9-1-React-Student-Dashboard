@@ -4,12 +4,16 @@ const Students = ({
   students,
   filteredCohortInfoData,
   cohortClicked,
-  showStudentDetailsBool,
-  setShowStudentDetailsBool,
+  splitString,
+  resetStudentDetails,
 }) => {
   return (
     <div className="main">
-      <h2>{cohortClicked}</h2>
+      <h2>
+        {cohortClicked === "All Students"
+          ? cohortClicked
+          : splitString(cohortClicked)}
+      </h2>
       <h4>{filteredCohortInfoData.length}</h4>
 
       {filteredCohortInfoData.map((student) => {
@@ -17,8 +21,7 @@ const Students = ({
           <>
             <Student
               student={student}
-              showStudentDetailsBool={showStudentDetailsBool}
-              setShowStudentDetailsBool={setShowStudentDetailsBool}
+              resetStudentDetails={resetStudentDetails}
             />
           </>
         );

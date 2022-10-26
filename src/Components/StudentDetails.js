@@ -14,6 +14,7 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewNotes([...newNotes, notes]);
+    setNotes({ commenter: "", comment: "" });
   };
 
   return (
