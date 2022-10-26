@@ -6,26 +6,24 @@ export default function Cohorts({
   chooseCohort,
 }) {
   const seasons = {
-    Winter2026: 1,
-    Fall2026: 2,
-    Summer2026: 3,
-    Spring2026: 4,
-    Winter2025: 5,
-    Fall2025: 6,
-    Summer2025: 7,
-    Spring2025: 8,
+    Winter: 0,
+    Fall: 1,
+    Summer: 2,
+    Spring: 3,
   };
 
   // Sorting Algorithm for Cohorts list
   const orderedCohorts = uniqueCohorts
-    .map((cohort) => {
-      return seasons[cohort];
+    .map((season) => season.split(/([0-9]+)/))
+    .map((arr) => {
+      arr.pop();
+      return arr;
     })
-    .sort((a, b) => {
-      return a - b;
+    .sort(([aSeason, aYear], [bSeason, bYear]) => {
+      return bYear - aYear || seasons[aSeason] - seasons[bSeason];
     })
-    .map((a) => {
-      return Object.keys(seasons).find((key) => seasons[key] === a);
+    .map(([season, year]) => {
+      return `${season}${year}`;
     });
 
   return (
