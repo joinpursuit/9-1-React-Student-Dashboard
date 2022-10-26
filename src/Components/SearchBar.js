@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function SearchBar({data, setStudents,setCohortName, setSearchValue, searchValue, students}) {
+function SearchBar({data, setStudents, setCohortName, students}) {
     // Declare State to store user inputted search
     const [search, setSearch] = useState("")
     

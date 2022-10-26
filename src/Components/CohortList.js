@@ -5,7 +5,7 @@ import { filterStudents } from '../data/helperFunctions';
 import CohortOrderButton from './CohortOrderButton';
 
 
-function CohortList({data, setStudents, setCohortName, setReset,selectValue, setSelectValue, searchValue, setSearchValue}) {
+function CohortList({data, setStudents, setCohortName,}) {
 // Declare state for cohort List
 const [cohortList, setCohortList] = useState(sortCohort(data))
 

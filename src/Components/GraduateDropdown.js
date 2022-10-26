@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function GraduateDropdown({students,setStudents,data, setSelectValue}) {
+function GraduateDropdown({students,setStudents,data}) {
     // Declare Stae for selection value
     const [select, setSelect] = useState("all")
 
