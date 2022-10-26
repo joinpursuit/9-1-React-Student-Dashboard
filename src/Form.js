@@ -1,14 +1,19 @@
 import { useState } from 'react';
+// import Data from './data/data.json';
 import './Form.css';
 
-function Form() {
+function Form({ el }) {
+  // console.log(Data.notes);
   const [comment, setComment] = useState('');
   const [commenter, setCommenter] = useState('');
+  const [newComment, setNewComment] = useState(el.notes);
 
-  function handleInput(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    // console.log('hello');
-    console.log(e.target.value);
+    const newObj = { commenter: commenter, comment: comment };
+    setNewComment([...newComment, newObj]);
+    // console.log(newObj);
+    // console.log(e.target.value);
   }
   return (
     <article className="form-article">
@@ -24,16 +29,28 @@ function Form() {
           value={commenter}
         />
         <label>Comment</label>
-        <input type="text" name="comment" id="comment" value={comment} />
-        <button
-          onClick={() => handleInput()}
-          className="add-note"
-          type="submit"
-        >
+        <input
+          onChange={(i) => setComment(i.target.value)}
+          type="text"
+          name="comment"
+          id="comment"
+          value={comment}
+        />
+        <button onClick={handleSubmit} className="add-note" type="submit">
           Add Note
         </button>
       </form>
-      <ul></ul>
+      <ul>
+        {newComment.map((notes) => {
+          // console.log(e.notes);
+          return (
+            <li>
+              {notes.commenter} says, {notes.comment}
+            </li>
+          );
+        })}
+        {handleSubmit}
+      </ul>
     </article>
   );
 }

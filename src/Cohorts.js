@@ -2,8 +2,8 @@ import React from 'react';
 import './Cohorts.css';
 
 function Cohorts({ Data }) {
+  // Data.map((comp) => {});
   // const filterData = Data.filter((el) => el === el.cohort.cohortCode);
-
   // console.log(filterData);
   return (
     <aside className="cohorts">

@@ -59,7 +59,7 @@ function StudentScoreCard({ el }) {
           {el.certifications.GitHub === false ? '❌' : '✅'}
         </p>
       </article>
-      <Form />
+      <Form el={el} />
     </section>
   );
 }

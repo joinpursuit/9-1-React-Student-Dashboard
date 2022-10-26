@@ -28,8 +28,8 @@ function Article({ el, birthday }) {
             <p> {!showData ? 'Show More ...' : 'Show Less...'}</p>
           </button>
         </aside>
-        {showData ? <StudentScoreCard el={el} /> : null}
-        {showData ? <Form /> : null}
+        {showData && <StudentScoreCard el={el} />}
+        {/* {showData && <Form />}/ */}
       </div>
     </article>
   );

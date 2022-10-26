@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import StudentScoreCard from './StudentScoreCard';
+import React from 'react';
 import Article from './Article';
 import './Students.css';
-import Form from './Form';
 
 function Students({ Data }) {
   const studentDetails = Data.map((el) => {
