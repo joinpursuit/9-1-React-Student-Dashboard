@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar';
+import GraduateDropdown from './Components/GraduateDropdown';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
   // Declare State for accessing searchbar
-  const [searchbar, setSearchbar] = useState(false)
+  const [searchbar, setSearchbar] = useState("")
 
 
   return (
@@ -37,7 +38,12 @@ function App() {
           <SearchBar
           data = {data}
           setStudents = {setStudents}
-          setCohortName = {setCohortName} />
+          setCohortName = {setCohortName}
+          />
+          <GraduateDropdown
+          students = {students}
+          setStudents = {setStudents}
+          data = {data} />
         </div>
         
         <div className='scrollStudents'>
@@ -58,7 +64,8 @@ function App() {
         <CohortList
         data = {data}
         setStudents = {setStudents}
-        setCohortName = {setCohortName} />
+        setCohortName = {setCohortName}
+        />
       </aside>
       
       </main>

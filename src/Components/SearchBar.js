@@ -27,7 +27,6 @@ function SearchBar({data, setStudents,setCohortName}) {
         setCohortName(`All Students`)
         searchFilter(value)
 
-
     }
 
     return (
