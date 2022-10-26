@@ -8,9 +8,20 @@ function App() {
   //********* STATES *********/
   const [cohorts, setCohorts] = useState([]);
 
+  const [studentInfo, setStudentInfo] = useState({
+    all: [...data],
+    byCohortCode: {},
+    selected: [],
+  });
+
+  let [cohortClicked, setCohortClicked] = useState("All Students");
+
+  // console.log("STUDENT INFO", studentInfo);
+
   //********* NON-STATE VARS *********/
 
   let cohortArr = [];
+  let cohortsFormatted = [];
 
   //********* HELPERS *********/
 
@@ -25,19 +36,48 @@ function App() {
     });
     const cohortSet = new Set(cohortArr);
     const arrOfCohorts = Array.from(cohortSet);
-    setCohorts([arrOfCohorts]);
 
-    console.log("###state###", cohorts);
+    //Formats arrOfCohorts so that the state is set with a space between season and year
+    arrOfCohorts.forEach((cohort) => {
+      if (cohort.length === 10) {
+        cohort.slice(5);
+        cohortsFormatted = [cohort];
+      }
+      if (cohort.length === 8) {
+        cohort.slice(3);
+        cohortsFormatted = [cohort];
+      }
+    });
+    setCohorts(arrOfCohorts);
   };
+
+  // Filter for each cohort array based on click event on each cohort li in Cohorts
+  let filteredCohortInfoData = data.filter((filteredCohort, i, data) => {
+    if (cohortClicked === filteredCohort.cohort.cohortCode) {
+      return filteredCohort;
+    }
+    if (cohortClicked === "All Students") {
+      return data;
+    }
+  });
+
+  // console.log(filteredCohortInfoData);
 
   //********** RETURN **********/
 
   return (
     <div className="page" onLoad={cohortListAside}>
       <Header />
-      <Cohorts cohorts={cohorts} cohortListAside={cohortListAside} />
-      <Students students={data} />
-      <button onClick={cohortListAside}>click</button>
+      <Cohorts
+        cohorts={cohorts}
+        cohortListAside={cohortListAside}
+        setCohortClicked={setCohortClicked}
+      />
+      <Students
+        students={data}
+        filteredCohortInfoData={filteredCohortInfoData}
+        cohortClicked={cohortClicked}
+      />
     </div>
   );
 }

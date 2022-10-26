@@ -1,12 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Student from "./Student";
-const Students = ({ students }) => {
+const Students = ({ students, filteredCohortInfoData, cohortClicked }) => {
   return (
     <div className="main">
-      <h2>All Students</h2>
-      <h4>{students.length}</h4>
+      <h2>{cohortClicked}</h2>
+      <h4>{filteredCohortInfoData.length}</h4>
 
-      {students.map((student) => {
+      {filteredCohortInfoData.map((student) => {
         return (
           <>
             <Student student={student} />;

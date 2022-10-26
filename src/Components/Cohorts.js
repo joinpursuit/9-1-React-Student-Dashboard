@@ -1,17 +1,26 @@
 import { useState } from "react";
-const Cohorts = ({ cohorts, cohortListAside }) => {
-  console.log(cohorts);
-  //   cohortListAside();
 
-  const cohortLi = () => {
-    cohorts.map((cohort) => {
-      return <li>{cohort}</li>;
-    });
+const Cohorts = ({ cohorts, cohortListAside, setCohortClicked }) => {
+  // console.log(cohorts);
+
+  let searchCohort = (e) => {
+    setCohortClicked(e.target.innerText);
   };
 
   return (
     <div className="aside" onLoad={cohortListAside}>
-      <ul>{cohorts}</ul>
+      <ul>
+        <li onClick={searchCohort}>All Students</li>
+        <hr></hr>
+        {cohorts.map((cohort) => {
+          return (
+            <li onClick={searchCohort}>
+              {cohort}
+              <hr></hr>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
