@@ -2,7 +2,7 @@ import Records from "./data/data.json";
 import { useState } from "react";
 import StudentList from "./Components/StudentList";
 import Header from "./Components/Header";
-// import Cohort from "./Components/Cohort";
+import Cohort from "./Components/Cohort";
 // import Footer from "./Components/Footer";
 // import Student from "./Components/Student";
 
@@ -13,25 +13,25 @@ function App() {
   
   return (
     <div className="App">
-      <Header
+      {/* <Header
       Records={Records}
       titleOption={titleOption}
       totalOption={totalOption}
       setTotalOption={setTotalOption}
       setTitleOption={setTitleOption}
       setStudentListOption={setStudentListOption}
-      />
+      /> */}
 
       <div className="Main">
         <aside>
-          {/* <Cohort
+          <Cohort
             Records={Records}
             titleOption={titleOption}
             totalOption={totalOption}
             setTotalOption={setTotalOption}
             setTitleOption={setTitleOption}
-            setStudentListOption={setStudentListOption} */}
-          {/* /> */}
+            setStudentListOption={setStudentListOption}
+          /> 
         </aside>
         <main>
           {/* <Student

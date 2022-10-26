@@ -1,26 +1,35 @@
 import { useState } from "react";
 
-export default function Form({ record }) {
-  const [notes, setNotes] = useState(record.notes);
-  // console.log(notes);
+export default function Form({ record, notes, setNotes }) {
   //* bird project
   const [comment, setComment] = useState("");
   const [commenter, setCommenter] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
+    addComment();
+    setComment("");
+    setCommenter("");
   }
-  const handleComment = (note) => {
-    setNotes([...notes, note]);
-  };
+  function addComment() {
+    // event.preventDefault();
+    const createComment = {
+      ...notes,
+      comment: comment,
+      commenter: commenter,
+    };
+    notes.push(createComment);
+    // setNotes(createComment);
+  }
+
   return (
     <article id="notes-list">
       <h4>1-on-1 Notes</h4>
-      <form id="notes-formt" onSubmit={handleSubmit}>
+      <form id="notes-form" onSubmit={handleSubmit}>
         <label htmlFor="commenter">
           Commenter Name:
           <input
-            onChange={(event) => setCommenter(event.target.value)}
+            onChange={(e) => setCommenter(e.target.value)}
             id="commenter"
             type="text"
             name="commenter"
@@ -31,7 +40,7 @@ export default function Form({ record }) {
         <label htmlFor="comment">
           Comment:
           <input
-            onChange={(event) => setComment(event.target.value)}
+            onChange={(e) => setComment(e.target.value)}
             id="comment"
             type="text"
             name="comment"
@@ -41,13 +50,13 @@ export default function Form({ record }) {
         <button type="submit">Add</button>
       </form>
       <section>
-        {notes.map((note) => {
+        {record.notes.map((note) => {
           return (
-            <li>
-              <p>
+            <div key={note.id}>
+              <li>
                 {note.commenter} says: {note.comment}
-              </p>
-            </li>
+              </li>
+            </div>
           );
         })}
       </section>

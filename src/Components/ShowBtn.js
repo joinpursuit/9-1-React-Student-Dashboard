@@ -4,14 +4,17 @@ import "./studentList.css";
 import Student from "./Student";
 export default function ShowBtn({ record }) {
   const [showMore, setShowMore] = useState(false);
-
-  function handleColor(record) {
-    //   ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) > 99 ? <span style={{color: "green"}}></span> : ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) > 49 ? <span style={{color: "yellow"}}></span> : ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) < 50 ? <span style={{color: "red"}}></span> : null
-  }
+  const [notes, setNotes] = useState(record.notes);
+  const noteSet = (createComment) => {
+    setNotes([...notes, createComment]);
+  };
 
   return (
     <div id="ShowMore">
-      <p className="ShowMoreBtn" onClick={() => setShowMore(!showMore)}>
+      <p
+        //  className="ShowMoreBtn"
+        onClick={() => setShowMore(!showMore)}
+      >
         {" "}
         {!showMore ? "Show More..." : "Show Less..."}
       </p>
@@ -124,7 +127,12 @@ export default function ShowBtn({ record }) {
               </article>
             </section>
             {/* //! */}
-            <Form record={record} />
+            <Form
+              noteSet={noteSet}
+              record={record}
+              notes={notes}
+              setNotes={setNotes}
+            />
           </section>
         </div>
       ) : null}

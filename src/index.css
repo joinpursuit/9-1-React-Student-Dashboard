@@ -46,6 +46,7 @@ body {
   /* text-transform: inherit; */
   /* border: 3px solid #5c946e; */
   margin-right: 30px;
+  /* background-color: red; */
 }
 img {
   width: 100px;
@@ -71,32 +72,12 @@ li {
   list-style: none;
   text-align: none;
 }
-.ShowMore {
-}
-/* //! _____________________________________ */
-/* .Cards {
-  border: 2px solid #5c946e;
-  display: grid;
-  padding-bottom: 25px;
-  grid-template-columns: 1fr 2fr;
-} */
-/* .Cards:hover {
-  background-color: greenyellow;
-  background-color: transparent;
-  border: 2px solid #799be6;
-  box-shadow: 0 0 10px 0 green inset, 0 0 10px 4px greenyellow;
-  border-radius: 20px;
-}
 
-::-webkit-scrollbar {
-  width: 8px;
+/* //! _____________________________________ */
+#notes-list{
+  background-color: yellow;
 }
-::-webkit-scrollbar-track {
-  background-color: rgb(232, 232, 218);
-  border-radius: 100vw;
+#notes-form{
+  background-color: aquamarine;
 }
-::-webkit-scrollbar-thumb {
-  background-color: rgb(72, 18, 18);
-  border-radius: 100vw;
-} */
 /* //! _____________________________________ */

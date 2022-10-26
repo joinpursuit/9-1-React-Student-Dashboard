@@ -35,7 +35,7 @@ export default function Cohort({
 
   //!-------------------------------
   return (
-    <div className="CohortList">
+    <div className="CohortList" key={Records.id}>
       <h2>Choose a Class by Start Date</h2>
       {
         <ul
