@@ -1,14 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 
-function SearchBar({data, setStudents,setCohortName, reset, setReset, students}) {
+function SearchBar({data, setStudents,setCohortName, setSearchValue, searchValue, students}) {
     // Declare State to store user inputted search
     const [search, setSearch] = useState("")
     
     // function for filtering students by search value
     function searchFilter(input) {
-        const string = input.toLowerCase()
-        const searchedStudent = students.filter(({names}) => {
+        if(input === ""){
+            setStudents(data)
+        }
+        else{
+            const string = input.toLowerCase()
+            const searchedStudent = students.filter(({names}) => {
             const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${names.middleName.toLowerCase()}`
 
             const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
@@ -17,22 +21,19 @@ function SearchBar({data, setStudents,setCohortName, reset, setReset, students})
             
         })
         setStudents(searchedStudent)
-        
+
+        }
 
     }
 
     // function for on change in search bar
     function handleSearch(e) {
         const value = e.target.value
-        setReset(false)
         setSearch(value)
         setCohortName(`All Students`)
-        searchFilter(value)
-        if(value === ''){
-            setReset(true)
-            setStudents(data)
-        }
-       
+        searchFilter(value) 
+        
+            
     }
 
     return (
@@ -41,7 +42,7 @@ function SearchBar({data, setStudents,setCohortName, reset, setReset, students})
         id = "searchbar"
         type= "text"
         placeholder='Search Students'
-        value={reset ? "" : search}
+        value={search}
         onChange ={(event) => {handleSearch(event)}}
 
         />

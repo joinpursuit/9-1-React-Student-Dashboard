@@ -15,6 +15,10 @@ function App() {
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
 
+   // Declare boolean for search to indicate if value in search bar
+   const [searchValue, setSearchValue] = useState(false)
+  //  Declare boolean for dropdown
+  const [selectValue, setSelectValue] = useState(false)
   // Declare state for rest on cohort click 
   const [reset, setReset] = useState(false)
 
@@ -44,8 +48,8 @@ function App() {
             data = {data}
             setStudents = {setStudents}
             setCohortName = {setCohortName}
-            reset = {reset}
-            setReset = {setReset}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
             />
           </p>
 
@@ -53,8 +57,7 @@ function App() {
           students = {students}
           setStudents = {setStudents}
           data = {data} 
-          reset = {reset}
-          setReset = {setReset}
+          setSelectValue = {setSelectValue}
          />
         </div>
         
@@ -79,6 +82,10 @@ function App() {
         setStudents = {setStudents}
         setCohortName = {setCohortName}
         setReset = {setReset}
+        selectValue = {selectValue}
+        setSelectValue = {setSelectValue}
+      
+        setSearchValue = {setSearchValue}
         />
 
       </aside>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 
-function GraduateDropdown({students,setStudents,data, reset, setReset}) {
+function GraduateDropdown({students,setStudents,data, setSelectValue}) {
     // Declare Stae for selection value
     const [select, setSelect] = useState("all")
+
     // function for filter by graduation status
     function graduateStudents() {
         
@@ -16,22 +17,18 @@ function GraduateDropdown({students,setStudents,data, reset, setReset}) {
     function dropDownHandle(e) {
         const value = e.target.value
         setSelect(value)
-    
         if(value === "graduate"){
             setStudents(graduateStudents())
-            setSelect("graduate")
         }
         else if(value === 'all'){
-            setStudents(data)
-            setReset(true) 
-            
+            setStudents(data) 
         }
 }
   
     return (
        <select
        onChange={(event) => {dropDownHandle(event)}}
-       value = {reset ? "all" : select}>
+       value = {select}>
             <option
             value = "all">All Students</option>
             <option
