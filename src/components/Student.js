@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import Check from "./Check";
+import XIcon from "./XIcon";
+
 function Student({
   photo,
   names,
@@ -110,19 +113,19 @@ function Student({
               <h4>Certifications:</h4>
               <p>
                 <span>Resume: </span>
-                {/* {certifications.resume? } */}
+                {certifications.resume ? <Check /> : <XIcon />}
               </p>
               <p>
                 <span>LinkedIn: </span>
-                {}
+                {certifications.linkedin ? <Check /> : <XIcon />}
               </p>
               <p>
                 <span>Mock Interview: </span>
-                {}
+                {certifications.mockInterview ? <Check /> : <XIcon />}
               </p>
               <p>
                 <span>GitHub: </span>
-                {}
+                {certifications.github ? <Check /> : <XIcon />}
               </p>
             </div>
             <hr />
