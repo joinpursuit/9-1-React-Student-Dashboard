@@ -1,6 +1,6 @@
-export default function Students ({ students, cohort, setStudents }){
+import Details from "./Details"
 
-    let studentArr = []
+export default function Students ({ students, cohort, showDetails, setShowDetails }){
 
     return (
         <div>
@@ -8,11 +8,14 @@ export default function Students ({ students, cohort, setStudents }){
             <p>Total Students: {students.length}</p>
             {
                 students.map((student) => {
+
+                    //Creating variables to format name
                     const first = student.names.preferredName
                     const middle = student.names.middleName.charAt(0)
                     const last = student.names.surname
                     const fullName = `${first} ${middle}. ${last}`
 
+                    //React components for each student
                         return(
                             <div className="student" key={student.id}>
                                 <img src={student.profilePhoto}/>
@@ -20,7 +23,17 @@ export default function Students ({ students, cohort, setStudents }){
                                     <h4>{fullName}</h4>
                                     <p>{student.username}</p>
                                     <p><span>Birthday: </span>{student.dob}</p>
-                                    <button>See more...</button>
+                                    {
+                                        showDetails 
+                                        ?
+                                        <>
+                                            <button onClick={() => setShowDetails(!showDetails)}>See Less...</button>
+                                            <Details student={student}/> 
+                                        </>
+                                        :
+                                        <button onClick={() => setShowDetails(!showDetails)}>See More...</button>
+                                    }
+                                    
                                 </div>
                             </div>
                         )

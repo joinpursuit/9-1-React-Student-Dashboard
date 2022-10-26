@@ -10,6 +10,7 @@ function App() {
   //Defining state variables
   const [cohort, setCohort] = useState("All Students")
   const [students, setStudents] = useState(allStudents)
+  const [showDetails, setShowDetails] = useState(false)
 
   //Declaring studentArr variable used to update students state
   let studentArr = []
@@ -53,7 +54,8 @@ function App() {
         <Students
           students={students}
           cohort={cohort}
-          setStudents={setStudents}
+          showDetails={showDetails}
+          setShowDetails={setShowDetails}
         />
       </section>
     </main>

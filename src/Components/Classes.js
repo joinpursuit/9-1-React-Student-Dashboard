@@ -39,7 +39,7 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
           //Converting cohort codes to 'human-readable' text and storing original cohortCode as value for each button
             cohortCodes.map((cohort) => {
               return (
-                <button value={cohort} onClick={() => {handleClick(cohort)}}>
+                <button value={cohort} key={cohort} onClick={() => {handleClick(cohort)}}>
                   {cohort.replaceAll('20', ' 20')}
                 </button>
               )
