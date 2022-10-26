@@ -12,8 +12,8 @@ function Form({ el }) {
     e.preventDefault();
     const newObj = { commenter: commenter, comment: comment };
     setNewComment([...newComment, newObj]);
-    // console.log(newObj);
-    // console.log(e.target.value);
+    setCommenter('');
+    setComment('');
   }
   return (
     <article className="form-article">
@@ -42,7 +42,6 @@ function Form({ el }) {
       </form>
       <ul>
         {newComment.map((notes) => {
-          // console.log(e.notes);
           return (
             <li>
               {notes.commenter} says, {notes.comment}
