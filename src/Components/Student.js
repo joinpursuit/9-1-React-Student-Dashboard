@@ -1,3 +1,4 @@
+import ShowMore from "./ShowMore";
 import "./Student.css";
 
 export default function Student({ person, date, data }) {
@@ -5,29 +6,20 @@ export default function Student({ person, date, data }) {
     dateStyle: "long",
   }).format(date);
 
-  //   let trackCheck;
   function onTrack(person) {
-    // Object.values(person.certifications).every((value) => {
-    //   if (value === true) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // });
     if (
       person.certifications.resume &&
       person.certifications.linkedin &&
       person.certifications.github &&
-      person.certifications.mockInterview
+      person.certifications.mockInterview &&
+      person.codewars.current.total >= 600
     ) {
       return true;
     } else {
       return false;
     }
-    // console.log(person);
   }
 
-  //   console.log(trackCheck);
   return (
     <article className="card">
       <img src={person.profilePhoto} alt={person.names.preferredName}></img>
@@ -42,10 +34,13 @@ export default function Student({ person, date, data }) {
             <span>Birthday:</span> {bday}
           </p>
         </aside>
-        <button className="toggle-details">Show more...</button>
         {onTrack(person) ? (
-          <p className="onTrack">On Track to Graduate</p>
+          <p className="onTrack">
+            <em>On Track to Graduate</em>
+          </p>
         ) : null}
+        {/* <button className="toggle-details">Show more...</button> */}
+        <ShowMore person={person} />
       </div>
     </article>
   );

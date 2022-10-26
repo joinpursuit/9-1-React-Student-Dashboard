@@ -15,6 +15,6 @@ header {
   display: grid;
   grid-template-rows: 120px auto;
   row-gap: 25px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 15px;
   column-gap: 25px;
 }

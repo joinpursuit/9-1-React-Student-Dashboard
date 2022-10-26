@@ -20,5 +20,6 @@ img {
 }
 
 .card:hover {
-  background-color: rgb(217, 217, 241);
+  background-color: rgb(224, 224, 237);
+  size: 110%;
 }

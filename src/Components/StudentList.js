@@ -9,7 +9,7 @@ export default function StudentList({ data, selected }) {
   return (
     <section className="student-list">
       <h2>{selected}</h2>
-      <p>
+      <p style={{ color: "darkblue" }}>
         Total Students:{" "}
         {selected === "All Students" ? data.length : cohortArr.length}
       </p>

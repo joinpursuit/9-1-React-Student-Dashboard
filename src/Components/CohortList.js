@@ -20,9 +20,7 @@ export default function CohortList({ data, setSelected }) {
       year - year2 || seasons[season] - seasons[season2]
   );
 
-  //    const final= sorted.map(([season, year]) => `${season}${year}`)
-
-  console.log(sorted);
+  //   console.log(sorted);
 
   //   console.log(filtered);
   return (
