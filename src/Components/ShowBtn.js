@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Student from "./Student";
 export default function ShowBtn({ record }) {
-  
-    const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+
+  function handleColor(record) {
+    //   ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) > 99 ? <span style={{color: "green"}}></span> : ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) > 49 ? <span style={{color: "yellow"}}></span> : ((record.codewars.current.total / record.codewars.goal.total) * 100).toFixed(0) < 50 ? <span style={{color: "red"}}></span> : null
+  }
+
   return (
     <div className="ShowMoreBtn">
       <button onClick={() => setShowMore(!showMore)}>
@@ -32,12 +36,51 @@ export default function ShowBtn({ record }) {
                 </p>
                 <p>
                   {" "}
-                  Percent of Goal Achieved:
+                  Percent of Goal Achieved:{" "}
                   <span>
-                    FIX THIS MATH
-                    {/*{(record.codewars.current.total /
-                    record.codewars.goals.total) *
-                    100} */}
+                    {(
+                      (record.codewars.current.total /
+                        record.codewars.goal.total) *
+                      100
+                    ).toFixed(0) > 99 ? (
+                      <span style={{ color: "green" }}>
+                        {" "}
+                        {(
+                          (record.codewars.current.total /
+                            record.codewars.goal.total) *
+                          100
+                        ).toFixed(0)}
+                        %
+                      </span>
+                    ) : (
+                        (record.codewars.current.total /
+                          record.codewars.goal.total) *
+                        100
+                      ).toFixed(0) > 49 ? (
+                      <span style={{ color: "yellow" }}>
+                        {" "}
+                        {(
+                          (record.codewars.current.total /
+                            record.codewars.goal.total) *
+                          100
+                        ).toFixed(0)}
+                        %
+                      </span>
+                    ) : (
+                        (record.codewars.current.total /
+                          record.codewars.goal.total) *
+                        100
+                      ).toFixed(0) < 50 ? (
+                      <span style={{ color: "red" }}>
+                        {" "}
+                        {(
+                          (record.codewars.current.total /
+                            record.codewars.goal.total) *
+                          100
+                        ).toFixed(0)}
+                        %
+                      </span>
+                    ) : null}
                   </span>
                 </p>
               </article>{" "}
