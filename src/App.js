@@ -11,7 +11,7 @@ function App() {
   // Create shallow copy of data
   const studentsData = [...data];
 
-  // Map data array into an array of each student's cohortCode
+  // Map studentsData array into an array of each student's cohortCode
   const mappedStudentsToCohortCode = studentsData.map(
     (student) => student.cohort.cohortCode
   );
@@ -20,6 +20,7 @@ function App() {
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
 
   // State for App
+  const [students, setStudents] = useState([...data]);
   const [cohort, setCohort] = useState("All Students");
   const [totalStudents, setTotalStudents] = useState(studentsData.length);
 
@@ -54,10 +55,10 @@ function App() {
           <h2>{formatCohortName(cohort)}</h2>
           <p>Total: {totalStudents}</p>
           {cohort === "All Students"
-            ? studentsData.map((student) => (
+            ? students.map((student) => (
                 <Student key={student.id} student={student} />
               ))
-            : studentsData
+            : students
                 .filter((student) => student.cohort.cohortCode === cohort)
                 .map((student) => (
                   <Student key={student.id} student={student} />

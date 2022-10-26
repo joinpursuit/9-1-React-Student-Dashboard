@@ -1,18 +1,12 @@
 import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
-import Comments from "./Comments";
 import Stats from "./Stats";
 
-export default function Student({ student }) {
-  const commentsArray = student.notes;
+export default function Student({ student, addComment }) {
+  const comments = [...student.notes];
 
   const [showMore, setShowMore] = useState(false);
-  const [comments, setComments] = useState([...commentsArray]);
-
-  function addComment(newComment) {
-    setComments([...comments, newComment]);
-  }
 
   return (
     <li className="student">
@@ -32,7 +26,15 @@ export default function Student({ student }) {
               <br></br>
               <hr></hr>
               <h4>Comments</h4>
-              <Comments comments={comments} />
+              <ul className="comments">
+                {comments.map((comment, idx) => {
+                  return (
+                    <li key={idx}>
+                      {comment.commenter} says, "{comment.comment}"
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </section>
         </>
