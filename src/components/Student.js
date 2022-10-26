@@ -10,6 +10,19 @@ function Student({
   cohort,
 }) {
   const [showMore, SetShowMore] = useState("Show More...");
+  const goalPercent = Math.round(
+    (codewars.current.total / codewars.goal.total) * 100
+  );
+
+  const colorUpdate = (val) => {
+    if (val > 99) {
+      return "#006400";
+    } else if (val > 49) {
+      return "gold";
+    } else {
+      return "red";
+    }
+  };
 
   const formatDate = (dob) => {
     let newDate = dob.split("/");
@@ -73,10 +86,9 @@ function Student({
               </p>
               <p>
                 <span>Percent of Goal Achieved: </span>
-                {Math.round(
-                  (codewars.current.total / codewars.goal.total) * 100
-                )}
-                %
+                <span style={{ color: colorUpdate(goalPercent) }}>
+                  {goalPercent}%
+                </span>
               </p>
             </div>
             <div>
@@ -98,7 +110,7 @@ function Student({
               <h4>Certifications:</h4>
               <p>
                 <span>Resume: </span>
-                {}
+                {/* {certifications.resume? } */}
               </p>
               <p>
                 <span>LinkedIn: </span>
