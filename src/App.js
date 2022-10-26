@@ -13,6 +13,8 @@ function App() {
   const [students, setStudents] = useState(data)
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
+  // Declare State for accessing searchbar
+  const [searchbar, setSearchbar] = useState(false)
 
 
   return (

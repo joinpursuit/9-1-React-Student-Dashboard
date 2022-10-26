@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(props) {
     return (
         <footer className='footer'>
-            Destiny J. Pursuit FSD 2022
+            Destiny J. Pursuit FSW 2022
         </footer>
     );
 }

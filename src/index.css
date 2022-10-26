@@ -197,4 +197,5 @@ input {
 #searchbar {
     width: 70%;
     justify-self: center;
+    height: fit-content;
 }

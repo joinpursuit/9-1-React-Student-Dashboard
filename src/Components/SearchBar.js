@@ -9,8 +9,11 @@ function SearchBar({data, setStudents}) {
     function searchFilter(input) {
         const string = input.toLowerCase()
         const searchedStudent = data.filter(({names}) => {
-            const studentLowerCase = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
-            return studentLowerCase.includes(string)
+            const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${names.middleName.toLowerCase()}`
+
+            const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
+            
+            return studentLowerCaseMiddle.includes(string) || studentLowerCaseLast.includes(string)
             
         })
         setStudents(searchedStudent)
@@ -27,14 +30,17 @@ function SearchBar({data, setStudents}) {
     }
 
     return (
+        
         <input
         id = "searchbar"
         type= "text"
-        placeholder='Search'
+        placeholder='Search Students'
         value={search}
         onChange ={(event) => {handleSearch(event)}}
 
         />
+        
+        
     );
 }
 
