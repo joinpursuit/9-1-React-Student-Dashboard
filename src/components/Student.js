@@ -1,4 +1,4 @@
-function Student({ photo, names, username, dob }) {
+function Student({ photo, names, username, dob, certifications, codewars }) {
   const formatDate = (dob) => {
     let newDate = dob.split("/");
     const month = new Date();
@@ -8,6 +8,7 @@ function Student({ photo, names, username, dob }) {
 
     return newDate.join(" ");
   };
+
   return (
     <div className="Student">
       <img src={photo} height="120px"></img>
@@ -22,7 +23,15 @@ function Student({ photo, names, username, dob }) {
           {formatDate(dob)}
         </p>
         <br></br>
-        <button className="more">Show More...</button>
+        <button className="more" onClick={() => console.log(`hello`)}>Show More...</button>
+      </section>
+      <section className="on-track">
+        {Object.values(certifications).includes(false) ||
+        codewars.current.total < 601 ? (
+          <></>
+        ) : (
+          <>On Track to Graduate</>
+        )}
       </section>
     </div>
   );

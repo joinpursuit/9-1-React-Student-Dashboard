@@ -40,7 +40,7 @@ main {
   margin-bottom: 10px;
   padding: 20px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 2fr 1fr;
   column-gap: 20px;
   font-size: 18px;
   line-height: 10px;
@@ -50,7 +50,8 @@ img {
   border-radius: 10px;
 }
 
-span {
+span,
+.on-track {
   color: #60946c;
 }
 

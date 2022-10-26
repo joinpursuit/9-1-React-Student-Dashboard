@@ -8,17 +8,21 @@ function Students({ students, cohortName }) {
         Total Students: <span>{students.length}</span>
       </p>
       <section>
-        {students.map(({ id, profilePhoto, names, username, dob }) => {
-          return (
-            <Student
-              key={id}
-              photo={profilePhoto}
-              names={names}
-              username={username}
-              dob={dob}
-            />
-          );
-        })}
+        {students.map(
+          ({ id, profilePhoto, names, username, dob, certifications, codewars }) => {
+            return (
+              <Student
+                key={id}
+                photo={profilePhoto}
+                names={names}
+                username={username}
+                dob={dob}
+                certifications={certifications}
+                codewars={codewars}
+              />
+            );
+          }
+        )}
       </section>
     </div>
   );
