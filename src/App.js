@@ -3,10 +3,9 @@ import { useState } from "react";
 import StudentList from "./Components/StudentList";
 import Header from "./Components/Header";
 import Cohort from "./Components/Cohort";
-import Footer from "./Components/Footer";
-import Student from "./Components/Student";
+// import Footer from "./Components/Footer";
 // import Student from "./Components/Student";
-// import ShowMore from "./Components/ShowMore";
+
 function App() {
   const [titleOption, setTitleOption] = useState("All Students");
   const [studentListOption, setStudentListOption] = useState(Records);
@@ -16,24 +15,24 @@ function App() {
   return (
     <div className="App">
       <Header
-      // Records={Records}
-      // titleOption={titleOption}
-      // totalOption={totalOption}
-      // setTotalOption={setTotalOption}
-      // setTitleOption={setTitleOption}
-      // setStudentListOption={setStudentListOption}
+      Records={Records}
+      titleOption={titleOption}
+      totalOption={totalOption}
+      setTotalOption={setTotalOption}
+      setTitleOption={setTitleOption}
+      setStudentListOption={setStudentListOption}
       />
 
       <div className="Main">
         <aside>
-          <Cohort
+          {/* <Cohort
             Records={Records}
             titleOption={titleOption}
             totalOption={totalOption}
             setTotalOption={setTotalOption}
             setTitleOption={setTitleOption}
-            setStudentListOption={setStudentListOption}
-          />
+            setStudentListOption={setStudentListOption} */}
+          {/* /> */}
         </aside>
         <main>
           {/* <Student

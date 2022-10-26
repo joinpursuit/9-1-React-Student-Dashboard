@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Form from "./Form";
+import "./studentList.css";
 import Student from "./Student";
 export default function ShowBtn({ record }) {
   const [showMore, setShowMore] = useState(false);
@@ -8,11 +10,11 @@ export default function ShowBtn({ record }) {
   }
 
   return (
-    <div className="ShowMoreBtn">
-      <button onClick={() => setShowMore(!showMore)}>
+    <div id="ShowMore">
+      <p className="ShowMoreBtn" onClick={() => setShowMore(!showMore)}>
         {" "}
         {!showMore ? "Show More..." : "Show Less..."}
-      </button>
+      </p>
       {showMore ? (
         <div className="ShowMOre">
           <section className="Student-Information">
@@ -121,6 +123,7 @@ export default function ShowBtn({ record }) {
                 </p>
               </article>
             </section>
+            <Form />
           </section>
         </div>
       ) : null}

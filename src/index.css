@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0%;
 }
+/* !----------- */
+
 body {
   line-height: 25px;
-  background-color: #303032;
+  /* background-color: #303032; */
   display: grid;
   text-align: justify;
 }
@@ -28,6 +30,15 @@ body {
   background-color: #5c946e;
 }
 /* //! _____________________________________ */
+#notes-list {
+  border-top: 3px solid #5c946e;
+}
+#showMoreBtn {
+  background-color: aqua;
+  border-radius: 25px;
+  font-weight: 900px;
+  /* padding: ; */
+}
 
 /* //! _____________________________________ */
 
@@ -46,10 +57,10 @@ img {
 button {
   background: none;
   border: none;
-  text-decoration: underline;
+  border-bottom: 3px solid #5c946e;
   width: 100%;
 }
-#showMoreBtn {
+.showMoreBtn {
   background-color: aqua;
   border-radius: 25px;
   font-weight: 900px;

@@ -1,4 +1,5 @@
 import Student from "./Student";
+import Form from "./Form";
 import "./studentList.css";
 import { useState } from "react";
 export default function StudentList({
@@ -23,6 +24,7 @@ export default function StudentList({
    return (
 
      <Student record={record} dateFormat={dateFormat} />
+  
    )
           
         })}
