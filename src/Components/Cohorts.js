@@ -28,7 +28,6 @@ export default function Cohorts({
 
   return (
     <div className="cohorts">
-      {"<Cohorts />"}
       <h2>Choose a Class by Start Date</h2>
       <li onClick={() => chooseCohort("All Students")}>All Students</li>
       {orderedCohorts.map((cohort, idx) => (

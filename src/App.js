@@ -44,7 +44,6 @@ function App() {
       </header>
       <main className="main">
         <aside>
-          {"<aside />"}
           <Cohorts
             formatCohortName={formatCohortName}
             uniqueCohorts={uniqueCohorts}
