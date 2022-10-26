@@ -14,8 +14,8 @@ function App() {
   const [students, setStudents] = useState(data)
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
-  // Declare State for accessing searchbar
-  const [searchbar, setSearchbar] = useState("")
+  // Declare state for toggling searchbar/dropdown resets
+  const [clickReset, setClickReset] = useState(false)
 
 
   return (
@@ -35,15 +35,21 @@ function App() {
           <p>Total Students: 
           <span style={{color: "green"}}> {students.length}</span>
           </p> 
-          <SearchBar
+          
+          <p>
+            <SearchBar
           data = {data}
           setStudents = {setStudents}
           setCohortName = {setCohortName}
-          />
+            />
+          </p>
+
           <GraduateDropdown
           students = {students}
           setStudents = {setStudents}
-          data = {data} />
+          data = {data} 
+          clickReset = {clickReset}
+          setClickReset = {setClickReset}/>
         </div>
         
         <div className='scrollStudents'>
@@ -65,6 +71,7 @@ function App() {
         data = {data}
         setStudents = {setStudents}
         setCohortName = {setCohortName}
+        setClickReset = {setClickReset}
         />
       </aside>
       

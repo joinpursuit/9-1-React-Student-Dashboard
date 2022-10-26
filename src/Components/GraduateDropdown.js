@@ -1,31 +1,34 @@
 import React from 'react';
 
-function GraduateDropdown({students,setStudents,data}) {
+function GraduateDropdown({students,setStudents,data,clickReset, setClickReset}) {
     // function for filter by graduation status
     function graduateStudents() {
+        
         const graduateFilteredArr = students.filter(({codewars, certifications}) =>
           codewars.current.total > 600 && certifications.resume && certifications.linkedin && certifications.github && certifications.mockInterview 
         )
-        console.log(graduateFilteredArr)
         return graduateFilteredArr
     }
     // function for dropdown onChange
     function dropDownHandle(e) {
         const value = e.target.value
+        
         if(value === "graduate"){
+            setClickReset(true)
             setStudents(graduateStudents())
         }
-        else{
-            setStudents(data)
+        else if(value === 'all'){
+            setStudents(data) 
+            setClickReset(false)
         }
-    }
-    // thisPerson.map(({codewars, certifications }) => 
-    //                 codewars.current.total > 600 && certifications.resume && certifications.linkedin && certifications.github && certifications.mockInterview 
+}
+  
     return (
        <select
-       onChange={(event) => {dropDownHandle(event)}}>
+       onChange={(event) => {dropDownHandle(event)}}
+       value = {!clickReset ? "all" : "graduate"}>
             <option
-            value = "">All Students</option>
+            value = "all">All Students</option>
             <option
             value = "graduate"
             >On Track To Graduate</option>
