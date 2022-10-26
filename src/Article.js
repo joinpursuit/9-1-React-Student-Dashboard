@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import StudentScoreCard from './StudentScoreCard';
-import Form from './Form';
+// import Form from './Form';
 
 function Article({ el, birthday }) {
   const [showData, setShowData] = useState(false);
