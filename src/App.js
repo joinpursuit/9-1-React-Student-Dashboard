@@ -35,7 +35,8 @@ function App() {
         </p> 
         <SearchBar
         data = {data}
-        setStudents = {setStudents} />
+        setStudents = {setStudents}
+        setCohortName = {setCohortName} />
         <StudentList
         students = {students}
         setStudents = {setStudents}

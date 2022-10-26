@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function SearchBar({data, setStudents}) {
+function SearchBar({data, setStudents,setCohortName}) {
     // Declare State to store user inputted search
     const [search, setSearch] = useState("")
     
@@ -24,6 +24,7 @@ function SearchBar({data, setStudents}) {
     function handleSearch(e) {
         const value = e.target.value
         setSearch(value)
+        setCohortName(`All Students`)
         searchFilter(value)
 
 
