@@ -1,9 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
 
 function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch}) {
-    // // Declare State for selection value
-    // const [select, setSelect] = useState("all")
 
     // function for filter by graduation status
     function graduateStudents() {
