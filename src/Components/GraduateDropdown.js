@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 
-function GraduateDropdown({students,setStudents,data}) {
-    // Declare Stae for selection value
-    const [select, setSelect] = useState("all")
+function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch}) {
+    // // Declare State for selection value
+    // const [select, setSelect] = useState("all")
 
     // function for filter by graduation status
     function graduateStudents() {
@@ -22,6 +22,7 @@ function GraduateDropdown({students,setStudents,data}) {
         }
         else if(value === 'all'){
             setStudents(data) 
+            setSearch("")
         }
 }
   

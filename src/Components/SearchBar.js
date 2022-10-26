@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 
-function SearchBar({data, setStudents, setCohortName, students}) {
-    // Declare State to store user inputted search
-    const [search, setSearch] = useState("")
+function SearchBar({data, setStudents, setCohortName, students,search, setSearch, setSelect}) {
+    // // Declare State to store user inputted search
+    // const [search, setSearch] = useState("")
     
     // function for filtering students by search value
     function searchFilter(input) {
         if(input === ""){
             setStudents(data)
+            setSelect("all")
         }
         else{
             const string = input.toLowerCase()
