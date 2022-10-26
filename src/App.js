@@ -16,6 +16,8 @@ function App() {
 
   let [cohortClicked, setCohortClicked] = useState("All Students");
 
+  const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
+
   // console.log("STUDENT INFO", studentInfo);
 
   //********* NON-STATE VARS *********/
@@ -72,11 +74,14 @@ function App() {
         cohorts={cohorts}
         cohortListAside={cohortListAside}
         setCohortClicked={setCohortClicked}
+        setShowStudentDetailsBool={setShowStudentDetailsBool}
       />
       <Students
         students={data}
         filteredCohortInfoData={filteredCohortInfoData}
         cohortClicked={cohortClicked}
+        showStudentDetailsBool={showStudentDetailsBool}
+        setShowStudentDetailsBool={setShowStudentDetailsBool}
       />
     </div>
   );

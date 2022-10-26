@@ -1,10 +1,13 @@
 import { useState } from "react";
+import StudentDetails from "./StudentDetails";
 
-const Student = ({ student }) => {
-  const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
-
+const Student = ({
+  student,
+  showStudentDetailsBool,
+  setShowStudentDetailsBool,
+}) => {
   const showStudentDetails = () => {
-    setShowStudentDetailsBool(!setShowStudentDetailsBool);
+    setShowStudentDetailsBool(!showStudentDetailsBool);
   };
 
   return (
@@ -16,7 +19,14 @@ const Student = ({ student }) => {
       </h4>
       <p>{student.username}</p>
       <p>Birthday: {student.dob}</p>
-      <button onClick={showStudentDetails}>Show More...</button>
+      <button onClick={showStudentDetails}>
+        {" "}
+        {!showStudentDetailsBool ? "Show More..." : "Show Less..."}
+      </button>
+      <StudentDetails
+        showStudentDetailsBool={showStudentDetailsBool}
+        student={student}
+      />
     </div>
   );
 };
