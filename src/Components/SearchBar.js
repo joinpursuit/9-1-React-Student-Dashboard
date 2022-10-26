@@ -23,8 +23,8 @@ function SearchBar({data, setStudents,setCohortName, reset, setReset}) {
 
     // function for on change in search bar
     function handleSearch(e) {
-        setReset(!reset)
         const value = e.target.value
+        setReset(false)
         setSearch(value)
         setCohortName(`All Students`)
         searchFilter(value)
@@ -37,7 +37,7 @@ function SearchBar({data, setStudents,setCohortName, reset, setReset}) {
         id = "searchbar"
         type= "text"
         placeholder='Search Students'
-        value={reset? "" : search}
+        value={reset ? "" : search}
         onChange ={(event) => {handleSearch(event)}}
 
         />

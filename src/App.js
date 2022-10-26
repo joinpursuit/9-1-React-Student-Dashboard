@@ -16,7 +16,7 @@ function App() {
   const [cohortName, setCohortName] = useState("All Students")
 
   // Declare state for rest on cohort click 
-  const [reset, setReset] = useState("")
+  const [reset, setReset] = useState(false)
 
 
 

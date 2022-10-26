@@ -16,10 +16,10 @@ function GraduateDropdown({students,setStudents,data, reset, setReset}) {
     function dropDownHandle(e) {
         const value = e.target.value
         setSelect(value)
-        
+    
         if(value === "graduate"){
             setStudents(graduateStudents())
-            setReset(false)
+            setSelect("graduate")
         }
         else if(value === 'all'){
             setStudents(data)
