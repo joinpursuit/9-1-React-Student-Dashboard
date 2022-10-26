@@ -35,9 +35,10 @@ function cohortFilter(e) {
         return <h4
         className='cohort' 
         key = {el}
+        ><span
         id = {code} 
         onClick = {(event) => {cohortFilter(event)}}
-        >{el} 
+        >{el}</span>
          <hr />
         
         </h4>
