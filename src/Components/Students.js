@@ -4,7 +4,7 @@ export default function Students ({ students, cohort, setStudents }){
 
     return (
         <div>
-            <h2>All Students</h2>
+            <h2>{cohort}</h2>
             <p>Total Students: {students.length}</p>
             {
                 students.map((student) => {

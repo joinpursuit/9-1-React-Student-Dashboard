@@ -6,17 +6,21 @@ import './app.css'
 
 
 function App() {
-  const [cohort, setCohort] = useState("")
+
+  //Defining state variables
+  const [cohort, setCohort] = useState("All Students")
   const [students, setStudents] = useState(allStudents)
+
+  //Declaring studentArr variable used to update students state
   let studentArr = []
 
+  //Function to update cohort and students state when cohort button clicked
   const handleClick = (cohort) => {
-    setCohort(cohort) 
+    setCohort(cohort.replaceAll('20', ' 20')) 
     updateStudents(cohort)
   }
 
   const updateStudents = (cohort) => {
-
     allStudents.map((student) => {
       if (student.cohort.cohortCode === cohort){
         studentArr.push(student)
@@ -26,8 +30,10 @@ function App() {
     })
   }
 
+  //Function to update states when "All Students" clicked
   const showAll = () => {
     setStudents(allStudents)
+    setCohort("All Students")
   }
 
   return (

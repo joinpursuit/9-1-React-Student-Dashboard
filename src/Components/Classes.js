@@ -36,7 +36,7 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
           <h2>Classes by start date</h2>
           <button value="allStudents" onClick={showAll}>All Students</button>
           {
-          //Converting cohort codes to 'human-readable' text and storing original cohortCode as value
+          //Converting cohort codes to 'human-readable' text and storing original cohortCode as value for each button
             cohortCodes.map((cohort) => {
               return (
                 <button value={cohort} onClick={() => {handleClick(cohort)}}>
