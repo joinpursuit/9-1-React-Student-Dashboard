@@ -4,20 +4,28 @@ import "./ShowDetails.css";
 export function ShowDetails({ el, Data }) {
   const [commenter, setCommenter] = useState("");
   const [comment, setComment] = useState("");
+  const [notesArray, setNotesArray] = useState(el.notes);
 
-  //   function handleCommenterInput(e) {
-  //     setCommenter(e.target.value);
-  //   }
+  function handleCommenterInput(e) {
+    setCommenter(e.target.value);
+  }
 
-  //   function handleCommentInput(e) {
-  //     setComment(e.target.value);
-  //   }
+  function handleCommentInput(e) {
+    setComment(e.target.value);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!commenter || !comment) {
       alert("Please make sure you put your name and a message");
     }
+    //make a new obj that holds the values of comment and commenter
+    const newObj = { commenter: commenter, comment: comment };
+
+    //use setNotes function to add to the notes array without losing the other comments in the array
+    setNotesArray([...notesArray, newObj]);
+    setCommenter("");
+    setComment("");
   }
 
   return (
@@ -105,7 +113,7 @@ export function ShowDetails({ el, Data }) {
           </button>
         </form>
         <ul>
-          {el.notes.map((note) => {
+          {notesArray.map((note) => {
             return (
               <li>
                 {note.commenter} says, {note.comment}
