@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ShowMore.css";
+import CommentForm from "./CommentForm";
 
 export default function ShowMore({ person }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -24,7 +25,7 @@ export default function ShowMore({ person }) {
   }
 
   return (
-    <>
+    <div>
       <button
         className="detailsButton"
         onClick={() => {
@@ -86,8 +87,9 @@ export default function ShowMore({ person }) {
               <span>GitHub: </span> {person.certifications.github ? "✅" : "❌"}
             </p>
           </article>
+          <CommentForm />
         </section>
       ) : null}
-    </>
+    </div>
   );
 }
