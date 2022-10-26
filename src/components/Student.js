@@ -54,6 +54,74 @@ function Student({
           <>On Track to Graduate</>
         )}
       </section>
+      <section className="details">
+        {showMore.includes("Less") ? (
+          <>
+            <div>
+              <h4>Codewars:</h4>
+              <p>
+                <span>Current Total: </span>
+                {codewars.current.total}
+              </p>
+              <p>
+                <span>Last Week: </span>
+                {codewars.current.lastWeek}
+              </p>
+              <p>
+                <span>Goal: </span>
+                {codewars.goal.total}
+              </p>
+              <p>
+                <span>Percent of Goal Achieved: </span>
+                {Math.round(
+                  (codewars.current.total / codewars.goal.total) * 100
+                )}
+                %
+              </p>
+            </div>
+            <div>
+              <h4>Scores:</h4>
+              <p>
+                <span>Assignments: </span>
+                {cohort.scores.assignments * 100}%
+              </p>
+              <p>
+                <span>Projects: </span>
+                {cohort.scores.projects * 100}%
+              </p>
+              <p>
+                <span>Assessments: </span>
+                {cohort.scores.assessments * 100}%
+              </p>
+            </div>
+            <div>
+              <h4>Certifications:</h4>
+              <p>
+                <span>Resume: </span>
+                {}
+              </p>
+              <p>
+                <span>LinkedIn: </span>
+                {}
+              </p>
+              <p>
+                <span>Mock Interview: </span>
+                {}
+              </p>
+              <p>
+                <span>GitHub: </span>
+                {}
+              </p>
+            </div>
+            <hr />
+            <section id="notes">
+              <h5>1-on-1 Notes</h5>
+            </section>
+          </>
+        ) : (
+          <></>
+        )}
+      </section>
     </div>
   );
 }

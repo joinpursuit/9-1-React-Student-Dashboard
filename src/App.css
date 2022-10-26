@@ -63,6 +63,28 @@ span,
   padding-left: 0;
 }
 
+.details {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+.details div {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.details hr {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  width: 100%;
+}
+
+#notes{
+  grid-row: 3/4;
+}
+
 .more:hover {
   color: black;
   cursor: pointer;

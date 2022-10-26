@@ -17,7 +17,7 @@ function Students({ students, cohortName }) {
             dob,
             certifications,
             codewars,
-            cohort,
+            cohort
           }) => {
             return (
               <Student
