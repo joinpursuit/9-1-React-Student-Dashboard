@@ -15,7 +15,11 @@ function App() {
   // Declare State for CohortName
   const [cohortName, setCohortName] = useState("All Students")
 
-
+  // triangle
+  // Declare State to store user inputted search
+  const [search, setSearch] = useState("")
+  // Declare State for selection value
+  const [select, setSelect] = useState("all")
 
 
   return (
@@ -42,6 +46,9 @@ function App() {
             data = {data}
             setStudents = {setStudents}
             setCohortName = {setCohortName}
+            search = {search}
+            setSearch = {setSearch}
+            setSelect = {setSelect}
             />
           </p>
 
@@ -49,6 +56,9 @@ function App() {
           students = {students}
           setStudents = {setStudents}
           data = {data} 
+          select = {select}
+          setSelect = {setSelect}
+          setSearch = {setSearch}
          />
         </div>
         
@@ -72,6 +82,8 @@ function App() {
         data = {data}
         setStudents = {setStudents}
         setCohortName = {setCohortName}
+        setSearch = {setSearch}
+        setSelect = {setSelect}
         />
 
       </aside>
