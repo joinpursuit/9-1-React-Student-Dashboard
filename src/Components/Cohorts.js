@@ -1,3 +1,4 @@
+// Styling
 import "./Cohorts.css";
 
 export default function Cohorts({
@@ -5,6 +6,7 @@ export default function Cohorts({
   uniqueCohorts,
   chooseCohort,
 }) {
+  // Helper Object for Sorting Algorithm
   const seasons = {
     Winter: 0,
     Fall: 1,
@@ -25,6 +27,7 @@ export default function Cohorts({
     .map(([season, year]) => {
       return `${season}${year}`;
     });
+  // Reference: https://stackoverflow.com/questions/72341613/javascript-how-to-sort-an-array-of-strings-that-has-seasons-and-years
 
   return (
     <div className="cohorts">
