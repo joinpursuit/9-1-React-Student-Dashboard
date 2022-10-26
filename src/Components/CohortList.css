@@ -17,4 +17,5 @@ ul {
 .cohortButton:hover {
   border-bottom: 5px solid rgb(138, 76, 138);
   font-size: 110%;
+  color: rgb(73, 81, 198);
 }

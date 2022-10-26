@@ -1,10 +1,9 @@
 .detailsButton {
   background: none;
   font-weight: 600px;
-  /* border: none;
-  text-decoration: underline; */
+  margin: 5px;
   color: rgb(6, 7, 10);
-  padding: 6px;
+  padding: 4px;
   border-radius: 20px;
   background-color: beige;
 }
@@ -28,6 +27,8 @@
 
 article {
   display: block;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 
 span {

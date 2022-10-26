@@ -4,6 +4,11 @@ import CommentForm from "./CommentForm";
 
 export default function ShowMore({ person }) {
   const [showDetails, setShowDetails] = useState(false);
+  const [notes, setNotes] = useState(person.notes);
+
+  function handleNotes(newNote) {
+    setNotes([...notes, newNote]);
+  }
 
   function toggleDetails() {
     setShowDetails(!showDetails);
@@ -40,54 +45,86 @@ export default function ShowMore({ person }) {
           <article>
             <h4>Codewars:</h4>
             <p>
-              <span>Current Total: </span>
+              <span>
+                <em>Current Total: </em>
+              </span>
               {person.codewars.current.total}
             </p>
             <p>
-              <span>Last Week: </span>
+              <span>
+                <em>Last Week: </em>
+              </span>
               {person.codewars.current.lastWeek}
             </p>
             <p>
-              <span>Goal: </span> {person.codewars.goal.total}
+              <span>
+                <em>Goal: </em>
+              </span>{" "}
+              {person.codewars.goal.total}
             </p>
             <p>
-              <span>Percentage of Goal Achieved: </span>
-              {/* <span>{percent}%</span> */}
+              <span>
+                <em>Percentage of Goal Achieved: </em>
+              </span>
+
               {changeColor(percent)}
             </p>
           </article>
           <article>
             <h4>Scores</h4>
             <p>
-              <span>Assignments: </span>
+              <span>
+                <em>Assignments: </em>
+              </span>
               {person.cohort.scores.assignments * 100}%
             </p>
             <p>
-              <span>Projects: </span> {person.cohort.scores.projects * 100}%
+              <span>
+                <em>Projects: </em>
+              </span>{" "}
+              {person.cohort.scores.projects * 100}%
             </p>
             <p>
-              <span>Assessments: </span>{" "}
+              <span>
+                <em>Assessments: </em>
+              </span>{" "}
               {person.cohort.scores.assessments * 100}%
             </p>
           </article>
           <article>
             <h4>Certifications</h4>
             <p>
-              <span>Resume: </span> {person.certifications.resume ? "✅" : "❌"}
+              <span>
+                <em>Resume: </em>
+              </span>{" "}
+              {person.certifications.resume ? "✅" : "❌"}
             </p>
             <p>
-              <span>LinkedIn: </span>{" "}
+              <span>
+                <em>LinkedIn: </em>
+              </span>{" "}
               {person.certifications.linkedin ? "✅" : "❌"}
             </p>
             <p>
-              <span>Mock Interview: </span>{" "}
+              <span>
+                <em>Mock Interview: </em>
+              </span>{" "}
               {person.certifications.mockInterview ? "✅" : "❌"}
             </p>
             <p>
-              <span>GitHub: </span> {person.certifications.github ? "✅" : "❌"}
+              <span>
+                <em>GitHub: </em>
+              </span>{" "}
+              {person.certifications.github ? "✅" : "❌"}
             </p>
           </article>
-          <CommentForm />
+          <hr />
+          <CommentForm
+            handleNotes={handleNotes}
+            notes={notes}
+            setNotes={setNotes}
+            person={person}
+          />
         </section>
       ) : null}
     </div>

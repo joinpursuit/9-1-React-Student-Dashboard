@@ -20,9 +20,6 @@ export default function CohortList({ data, setSelected }) {
       year - year2 || seasons[season] - seasons[season2]
   );
 
-  //   console.log(sorted);
-
-  //   console.log(filtered);
   return (
     <div>
       <h2>Choose a Class by Start Date</h2>
@@ -35,9 +32,9 @@ export default function CohortList({ data, setSelected }) {
             All Students
           </button>
         </li>
-        {sorted.map(([season, year]) => {
+        {sorted.map(([season, year], i) => {
           let cohort = [season, year];
-          console.log(cohort);
+
           function cohortClicked() {
             setSelected(cohort.join(" "));
           }
@@ -51,7 +48,7 @@ export default function CohortList({ data, setSelected }) {
           //   let cohortNameFormatted = wordPortion + " " + numPortion;
 
           return (
-            <li key={cohort.id}>
+            <li key={i}>
               <button className="cohortButton" onClick={() => cohortClicked()}>
                 {cohort.join(" ")}
               </button>

@@ -26,7 +26,7 @@ export default function Student({ person, date, data }) {
       <div className="studentInfo">
         <aside>
           <h3>
-            {person.names.preferredName} {person.names.middleName.charAt(0)}{" "}
+            {person.names.preferredName} {person.names.middleName.charAt(0)}.{" "}
             {person.names.surname}
           </h3>
           <p>{person.username}</p>
