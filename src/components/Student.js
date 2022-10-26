@@ -1,4 +1,16 @@
-function Student({ photo, names, username, dob, certifications, codewars }) {
+import { useState } from "react";
+
+function Student({
+  photo,
+  names,
+  username,
+  dob,
+  certifications,
+  codewars,
+  cohort,
+}) {
+  const [showMore, SetShowMore] = useState("Show More...");
+
   const formatDate = (dob) => {
     let newDate = dob.split("/");
     const month = new Date();
@@ -23,7 +35,16 @@ function Student({ photo, names, username, dob, certifications, codewars }) {
           {formatDate(dob)}
         </p>
         <br></br>
-        <button className="more" onClick={() => console.log(`hello`)}>Show More...</button>
+        <button
+          className="more"
+          onClick={() =>
+            showMore.includes("More")
+              ? SetShowMore("Show Less...")
+              : SetShowMore("Show More...")
+          }
+        >
+          {showMore}
+        </button>
       </section>
       <section className="on-track">
         {Object.values(certifications).includes(false) ||

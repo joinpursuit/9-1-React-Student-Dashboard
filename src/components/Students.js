@@ -9,7 +9,16 @@ function Students({ students, cohortName }) {
       </p>
       <section>
         {students.map(
-          ({ id, profilePhoto, names, username, dob, certifications, codewars }) => {
+          ({
+            id,
+            profilePhoto,
+            names,
+            username,
+            dob,
+            certifications,
+            codewars,
+            cohort,
+          }) => {
             return (
               <Student
                 key={id}
@@ -19,6 +28,7 @@ function Students({ students, cohortName }) {
                 dob={dob}
                 certifications={certifications}
                 codewars={codewars}
+                cohort={cohort}
               />
             );
           }
