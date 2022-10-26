@@ -8,11 +8,11 @@ function App() {
   //********* STATES *********/
   const [cohorts, setCohorts] = useState([]);
 
-  const [studentInfo, setStudentInfo] = useState({
-    all: [...data],
-    byCohortCode: {},
-    selected: [],
-  });
+  // const [studentInfo, setStudentInfo] = useState({
+  //   all: [...data],
+  //   byCohortCode: {},
+  //   selected: [],
+  // });
 
   let [cohortClicked, setCohortClicked] = useState("All Students");
 

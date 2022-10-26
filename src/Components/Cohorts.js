@@ -9,18 +9,21 @@ const Cohorts = ({
   // console.log(cohorts);
 
   let searchCohort = (e) => {
-    setCohortClicked(e.target.innerText);
+    setCohortClicked(e.target.id);
     setShowStudentDetailsBool(false);
+    console.log(e.target.id);
   };
 
   return (
     <div className="aside" onLoad={cohortListAside}>
       <ul>
-        <li onClick={searchCohort}>All Students</li>
+        <li id={"All Students"} onClick={searchCohort}>
+          All Students
+        </li>
         <hr></hr>
         {cohorts.map((cohort) => {
           return (
-            <li onClick={searchCohort}>
+            <li id={cohort} onClick={searchCohort}>
               {cohort}
               <hr></hr>
             </li>

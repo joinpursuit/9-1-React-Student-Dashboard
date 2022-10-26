@@ -20,7 +20,6 @@ const Student = ({
       <p>{student.username}</p>
       <p>Birthday: {student.dob}</p>
       <button onClick={showStudentDetails}>
-        {" "}
         {!showStudentDetailsBool ? "Show More..." : "Show Less..."}
       </button>
       <StudentDetails

@@ -20,7 +20,6 @@ const Students = ({
               showStudentDetailsBool={showStudentDetailsBool}
               setShowStudentDetailsBool={setShowStudentDetailsBool}
             />
-            ;
           </>
         );
       })}
