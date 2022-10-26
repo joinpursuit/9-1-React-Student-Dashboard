@@ -1,11 +1,11 @@
-export default function Classes ({ students, handleClick, showAll }) {
+export default function Classes ({ allStudents, handleClick, showAll }) {
 
   let cohorts = []
   let cohortCodes = []
   let cohortInfo ={}
 
   //Identify all cohorts by unique start date and sort in descending order
-  students.map((student) => {
+  allStudents.map((student) => {
     let cohortDate = student.cohort.cohortStartDate
     let cohortCode = student.cohort.cohortCode
 

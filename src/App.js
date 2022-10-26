@@ -38,7 +38,7 @@ function App() {
     <main>
       <aside>
         <Classes
-          students={students}
+          allStudents={allStudents}
           cohort={cohort}
           setCohort={setCohort}
           handleClick={handleClick}
