@@ -123,7 +123,8 @@ export default function ShowBtn({ record }) {
                 </p>
               </article>
             </section>
-            <Form />
+            {/* //! */}
+            <Form record={record} />
           </section>
         </div>
       ) : null}

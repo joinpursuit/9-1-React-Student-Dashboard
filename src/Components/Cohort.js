@@ -12,11 +12,12 @@ export default function Cohort({
     setTotalOption(Records.length);
   };
   //?---------------
-  //* Filter cohort list for those matching optionb --------
+  //* Filter cohort list for students with those matching options --------
   let filterCohort = Records.filter((el) => {
     return el.cohort.cohortCode === titleOption.split(" ").join("");
   });
- 
+  // console.log(filterCohort) //click to see result --> tot of students
+
   //*---------------
 
   //!-------------------- USED NEW SET to remove duplicates
@@ -49,7 +50,7 @@ export default function Cohort({
               <div className="Cohort" key={record.id}>
                 {
                   <li
-                   onClick={ () => {
+                    onClick={() => {
                       setStudentListOption(filterCohort);
                       setTotalOption(filterCohort.length);
                       //! Separating the dates using Slice by targeting years, years contain 4

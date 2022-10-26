@@ -1,6 +1,7 @@
 import ShowBtn from "./ShowBtn";
 import Form from "./Form";
 import { useState } from "react";
+//
 export default function Student({ record, dateFormat }) {
   const [onTrack, setOnTrack] = useState("");
   const handleOnTrack = (record) => {
@@ -39,7 +40,6 @@ export default function Student({ record, dateFormat }) {
         <br />
         {/* showbtn */}
         <ShowBtn record={record} />
-     
       </div>
     </article>
   );
