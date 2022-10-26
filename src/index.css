@@ -193,3 +193,8 @@ input {
     justify-content: center;
 
 }
+
+#searchbar {
+    width: 70%;
+    justify-self: center;
+}

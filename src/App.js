@@ -5,6 +5,7 @@ import CohortList from './Components/CohortList';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
+import SearchBar from './Components/SearchBar';
 
 
 function App() {
@@ -16,11 +17,11 @@ function App() {
 
   return (
     <div className='topLevel'>
+      
       <header>
         <Header />
         <NavBar />
       </header>
-     
       
       <main>
       
@@ -30,6 +31,9 @@ function App() {
         <p>Total Students: 
           <span style={{color: "green"}}> {students.length}</span>
         </p> 
+        <SearchBar
+        students = {students}
+        setStudents = {setStudents} />
         <StudentList
         students = {students}
         setStudents = {setStudents}
