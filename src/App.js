@@ -39,8 +39,6 @@ function App() {
       <aside>
         <Classes
           allStudents={allStudents}
-          cohort={cohort}
-          setCohort={setCohort}
           handleClick={handleClick}
           showAll={showAll}
         />
@@ -50,7 +48,6 @@ function App() {
           students={students}
           cohort={cohort}
           setStudents={setStudents}
-          // updateStudents={updateStudents}
         />
       </section>
     </main>

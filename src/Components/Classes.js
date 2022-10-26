@@ -1,5 +1,6 @@
 export default function Classes ({ allStudents, handleClick, showAll }) {
 
+  //Declare variables to store cohort start date and cohort codes
   let cohorts = []
   let cohortCodes = []
   let cohortInfo ={}
@@ -22,13 +23,14 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
     return b[2] - a[2] || b[1] - a[1] || b[0] - a[0];
   })
 
-  //Using new cohortCodes array to store unique cohort codes in descending order
+  //Using new cohortCodes array to store unique cohort codes in descending order based on sorted cohort array
   for (let i=0; i < cohorts.length; i++){
     if (!cohortCodes.includes(cohortInfo[cohorts[i]])){
       cohortCodes.push(cohortInfo[cohorts[i]])
     } 
   }
 
+  //React component
     return (
         <aside className="classes">
           <h2>Classes by start date</h2>
