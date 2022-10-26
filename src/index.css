@@ -15,19 +15,25 @@ header {
 
 main {
   width: 90%;
-  margin: 0 auto;
+  margin: 10;
   display: grid;
   justify-content: space-between;
   border: 1px solid black;
   justify-items: center;
 }
-
+.Class-selection {
+  grid-column: 3;
+  grid-row: 2;
+  border: 1px solid black;
+  margin-right: 725px;
+  margin-left: 25px;
+}
 .student-card {
   border: 2px solid green;
   display: grid;
   grid-column-gap: 25px;
-  grid-template-columns: [left]100px [middle]2fr 1fr;
-  margin-left: 10px 0;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 15px;
   padding: 25px;
   column-gap: 25px;
 }

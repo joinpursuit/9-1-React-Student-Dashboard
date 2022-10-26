@@ -6,16 +6,24 @@ import { useState } from "react"
 
 function App() {
   const [dataList, setData] = useState(data)
+  const [showMe, setShowMe] = useState(false)
 
-  console.log(dataList)
+  function toggleSetNewShowMe() {
+    setShowMe(!showMe)
+  }
+
   return (
     <div>
       <Header />
       <aside>
-        <StartDate />
+        <StartDate dataList={dataList} />
       </aside>
       <main>
-        <StudentsList dataList={dataList} />
+        <StudentsList
+          key={dataList.id}
+          dataList={dataList}
+          toggleSetNewShowMe={toggleSetNewShowMe}
+        />
       </main>
     </div>
   )

@@ -1,7 +1,18 @@
 import React from "react"
+import ShowDetails from "./ShowDetails"
 
-function StudentsList({ dataList }) {
-  console.log(dataList.names)
+function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
+  function ontrack(dataList) {
+    if (
+      dataList.certifications.resume === true &&
+      dataList.certifications.lindedin === true &&
+      dataList.certifications.github === true &&
+      dataList.certifications.mockInterview === true &&
+      dataList.current.total > 600
+    ) {
+      return "On track to Graduate"
+    }
+  }
   return (
     <div className="student-cards">
       <h2>All Students</h2>
@@ -9,27 +20,32 @@ function StudentsList({ dataList }) {
         Total Students:
         <span>{dataList.length}</span>
       </p>
-      <div className="student-cards">
-        {dataList.map((datainfo) => {
+      <div className="studentcards">
+        {dataList.map((dataLists) => {
           return (
             <article className="student-card">
-              <div key={datainfo.id}>
-                <img src={datainfo.profilePhoto} alt={datainfo.id} />
+              <div key={dataLists.id}>
+                <img
+                  src={dataLists.profilePhoto}
+                  alt={dataLists.names.preferredName}
+                />
+
                 <div className="student-info">
                   <aside>
                     <h3>
-                      {datainfo.names.preferredName} {datainfo.names.middleName}
-                      . {datainfo.names.surname}
+                      {dataLists.names.preferredName}{" "}
+                      {dataLists.names.middleName}. {dataLists.names.surname}
                     </h3>
-                    <p>{datainfo.username}</p>
+                    <p>{dataLists.username}</p>
                     <p>
                       <span>Birthday:</span>
-                      {datainfo.dob}
+                      {dataLists.dob}
                     </p>
                   </aside>
-                  <button>Show me...</button>
+                  <button onClick={toggleSetNewShowMe}>Show me</button>
+                  <ShowDetails dataList={dataList} />
                 </div>
-                <p className="on-track"></p>
+                <p className="on-track">{ontrack}</p>
               </div>
             </article>
           )
