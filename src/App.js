@@ -10,12 +10,12 @@ function App() {
   //Defining state variables
   const [cohort, setCohort] = useState("All Students")
   const [students, setStudents] = useState(allStudents)
-  const [showDetails, setShowDetails] = useState(false)
+  const [comments, setComments] = useState([])
 
   //Declaring studentArr variable used to update students state
   let studentArr = []
 
-  //Function to update cohort and students state when cohort button clicked
+  //Functions to update cohort and students state when cohort button clicked
   const handleClick = (cohort) => {
     setCohort(cohort.replaceAll('20', ' 20')) 
     updateStudents(cohort)
@@ -37,6 +37,23 @@ function App() {
     setCohort("All Students")
   }
 
+  //Function to add and store comments added to instructor notes
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e)
+        console.log(e.target.id)
+
+        const newComment = {
+            [e.target.id]: {
+                name: e.target.name.value,
+                comment: e.target.comment.value
+                }
+            }
+
+        setComments([...comments, newComment])
+    }
+
+  //Rendering of App component
   return (
     <div>
     <header>
@@ -54,8 +71,8 @@ function App() {
         <Students
           students={students}
           cohort={cohort}
-          showDetails={showDetails}
-          setShowDetails={setShowDetails}
+          comments={comments}
+          handleSubmit={handleSubmit}
         />
       </section>
     </main>

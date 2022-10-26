@@ -1,7 +1,8 @@
 import Details from "./Details"
 
-export default function Students ({ students, cohort, showDetails, setShowDetails }){
+export default function Students ({ students, cohort, comments, handleSubmit }){
 
+    //Rendering of Students component using .map() method
     return (
         <div>
             <h2>{cohort}</h2>
@@ -15,26 +16,22 @@ export default function Students ({ students, cohort, showDetails, setShowDetail
                     const last = student.names.surname
                     const fullName = `${first} ${middle}. ${last}`
 
-                    //React components for each student
+                    //React component for each student
                         return(
                             <div className="student" key={student.id}>
-                                <img src={student.profilePhoto}/>
-                                <div>
-                                    <h4>{fullName}</h4>
-                                    <p>{student.username}</p>
-                                    <p><span>Birthday: </span>{student.dob}</p>
-                                    {
-                                        showDetails 
-                                        ?
-                                        <>
-                                            <button onClick={() => setShowDetails(!showDetails)}>See Less...</button>
-                                            <Details student={student}/> 
-                                        </>
-                                        :
-                                        <button onClick={() => setShowDetails(!showDetails)}>See More...</button>
-                                    }
-                                    
+                                <div className="info">
+                                    <img src={student.profilePhoto}/>
+                                    <aside>
+                                        <h4>{fullName}</h4>
+                                        <p>{student.username}</p>
+                                        <p><span>Birthday: </span>{student.dob}</p>
+                                    </aside>
                                 </div>
+                                <Details
+                                    student={student}
+                                    comments={comments}
+                                    handleSubmit={handleSubmit}
+                                />
                             </div>
                         )
                     }

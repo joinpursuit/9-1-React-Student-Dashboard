@@ -34,17 +34,20 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
     return (
         <aside className="classes">
           <h2>Classes by start date</h2>
-          <button value="allStudents" onClick={showAll}>All Students</button>
-          {
-          //Converting cohort codes to 'human-readable' text and storing original cohortCode as value for each button
-            cohortCodes.map((cohort) => {
-              return (
-                <button value={cohort} key={cohort} onClick={() => {handleClick(cohort)}}>
-                  {cohort.replaceAll('20', ' 20')}
-                </button>
-              )
-            })
-          }
+          <ul>
+            <li value="allStudents" onClick={showAll}>All Students</li>
+            <hr></hr>
+            {
+            //Converting cohort codes to 'human-readable' text and storing original cohortCode as value for each button
+              cohortCodes.map((cohort) => {
+                return (
+                  <li value={cohort} key={cohort} onClick={() => {handleClick(cohort)}}>
+                    {cohort.replaceAll('20', ' 20')}
+                  </li>
+                )
+              })
+            }
+          </ul>
         </aside>
     )
 }
