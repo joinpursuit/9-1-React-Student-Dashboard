@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 
-function SearchBar({data, setStudents,setCohortName, reset, setReset}) {
+function SearchBar({data, setStudents,setCohortName, reset, setReset, students}) {
     // Declare State to store user inputted search
     const [search, setSearch] = useState("")
     
     // function for filtering students by search value
     function searchFilter(input) {
         const string = input.toLowerCase()
-        const searchedStudent = data.filter(({names}) => {
+        const searchedStudent = students.filter(({names}) => {
             const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${names.middleName.toLowerCase()}`
 
             const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
@@ -28,6 +28,10 @@ function SearchBar({data, setStudents,setCohortName, reset, setReset}) {
         setSearch(value)
         setCohortName(`All Students`)
         searchFilter(value)
+        if(value === ''){
+            setReset(true)
+            setStudents(data)
+        }
        
     }
 

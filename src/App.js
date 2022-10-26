@@ -40,6 +40,7 @@ function App() {
           
           <p>
             <SearchBar
+            students = {students}
             data = {data}
             setStudents = {setStudents}
             setCohortName = {setCohortName}
