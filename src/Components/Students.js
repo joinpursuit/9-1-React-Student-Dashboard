@@ -1,6 +1,6 @@
-export default function Students ({ students }){
+export default function Students ({ students, cohort, setStudents }){
 
-
+    let studentArr = []
 
     return (
         <div>
@@ -13,18 +13,19 @@ export default function Students ({ students }){
                     const last = student.names.surname
                     const fullName = `${first} ${middle}. ${last}`
 
-                    return(
-                        <div className="student">
-                            <img src={student.profilePhoto}/>
-                            <div>
-                                <h4>{fullName}</h4>
-                                <p>{student.username}</p>
-                                <p><span>Birthday: </span>{student.dob}</p>
-                                <button>See more...</button>
+                        return(
+                            <div className="student" key={student.id}>
+                                <img src={student.profilePhoto}/>
+                                <div>
+                                    <h4>{fullName}</h4>
+                                    <p>{student.username}</p>
+                                    <p><span>Birthday: </span>{student.dob}</p>
+                                    <button>See more...</button>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })
+                        )
+                    }
+                )
             }
         </div>
     )

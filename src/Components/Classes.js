@@ -1,6 +1,8 @@
-export default function Classes ({ students }) {
+export default function Classes ({ students, handleClick, showAll }) {
 
   let cohorts = []
+  let cohortCodes = []
+  let cohortInfo ={}
 
   //Identify all cohorts by unique start date and sort in descending order
   students.map((student) => {
@@ -8,58 +10,38 @@ export default function Classes ({ students }) {
     let cohortCode = student.cohort.cohortCode
 
     if (!cohorts.includes(cohortDate)){
+      cohortInfo[cohortDate] = cohortCode
       cohorts.push(cohortDate)
     }
-    cohorts.sort((a, b)=> {
-      a = a.split('/')
-      b = b.split('/')
-      return b[2] - a[2] || b[1] - a[1] || b[0] - [0];
-    })
   })
 
+  //Sorting cohorts by date in descending order
+  cohorts.sort((a, b)=> {
+    a = a.split('/')
+    b = b.split('/')
+    return b[2] - a[2] || b[1] - a[1] || b[0] - a[0];
+  })
 
-  console.log(cohorts)
-
-  // cohorts.forEach((cohort) => {
-  //   students.map((student) => {
-  //     if (student.cohort.cohortStartDate === cohort){
-  //       cohort = student.cohort.cohortCode
-  //     }
-  //   })
-  // })
-
-  // for (let i=0; i < cohorts.length; i++){
-  //   students.map((student) => {
-  //     if (student.cohort.cohortDate === cohorts[i]){
-  //       cohorts[i] = student.cohort.cohortCode
-  //     }
-  //   })
-  // }
-
-  // cohorts.map((cohort) => {
-  //   students.map((student) => {
-  //     let index = student.indexOf(student.cohort.cohortStartDate === cohort)
-  //   })
-  //   cohort = students[index].cohort,cohortCode
-  //   console.log(cohort)
-  // })
- 
+  //Using new cohortCodes array to store unique cohort codes in descending order
+  for (let i=0; i < cohorts.length; i++){
+    if (!cohortCodes.includes(cohortInfo[cohorts[i]])){
+      cohortCodes.push(cohortInfo[cohorts[i]])
+    } 
+  }
 
     return (
-        <aside>
+        <aside className="classes">
           <h2>Classes by start date</h2>
-          <p>All Students</p>
+          <button value="allStudents" onClick={showAll}>All Students</button>
           {
-            cohorts.map((cohort) => {
+          //Converting cohort codes to 'human-readable' text and storing original cohortCode as value
+            cohortCodes.map((cohort) => {
               return (
-                <p>{cohort}</p>
+                <button value={cohort} onClick={() => {handleClick(cohort)}}>
+                  {cohort.replaceAll('20', ' 20')}
+                </button>
               )
             })
-            // sortedCohorts.map((cohort)=> {
-              // return (
-              // // <p>{cohort.replaceAll("20", " 20")}</p>
-              // )
-            // })
           }
         </aside>
     )

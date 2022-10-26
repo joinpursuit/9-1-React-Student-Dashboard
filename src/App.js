@@ -1,4 +1,4 @@
-import students from './data/data.json'
+import allStudents from './data/data.json'
 import Classes from './Components/Classes'
 import Students from './Components/Students';
 import { useState } from 'react';
@@ -6,8 +6,29 @@ import './app.css'
 
 
 function App() {
-  const [ viewStudents, setViewStudent] = useState({students})
+  const [cohort, setCohort] = useState("")
+  const [students, setStudents] = useState(allStudents)
+  let studentArr = []
 
+  const handleClick = (cohort) => {
+    setCohort(cohort) 
+    updateStudents(cohort)
+  }
+
+  const updateStudents = (cohort) => {
+
+    allStudents.map((student) => {
+      if (student.cohort.cohortCode === cohort){
+        studentArr.push(student)
+      }
+    
+    setStudents(studentArr)
+    })
+  }
+
+  const showAll = () => {
+    setStudents(allStudents)
+  }
 
   return (
     <div>
@@ -16,10 +37,21 @@ function App() {
     </header>
     <main>
       <aside>
-        <Classes students={students}/>
+        <Classes
+          students={students}
+          cohort={cohort}
+          setCohort={setCohort}
+          handleClick={handleClick}
+          showAll={showAll}
+        />
       </aside>
       <section>
-        <Students students={students}/>
+        <Students
+          students={students}
+          cohort={cohort}
+          setStudents={setStudents}
+          // updateStudents={updateStudents}
+        />
       </section>
     </main>
     </div>
