@@ -56,7 +56,9 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Student Dashboard Project</h1>
+        <h1>
+          <span id="studentDashboard">Student Dashboard</span> Project
+        </h1>
       </header>
       <main className="main">
         <aside>

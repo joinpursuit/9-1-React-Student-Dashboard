@@ -1,8 +1,9 @@
 .cohorts {
-    padding: 10px;
+    margin: auto;
+    margin-top: 30px;;
     padding-top: 0px;
     width: 170px;
-    top: 0%;
+    top: 140px;;
     position: sticky;
 }
 
