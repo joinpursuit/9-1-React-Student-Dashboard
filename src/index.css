@@ -27,8 +27,9 @@ header{
 
 .allStudentsList{
     display:grid;
-    grid-template-columns: .1fr 1fr;
-    margin: 10px 10px 10px 10px
+    grid-template-columns: .2fr 1fr;
+    margin: 10px 10px 10px 10px;
+    border:2px solid rgb(57, 158, 87)
 }
 
 .birthday{
@@ -38,12 +39,16 @@ header{
 .allStudentsButton, .showMoreButton {
     background: none;
     border: none;
-    font-family: arial, sans-serif;
     color: black;
-    font-weight: bold;
     cursor: pointer;
   }
+  .allStudentsButton{
+    font-weight: bold;
+  }
 
+  .showMoreButton{
+    margin-left: -7px;
+  }
 
   .allStudentsButton:hover{
     color: rgb(86, 152, 106);
@@ -58,4 +63,14 @@ header{
     height: 95px;
     width: 95px;
     border-radius: 5%;
+    margin-left: 2.2vw;
+    margin-top: 3.2vh;
+}
+
+.studentTag{
+    margin-left: 2.2vw;
+    margin-top: 5vh;
+}
+  span{
+   line-height: 1.5em;
   }
