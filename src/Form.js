@@ -17,7 +17,6 @@ function Form({ el }) {
 
   function addNote() {
     const newObj = { ...newComment, commenter: commenter, comment: comment };
-
     newComment.push(newObj);
   }
   return (
