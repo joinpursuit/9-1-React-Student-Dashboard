@@ -47,7 +47,7 @@
             return `red`
         }
         else if(percentage > 50 && percentage < 100 ){
-            return `yellow`
+            return `goldenrod`
         }
         else {
             return 'green'

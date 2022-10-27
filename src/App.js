@@ -7,6 +7,8 @@ import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar';
 import GraduateDropdown from './Components/GraduateDropdown';
+import AvatarImage from './Components/AvatarImage';
+import TestSearch from './Components/TestSearch';
 
 
 function App() {
@@ -26,11 +28,15 @@ function App() {
     <div className='topLevel'>
       
       <header>
+        <AvatarImage />
         <Header />
         <NavBar />
+        
       </header>
       
       <main>
+        <TestSearch
+        data = {data} />
       
       <div className="studentList">
         <div className='studentListHeader'>
@@ -49,6 +55,7 @@ function App() {
             search = {search}
             setSearch = {setSearch}
             setSelect = {setSelect}
+            cohortName = {cohortName}
             />
           </p>
 
