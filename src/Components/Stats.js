@@ -22,26 +22,27 @@ export default function Stats({ student }) {
   }
 
   return (
-    <div>
-      <section>
+    <div className="statsContainer">
+      <section className="stats">
         <h4>CodeWars</h4>
         <p>Current Total: {current.total}</p>
         <p>Last Week: {current.lastWeek}</p>
         <p>Goal: {goal.total}</p>
+        <p>Percent of Goal Achieved:</p>
         <p>
-          Percent of Goal Achieved:{" "}
           <span className={colorCodeWarsPercent()}>
             {formatCodeWarsPercentage()}%
           </span>
         </p>
       </section>
-      <section>
+      <section className="stats">
+        <br></br>
         <h4>Scores</h4>
         <p>Assignments: {cohort.scores.assignments * 100}%</p>
         <p>Projects: {cohort.scores.projects * 100}%</p>
         <p>Assessments: {cohort.scores.assessments * 100}%</p>
       </section>
-      <section>
+      <section className="stats">
         <h4>Certifications</h4>
         <p>Resume: {certifications.resume ? "✅" : "❌"}</p>
         <p>LinkedIn: {certifications.linkedin ? "✅" : "❌"}</p>

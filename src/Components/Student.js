@@ -19,7 +19,6 @@ export default function Student({ student, addComment }) {
       </p>
       {showMore && (
         <>
-          <hr></hr>
           <section className="showMoreSection">
             <Stats student={student} />
             <CommentsForm student={student} addComment={addComment} />
