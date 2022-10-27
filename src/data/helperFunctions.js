@@ -87,6 +87,42 @@ function filterStudents(string, setFunction1, setFunction2, arrOfObj) {
     
  }
 
+ const aboutMe = [
+    {
+    "id": "developer1990",
+    "names": {
+      "preferredName": "Destiny",
+      "middleName": "R",
+      "surname": "Joyner"
+    },
+    "username": "destinyjoyner@pursuit.org",
+    "dob": "12/1/19??",
+    "profilePhoto": "/assets/Avatar.png",
+    "codewars": {
+      "current": { "total": 744, "lastWeek": 0 },
+      "goal": { "total": 850, "lastWeek": 0 }
+    },
+    "certifications": {
+      "resume": false,
+      "linkedin": true,
+      "github": true,
+      "mockInterview": false
+    },
+    "notes": [
+      {
+        "commenter": "Cole Brown",
+        "comment": "Rent 'Em Spoons!"
+      }
+    ],
+    "cohort": {
+      "cohortCode": "Pursuit 9.1 DayTime",
+      "cohortStartDate": "5/22/22",
+      "scores": { "assignments": 0.9, "projects": 0.9, "assessments": 0.9 }
+    }
+
+ }
+]
+
   
   export {
     middleName,
@@ -94,5 +130,6 @@ function filterStudents(string, setFunction1, setFunction2, arrOfObj) {
     goalPercent,
     codeWarsColor,
     getMonthName,
-    filterStudents
+    filterStudents,
+    aboutMe
   }

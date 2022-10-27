@@ -7,7 +7,6 @@ import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar';
 import GraduateDropdown from './Components/GraduateDropdown';
-import AvatarImage from './Components/AvatarImage';
 
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
     <div className='topLevel'>
       
       <header>
-        <AvatarImage />
         <Header />
         <NavBar />
         

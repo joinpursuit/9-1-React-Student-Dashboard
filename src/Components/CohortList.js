@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { sortCohort } from '../data/helperFunctions';
 import { filterStudents } from '../data/helperFunctions';
 import CohortOrderButton from './CohortOrderButton';
+import Me from './Me';
 
 
 function CohortList({data, setStudents, setCohortName, setSearch, setSelect, setSearchResult}) {
@@ -29,6 +30,10 @@ function cohortFilter(e) {
 
     return (
        <>
+       <Me
+       setStudents= {setStudents}
+       data = {data} />
+
        <CohortOrderButton
        cohortList = {cohortList}
        setCohortList = {setCohortList} />

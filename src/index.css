@@ -216,13 +216,55 @@ input:focus {
     outline-color: green;
 }
 
-.avatar {
-    grid-row: 1/3;
-    padding: 0;
-    justify-self: end;
+
+/* About Me Custom */
+.developer1990 {
+    margin-top: 10px;
+    background-image: url('../public/assets/jackpumpkin.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px dashed rgb(237, 102, 23) ;
+    font-family: shlop ;
+    font-size: 24px;
+    color: rgb(237, 102, 23);
 }
-.avatar img {
-    margin: 0;
+.developer1990 hr {
+    height: 4px;
+    color: orange;
+    background: rgb(237, 102, 23);
+    width: 90%;
+}
+.developer1990 .studentStats  {
+    
+    font-family: shlop ;
+    font-size: 24px;
+    color: rgb(237, 102, 23);
+}
+.developer1990 .studentStats span {
+    /* color: rgb(230, 145, 9); */
+    color: white;
+    font-family: disney nightmare before christmas  ;
+    font-size: 20px;
+}
+.developer1990 form input {
+    background-color: rgb(237, 102, 23);
+    color: black;
+}
+
+.developer1990 .form {
+    border: 1px solid rgb(237, 102, 23);
+}
+
+#developer {
+    background-color: rgb(108, 162, 108);
+    border-radius: 5px;
+    font-family: the jacatra;
+    border: 2px solid black;
+    color: black;
+}
+#developer:hover {
+    background-color: white;
+    cursor: pointer;
 }
 
 
