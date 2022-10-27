@@ -1,44 +1,50 @@
 import { useState } from "react";
 import data from "./data/data.json";
 
-// Primary Components
 import Student from "./Components/Student";
 import Cohorts from "./Components/Cohorts";
 
-// Styling
 import "./App.css";
 
 function App() {
-  // Create shallow copy of data
-  const studentsData = [...data];
-
-  // Map studentsData array into an array of each student's cohortCode
-  const mappedStudentsToCohortCode = studentsData.map(
+  const mappedStudentsToCohortCode = [...data].map(
     (student) => student.cohort.cohortCode
   );
-
-  // Use set constructor and new operator to create a new array and filter out only the unique cohortCodes
   const uniqueCohorts = [...new Set(mappedStudentsToCohortCode)];
+  // Used Det constructor and New operator to create a new array with filtered unique cohortCodes
 
-  // State for App
+  const numOfStudentsDisplayed = setTimeout(
+    () => setTotalStudents(document.getElementsByClassName("student").length),
+    250
+  ); // setTimeout used to delay the access to the number of students rendered on page for accuracy
+
   const [students, setStudents] = useState([...data]);
-  const [cohort, setCohort] = useState("All Students");
-  const [totalStudents, setTotalStudents] = useState(studentsData.length);
+  const [cohort, setCohort] = useState(null);
+  const [totalStudents, setTotalStudents] = useState(numOfStudentsDisplayed);
 
-  // Cohort Selection Algorithm
+  /**
+   * Sets a chosen cohort, from the <Cohorts /> component, to <App /> state in order to map out the corresponding students
+   * @param {str} cohort chosen cohort
+   */
   function chooseCohort(cohort) {
     setCohort(cohort);
-    setTimeout(
-      () => setTotalStudents(document.getElementsByClassName("student").length),
-      250
-    );
   }
 
-  // Formatting Algorithm
+  /**
+   * Formats the cohortCode selected to a hunman-readable string
+   * @param {str} cohort
+   * @returns {str}
+   */
   function formatCohortName(cohort) {
     return cohort.split(20).join(" 20");
   }
 
+  /**
+   * Updates <App /> students state to include permanent comments in the source data
+   * This function changes the data into an array of id's in order to facilitate finding the corresping student
+   * @param {{}} commentedStudent
+   * @param {{}} comment
+   */
   function addComment(commentedStudent, comment) {
     const updatedStudents = [...students];
     const studentsById = updatedStudents.map((student) => student.id);
@@ -61,9 +67,9 @@ function App() {
           />
         </aside>
         <div className="students">
-          <h2>{formatCohortName(cohort)}</h2>
+          <h2>{cohort ? formatCohortName(cohort) : "All Students"}</h2>
           <p>Total: {totalStudents}</p>
-          {cohort === "All Students"
+          {!cohort
             ? students.map((student) => (
                 <Student
                   key={student.id}
@@ -72,7 +78,7 @@ function App() {
                 />
               ))
             : students
-                .filter((student) => student.cohort.cohortCode === cohort)
+                .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
                 .map((student) => (
                   <Student
                     key={student.id}
