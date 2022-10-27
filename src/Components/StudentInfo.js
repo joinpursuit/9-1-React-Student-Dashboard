@@ -10,11 +10,18 @@ export default function StudentInfo({ student }) {
     github &&
     student.codewars.current.total > 600;
 
+  /**
+   * Takes in a date as a string and uses the Date constructor to create a new date object to get the necessary date elements in a human readable format
+   * @param {str} date
+   * @returns {str} formatted date
+   */
   function formatDob(date) {
-    let newDate = new Date(date);
-    console.log(newDate);
-    const newDateArray = newDate.toDateString().split(" ");
-    return `${newDateArray[1]} ${newDateArray[2]}, ${newDateArray[3]}`;
+    let dateObj = new Date(date);
+    const dateArray = dateObj.toDateString().split(" ");
+    const month = dateObj.toLocaleString("default", { month: "long" });
+    // We use .toLocaleString to get the long month name from the created date object
+    // https://stackoverflow.com/questions/1643320/get-month-name-from-date/18648314#18648314
+    return `${month} ${dateArray[2]}, ${dateArray[3]}`;
   }
 
   return (
