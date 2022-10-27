@@ -1,3 +1,5 @@
+import "./StudentInfo.css";
+
 export default function StudentInfo({ student }) {
   const { certifications } = student;
   const { resume, linkedin, mockInterview, github } = certifications;
@@ -23,12 +25,20 @@ export default function StudentInfo({ student }) {
         width="50px"
       />
       <div>
-        <h3>
-          <span id="firstName">{student.names.preferredName} </span>
-          <span id="middleName">{student.names.middleName.slice(0, 1)}. </span>
-          <span id="lastName">{student.names.surname}</span>
-        </h3>
-        <p>{student.username}</p>
+        <p>
+          Name:{" "}
+          <span id="fullName">
+            {student.names.preferredName} {student.names.middleName.slice(0, 1)}
+            . {student.names.surname}
+          </span>
+        </p>
+
+        <p>
+          User Name:{" "}
+          <a href={`mailto: ${student.username}`} target="blank">
+            {student.username}
+          </a>
+        </p>
         <p>Birthday: {formatDob(student.dob)}</p>
       </div>
       {onTrackToGrad && <p style={{ color: "green" }}>On Track to Graduate</p>}
