@@ -47,7 +47,7 @@
             return `red`
         }
         else if(percentage > 50 && percentage < 100 ){
-            return `yellow`
+            return `goldenrod`
         }
         else {
             return 'green'
@@ -72,11 +72,19 @@
   }
 
 //   function for filtering students by cohort name
-function filterStudents(string, setFunction, arrOfObj) {
-    const filteredStudentArray = arrOfObj.filter(({cohort}) => 
-       cohort.cohortCode === string
-    )
-    setFunction(filteredStudentArray)
+function filterStudents(string, setFunction1, setFunction2, arrOfObj) {
+    if ( string === `All Students`){
+        setFunction1(arrOfObj) 
+        setFunction2(arrOfObj)
+    }
+    else{
+        const filteredStudentArray = arrOfObj.filter(({cohort}) => 
+        cohort.cohortCode === string.split(` `).join(``)
+        )
+        setFunction1(filteredStudentArray) 
+        setFunction2(filteredStudentArray)
+    }
+    
  }
 
   

@@ -7,6 +7,7 @@ import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar';
 import GraduateDropdown from './Components/GraduateDropdown';
+import AvatarImage from './Components/AvatarImage';
 
 
 function App() {
@@ -21,13 +22,18 @@ function App() {
   // Declare State for selection value
   const [select, setSelect] = useState("all")
 
+  // Declare state for search data
+  const [searchResult, setSearchResult] = useState(data)
+
 
   return (
     <div className='topLevel'>
       
       <header>
+        <AvatarImage />
         <Header />
         <NavBar />
+        
       </header>
       
       <main>
@@ -49,6 +55,9 @@ function App() {
             search = {search}
             setSearch = {setSearch}
             setSelect = {setSelect}
+            cohortName = {cohortName}
+            searchResult = {searchResult}
+            setSearchResult = {setSearchResult}
             />
           </p>
 
@@ -59,7 +68,10 @@ function App() {
           select = {select}
           setSelect = {setSelect}
           setSearch = {setSearch}
+          cohortName = {cohortName}
           setCohortName = {setCohortName}
+          searchResult = {searchResult}
+          setSearchResult = {setSearchResult}
          />
         </div>
         
@@ -68,7 +80,8 @@ function App() {
         students = {students}
         setStudents = {setStudents}
         data = {data}
-        setCohortName = {setCohortName} />
+        setCohortName = {setCohortName}
+        setSearchResult = {setSearchResult} />
         </div>
       
       </div>
@@ -85,6 +98,7 @@ function App() {
         setCohortName = {setCohortName}
         setSearch = {setSearch}
         setSelect = {setSelect}
+        setSearchResult = {setSearchResult}
         />
 
       </aside>

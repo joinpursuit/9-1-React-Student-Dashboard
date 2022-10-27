@@ -3,11 +3,11 @@ import { filterStudents } from '../data/helperFunctions';
 
 
 
-function StudentCohortLink({id,cohort,setStudents,data,setCohortName}) {
+function StudentCohortLink({id,cohort,setStudents,data,setCohortName, setSearchResult}) {
 const linkName = cohort.cohortCode.replace(2, ` 2`)
 
 function studentCohort(e) {
-    filterStudents(e.target.name, setStudents, data)
+    filterStudents(e.target.name, setStudents, setSearchResult, data)
     setCohortName(e.target.innerText)
 }
     return (

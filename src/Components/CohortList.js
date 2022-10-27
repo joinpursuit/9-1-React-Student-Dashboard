@@ -5,26 +5,26 @@ import { filterStudents } from '../data/helperFunctions';
 import CohortOrderButton from './CohortOrderButton';
 
 
-function CohortList({data, setStudents, setCohortName, setSearch, setSelect}) {
+function CohortList({data, setStudents, setCohortName, setSearch, setSelect, setSearchResult}) {
 // Declare state for cohort List
 const [cohortList, setCohortList] = useState(sortCohort(data))
 
 // function for onClick cohort
 function cohortFilter(e) {
-   const cohortName = e.target.id
+   const value = e.target.id
    setCohortName(e.target.innerText)
-   if(cohortName === "AllStudents"){
+   
+   if(value === "AllStudents"){
       setStudents(data)
+      setSearchResult(data)
    }
    else{
-      filterStudents(cohortName,setStudents,data)
+      filterStudents(value, setStudents, setSearchResult, data)      
    }
   // *****clear searchbar and dropdown if cohort is clicked******
   setSearch("")
   setSelect("all")
 
-
-  
 }
 
     return (
