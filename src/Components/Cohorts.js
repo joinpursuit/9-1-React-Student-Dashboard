@@ -2,64 +2,34 @@ import React from 'react'
 import data from "../data/data.json"
 import Students from "./Students"
 
-export default function Cohorts() {
+export default function Cohorts({students, setStudents, setCohort}) {
 
-const students = data
-let studentImage, studentName, studentEmail
+const allStudents = data
+
+function handleClickUpdateCohort(e){
+    setCohort(e.target.name)
+}
 
 
-// }
-// [
-//     {
-//       "id": "D8-hEWB",
-//       "names": {
-//         "preferredName": "Israel",
-//         "middleName": "Benjamin",
-//         "surname": "Rodriguez"
-//       },
-//       "username": "israel.rodriguez@pursuit.org",
-//       "dob": "2/3/1979",
-//       "profilePhoto": "https://fakeface.rest/thumb/view?gender=male&minimum_age=38&maximum_age=48",
-//       "codewars": {
-//         "current": { "total": 1804, "lastWeek": 144 },
-//         "goal": { "total": 850, "lastWeek": 75 }
-//       },
-//       "certifications": {
-//         "resume": false,
-//         "linkedin": false,
-//         "github": false,
-//         "mockInterview": false
-//       },
-//       "notes": [
-//         {
-//           "commenter": "Alan R.",
-//           "comment": "Israel is a pleasure to work with!"
-//         }
-//       ],
-//       "cohort": {
-//         "cohortCode": "Winter2025",
-//         "cohortStartDate": "12/1/25",
-//         "scores": { "assignments": 0.71, "projects": 0.7, "assessments": 0.66 }
-//       }
-//     },
+return (
+    <>
+        <div className='cohortButton' > 
+            <button onClick={handleClickUpdateCohort} name="allStudents" className ="allStudentsButton cohortButton" > All Students</button></div>
+        <div className='cohortButton'>
+            <button onClick={handleClickUpdateCohort} name="Winter2026" >Winter 2026</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Fall2026">Fall 2026</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Summer2026">Summer 2026</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Spring2026">Spring 2026</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Winter2025">Winter 2025</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Fall2025">Fall 2025</button></div>
+        <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Summer2025">Summer 2025</button></div>
+        <div className='cohortButton'><button  onClick={handleClickUpdateCohort} name="Spring2025">Spring 2025</button></div>
+    </>
 
-    return (
-        // <div>  <button onClick={
-        //     students.map((student) =>
-        //     {
-        //         return(
-        //             <div key={student.id} className="eachStudentBox">
-        //                 <img src="students.profilePhoto" alt="student picture"/>
-        //             students.profilePhot
-        //             </div>
-        //         )
-        //     })
-            
-        // }>
-            
-        <div>  <button className ="allStudentsButton">  
-            All Students</button>
-        </div>
+
+
+
+
     );
 }
 

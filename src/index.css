@@ -3,6 +3,10 @@ body{
 
 }
 
+.hidden{
+    display:none;
+}
+
 .overall-container{
     display:grid;
     grid-template-rows: 1fr 5fr;
@@ -32,30 +36,38 @@ header{
     border:2px solid rgb(57, 158, 87)
 }
 
+
 .birthday{
     color: rgb(86, 152, 106);
 }
-
-.allStudentsButton, .showMoreButton {
+.cohortButton{
+   
+    border-bottom:  2px solid rgb(86, 152, 106);
+    height: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+button, .allStudentsButton, .showMoreButton {
     background: none;
     border: none;
     color: black;
     cursor: pointer;
-  }
-  .allStudentsButton{
     font-weight: bold;
+
   }
+
 
   .showMoreButton{
     margin-left: -7px;
   }
 
-  .allStudentsButton:hover{
+  button:hover, .allStudentsButton:hover{
     color: rgb(86, 152, 106);
   }
 
   .showMoreButton{
     color: rgb(86, 152, 106);
+    font-weight: normal;
   }
 
   img{

@@ -4,12 +4,27 @@ import Cohorts from './Components/Cohorts';
 import data from "./data/data"
 import Students from './Components/Students';
 
-
 function App() {
 
-  const[students, setStudents] = useState(data)
- 
-  
+const[students, setStudents] = useState(data)
+const total = students.length
+
+const[cohort, setCohort] = useState("allStudents")
+// const allStudents = students
+// console.log("allStudents = ", allStudents)
+
+// const bigList = document.querySelector(".studentCards")
+
+//  function handleClickAllStudents(){
+//   bigList.classList.remove("hidden")
+//  }
+   
+
+//  function handleClickW2026(){
+//     const studentsW2026 = students.filter(student => student.cohort.cohortCode = "Winter 2026") 
+//   setStudents(studentsW2026)
+//   bigList.classList.add("hidden")
+//  }
 
 
   return (
@@ -22,11 +37,23 @@ function App() {
           <div className="second-container">
             <aside className="cohort-list" >
               <div><h2>Choose a Class By Start Date</h2></div>
-              <div> <Cohorts /></div>
+              <div> <Cohorts  
+               students = {students}
+               setStudents={setStudents}
+               setCohort={setCohort}
+              // handleClickAllStudents={handleClickAllStudents}
+              // handleClickW2026={handleClickW2026}
+              
+              /></div>
             </aside>
             <main className="selected-students">
               <div> <h2>All Students</h2></div>
-              <div> <Students students={students} /></div>
+              <h3>Total: {total}</h3>
+              <div> <Students 
+                          students={students}  
+                          setStudents={setStudents}
+                          cohort={cohort}
+                          /></div>
             </main>
           </div>
       </div>
