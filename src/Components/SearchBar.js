@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { filterStudents } from '../data/helperFunctions';
+import { middleName } from '../data/helperFunctions';
 
 function SearchBar({data, setStudents, setCohortName, cohortName, students,search, setSearch, setSelect}) {
     console.log(cohortName.split(` `).join(``))
@@ -13,7 +13,7 @@ function SearchBar({data, setStudents, setCohortName, cohortName, students,searc
         const string = input.toLowerCase()
        
         const searchedStudent = searchResult.filter(({names}) => {
-            const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${names.middleName.toLowerCase()}`
+            const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${middleName(names.middleName).toLowerCase().replace(`.`,``)} ${names.surname.toLowerCase()}`
             const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
 
             if(input === ""){
@@ -22,26 +22,12 @@ function SearchBar({data, setStudents, setCohortName, cohortName, students,searc
             else{
                 return studentLowerCaseMiddle.includes(string) || studentLowerCaseLast.includes(string)
             }
-            
            
         })
 
-        console.log(`result`,searchedStudent)
         setStudents(searchedStudent)
-        // return searchedStudent
     }
         
-        // if(input === ""){
-        //     setStudents(data)
-        //     setSelect("all")
-        //     setCohortName(`All Students`)
-        // }
-        // else if(!searchedStudent.length){
-        //     setStudents(students)
-        // }
-        // else{
-        //     setStudents(searchedStudent)
-        // }
     
 
     // function for on change in search bar
@@ -49,7 +35,6 @@ function SearchBar({data, setStudents, setCohortName, cohortName, students,searc
         const value = e.target.value
         setSearch(value)
         searchFilter(value)
-        // setStudents(searchResult)
        
     }
 
