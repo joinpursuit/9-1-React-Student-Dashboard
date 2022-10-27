@@ -20,7 +20,12 @@ function App() {
           setStudents={setStudents}
           setCohortName={setCohortName}
         />
-        <Students students={students} cohortName={cohortName} />
+        <Students
+          students={students}
+          cohortName={cohortName}
+          setStudents={setStudents}
+          studentData={studentData}
+        />
       </main>
     </div>
   );
