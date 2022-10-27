@@ -16,8 +16,8 @@ img {
 
 .onTrackToGrad {
     color: green;
-    padding: 10px;
-    box-shadow: 2px 2px 3px 2px lime;
+    padding: 8px;
+    box-shadow: 0.5px 0.5px 5px 4px lime inset;
     border-radius: 10px;
 
     margin: auto;
