@@ -4,6 +4,8 @@ import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
 import Stats from "./Stats";
 
+import "./Student.css";
+
 export default function Student({ student, addComment }) {
   const comments = [...student.notes];
 
