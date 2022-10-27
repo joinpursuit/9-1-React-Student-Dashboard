@@ -11,32 +11,20 @@ const [cohortList, setCohortList] = useState(sortCohort(data))
 
 // function for onClick cohort
 function cohortFilter(e) {
-   const cohortName = e.target.id
+   const value = e.target.id
    setCohortName(e.target.innerText)
    
-   if(cohortName === "AllStudents"){
+   if(value === "AllStudents"){
       setStudents(data)
       setSearchResult(data)
    }
    else{
-      // filterStudents(cohortName,setStudents,data)
-
-      //   function for filtering students by cohort name
-      const filteredStudentArray = data.filter(({cohort}) => 
-       cohort.cohortCode === cohortName
-    )
-    setStudents(filteredStudentArray)
-    setSearchResult(filteredStudentArray)
-
-      
+      filterStudents(value, setStudents, setSearchResult, data)      
    }
   // *****clear searchbar and dropdown if cohort is clicked******
   setSearch("")
   setSelect("all")
-  
 
-
-  
 }
 
     return (

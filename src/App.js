@@ -8,7 +8,6 @@ import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar';
 import GraduateDropdown from './Components/GraduateDropdown';
 import AvatarImage from './Components/AvatarImage';
-import TestSearch from './Components/TestSearch';
 
 
 function App() {
@@ -38,8 +37,6 @@ function App() {
       </header>
       
       <main>
-        <TestSearch
-        data = {data} />
       
       <div className="studentList">
         <div className='studentListHeader'>
@@ -83,7 +80,8 @@ function App() {
         students = {students}
         setStudents = {setStudents}
         data = {data}
-        setCohortName = {setCohortName} />
+        setCohortName = {setCohortName}
+        setSearchResult = {setSearchResult} />
         </div>
       
       </div>

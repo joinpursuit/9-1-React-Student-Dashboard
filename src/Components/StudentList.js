@@ -4,12 +4,12 @@ import Birthday from './Birthday';
 import Graduate from './Graduate';
 import ShowMoreButton from './ShowMoreButton';
 import StudentCohortLink from './StudentCohortLink';
-function StudentList({students,setStudents,data,setCohortName}) {
+function StudentList({students,setStudents,data,setCohortName, setSearchResult}) {
    
     return (
         <>
         {
-            students.map(({id,names,username,profilePhoto,dob,notes,cohort},i) => {
+            students.map(({id,names,username,profilePhoto,dob,notes,cohort}) => {
                 const firstName = names.preferredName
                 const middleInitial = middleName(names.middleName)
                 const lastName = names.surname
@@ -37,7 +37,8 @@ function StudentList({students,setStudents,data,setCohortName}) {
                                     setStudents = {setStudents}
                                     cohort = {cohort} 
                                     data = {data}
-                                    setCohortName = {setCohortName}/>
+                                    setCohortName = {setCohortName}
+                                    setSearchResult = {setSearchResult}/>
                                     
                                 </div>
                                 <Graduate

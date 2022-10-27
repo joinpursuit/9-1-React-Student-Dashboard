@@ -1,6 +1,7 @@
 import React from 'react';
+import { filterStudents } from '../data/helperFunctions';
 
-function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch, setCohortName, setSearchResult, searchResult, cohortName}) {
+function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch, setSearchResult,cohortName}) {
 
     // function for filter by graduation status
     function graduateStudents() {
@@ -20,12 +21,8 @@ function GraduateDropdown({students,setStudents,data, select, setSelect, setSear
             setSearchResult(graduateStudents())
         }
         else if(value === 'all'){
-            const filteredStudentArray = data.filter(({cohort}) => 
-            cohort.cohortCode === cohortName.split(` `).join(``)
-    )
-            setStudents(filteredStudentArray) 
-            // setCohortName(`All Students`)
-            setSearchResult(filteredStudentArray)
+            filterStudents(cohortName, setStudents, setSearchResult, data)
+        
         }
 }
   
