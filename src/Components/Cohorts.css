@@ -1,12 +1,15 @@
 .cohorts {
-    border: 3px solid black;
     padding: 10px;
+    padding-top: 0px;
     width: 170px;
+    top: 0%;
+    position: sticky;
 }
 
 #cohortsTitle {
     text-align: center;
     font-family: monospace;
+    margin-bottom: 20px;
 }
 
 .cohort {
@@ -14,8 +17,8 @@
     margin-bottom: 15px;
     padding: 10px;
 
-    box-shadow: 1px 1px 1px 1px;
-    border: 0px solid black;
+    box-shadow: 1px 1px 3px 1px;
+    border: 1px solid black;
     border-radius: 10px;
     
     font-family: monospace;
@@ -25,13 +28,14 @@
 }
 
 .cohort:hover {
-    color: darkred;
-    background-color: beige;
-    box-shadow: 3px 3px 3px 1px darkred;
+    color: rgb(168, 0, 0);
+    /* background-color: beige; */
+    border: 1px solid rgb(168, 0, 0);
+    box-shadow: 3px 3px 3px 1px rgb(255, 28, 28);
 }
 
 .cohort:active {
     color: darkred;
-    background-color: rgb(230, 230, 205);
+    /* background-color: rgb(230, 230, 205); */
     box-shadow: 2px 2px 3px 1px black inset;
 }
