@@ -8,6 +8,19 @@ function StudentData({ el, birthday }) {
   function toggleShowMore() {
     setShowMore(!showMore);
   }
+
+  function onTrack() {
+    if (
+      el.certifications.resume === true &&
+      el.certifications.linkedin === true &&
+      el.certifications.mockInterview === true &&
+      el.certifications.github === true &&
+      el.codewars.current.total > 600
+    ) {
+      return <p className="grad">On Track to Graduate</p>;
+    }
+  }
+
   return (
     <article className="studentsArticle" key={el.id}>
       <img src={el.profilePhoto} alt={el.names.preferredName}></img>
@@ -21,15 +34,12 @@ function StudentData({ el, birthday }) {
           <span>Birthday: </span>
           {birthday}
         </p>
-        <button
-          key={el.id}
-          id="showMoreButton"
-          onClick={() => toggleShowMore(el.id)}
-        >
+        <button key={el.id} id="showMoreButton" onClick={toggleShowMore}>
           {!showMore ? "Show More ..." : "Show Less ..."}
         </button>
       </div>
       {showMore && <ShowMore el={el} />}
+      <p>{onTrack()}</p>
     </article>
   );
 }

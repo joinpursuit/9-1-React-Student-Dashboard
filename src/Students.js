@@ -3,8 +3,9 @@ import "./Students.css";
 import ShowMore from "./ShowMore";
 // import "./Form.css";
 import StudentData from "./StudentData";
+import Cohort from "./Cohort";
 
-function Students({ Data }) {
+function Students({ Data, cohort }) {
   const studentData = Data.map((el) => {
     const dob = new Date(el.dob);
     const birthday = new Intl.DateTimeFormat("en-US", {
@@ -14,7 +15,32 @@ function Students({ Data }) {
     return <StudentData el={el} birthday={birthday} />;
   });
 
-  return <div className="divReturn">{studentData}</div>;
+  const filteredStudents = Data.filter((student) => {
+    return student.cohort.cohortCode === cohort;
+  });
+  const filteredData = filteredStudents.map((el) => {
+    const dob = new Date(el.dob);
+    const birthday = new Intl.DateTimeFormat("en-US", {
+      dateStyle: "long",
+    }).format(dob);
+
+    return <StudentData el={el} birthday={birthday} />;
+  });
+  let spacing = cohort.replace(/[^a-zA-Z]+/g, "");
+  return (
+    <>
+      <h2 className="studentText">
+        {cohort === "All Students" ? cohort : spacing + " " + cohort.slice(-4)}
+      </h2>
+      <h3 className="studentText">
+        Total Students:{" "}
+        {cohort === "All Students" ? studentData.length : filteredData.length}{" "}
+      </h3>
+      <div className="divReturn">
+        {cohort === "All Students" ? studentData : filteredData}
+      </div>
+    </>
+  );
 }
 
 export default Students;

@@ -6,6 +6,8 @@ import Students from "./Students";
 // import Form from "./Form";
 
 function App() {
+  const [cohort, setCohort] = useState("All Students");
+
   return (
     <div className="all">
       <div className="header">
@@ -13,12 +15,10 @@ function App() {
       </div>
       <div className="body">
         <div className="cohort">
-          <Cohort />
+          <Cohort setCohort={setCohort} />
         </div>
         <div className="students">
-          <h2 className="studentText">All Students</h2>
-          <h3 className="studentText">Total Students: {Data.length}</h3>
-          <Students Data={Data} />
+          <Students cohort={cohort} Data={Data} />
         </div>
       </div>
     </div>
