@@ -28,7 +28,7 @@ function Students({ Data, title, total }) {
   // return <div className="student-cards">{studentDetails2}</div>;
   return (
     <>
-      <p>
+      <p style={{ color: '#a90329' }}>
         Total Students:{' '}
         <span>{title === 'All Students' ? total : studentDetails2.length}</span>
       </p>
