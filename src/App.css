@@ -15,7 +15,6 @@
 .body {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  /* grid-template-rows: 0.1fr 1fr; */
   padding-top: 30px;
   font-size: larger;
 }
@@ -30,8 +29,7 @@
 }
 
 .students {
-  /* border: 2px solid; */
-  /* border-color: black; */
+  /* border: 2px solid black; */
   margin-left: 70px;
   margin-right: 50px;
   padding-left: 50px;

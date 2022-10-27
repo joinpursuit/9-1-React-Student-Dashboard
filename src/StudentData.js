@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ShowMore from "./ShowMore";
-// import Form from "./Form";
 
 function StudentData({ el, birthday }) {
   const [showMore, setShowMore] = useState(false);

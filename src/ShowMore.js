@@ -2,6 +2,9 @@ import "./ShowMore.css";
 import Form from "./Form";
 import "./Form.css";
 function ShowMore({ el }) {
+  const percent =
+    (el.codewars.current.total / el.codewars.goal.total).toFixed(2) * 100;
+
   return (
     <section className="studentsDetails">
       <article className="codeWars">
@@ -20,9 +23,7 @@ function ShowMore({ el }) {
         </p>
         <p>
           <span>Percent of Goal Achieved: </span>
-          {(el.codewars.current.total / el.codewars.goal.total).toFixed(2) *
-            100}
-          %
+          {percent}%
         </p>
       </article>
       <article className="scores">

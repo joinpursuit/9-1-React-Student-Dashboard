@@ -3,7 +3,6 @@ import Data from "./data/data.json";
 import "./App.css";
 import Cohort from "./Cohort";
 import Students from "./Students";
-// import Form from "./Form";
 
 function App() {
   const [cohort, setCohort] = useState("All Students");

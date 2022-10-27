@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Students.css";
-import ShowMore from "./ShowMore";
-// import "./Form.css";
 import StudentData from "./StudentData";
-import Cohort from "./Cohort";
 
 function Students({ Data, cohort }) {
   const studentData = Data.map((el) => {
