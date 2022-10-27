@@ -13,7 +13,7 @@ export default function Details ({ student, comments, handleSubmit }){
 
     return (
      <>
-        <button onClick={() => setShowDetails(!showDetails)}>{showDetails ? 'See Less...' : "See More..."}</button>
+        <button id="detailButton" onClick={() => setShowDetails(!showDetails)}>{showDetails ? 'See Less...' : "See More..."}</button>
         <div>
         {/* Ternary to show/hide details when button clicked*/}
         {
@@ -24,25 +24,25 @@ export default function Details ({ student, comments, handleSubmit }){
                 <section className="details" id={student} key={student.id}>
                     <div className="codewars">
                         <h4>Codewars</h4>
-                        <p>Current Total: {student.codewars.current.total}</p>
-                        <p>Last Week: {student.codewars.current.lastWeek}</p>
-                        <p>Goal: {student.codewars.goal.total}</p>
-                            {percent >= 100 && <p>Percent of goal achieved: <span style={{color: "green"}}>{percent}%</span></p>}
-                            {percent > 50 && percent < 100 && <p>Percent of goal achieved: <span style={{color: "yellow"}}>{percent}%</span></p>}
-                            {percent <= 50 && <p>Percent of goal achieved: <span style={{color: "red"}}>{percent}%</span></p>}
+                        <p><span>Current Total: </span>{student.codewars.current.total}</p>
+                        <p><span>Last Week: </span>{student.codewars.current.lastWeek}</p>
+                        <p><span>Goal: </span>{student.codewars.goal.total}</p>
+                            {percent >= 100 && <p><span>Percent of goal achieved: </span><span style={{color: "green"}}>{percent}%</span></p>}
+                            {percent > 50 && percent < 100 && <p><span>Percent of goal achieved: </span><span className='yellow' style={{color: "darkyellow"}}>{percent}%</span></p>}
+                            {percent <= 50 && <p><span>Percent of goal achieved: </span><span style={{color: "red"}}>{percent}%</span></p>}
                     </div>
                     <div className="scores">
                         <h4>Scores</h4>
-                        <p>Assignments: {student.cohort.scores.assignments * 100}%</p>
-                        <p>Projects: {student.cohort.scores.projects * 100}%</p>
-                        <p>Assessments: {student.cohort.scores.assessments * 100}%</p>
+                        <p><span>Assignments: </span><span className={student.cohort.scores.assignments >= 0.7 ? "true" : "false"}>{student.cohort.scores.assignments * 100}%</span></p>
+                        <p><span>Projects: </span><span className={student.cohort.scores.projects >= 0.7 ? "true" : "false"}>{student.cohort.scores.projects * 100}%</span></p>
+                        <p><span>Assessments: </span><span className={student.cohort.scores.assessments >= 0.7 ? "true" : "false"}>{student.cohort.scores.assessments * 100}%</span></p>
                     </div>
                     <div className="certifcations">
                         <h4>Certifications</h4>
-                        <p>Resume: {student.certifications.resume ? <FcCheckmark/> : <VscChromeClose/> }</p>
-                        <p>LinkedIn: {student.certifications.linkedin ? <FcCheckmark/> : <VscChromeClose/> }</p>
-                        <p>Github: {student.certifications.github ? <FcCheckmark/> : <VscChromeClose/> }</p>
-                        <p>Mock Interview: {student.certifications.mockInterview ? <FcCheckmark/> : <VscChromeClose/> }</p>
+                        <p><span className={`${student.certifications.resume}`}>Resume: </span>{student.certifications.resume ? <FcCheckmark/> : <VscChromeClose/> }</p>
+                        <p><span className={`${student.certifications.linkedin}`}>LinkedIn: </span>{student.certifications.linkedin ? <FcCheckmark/> : <VscChromeClose/> }</p>
+                        <p><span className={`${student.certifications.github}`}>Github: </span>{student.certifications.github ? <FcCheckmark/> : <VscChromeClose/> }</p>
+                        <p><span className={`${student.certifications.mockInterview}`}>Mock Interview: </span>{student.certifications.mockInterview ? <FcCheckmark/> : <VscChromeClose/> }</p>
                     </div>
                 </section>
                 <Notes

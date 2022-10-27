@@ -5,8 +5,7 @@ export default function Students ({ students, cohort, comments, handleSubmit }){
     //Rendering of Students component using .map() method
     return (
         <div>
-            <h2>{cohort}</h2>
-            <p>Total Students: {students.length}</p>
+            <h2>{cohort} | <span id="total">Total Students: {students.length}</span></h2>
             {
                 students.map((student) => {
 
@@ -22,8 +21,8 @@ export default function Students ({ students, cohort, comments, handleSubmit }){
                                 <div className="info">
                                     <img src={student.profilePhoto}/>
                                     <section>
-                                        <h4>{fullName}</h4>
-                                        <p>{student.username}</p>
+                                        <h3>{fullName}</h3>
+                                        <p id="email">{student.username}</p>
                                         <p><span>Birthday: </span>{student.dob}</p>
                                     </section>
                                     <aside>

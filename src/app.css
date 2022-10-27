@@ -1,43 +1,106 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+
 header {
-    background-color: yellow;
+    color: white;  
+    text-shadow: 2px 2px red;  
+    background-color: #4242EA;
     text-align: center;
     margin: 0;
     padding: 20px;
+    border-left: 30px solid rgb(67, 42, 180);
+    border-right: 30px solid rgb(67, 42, 180);
+}
+
+h1 {
+    font-size: 35px
 }
 
 main {
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 400px auto;
+    column-gap: 40px;
+}
+
+span {
+    font-weight: bold;
+}
+
+/* CSS for Classes section */
+#sidebar {
+    background-color: lightgrey;
+}
+
+#classes {
+    position: fixed;
     margin-left: 30px;
+    margin-top: 30px;
+    background-color: rgb(246, 246, 142);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
 }
 
-img {
-    height: 150px;
-    width: 150px;
-    display: inline-block;
-    padding-right: 20px;
+.classes h2 {
+    text-align: center;
 }
 
-/* li {
+ul {
+    margin-top: 50px;
+    margin-left: -25px
+}
+
+.allStudents{
+    font-weight: bold;
+}
+
+.classes li {
     list-style: none; 
-    padding-bottom: 15px;
-    padding-top: 15px;
+    text-align: left;
     font-size: 18px;
-    background-color: lightblue;
-    border: ;
-} */
-
-li:hover {
-    color: blue;
 }
+
+.classes li:hover {
+    font-size: 18px;
+    text-shadow: 3px 3px white;
+    font-weight: bold;
+    transform: translate(40px);
+}
+
+/* CSS for Students section */
+#students {
+    padding: 20px 50px;
+}
+
+#total {
+    font-size: 20px;
+    font-weight: lighter;
+}    
 
 .student {
-    border: 2px solid blue;
+    border: 4px dashed rgb(59, 59, 228);
+    border-radius: 10px;
     display: grid;
     grid-template-rows: auto;
     margin-bottom: 30px;
     margin-right: 40px;
     padding: 20px;
+    background-image: linear-gradient(lightblue, white );
+}    
+
+img {
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin: 10px 20px 5px 20px;
+    border: 3px solid white;
+}   
+
+#email {
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .info {
@@ -45,22 +108,83 @@ li:hover {
     grid-template-columns: 1fr 2fr 1fr;
 }
 
-button {
-    margin-top: 15px;
+.info aside {
+    font-size: 18px;
+    padding-top: 20px;
+}    
+
+.student div {
+    padding-left: 20px;
+    padding-right: 20px;
+}    
+
+#detailButton {
+    margin: 20px 30px 0px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CSS for Student Details */
+h4 {
+    font-size: 18px;
+    text-decoration: underline;
 }
 
 .details {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    margin: auto;
+    grid-template-columns: 38% 33% auto;
+    font-size: 14px;
+    margin: 20px 30px;
+}
+
+/* CSS for text color based on grade/completion */
+.true {
+    color: rgb(31, 125, 31);
+}
+
+.false {
+    color: red;
+}
+
+.yellow {
+    color: rgb(223, 168, 17);
+}
+
+/* CSS for Notes section */
+form {
+    position: relative;
+}
+
+fieldset {
+    margin-top: 30px;
+    background-image: linear-gradient(white, lightblue);
+    margin-bottom: -10px;
+}
+
+#submit {
+    margin: 15px 300px 10px 300px;
 }
 
 input {
-    display: block;
+    display: block; 
+    margin-top: 5px;
+}
+
+#commenter {
+    display: inline-block;
+    margin: 15px;
+    background-color: none;
+}
+
+#comment {
+    width: 600px;
+    height: 50px;
+    display: block;    
 }
 
 legend {
     font-weight: bold;
     text-align: center;
+    font-size: large;
+    padding: 0px 5px;
 }

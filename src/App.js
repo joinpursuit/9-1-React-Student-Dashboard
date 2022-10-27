@@ -60,14 +60,14 @@ function App() {
       <h1>Student Dashboard</h1>
     </header>
     <main>
-      <aside>
+      <aside id="sidebar">
         <Classes
           allStudents={allStudents}
           handleClick={handleClick}
           showAll={showAll}
         />
       </aside>
-      <section>
+      <section id="students">
         <Students
           students={students}
           cohort={cohort}

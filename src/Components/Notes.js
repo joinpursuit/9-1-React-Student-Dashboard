@@ -8,14 +8,15 @@ export default function Notes ({ student, comments, handleSubmit }) {
                 <fieldset>
                 <legend>Instructor Notes</legend>
                 <label htmlFor='name'>
-                   Commenter Name 
-                   <input type="text" name="name"></input>
+                   Name 
+                   <input type="text" name="name" id="commenter"></input>
                  </label>
+                 <br/>
                  <label htmlFor='comment'>
                     Comment
-                    <input type="text" name="comment"></input>
+                    <input type="textarea" name="comment" id="comment"></input>
                 </label>
-                <button type='submit'>Add Notes</button>
+                <button type='submit' id="submit">Add Notes</button>
                 </fieldset>
             </form>
             <ul>
