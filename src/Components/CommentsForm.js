@@ -8,9 +8,9 @@ export default function CommentsForm({ student, addComment }) {
 
   const { commenter, comment } = inputComment;
 
-  const handleInputChange = (e) => {
+  function handleInputChange(e) {
     setInputComment({ ...inputComment, [e.target.id]: e.target.value });
-  };
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
