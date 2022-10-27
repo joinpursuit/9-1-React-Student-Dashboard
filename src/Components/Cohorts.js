@@ -1,4 +1,3 @@
-// Styling
 import "./Cohorts.css";
 
 export default function Cohorts({
@@ -28,10 +27,12 @@ export default function Cohorts({
 
   return (
     <div className="cohorts">
-      <h2>Choose a Class by Start Date</h2>
-      <li onClick={() => chooseCohort(null)}>All Students</li>
+      <h2 id="cohortsTitle">Choose a Class by Start Date</h2>
+      <li className="cohort" onClick={() => chooseCohort(null)}>
+        All Students
+      </li>
       {orderedCohorts.map((cohort, idx) => (
-        <li key={idx} onClick={() => chooseCohort(cohort)}>
+        <li className="cohort" key={idx} onClick={() => chooseCohort(cohort)}>
           {formatCohortName(cohort)}
         </li>
       ))}

@@ -1,12 +1,37 @@
 .cohorts {
     border: 3px solid black;
     padding: 10px;
+    width: 170px;
 }
 
-li {
+#cohortsTitle {
+    text-align: center;
+    font-family: monospace;
+}
+
+.cohort {
     list-style: none;
-    border: 3px solid black;
-    margin: 10px;
+    margin-bottom: 15px;
     padding: 10px;
+
+    box-shadow: 1px 1px 1px 1px;
+    border: 0px solid black;
+    border-radius: 10px;
+    
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+    
 }
 
+.cohort:hover {
+    color: darkred;
+    background-color: beige;
+    box-shadow: 3px 3px 3px 1px darkred;
+}
+
+.cohort:active {
+    color: darkred;
+    background-color: rgb(230, 230, 205);
+    box-shadow: 2px 2px 3px 1px black inset;
+}
