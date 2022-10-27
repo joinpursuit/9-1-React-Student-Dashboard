@@ -12,18 +12,23 @@ export default function StudentInfo({ student }) {
 
   function formatDob(date) {
     let newDate = new Date(date);
+    console.log(newDate);
     const newDateArray = newDate.toDateString().split(" ");
     return `${newDateArray[1]} ${newDateArray[2]}, ${newDateArray[3]}`;
   }
 
   return (
     <div className="profile">
-      <img
-        className="profilePhoto"
-        src={student.profilePhoto}
-        alt="profile"
-        width="50px"
-      />
+      <div className="imageContainer">
+        <img
+          className="profilePhoto"
+          src={student.profilePhoto}
+          alt="profile"
+          width="100px"
+        />
+
+        {onTrackToGrad && <p className="onTrackToGrad">On Track to Graduate</p>}
+      </div>
       <div>
         <p>
           Name:{" "}
@@ -41,7 +46,6 @@ export default function StudentInfo({ student }) {
         </p>
         <p>Birthday: {formatDob(student.dob)}</p>
       </div>
-      {onTrackToGrad && <p style={{ color: "green" }}>On Track to Graduate</p>}
     </div>
   );
 }

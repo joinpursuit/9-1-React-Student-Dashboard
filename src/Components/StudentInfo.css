@@ -3,6 +3,29 @@
     font-weight: bold;
 }
 
+.imageContainer {
+display: flex;
+}
+
+img {
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+
+    margin-right: 10px
+}
+
+.onTrackToGrad {
+    color: green;
+    padding: 10px;
+    box-shadow: 2px 2px 3px 2px lime;
+    border-radius: 10px;
+
+    margin: auto;
+    margin-left: 0px;
+    
+}
+
 #fullName {
     color: red;
 }
+
