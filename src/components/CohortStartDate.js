@@ -1,31 +1,35 @@
 import React from "react"
 import { useState } from "react"
 
-function CohortStartDate({ dataList }) {
-  //   const filteredStudents = dataList.filter((student) => {
-  //     console.log("student info", dataList.cohort.cohortCode)
-  //     // return student.cohort.cohortCode === dataList.cohort.cohortCode
-  //     return " hi"
-  //   })
+function CohortStartDate({ dataList, setselectCohort }) {
+  let yearTwentySix = ["Winter2026", "Fall2026", "Summer2026", "Spring2026"]
+  let yearTwentyFive = ["Winter2025", "Fall2025", "Summer2025", "Spring2025"]
 
-  //   function cohortClick(dataList) {
-  //     setCohort(filteredStudents)
-  //   }
-
+  function cohortClick(e) {
+    setselectCohort(e.target.innerText)
+    console.log(e)
+  }
   return (
     <div>
       <aside className="Class-selection">
         <h2>Choose a Class by Start Date</h2>
         <ul>
-          {dataList.map((datalists) => {
-            // <button>AllStudents</button>
+          <button onClick={cohortClick}> All Students </button>
+          <hr></hr>
+          {yearTwentySix.map((season) => {
             return (
-              <div key={datalists.id}>
-                <button> All Students </button>
-                <li>
-                  <button>Class Start</button>
-                </li>
-              </div>
+              <li>
+                <button onClick={cohortClick}>{season}</button>
+                <hr></hr>
+              </li>
+            )
+          })}
+          {yearTwentyFive.map((season) => {
+            return (
+              <li>
+                <button onClick={cohortClick}>{season}</button>
+                <hr></hr>
+              </li>
             )
           })}
         </ul>

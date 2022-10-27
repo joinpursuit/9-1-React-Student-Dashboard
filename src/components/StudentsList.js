@@ -1,7 +1,11 @@
-import React from "react"
 import ShowDetails from "./ShowDetails"
 
-function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
+function StudentsList({
+  dataList,
+  toggleSetNewShowMe,
+  ShowDetails,
+  selectCohort,
+}) {
   function ontrack(dataList) {
     if (
       dataList.certifications.resume === true &&
@@ -13,6 +17,9 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
       return "On track to Graduate"
     }
   }
+  const filteredStudents = dataList.filter(
+    (students) => selectCohort === students.cohort.cohortCode
+  )
   return (
     <section className="students-list">
       <button>All Students</button>
@@ -29,7 +36,6 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
                   src={dataLists.profilePhoto}
                   alt={dataLists.names.preferredName}
                 />
-
                 <div className="student-info">
                   <aside>
                     <h3>
@@ -42,13 +48,13 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
                       {dataLists.dob}
                     </p>
                   </aside>
-                  {/* <ShowDetails /> */}
                 </div>
                 <p className="on-track">{ontrack}</p>
               </div>
             </article>
           )
         })}
+        {/* <ShowDetails dataList={dataList} /> */}
       </div>
     </section>
   )

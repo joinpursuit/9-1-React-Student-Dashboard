@@ -6,7 +6,7 @@ import { useState } from "react"
 
 function App() {
   const [dataList, setData] = useState(data)
-  const [selectCohort, setselectCohort] = useState()
+  const [selectCohort, setselectCohort] = useState("AllStudents")
 
   return (
     <div className="container">
@@ -15,12 +15,15 @@ function App() {
         <CohortStartDate
           key={dataList.id}
           dataList={dataList}
-          selectCohort={selectCohort}
           setselectCohort={setselectCohort}
         />
       </aside>
       <main>
-        <StudentsList key={dataList.id} dataList={dataList} />
+        <StudentsList
+          key={dataList.id}
+          dataList={dataList}
+          selectCohort={selectCohort}
+        />
       </main>
     </div>
   )
