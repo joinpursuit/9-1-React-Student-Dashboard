@@ -5,7 +5,7 @@ export default function Main({students, cohorts,selected,setStudents,allCohortCo
     let spaceCohort = cohorts.split('')
     spaceCohort.splice(-4,0,' ')
     spaceCohort.join('')
-    console.log(spaceCohort)
+    // console.log(spaceCohort)
 
     return(
         <div className="main">
