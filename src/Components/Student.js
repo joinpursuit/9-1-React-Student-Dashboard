@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+// Secondary Components
 import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
 import Stats from "./Stats";
@@ -22,7 +24,7 @@ export default function Student({ student, addComment }) {
             <hr></hr>
             <div className="commentsContainer">
               <h4>1-on-1 Notes</h4>
-              <CommentsForm addComment={addComment} />
+              <CommentsForm student={student} addComment={addComment} />
               <br></br>
               <hr></hr>
               <h4>Comments</h4>

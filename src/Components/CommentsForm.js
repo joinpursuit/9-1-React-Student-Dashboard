@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CommentsForm({ addComment }) {
+export default function CommentsForm({ student, addComment }) {
   const [inputComment, setInputComment] = useState({
     commenter: "",
     comment: "",
@@ -14,7 +14,7 @@ export default function CommentsForm({ addComment }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    addComment(inputComment);
+    addComment(student, inputComment);
     setInputComment({
       commenter: "",
       comment: "",

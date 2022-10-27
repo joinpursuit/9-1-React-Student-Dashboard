@@ -5,6 +5,7 @@ import data from "./data/data.json";
 import Student from "./Components/Student";
 import Cohorts from "./Components/Cohorts";
 
+// Styling
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const [cohort, setCohort] = useState("All Students");
   const [totalStudents, setTotalStudents] = useState(studentsData.length);
 
+  // Cohort Selection Algorithm
   function chooseCohort(cohort) {
     setCohort(cohort);
     setTimeout(
@@ -35,6 +37,14 @@ function App() {
   // Formatting Algorithm
   function formatCohortName(cohort) {
     return cohort.split(20).join(" 20");
+  }
+
+  function addComment(commentedStudent, comment) {
+    const updatedStudents = [...students];
+    const studentsById = updatedStudents.map((student) => student.id);
+    const index = studentsById.indexOf(commentedStudent.id);
+    updatedStudents[index].notes.push(comment);
+    setStudents(updatedStudents);
   }
 
   return (
@@ -55,12 +65,20 @@ function App() {
           <p>Total: {totalStudents}</p>
           {cohort === "All Students"
             ? students.map((student) => (
-                <Student key={student.id} student={student} />
+                <Student
+                  key={student.id}
+                  student={student}
+                  addComment={addComment}
+                />
               ))
             : students
                 .filter((student) => student.cohort.cohortCode === cohort)
                 .map((student) => (
-                  <Student key={student.id} student={student} />
+                  <Student
+                    key={student.id}
+                    student={student}
+                    addComment={addComment}
+                  />
                 ))}
         </div>
       </main>
