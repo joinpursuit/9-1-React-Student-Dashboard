@@ -23,6 +23,7 @@ export default function CommentsForm({ student, addComment }) {
 
   return (
     <form className="form" onSubmit={(e) => handleSubmit(e)}>
+      <h4>1-on-1 Notes</h4>
       <label htmlFor="commenterName">Commenter Name </label>
       <input
         id="commenter"
