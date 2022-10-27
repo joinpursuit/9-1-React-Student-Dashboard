@@ -4,13 +4,15 @@ import { useState } from "react"
 function StartDate({ dataList }) {
   const [cohort, setCohort] = useState()
 
-  const filteredStudents = dataList.filter((student) => {
-    return student.cohort.cohortCode === dataList.cohort.cohortCode
-  })
+  //   const filteredStudents = dataList.filter((student) => {
+  //     console.log("student info", dataList.cohort.cohortCode)
+  //     // return student.cohort.cohortCode === dataList.cohort.cohortCode
+  //     return " hi"
+  //   })
 
-  function cohortClick(dataList) {
-    setCohort(filteredStudents)
-  }
+  //   function cohortClick(dataList) {
+  //     setCohort(filteredStudents)
+  //   }
 
   return (
     <div>
@@ -23,9 +25,7 @@ function StartDate({ dataList }) {
               <div key={datalists.id}>
                 <button> All Students </button>
                 <li>
-                  <button onClick={cohortClick}>
-                    {datalists.cohort.cohortCode}
-                  </button>
+                  <button>Class Start</button>
                 </li>
               </div>
             )

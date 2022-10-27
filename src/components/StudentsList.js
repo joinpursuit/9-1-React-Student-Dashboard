@@ -14,13 +14,13 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
     }
   }
   return (
-    <div className="student-cards">
-      <h2>All Students</h2>
+    <section className="students-list">
+      <button>All Students</button>
       <p>
         Total Students:
         <span>{dataList.length}</span>
       </p>
-      <div className="studentcards">
+      <div className="student-card">
         {dataList.map((dataLists) => {
           return (
             <article className="student-card">
@@ -42,8 +42,7 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
                       {dataLists.dob}
                     </p>
                   </aside>
-                  <button onClick={toggleSetNewShowMe}>Show me</button>
-                  <ShowDetails dataList={dataList} />
+                  {/* <ShowDetails /> */}
                 </div>
                 <p className="on-track">{ontrack}</p>
               </div>
@@ -51,7 +50,7 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
           )
         })}
       </div>
-    </div>
+    </section>
   )
 }
 

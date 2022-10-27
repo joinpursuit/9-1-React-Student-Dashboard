@@ -1,49 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
-  /* /* border: 1px solid black; */
-}
-
-body {
+.container {
   display: grid;
+  grid-template-rows: 1fr 6fr;
 }
 
 header {
+  grid-column: 3;
+  width: 100%;
+  background-color: rgb(54, 190, 190);
   text-align: center;
-  background-color: darkcyan;
 }
 
 main {
-  width: 90%;
-  margin: 10;
-  display: grid;
-  justify-content: space-between;
+  width: 100%;
+  margin-top: 65px;
+  grid-column: 3;
+  grid-row: 1;
   border: 1px solid black;
-  justify-items: center;
 }
+
+.students-list {
+  grid-row: 2;
+}
+
 .Class-selection {
   grid-column: 3;
   grid-row: 2;
-  border: 1px solid black;
-  margin-right: 725px;
-  margin-left: 25px;
+  justify-content: start;
 }
+
 .student-card {
   border: 2px solid green;
-  display: grid;
   grid-column-gap: 25px;
-  grid-template-columns: 1fr 2fr;
-  margin-left: 15px;
   padding: 25px;
-  column-gap: 25px;
-}
-
-li {
-  border: 1px solid green;
-
-  width: 255px;
 }
 
 img {
   height: 100px;
+}
+button {
+  border: none;
+  font-family: arial, sans-serif;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button:hover {
+  color: blue;
 }
