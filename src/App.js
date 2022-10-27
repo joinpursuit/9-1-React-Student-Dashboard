@@ -1,16 +1,20 @@
+import React from "react";
+import { useState } from "react";
+import data from "./data/data.json";
 import Start from "./Start";
 import Students from "./Students"
-import data from "./data/data.json";
-// import StudentsDetails from "./StudentDetails";
 
 
 function App() {
+  const [studentData, setStudentData] = useState(data)
   return (
     <div>
       <h1>Student Dashboard</h1>
-      <Start />
-      <Students studentData={data} />
-      {/* <StudentsDetails /> */}
+      <br></br>
+      <Start data={data} studentData={studentData} setStudentData={setStudentData}/>
+      <br></br>
+      <Students data={data} studentData={studentData} setStudentData={setStudentData} />
+
     </div>
 )
 

@@ -1,4 +1,36 @@
 img {
     height: 100px;
     width: 100px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+div {
+    background-color: darkseagreen;
+}
+
+li {
+    list-style: none;
+}
+
+.cohort-list {
+    position: absolute;
+    left: 0;
+}
+
+.student-list {
+    display: inline-block;
+    
+}
+
+.student-details {
+    display: inline-block;
+}
+
+.toggle-button {
+    color: white;
+    background-color: black;
+    border: white 1px solid;
+    font-family: cursive;
+    width: 500px;
 }
