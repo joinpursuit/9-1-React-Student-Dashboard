@@ -168,15 +168,9 @@ function Student({
                 <input id="add-note" type="submit" value="Add Note" />
               </form>
               <ul>
-                {notes ? (
-                  notes.map((e, i) => (
-                    <li key={i}>
-                      {e.commenter + ' says, "' + e.comment + '"'}
-                    </li>
-                  ))
-                ) : (
-                  <></>
-                )}
+                {notes.map((e, i) => (
+                  <li key={i}>{e.commenter + ' says, "' + e.comment + '"'}</li>
+                ))}
               </ul>
             </section>
           </>

@@ -110,7 +110,7 @@ span,
 #add-note {
   background-color: #60946c;
   color: #ffffff;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 4px 8px;
 }
@@ -118,4 +118,10 @@ span,
 .more:hover {
   color: black;
   cursor: pointer;
+}
+
+#add-note:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #ffffff;
 }
