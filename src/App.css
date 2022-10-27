@@ -1,6 +1,17 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 50px;
+
+    border: 5px solid black;;
+}
+
 header {
     top: 0%;
     position: sticky;
+    border-bottom: 5px solid black;
 }
 
 header h1 {
