@@ -25,7 +25,6 @@ function getCohortCode() {
 
 function handleCohortCodesSpace() {
   for (let i = 0; i < allCohortCodes.length; i++) {
-    // console.log(allCohortCodes[i].indexOf())
     let split = allCohortCodes[i].split('')
     let year = split.splice(split.length - 4)
     updatedCohortCodes.push(split.join('') + " " + year.join(''))
@@ -55,16 +54,11 @@ function handleUpdatedCohort(cohort) {
        }  
 }
 
-
-// console.log(allCohortCodes.sort((a, b) => a-b))
-
-
   return (
     <div className="wrapper">
      <Header />
      <Aside 
      allCohortCodes={allCohortCodes} 
-    //  updateAllStudentsButton={updateAllStudentsButton}
      handleCohortCodesSpace={handleCohortCodesSpace()} 
      updatedCohortCodes={updatedCohortCodes} 
      handleUpdatedCohort={handleUpdatedCohort}
