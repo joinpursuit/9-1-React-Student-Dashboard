@@ -11,8 +11,12 @@ function Student({
   certifications,
   codewars,
   cohort,
+  notes,
 }) {
   const [showMore, SetShowMore] = useState("Show More...");
+  const [commenter, setCommenter] = useState("");
+  const [comment, setComment] = useState("");
+
   const goalPercent = Math.round(
     (codewars.current.total / codewars.goal.total) * 100
   );
@@ -130,7 +134,50 @@ function Student({
             </div>
             <hr />
             <section id="notes">
-              <h5>1-on-1 Notes</h5>
+              <h4>1-on-1 Notes</h4>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  notes.push({ commenter: commenter, comment: comment });
+                  setCommenter("");
+                  setComment("");
+                }}
+              >
+                <label>
+                  Commenter Name{" "}
+                  <input
+                    type="text"
+                    name="commenter"
+                    required={true}
+                    value={commenter}
+                    onChange={(e) => setCommenter(e.target.value)}
+                  ></input>
+                </label>
+                <br />
+                <label>
+                  Comment{" "}
+                  <input
+                    type="text"
+                    name="comment"
+                    required={true}
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  ></input>
+                </label>
+                <br />
+                <input id="add-note" type="submit" value="Add Note" />
+              </form>
+              <ul>
+                {notes ? (
+                  notes.map((e, i) => (
+                    <li key={i}>
+                      {e.commenter + ' says, "' + e.comment + '"'}
+                    </li>
+                  ))
+                ) : (
+                  <></>
+                )}
+              </ul>
             </section>
           </>
         ) : (

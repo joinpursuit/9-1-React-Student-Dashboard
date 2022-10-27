@@ -17,7 +17,7 @@ function Students({ students, cohortName }) {
             dob,
             certifications,
             codewars,
-            cohort
+            cohort, notes
           }) => {
             return (
               <Student
@@ -29,6 +29,7 @@ function Students({ students, cohortName }) {
                 certifications={certifications}
                 codewars={codewars}
                 cohort={cohort}
+                notes={notes}
               />
             );
           }

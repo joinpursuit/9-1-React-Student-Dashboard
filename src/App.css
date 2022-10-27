@@ -67,7 +67,7 @@ span,
   grid-column: 1/4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr auto;
+  line-height: 0px;
 }
 
 .details div {
@@ -81,8 +81,38 @@ span,
   width: 100%;
 }
 
-#notes{
+.details div p {
+  line-height: 20px;
+  height: 20px;
+  display: flex;
+  margin: 0;
+}
+
+.details div p span {
+  padding-right: 6px;
+}
+
+#notes {
   grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+#notes form {
+  border: 2px solid black;
+  padding: 24px;
+  line-height: 36px;
+}
+
+#notes ul li {
+  line-height: 20px;
+}
+
+#add-note {
+  background-color: #60946c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 8px;
 }
 
 .more:hover {
