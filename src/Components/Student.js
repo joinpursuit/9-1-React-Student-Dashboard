@@ -17,17 +17,23 @@ const Student = ({ student, resetStudentDetails }) => {
   //************** */
 
   return (
-    <div id={student.id} onLoad={resetStudent}>
-      <img src={student.profilePhoto} alt={student.profilePhoto}></img>
-      <h4>
-        {student.names.preferredName} {student.names.middleName}{" "}
-        {student.names.surname}
-      </h4>
-      <p>{student.username}</p>
-      <p>Birthday: {student.dob}</p>
-      <button onClick={showStudentDetails}>
-        {!showStudentDetailsBool ? "Show More..." : "Show Less..."}
-      </button>
+    <div className="studentCard" id={student.id} onLoad={resetStudent}>
+      <img
+        className="profilePhoto"
+        src={student.profilePhoto}
+        alt={student.profilePhoto}
+      ></img>
+      <article className="studentInfo">
+        <h4>
+          {student.names.preferredName} {student.names.middleName}{" "}
+          {student.names.surname}
+        </h4>
+        <p>{student.username}</p>
+        <p>Birthday: {student.dob}</p>
+        <button onClick={showStudentDetails}>
+          {!showStudentDetailsBool ? "Show More..." : "Show Less..."}
+        </button>
+      </article>
       <StudentDetails
         showStudentDetailsBool={showStudentDetailsBool}
         student={student}

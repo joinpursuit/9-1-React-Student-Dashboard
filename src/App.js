@@ -15,6 +15,7 @@ function App() {
   //********* NON-STATE VARS *********/
 
   let cohortArr = [];
+  const seasons = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
 
   //********* HELPERS *********/
 
@@ -31,7 +32,7 @@ function App() {
     const arrOfCohorts = Array.from(cohortSet);
 
     //Formats arrOfCohorts so that the state is set with a space between season and year
-    arrOfCohorts.map((cohort) => {
+    arrOfCohorts.sort().map((cohort) => {
       setCohorts(arrOfCohorts);
     });
   };
@@ -71,6 +72,7 @@ function App() {
         filteredCohortInfoData={filteredCohortInfoData}
         cohortClicked={cohortClicked}
         splitString={splitString}
+        resetStudentDetails={resetStudentDetails}
       />
     </div>
   );

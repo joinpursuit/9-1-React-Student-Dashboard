@@ -14,7 +14,7 @@ const Students = ({
           ? cohortClicked
           : splitString(cohortClicked)}
       </h2>
-      <h4>{filteredCohortInfoData.length}</h4>
+      <h4>Total Students: {filteredCohortInfoData.length} </h4>
 
       {filteredCohortInfoData.map((student) => {
         return (
