@@ -35,3 +35,42 @@
     grid-column: 2;
     height: fit-content;
 }
+
+.moreDetails{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.codewars{
+    grid-column: 1;
+}
+
+.scores{
+    grid-column: 2;
+}
+
+.certifications{
+    grid-column: 3;
+}
+
+.studentList li{
+    display: grid;
+    width: 500px;
+    border: 2px solid blue;
+    margin-bottom: 5px;
+    
+}
+
+h3{
+    width: 150px;
+    border-bottom: 2px solid white;
+    margin-bottom: 5px;
+    
+}
+
+img{
+    display: grid;
+    height: 100px;
+    width: 100px;
+   
+}

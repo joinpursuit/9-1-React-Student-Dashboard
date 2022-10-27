@@ -1,21 +1,31 @@
+import MoreDetails from './MoreDetails'
+import Form from './Form'
 
+export default function studentList({data,studentTotal,currentCohort,setStudentTotal,detailsState,showButton,displayDetails,handleTextChange,setNote,note,handleSubmit}){
 
-export default function studentList({data,studentTotal,currentCohort,setStudentTotal}){
-
-console.log(currentCohort.slice(0,-5) + currentCohort.slice(-4))
 let i = 0
-    let studentDetails = data.map((e)=>{
+
+let studentDetails = data.map((e)=>{
+
     
     if(currentCohort==="All Students"){
         i++
+
         return (
-            
             <li key={e.id}> 
+            <img src={e.profilePhoto} />
             <div>{e.names.preferredName + " " + e.names.middleName + " " + e.names.surname}</div> 
             <div>{e.username}</div>
             <div>Birthday: {e.dob}</div>
             <br></br>
-            <div>Show More... </div>
+                <MoreDetails
+                data={e} />
+               
+                <div><Form
+                handleTextChange={handleTextChange}
+                setNote = {setNote}
+                note={note}
+                handleSubmit={handleSubmit} /></div>
             <br></br>
             </li>
           
@@ -29,12 +39,22 @@ let i = 0
     return (
             
             <li key={e.id}> 
+            <img src={e.profilePhoto} />
             <div>{e.names.preferredName + " " + e.names.middleName + " " + e.names.surname}</div> 
             <div>{e.username}</div>
             <div>Birthday: {e.dob}</div>
             <br></br>
-            <div>Show More... </div>
+            <MoreDetails
+                data={e} />
+               
+                    <Form 
+                    handleTextChange={handleTextChange}
+                    setNote = {setNote}
+                    note={note}
+                    handleSubmit={handleSubmit}
+                    />
             <br></br>
+
             </li>
           
         )
