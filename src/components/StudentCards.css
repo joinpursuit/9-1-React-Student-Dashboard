@@ -1,0 +1,84 @@
+main{
+    display:block;
+    grid-colum: right;
+    margin: 0 auto;
+    width: 90%;
+    grid-row: main; 
+    font-size:16px
+}
+
+.card{
+    grid-column-gap: 25px;
+    column-gap: 25px;
+    margin:10px;
+    padding: 25px
+}
+
+.student-cards{
+  border: 4px groove var(--darkPurple);
+  border-radius: 10px;
+  display: grid;
+  margin: 10px 0;
+  padding: 25px;
+  column-gap: 20px;
+  grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+}
+
+.student-cards .student-details h2{
+ margin: 0;
+}
+
+.student-cards section{
+    margin:20px 0;
+}
+
+.student-cards img{
+    width: 90px;
+    height:80px;
+    border-radius:5px;
+    
+}
+
+.student-cards p{
+    color: var(--lightPurple)
+}
+
+
+span{
+    color:black; 
+    
+}
+
+.student-cards .student-details{
+    grid-column: left/end;
+}
+
+.student-details{
+    display: grid;
+    column-gap: 60px;
+    grid-template-columns: repeat(3 1fr);
+}
+
+.show{
+    border:none;
+    background:none;
+    padding: 0;
+    text-align: left;
+    text-decoration:underline;
+    color: var(--pretty);
+}
+
+.show:hover{
+    color:black
+}
+
+.onTrack{
+    color: var(--pretty);
+    margin-top:15px;
+    text-align: right;
+}
+
+section{
+    grid-row: middle;
+}
+

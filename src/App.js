@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Cohort from './components/Cohort'
-import StudentCard from './components/StudentCard'
+import StudentCard from './components/Students'
 import "./App.css"
 import { useState } from "react";
 import data from './data/data.json'
@@ -8,12 +8,13 @@ import data from './data/data.json'
 function App() {
   const [student, setStudent] = useState(data)
   const [cohorts, setCohorts] = useState('All Students')
+  const [notes, setNotes] = useState(data.notes)
+  //This is maybe working
 
   return (
     <div className="wrap">
      <Header/>
      <Cohort
-    //  data={data}
      student={student}
      setStudent={setStudent}
      cohorts={cohorts}
@@ -24,6 +25,8 @@ function App() {
      student={student}
      setStudent={setStudent}
      cohorts={cohorts}
+     notes={notes}
+     setNotes={setNotes}
      />
     </div>
   );
