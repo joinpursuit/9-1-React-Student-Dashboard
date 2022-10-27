@@ -3,6 +3,7 @@ import Student from "./Student";
 
 function Students({ students, cohortName, setStudents, studentData }) {
   const [search, setSearch] = useState("");
+
   return (
     <div className="Students">
       <h2>{cohortName}</h2>
@@ -17,17 +18,34 @@ function Students({ students, cohortName, setStudents, studentData }) {
         onChange={(e) => {
           setSearch(e.target.value);
           setStudents(
-            studentData.filter(
-              (el) =>
-                (el.cohort.cohortCode === cohortName.replace(" 20", "20") ||
-                  cohortName === "All Students") &&
-                (el.names.preferredName
-                  .toLowerCase()
-                  .includes(e.target.value.toLowerCase().trim()) ||
-                  el.names.surname
+            studentData.filter((el) => {
+              // return (el.cohort.cohortCode === cohortName.replace(" 20", "20") ||
+              //   cohortName === "All Students") &&
+              //   (el.names.preferredName
+              //     .toLowerCase()
+              //     .includes(e.target.value.toLowerCase().trim()) ||
+              //     el.names.surname
+              //       .toLowerCase()
+              //       .includes(e.target.value.toLowerCase().trim()));
+              const keyWords = e.target.value.toLowerCase().split(" ");
+              console.log(keyWords);
+              let checkArr = [];
+              if (
+                el.cohort.cohortCode === cohortName.replace(" 20", "20") ||
+                cohortName === "All Students"
+              ) {
+                checkArr = [];
+                checkArr = keyWords.map((element) => {
+                  return el.names.preferredName
                     .toLowerCase()
-                    .includes(e.target.value.toLowerCase().trim()))
-            )
+                    .includes(element) ||
+                    el.names.surname.toLowerCase().includes(element)
+                    ? true
+                    : false;
+                });
+                return checkArr.includes(false) ? false : true;
+              }
+            })
           );
         }}
       />
