@@ -6,9 +6,12 @@
 }
 
 .individual-card {
-  /* border: 1px solid gold; */
+  /* border: 1px solid pink; */
   /* padding: rem; */
-  margin: 5px 50px;
+  /* padding-right: 300px; */
+
+  /* margin: 5px 30px; */
+  color: blue;
 }
 
 .student-cards {

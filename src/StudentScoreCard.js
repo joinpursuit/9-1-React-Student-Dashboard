@@ -22,9 +22,39 @@ function StudentScoreCard({ el, showData }) {
         </p>
         <p>
           <span>Percent of Goal Achieved:</span>{' '}
-          {(el.codewars.current.total / el.codewars.goal.total).toFixed(2) *
-            100}
-          %
+          {((el.codewars.current.total / el.codewars.goal.total) * 100).toFixed(
+            0
+          ) > 99 ? (
+            <p style={{ color: 'green' }}>
+              {(
+                (el.codewars.current.total / el.codewars.goal.total) *
+                100
+              ).toFixed(0)}
+              %
+            </p>
+          ) : (
+              (el.codewars.current.total / el.codewars.goal.total) *
+              100
+            ).toFixed(0) > 49 ? (
+            <p style={{ color: 'yellow' }}>
+              {(
+                (el.codewars.current.total / el.codewars.goal.total) *
+                100
+              ).toFixed(0)}{' '}
+              %
+            </p>
+          ) : (
+              (el.codewars.current.total / el.codewars.goal.total) *
+              100
+            ).toFixed(0) < 50 ? (
+            <p style={{ color: 'red' }}>
+              {(
+                (el.codewars.current.total / el.codewars.goal.total) *
+                100
+              ).toFixed(0)}
+              %
+            </p>
+          ) : null}
         </p>
       </article>
       <article className="scores">
@@ -47,15 +77,15 @@ function StudentScoreCard({ el, showData }) {
         </p>
         <p>
           <span style={{ color: 'darkgreen' }}>LinkedIn:</span> {''}
-          {el.certifications.linkedIn === false ? '❌' : '✅'}
+          {el.certifications.linkedin === false ? '❌' : '✅'}
         </p>
         <p>
           <span style={{ color: 'darkgreen' }}>Mock Interview:</span>
-          {el.certifications.mockInteerview === false ? '❌' : '✅'}
+          {el.certifications.mockInterview === false ? '❌' : '✅'}
         </p>
         <p>
           <span style={{ color: 'darkgreen' }}>GitHub:</span>{' '}
-          {el.certifications.GitHub === false ? '❌' : '✅'}
+          {el.certifications.github === false ? '❌' : '✅'}
         </p>
       </article>
       <Form el={el} />

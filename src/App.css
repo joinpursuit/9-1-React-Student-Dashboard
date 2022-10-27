@@ -39,3 +39,14 @@
   padding: 10px;
   margin-top: 20px;
 }
+
+.status {
+  /* border: 2px solid blue; */
+  padding: 10px;
+  padding-top: 20px;
+  /* padding-left: 50px; */
+  /* margin-left: 90px; */
+  text-align: center;
+  color: mediumvioletred;
+  font-size: large;
+}

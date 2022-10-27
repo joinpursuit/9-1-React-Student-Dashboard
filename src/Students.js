@@ -24,8 +24,6 @@ function Students({ Data, title, total }) {
     return <Article el={el} birthday={birthday} />;
   });
 
-  // return <div className="student-cards">{studentDetails}</div>;
-  // return <div className="student-cards">{studentDetails2}</div>;
   return (
     <>
       <p style={{ color: '#a90329' }}>

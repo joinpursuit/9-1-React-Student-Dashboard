@@ -15,6 +15,10 @@ function Form({ el }) {
     setCommenter('');
     setComment('');
   }
+
+  function addNote() {
+    setNewComment([...newComment, { commenter: commenter, comment: comment }]);
+  }
   return (
     <article className="form-article">
       <hr />
@@ -49,6 +53,7 @@ function Form({ el }) {
           );
         })}
         {handleSubmit}
+        {addNote}
       </ul>
     </article>
   );

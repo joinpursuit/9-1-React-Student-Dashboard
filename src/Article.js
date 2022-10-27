@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import StudentScoreCard from './StudentScoreCard';
-// import Form from './Form';
+import './Students.css';
 
 function Article({ el, birthday }) {
   const [showData, setShowData] = useState(false);
   function handleClick() {
     setShowData(!showData);
   }
+  function checkGraduation() {
+    if (
+      el.certifications.resume === true &&
+      el.certifications.linkedin === true &&
+      el.certifications.mockInterview === true &&
+      el.certifications.github === true &&
+      el.codewars.current.total > 600
+    )
+      return <p className="status">On track to Graduate </p>;
+  }
+
+  console.log(checkGraduation());
+
   return (
     <article key={el.id} className="article">
       <img
@@ -30,6 +43,7 @@ function Article({ el, birthday }) {
         </aside>
         {showData && <StudentScoreCard el={el} />}
       </div>
+      <p>{checkGraduation()}</p>
     </article>
   );
 }
