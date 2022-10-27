@@ -66,26 +66,32 @@ function App() {
             chooseCohort={chooseCohort}
           />
         </aside>
-        <div className="students">
-          <h2>{cohort ? formatCohortName(cohort) : "All Students"}</h2>
-          <p>Total: {totalStudents}</p>
-          {!cohort
-            ? students.map((student) => (
-                <Student
-                  key={student.id}
-                  student={student}
-                  addComment={addComment}
-                />
-              ))
-            : students
-                .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
-                .map((student) => (
+        <div className="studentsMainContainer">
+          <div className="studentListTitle">
+            <h2 id="chosenCohort">
+              {cohort ? formatCohortName(cohort) : "All Students"}
+            </h2>
+            <p id="totalStudentsDisplayed">Total Students: {totalStudents}</p>
+          </div>
+          <div className="studentListContainer">
+            {!cohort
+              ? students.map((student) => (
                   <Student
                     key={student.id}
                     student={student}
                     addComment={addComment}
                   />
-                ))}
+                ))
+              : students
+                  .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
+                  .map((student) => (
+                    <Student
+                      key={student.id}
+                      student={student}
+                      addComment={addComment}
+                    />
+                  ))}
+          </div>
         </div>
       </main>
     </div>

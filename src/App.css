@@ -21,3 +21,34 @@ header h1 {
     padding: 10px;
     padding-top: 0px;;
 }
+
+.studentsMainContainer {
+    margin-top: 18.185px;
+}
+
+.studentListTitle {
+    top: 140px;
+    margin-bottom: 30px;
+}
+
+#chosenCohort {
+    margin-bottom: 0px;
+
+    font-family: monospace;
+    color: black;
+}
+
+#totalStudentsDisplayed {
+    margin-top: 2px;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.studentListContainer {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px;
+}
