@@ -8,7 +8,8 @@ function Students({ students, cohortName, setStudents, studentData }) {
     <div className="Students">
       <h2>{cohortName}</h2>
       <p>
-        Total Students: <span>{students.length}</span>
+        {search ? "Search Results: " : "Total Students: "}
+        <span>{students.length}</span>
       </p>
       <input
         type="text"
@@ -19,30 +20,17 @@ function Students({ students, cohortName, setStudents, studentData }) {
           setSearch(e.target.value);
           setStudents(
             studentData.filter((el) => {
-              // return (el.cohort.cohortCode === cohortName.replace(" 20", "20") ||
-              //   cohortName === "All Students") &&
-              //   (el.names.preferredName
-              //     .toLowerCase()
-              //     .includes(e.target.value.toLowerCase().trim()) ||
-              //     el.names.surname
-              //       .toLowerCase()
-              //       .includes(e.target.value.toLowerCase().trim()));
-              const keyWords = e.target.value.toLowerCase().split(" ");
-              console.log(keyWords);
+              const keywords = e.target.value.toLowerCase().split(" ");
               let checkArr = [];
               if (
-                el.cohort.cohortCode === cohortName.replace(" 20", "20") ||
+                el.cohort.cohortCode === cohortName.replace(" ", "") ||
                 cohortName === "All Students"
               ) {
-                checkArr = [];
-                checkArr = keyWords.map((element) => {
-                  return el.names.preferredName
-                    .toLowerCase()
-                    .includes(element) ||
+                checkArr = keywords.map(
+                  (element) =>
+                    el.names.preferredName.toLowerCase().includes(element) ||
                     el.names.surname.toLowerCase().includes(element)
-                    ? true
-                    : false;
-                });
+                );
                 return checkArr.includes(false) ? false : true;
               }
             })
