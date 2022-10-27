@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const [title, setTitle] = useState('All Students');
   const [total, setTotal] = useState(Data.length);
-  const [student, setStudents] = useState(Data);
+  const [student, setStudent] = useState(Data);
 
   return (
     <div className="app">
@@ -38,7 +38,7 @@ function App() {
             </section>
             <br></br>
             <div className="students-info">
-              <Students Data={Data} student={student} />
+              <Students Data={Data} student={student} title={title} />
             </div>
           </main>
         </div>
