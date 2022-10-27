@@ -59,6 +59,7 @@ function App() {
           select = {select}
           setSelect = {setSelect}
           setSearch = {setSearch}
+          setCohortName = {setCohortName}
          />
         </div>
         

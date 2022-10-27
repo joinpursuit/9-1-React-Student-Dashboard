@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch}) {
+function GraduateDropdown({students,setStudents,data, select, setSelect, setSearch, setCohortName}) {
 
     // function for filter by graduation status
     function graduateStudents() {
@@ -14,12 +14,13 @@ function GraduateDropdown({students,setStudents,data, select, setSelect, setSear
     function dropDownHandle(e) {
         const value = e.target.value
         setSelect(value)
+        setSearch("")
         if(value === "graduate"){
             setStudents(graduateStudents())
         }
         else if(value === 'all'){
             setStudents(data) 
-            setSearch("")
+            setCohortName(`All Students`)
         }
 }
   

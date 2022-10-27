@@ -210,4 +210,8 @@ input {
     height: fit-content;
 }
 
+input:focus {
+    outline-color: green;
+}
+
 
