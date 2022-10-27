@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
+import { filterStudents } from '../data/helperFunctions';
 
 function SearchBar({data, setStudents, setCohortName, cohortName, students,search, setSearch, setSelect}) {
     console.log(cohortName.split(` `).join(``))
