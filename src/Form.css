@@ -5,14 +5,14 @@
 }
 
 .formButton {
-  background-color: blue;
-  color: white;
+  background-color: rgb(66, 66, 234);
+  color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
   font-size: large;
 }
 
 form {
-  /* border: 2px solid black; */
+  border: 1px solid rgb(0, 0, 0);
   padding: 20px;
 }
