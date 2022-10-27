@@ -34,11 +34,11 @@ function StudentsList({ dataList, toggleSetNewShowMe, ShowDetails }) {
                   <aside>
                     <h3>
                       {dataLists.names.preferredName}{" "}
-                      {dataLists.names.middleName}. {dataLists.names.surname}
+                      {dataLists.names.middleName} {dataLists.names.surname}
                     </h3>
                     <p>{dataLists.username}</p>
                     <p>
-                      <span>Birthday:</span>
+                      <span>Birthday: </span>
                       {dataLists.dob}
                     </p>
                   </aside>

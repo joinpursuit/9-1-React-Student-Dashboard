@@ -1,25 +1,33 @@
 .container {
   display: grid;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 5fr;
 }
 
 header {
-  grid-column: 3;
-  width: 100%;
+  grid-column: 2;
   background-color: rgb(54, 190, 190);
   text-align: center;
 }
 
 main {
   width: 100%;
-  margin-top: 65px;
-  grid-column: 3;
+  margin-top: 85px;
+  grid-column: 2;
   grid-row: 1;
   border: 1px solid black;
 }
 
 .students-list {
   grid-row: 2;
+  margin-top: 2%;
+}
+
+.cohort {
+  grid-row: 1;
+  margin-top: 13%;
+  margin-right: 10%;
+  margin-left: 7%;
+  border: 1px solid black;
 }
 
 .Class-selection {
@@ -38,10 +46,10 @@ img {
   height: 100px;
 }
 button {
+  background: none;
   border: none;
   font-family: arial, sans-serif;
   color: rgb(0, 0, 0);
-  text-decoration: underline;
   cursor: pointer;
 }
 

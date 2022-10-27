@@ -1,9 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-function StartDate({ dataList }) {
-  const [cohort, setCohort] = useState()
-
+function CohortStartDate({ dataList }) {
   //   const filteredStudents = dataList.filter((student) => {
   //     console.log("student info", dataList.cohort.cohortCode)
   //     // return student.cohort.cohortCode === dataList.cohort.cohortCode
@@ -36,4 +34,4 @@ function StartDate({ dataList }) {
   )
 }
 
-export default StartDate
+export default CohortStartDate
