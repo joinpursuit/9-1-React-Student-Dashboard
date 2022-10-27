@@ -22,9 +22,8 @@ function GraduateDropdown({students,setStudents,data, select, setSelect, setSear
         }
         else if(value === 'all'){
             filterStudents(cohortName, setStudents, setSearchResult, data)
-        
         }
-}
+    }
   
     return (
        <select

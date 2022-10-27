@@ -10,7 +10,9 @@ function SearchBar({setStudents, search, setSearch,searchResult, setSearchResult
         const string = input.toLowerCase()
         
         const searchedStudent = copyStudents.filter(({names}) => {
+            
             const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${middleName(names.middleName).toLowerCase().replace(`.`,``)} ${names.surname.toLowerCase()}`
+            
             const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
 
             if(input === ""){
@@ -24,16 +26,13 @@ function SearchBar({setStudents, search, setSearch,searchResult, setSearchResult
 
         setStudents(searchedStudent)
     }
-        
-    
 
     // function for on change in search bar
     function handleSearch(e) {
         const value = e.target.value
         setSearchResult(copyStudents)
         setSearch(value)
-        searchFilter(value)
-       
+        searchFilter(value) 
     }
 
     return (

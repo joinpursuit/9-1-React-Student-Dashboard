@@ -48,14 +48,9 @@ function App() {
           
           <p>
             <SearchBar
-            students = {students}
-            data = {data}
             setStudents = {setStudents}
-            setCohortName = {setCohortName}
             search = {search}
             setSearch = {setSearch}
-            setSelect = {setSelect}
-            cohortName = {cohortName}
             searchResult = {searchResult}
             setSearchResult = {setSearchResult}
             />
@@ -69,7 +64,6 @@ function App() {
           setSelect = {setSelect}
           setSearch = {setSearch}
           cohortName = {cohortName}
-          setCohortName = {setCohortName}
           searchResult = {searchResult}
           setSearchResult = {setSearchResult}
          />

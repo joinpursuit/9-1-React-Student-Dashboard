@@ -21,6 +21,7 @@ function StudentList({students,setStudents,data,setCohortName, setSearchResult})
                             
                             <div className='studentInfo'>
                                 <img src = {profilePhoto} alt = 'profilePhoto' />
+                                
                                 <div 
                                 style={{
                                     marginLeft: "10px",
@@ -29,9 +30,11 @@ function StudentList({students,setStudents,data,setCohortName, setSearchResult})
                                     style={{marginBottom : "0"}}>{firstName} {middleInitial} {lastName}</h4>
                                     {username}
                                     <br></br>
+                                    
                                     <Birthday
                                     dob = {dob} />
                                     <br></br>
+                                    
                                     <StudentCohortLink
                                     id = {id}
                                     setStudents = {setStudents}
