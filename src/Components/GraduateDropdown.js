@@ -15,9 +15,6 @@ function GraduateDropdown({students,setStudents,data, select, setSelect, setSear
         const value = e.target.value
         setSelect(value)
         setSearch("")
-        const searchOnDropdown = [...searchResult]
-        console.log(`search`,searchResult)
-        console.log(`copy`, searchOnDropdown)
         if(value === "graduate"){
             setStudents(graduateStudents())
             setSearchResult(graduateStudents())
@@ -28,7 +25,7 @@ function GraduateDropdown({students,setStudents,data, select, setSelect, setSear
     )
             setStudents(filteredStudentArray) 
             // setCohortName(`All Students`)
-            // setSearchResult(data)
+            setSearchResult(filteredStudentArray)
         }
 }
   
