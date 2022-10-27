@@ -1,19 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
-import { filterStudents } from '../data/helperFunctions';
 
-function SearchBar({data, setStudents, setCohortName, cohortName, students,search, setSearch, setSelect}) {
-    console.log(cohortName.split(` `).join(``))
-    const copyStudents = [...students]
-    console.log(`copy`,copyStudents)
-    const [searchResult, setSearchResult] = useState([...copyStudents])
-    console.log(`search`,searchResult)
+function SearchBar({setStudents, search, setSearch,searchResult, setSearchResult}) {
+    const copyStudents = [...searchResult]
+
     // function for filtering students by search value
     function searchFilter(input) {
         const string = input.toLowerCase()
-       
-        const searchedStudent = searchResult.filter(({names}) => {
+        
+        const searchedStudent = copyStudents.filter(({names}) => {
             const studentLowerCaseMiddle = `${names.preferredName.toLowerCase()} ${middleName(names.middleName).toLowerCase().replace(`.`,``)} ${names.surname.toLowerCase()}`
             const studentLowerCaseLast = `${names.preferredName.toLowerCase()} ${names.surname.toLowerCase()}`
 
@@ -34,6 +30,7 @@ function SearchBar({data, setStudents, setCohortName, cohortName, students,searc
     // function for on change in search bar
     function handleSearch(e) {
         const value = e.target.value
+        setSearchResult(copyStudents)
         setSearch(value)
         searchFilter(value)
        

@@ -23,6 +23,9 @@ function App() {
   // Declare State for selection value
   const [select, setSelect] = useState("all")
 
+  // Declare state for search data
+  const [searchResult, setSearchResult] = useState(data)
+
 
   return (
     <div className='topLevel'>
@@ -56,6 +59,8 @@ function App() {
             setSearch = {setSearch}
             setSelect = {setSelect}
             cohortName = {cohortName}
+            searchResult = {searchResult}
+            setSearchResult = {setSearchResult}
             />
           </p>
 
@@ -92,6 +97,7 @@ function App() {
         setCohortName = {setCohortName}
         setSearch = {setSearch}
         setSelect = {setSelect}
+        setSearchResult = {setSearchResult}
         />
 
       </aside>

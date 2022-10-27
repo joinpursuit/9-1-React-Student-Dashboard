@@ -72,11 +72,11 @@
   }
 
 //   function for filtering students by cohort name
-function filterStudents(string, setFunction, arrOfObj) {
+function filterStudents(string, setFunction1, arrOfObj) {
     const filteredStudentArray = arrOfObj.filter(({cohort}) => 
        cohort.cohortCode === string
     )
-    setFunction(filteredStudentArray)
+    setFunction1(filteredStudentArray)
  }
 
   
