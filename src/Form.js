@@ -10,20 +10,21 @@ function Form({ el }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newObj = { commenter: commenter, comment: comment };
-    setNewComment([...newComment, newObj]);
+    addNote();
     setCommenter('');
     setComment('');
   }
 
   function addNote() {
-    setNewComment([...newComment, { commenter: commenter, comment: comment }]);
+    const newObj = { ...newComment, commenter: commenter, comment: comment };
+
+    newComment.push(newObj);
   }
   return (
     <article className="form-article">
       <hr />
       <h4>1-on-1 Notes</h4>
-      <form className="comment-form">
+      <form onSubmit={handleSubmit} className="comment-form">
         <label>Commenter name</label>
         <input
           onChange={(e) => setCommenter(e.target.value)}
@@ -52,7 +53,6 @@ function Form({ el }) {
             </li>
           );
         })}
-        {handleSubmit}
         {addNote}
       </ul>
     </article>
