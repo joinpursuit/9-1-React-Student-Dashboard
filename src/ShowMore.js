@@ -23,7 +23,19 @@ function ShowMore({ el }) {
         </p>
         <p>
           <span>Percent of Goal Achieved: </span>
-          {percent}%
+          {percent >= 100 ? (
+            <p className="codewarsPercent" style={{ color: "green" }}>
+              {percent}%
+            </p>
+          ) : percent >= 50 ? (
+            <p className="codewarsPercent" style={{ color: "yellow" }}>
+              {percent} %
+            </p>
+          ) : percent < 50 ? (
+            <p className="codewarsPercent" style={{ color: "red" }}>
+              {percent}%
+            </p>
+          ) : null}
         </p>
       </article>
       <article className="scores">

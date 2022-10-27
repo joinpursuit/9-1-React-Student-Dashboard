@@ -1,7 +1,8 @@
 .form {
   grid-column: span 3;
-  /* border: 1px solid black; */
   text-align: left;
+  padding: 0px 35px 0px;
+  /* border: 1px solid black; */
 }
 
 .formButton {
@@ -10,9 +11,18 @@
   border-radius: 10px;
   padding: 10px;
   font-size: large;
+  transition: all 0.2s;
+  position: absolute;
+}
+
+.formButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.295);
+  color: rgb(66, 66, 234);
+  background-color: rgb(245, 245, 245);
 }
 
 form {
   border: 1px solid rgb(0, 0, 0);
-  padding: 20px;
+  padding: 10px 10px 50px;
 }
