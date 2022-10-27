@@ -1,0 +1,17 @@
+.profpic{
+    border-radius: 5px;
+    width: 150px;
+}
+
+
+.showmore {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+
+.notes{
+    border: 2px solid black;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
