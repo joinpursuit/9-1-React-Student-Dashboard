@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// Secondary Components
 import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
 import Stats from "./Stats";
