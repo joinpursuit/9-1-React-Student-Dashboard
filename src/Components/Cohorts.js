@@ -15,6 +15,7 @@ const Cohorts = ({
 
   return (
     <div className="aside" onLoad={cohortListAside}>
+      <h3 id="cohortH2">Classes by Start-Date</h3>
       <ul>
         <li id={"All Students"} onClick={searchCohort}>
           All Students
@@ -22,7 +23,7 @@ const Cohorts = ({
         <hr></hr>
         {cohorts.map((cohort, i) => {
           return (
-            <li id={cohort} onClick={searchCohort}>
+            <li className="cohorts" id={cohort} onClick={searchCohort}>
               {splitString(cohort)}
               <hr></hr>
             </li>

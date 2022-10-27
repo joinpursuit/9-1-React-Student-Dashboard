@@ -24,10 +24,10 @@ const Student = ({ student, resetStudentDetails }) => {
         alt={student.profilePhoto}
       ></img>
       <article className="studentInfo">
-        <h4>
+        <h3>
           {student.names.preferredName} {student.names.middleName}{" "}
           {student.names.surname}
-        </h4>
+        </h3>
         <p>{student.username}</p>
         <p>Birthday: {student.dob}</p>
         <button onClick={showStudentDetails}>

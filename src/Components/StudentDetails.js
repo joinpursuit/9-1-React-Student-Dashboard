@@ -7,6 +7,22 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
   // To add to the notes array
   const [newNotes, setNewNotes] = useState(student.notes);
 
+  let percentAchieved = document.querySelectorAll("p#percentAchieved");
+
+  const onTrackToGraduate = (student) => {
+    if (
+      student.certifications.resume === true &&
+      student.certifications.linkedin === true &&
+      student.certifications.github === true &&
+      student.certifications.mockInterview === true &&
+      student.codewars.current.total > 600
+    ) {
+      return <h4 className="graduate">On-track to Graduate: ✅</h4>;
+    } else {
+      return <h4 className="graduate">On-track to Graduate: ❌</h4>;
+    }
+  };
+
   const inputChange = (e) => {
     setNotes({ ...notes, [e.target.id]: e.target.value });
   };
@@ -17,17 +33,49 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
     setNotes({ commenter: "", comment: "" });
   };
 
+  const scoresDisplayColor = () => {
+    percentAchieved.forEach((el) => {
+      if (
+        Math.round(
+          (student.codewars.goal.total / student.codewars.current.total) * 100
+        ) >= 99
+      ) {
+        el.className = "good";
+      }
+      if (
+        Math.round(
+          (student.codewars.goal.total / student.codewars.current.total) * 100
+        ) > 49 &&
+        Math.round(
+          (student.codewars.goal.total / student.codewars.current.total) * 100
+        ) < 100
+      ) {
+        el.className = "medium";
+      }
+      if (
+        Math.round(
+          (student.codewars.goal.total / student.codewars.current.total) * 100
+        ) < 50
+      ) {
+        el.className = "bad";
+      }
+    });
+  };
+
+  console.log(percentAchieved);
+
   return (
     <>
       {showStudentDetailsBool ? (
         <>
           <section className="studentStats">
+            {" "}
             <article>
               <h4>Codewars</h4>
               <p>Current Total: {student.codewars.current.total}</p>
               <p>Last Week:{student.codewars.current.lastWeek}</p>
               <p>Goal:{student.codewars.goal.total}</p>
-              <p>
+              <p id="percentAchieved" className={scoresDisplayColor}>
                 Percent of Goal Achieved:{" "}
                 {Math.round(
                   (student.codewars.goal.total /
@@ -37,14 +85,12 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
                 %{" "}
               </p>
             </article>
-
             <article>
               <h4>Scores</h4>
               <p>Assignments: {student.cohort.scores.assignments}%</p>
               <p>Projects: {student.cohort.scores.projects}%</p>
               <p>Assesments: {student.cohort.scores.assessments}%</p>
             </article>
-
             <article>
               <h4>Certifications</h4>
               <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
@@ -54,6 +100,7 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
                 {student.certifications.mockInterview ? "✅" : "❌"}
               </p>
               <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+              {onTrackToGraduate(student)}
             </article>
           </section>
 

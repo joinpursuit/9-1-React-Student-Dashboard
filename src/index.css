@@ -10,6 +10,7 @@
     border-radius: 50%;
     margin-left: 5%;
     margin-top: 5%;
+    border: 2.5px solid rgb(13, 86, 135);
 }
 
 .page{
@@ -51,6 +52,10 @@
    
 }
 
+.cohorts:hover {
+color: blue;
+}
+
 .main {
     display: block;
     grid-column: right;
@@ -87,6 +92,26 @@
     grid-column: left/end;
    
 }
+
+.good{
+    color: green;
+}
+
+.medium{
+    color: yellow;
+}
+
+.bad{
+    color: red;
+}
+
+
+#cohortH2{
+    margin-left: 50px;
+
+}
+
+
 
 
 article{
