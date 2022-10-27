@@ -32,13 +32,21 @@ function App() {
           <main className="all-students">
             <section className="students-list">
               <h2> {title}</h2>
-              <p>
-                Total Students: <span>{total}</span>
-              </p>
+              {/* <p>
+                Total Students:{' '}
+                <span>
+                  {title === 'All Students' ? total : studentDetails2}
+                </span>
+              </p> */}
             </section>
             <br></br>
             <div className="students-info">
-              <Students Data={Data} student={student} title={title} />
+              <Students
+                Data={Data}
+                student={student}
+                total={total}
+                title={title}
+              />
             </div>
           </main>
         </div>
