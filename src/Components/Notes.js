@@ -1,7 +1,6 @@
-import { useState } from "react"
+export default function Notes ({ student, comments, newComment, handleChange, handleSubmit }) {
 
-export default function Notes ({ student, comments, handleSubmit }) {
-
+    //React rendering of Instructor Notes form
     return (
         <div className='notes'>
             <form id={student.id} onSubmit={handleSubmit}>
@@ -9,29 +8,30 @@ export default function Notes ({ student, comments, handleSubmit }) {
                 <legend>Instructor Notes</legend>
                 <label htmlFor='name'>
                    Name 
-                   <input type="text" name="name" id="commenter"></input>
+                   <input type="text" name="name" id="commenter" onChange={handleChange} value={newComment.name}></input>
                  </label>
                  <br/>
                  <label htmlFor='comment'>
                     Comment
-                    <input type="textarea" name="comment" id="comment"></input>
+                    <input type="textarea" name="comment" id="comment" onChange={handleChange} value={newComment.comment}></input>
                 </label>
                 <button type='submit' id="submit">Add Notes</button>
                 </fieldset>
             </form>
+            {/* Unordered list that displays previous comments from students data and added comments from state*/}
             <ul>
                 {
-                    student.notes.map((note) => {
+                    student.notes.map((note, i) => {
                         return (
-                            <li><span>{note.commenter}</span> says "{note.comment}"</li>
+                            <li key={i}><span>{note.commenter}</span> says "{note.comment}"</li>
                         )
                     })
                 }
                 {
                     comments.map((comment, i) => {
-                        if (comment[student.id]){
+                        if (comment.id === student.id){
                             return (
-                                <li key={i}><span>{comment[student.id].name}</span> says "{comment[student.id].comment}"</li>
+                                <li key={i}><span>{comment.name}</span> says "{comment.comment}"</li>
                             )
                         }
                     })

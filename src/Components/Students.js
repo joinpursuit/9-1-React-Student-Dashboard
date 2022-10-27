@@ -1,12 +1,12 @@
 import Details from "./Details"
 
-export default function Students ({ students, cohort, comments, handleSubmit }){
+export default function Students ({ students, cohort, comments, newComment, handleChange, handleSubmit }){
 
     //Rendering of Students component using .map() method
     return (
         <div>
-            <h2>{cohort} | <span id="total">Total Students: {students.length}</span></h2>
-            {
+            <h2>{cohort} | <span id="total">Total students: {students.length}</span></h2>
+                {
                 students.map((student) => {
 
                     //Creating variables to format name
@@ -37,13 +37,15 @@ export default function Students ({ students, cohort, comments, handleSubmit }){
                                             &&
                                             student.codewars.current.total > 600
                                             &&
-                                            <p style={{color:"green"}}>On Track to Graduate</p>
+                                            <p id="status">On Track to Graduate</p>
                                         }
                                     </aside>
                                 </div>
                                 <Details
                                     student={student}
                                     comments={comments}
+                                    newComment={newComment}
+                                    handleChange={handleChange}
                                     handleSubmit={handleSubmit}
                                 />
                             </div>
