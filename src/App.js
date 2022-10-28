@@ -24,14 +24,6 @@ function App() {
   //Declaring studentArr variable used to update students state
   let studentArr = []
 
-  // const newComment = 
-  //   {
-  //     [e.target.id]: {
-  //         name: "",
-  //         comment: ""
-  //         }
-  //   }
-
   //Functions to update cohort and students state when cohort button clicked
   const handleClick = (cohort) => {
     setCohort(cohort.replaceAll('20', ' 20')) 
