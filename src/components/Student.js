@@ -50,7 +50,8 @@ function Student ({student}) {
     return (
         <div className="student" >
             <h2 className="studentName">{fullName}</h2>
-            <p>{onTrack ? <span>On Track to Graduate ⭐⭐⭐⭐⭐</span> : null}</p>
+            <p>{onTrack ? <span>Good Noodle ⭐⭐⭐⭐⭐</span> : null}</p>
+            <p><span>Contact: </span></p>
             <p>{student.username}</p>
             <p><span>Birthday:</span> {fixedDate.toLocaleDateString()}</p>
             <img src={student.profilePhoto} alt="Picture of Student"/>

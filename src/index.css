@@ -63,19 +63,14 @@ html {
 .click:hover {
     font-weight: bold;
     cursor: pointer;
-    transform: scale(1.2);
 }
 
 img {
     display: inline;
 }
 
-span {
-    color: green;
-}
-
-.showButton {
-    color: green;
+span, .showButton {
+    color: #DCC241;
 }
 
 .green {
