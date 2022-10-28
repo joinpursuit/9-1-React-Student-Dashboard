@@ -1,7 +1,7 @@
 import { useState } from "react";
 import StudentDetails from "./StudentDetails";
 
-const Student = ({ student, resetStudentDetails }) => {
+const Student = ({ student, students, resetStudentDetails }) => {
   const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
 
   const showStudentDetails = () => {
@@ -37,6 +37,7 @@ const Student = ({ student, resetStudentDetails }) => {
       <StudentDetails
         showStudentDetailsBool={showStudentDetailsBool}
         student={student}
+        students={students}
       />
     </div>
   );

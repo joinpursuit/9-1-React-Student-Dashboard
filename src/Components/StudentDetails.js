@@ -1,7 +1,8 @@
 import { useState } from "react";
 // import Student from "./Student";
 
-const StudentDetails = ({ showStudentDetailsBool, student }) => {
+const StudentDetails = ({ showStudentDetailsBool, student, students }) => {
+  console.log(students);
   // State for Textbox
   const [notes, setNotes] = useState({ commenter: "", comment: "" });
   // To add to the notes array
@@ -33,36 +34,58 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
     setNotes({ commenter: "", comment: "" });
   };
 
-  const scoresDisplayColor = () => {
-    percentAchieved.forEach((el) => {
-      if (
-        Math.round(
-          (student.codewars.goal.total / student.codewars.current.total) * 100
-        ) >= 99
-      ) {
-        el.className = "good";
-      }
-      if (
-        Math.round(
-          (student.codewars.goal.total / student.codewars.current.total) * 100
-        ) > 49 &&
-        Math.round(
-          (student.codewars.goal.total / student.codewars.current.total) * 100
-        ) < 100
-      ) {
-        el.className = "medium";
-      }
-      if (
-        Math.round(
-          (student.codewars.goal.total / student.codewars.current.total) * 100
-        ) < 50
-      ) {
-        el.className = "bad";
-      }
-    });
+  const scoresDisplayColor = (student) => {
+    if (
+      Math.round(
+        (student.codewars.goal.total / student.codewars.current.total) * 100
+      ) >= 99
+    ) {
+      return (
+        <p className="good">
+          Percent of Goal Achieved:{" "}
+          {Math.round(
+            (student.codewars.goal.total / student.codewars.current.total) * 100
+          )}
+          %{" "}
+        </p>
+      );
+    }
+    if (
+      Math.round(
+        (student.codewars.goal.total / student.codewars.current.total) * 100
+      ) > 49 &&
+      Math.round(
+        (student.codewars.goal.total / student.codewars.current.total) * 100
+      ) < 100
+    ) {
+      return (
+        <p className="medium">
+          Percent of Goal Achieved:{" "}
+          {Math.round(
+            (student.codewars.goal.total / student.codewars.current.total) * 100
+          )}
+          %{" "}
+        </p>
+      );
+    }
+    if (
+      Math.round(
+        (student.codewars.goal.total / student.codewars.current.total) * 100
+      ) < 50
+    ) {
+      return (
+        <p className="bad">
+          Percent of Goal Achieved:{" "}
+          {Math.round(
+            (student.codewars.goal.total / student.codewars.current.total) * 100
+          )}
+          %{" "}
+        </p>
+      );
+    }
   };
 
-  console.log(percentAchieved);
+  //********* RETURN ***********/
 
   return (
     <>
@@ -75,15 +98,7 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
               <p>Current Total: {student.codewars.current.total}</p>
               <p>Last Week:{student.codewars.current.lastWeek}</p>
               <p>Goal:{student.codewars.goal.total}</p>
-              <p id="percentAchieved" className={scoresDisplayColor}>
-                Percent of Goal Achieved:{" "}
-                {Math.round(
-                  (student.codewars.goal.total /
-                    student.codewars.current.total) *
-                    100
-                )}
-                %{" "}
-              </p>
+              {scoresDisplayColor(student)}
             </article>
             <article>
               <h4>Scores</h4>
