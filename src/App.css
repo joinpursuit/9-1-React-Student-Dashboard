@@ -2,12 +2,20 @@ body {
   border: none;
   height: 100vh;
   width: 100vw;
+  background: var(--black);
 }
 
 :root {
   --black: #000000;
   --white: #ffffff;
   --skyblue: #7df9ff;
+  --yellow: #feda6a;
+  --grey: #393f4d;
+  --darkgrey: #1d1e22;
+  --silver: #d4d4dc;
+  --orange: #ff8928;
+  --green: #44d62c;
+  --red: #d22730;
 }
 
 .app {
@@ -20,6 +28,9 @@ body {
   column-gap: 25px;
   row-gap: 25px;
   font-family: sans-serif;
+  background: var(--black);
+  color: var(--white);
+  z-index: 1;
 }
 
 .header {
@@ -27,12 +38,47 @@ body {
   grid-column: span 2;
   text-align: center;
 }
+.header h1 span {
+  color: var(--yellow);
+}
 
-/* .side {
-  border: 1px solid black;
-} */
+.header input {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 6rem 0.3rem 0.5rem;
+}
+
+.search {
+  color: var(--black);
+  border: none;
+  margin: 0;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  position: relative;
+  top: 6px;
+  right: 35px;
+  transition: all 0.5s;
+}
+
+.search:hover {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 
 .main {
   margin: 0 auto;
   width: 90%;
+  background: var(--darkgrey);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0) 1px 3px 10px, rgb(0, 0, 0, 0.5) -1px -3px 10px;
+  z-index: 5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--yellow);
 }

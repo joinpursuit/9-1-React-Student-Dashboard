@@ -5,18 +5,33 @@ aside.select ul {
 
 .sideUl li {
   list-style: none;
+  padding-top: 0.5rem;
   padding-left: 0;
+  border-bottom: 2px solid var(--white);
+  width: 80%;
 }
 
 .sideUl li button {
   border: none;
-  background: none;
+  background: var(--darkgrey);
   display: block;
   font-weight: 700;
   cursor: pointer;
   text-align: left;
   width: 100%;
-  border-bottom: 2px solid var(--black);
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 1rem;
+  color: var(--white);
+  border-radius: 1rem;
+  transition: ease-in-out 0.3s;
+}
+
+.sideUl li button:hover {
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 1.2rem;
+}
+
+.track {
+  color: var(--green);
 }

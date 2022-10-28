@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import "./ShowDetails.css";
 
 export function ShowDetails({ el, Data }) {
@@ -6,26 +7,19 @@ export function ShowDetails({ el, Data }) {
   const [comment, setComment] = useState("");
   const [notesArray, setNotesArray] = useState(el.notes);
 
-  function handleCommenterInput(e) {
-    setCommenter(e.target.value);
-  }
-
-  function handleCommentInput(e) {
-    setComment(e.target.value);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     if (!commenter || !comment) {
       alert("Please make sure you put your name and a message");
-    }
-    //make a new obj that holds the values of comment and commenter
-    const newObj = { commenter: commenter, comment: comment };
+    } else {
+      //make a new obj that holds the values of comment and commenter
+      const newObj = { commenter: commenter, comment: comment };
 
-    //use setNotes function to add to the notes array without losing the other comments in the array
-    setNotesArray([...notesArray, newObj]);
-    setCommenter("");
-    setComment("");
+      //use setNotes function to add to the notes array without losing the other comments in the array
+      setNotesArray([...notesArray, newObj]);
+      setCommenter("");
+      setComment("");
+    }
   }
 
   return (
@@ -70,19 +64,43 @@ export function ShowDetails({ el, Data }) {
         <h3>Certifications</h3>
         <p>
           <span>Resume: </span>
-          <span>{el.certifications.resume === false ? "❌" : "✅"}</span>
+          <span>
+            {el.certifications.resume === false ? (
+              <FaTimesCircle id="timesemoji" />
+            ) : (
+              <FaCheckCircle id="checkemoji" />
+            )}
+          </span>
         </p>
         <p>
           <span>LinkedIn: </span>
-          <span>{el.certifications.linkedin === false ? "❌" : "✅"}</span>
+          <span>
+            {el.certifications.linkedin === false ? (
+              <FaTimesCircle id="timesemoji" />
+            ) : (
+              <FaCheckCircle id="checkemoji" />
+            )}
+          </span>
         </p>
         <p>
           <span>Mock Interview: </span>
-          <span>{el.certifications.mockInterview === false ? "❌" : "✅"}</span>
+          <span>
+            {el.certifications.mockInterview === false ? (
+              <FaTimesCircle id="timesemoji" />
+            ) : (
+              <FaCheckCircle id="checkemoji" />
+            )}
+          </span>
         </p>
         <p>
           <span>GitHub: </span>
-          <span>{el.certifications.github === false ? "❌" : "✅"}</span>
+          <span>
+            {el.certifications.github === false ? (
+              <FaTimesCircle id="timesemoji" />
+            ) : (
+              <FaCheckCircle id="checkemoji" />
+            )}
+          </span>
         </p>
       </article>
       <article className="notes">

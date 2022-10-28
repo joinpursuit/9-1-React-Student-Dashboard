@@ -1,14 +1,19 @@
 import { useState } from "react";
 import React from "react";
 import { ShowDetails } from "./ShowDetails";
+import "./Article.css";
 const Article = ({ el }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   function toggleShowDetails() {
     setShowDetails(!showDetails);
   }
+  const birthday = new Date(el.dob);
+  const formattedDob = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "long",
+  }).format(birthday);
   return (
-    <div>
+    <div className="stu">
       <article className="card">
         <img src={el.profilePhoto} alt={el.names.preferredName}></img>
         <div className="info">
@@ -19,7 +24,7 @@ const Article = ({ el }) => {
             <p>{el.username}</p>
             <p>
               <span>Birthday: </span>
-              {el.dob}
+              {formattedDob}
             </p>
           </aside>
           <button key={el.id} onClick={() => toggleShowDetails(el.id)}>

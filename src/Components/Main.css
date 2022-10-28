@@ -4,7 +4,6 @@
   grid-column-gap: 25px;
   margin: 10px 0;
   padding: 25px;
-  border: 2px solid black;
   column-gap: 25px;
 }
 
@@ -12,6 +11,13 @@
   width: 100px;
   height: 100px;
   border-radius: 5px;
+  transition: ease-in-out 1s;
+}
+
+.card img:hover {
+  animation: fadeIn 1s;
+  width: 120px;
+  height: 120px;
 }
 
 .details {
@@ -25,19 +31,22 @@
 
 .notes {
   grid-column: span 3;
-  border-top: 2px solid black;
+  border-top: 2px solid var(--yellow);
 }
 
 .form {
-  border: 1px solid black;
+  border: 1px solid var(--yellow);
   padding: 20px;
 }
 
 .form label {
   display: block;
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .form label input {
   margin: 0 10px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5em;
 }
