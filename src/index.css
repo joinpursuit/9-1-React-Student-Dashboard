@@ -1,11 +1,11 @@
 .container {
   display: grid;
   grid-template-rows: 1fr 6fr;
+  background-color: dodgerblue;
 }
 
 header {
   grid-column: 1/3;
-  color: white;
   background-color: rgb(54, 190, 190);
   text-align: center;
 }
@@ -39,6 +39,7 @@ header {
 img {
   height: 100px;
 }
+
 button {
   background: none;
   border: none;
