@@ -1,0 +1,305 @@
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.topLevel {
+    display: grid;
+    row-gap: 40px;
+}
+
+header {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    background-color:  rgb(108, 162, 108) ;
+    color: white;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+    grid-column: 2;
+    text-align: center;
+}
+
+nav {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+nav a {
+    color: white;
+    font-family: nanum pen ;
+    font-size: 22px;
+    text-decoration-style: dotted;
+}
+
+nav a:hover {
+    font-size: 30px;
+    color: black;
+}
+
+main {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+}
+
+.studentList {
+    grid-column: 2;
+    margin-left: 20px;
+    row-gap: 15px;
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+.studentListHeader {
+    text-align: center;
+
+}
+
+.scrollStudents {
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.student {
+   display: block;
+   justify-items: center;
+   width: 90%;
+   margin-left: 20px;
+   margin-top: 10px;
+   border: 2px solid rgb(47, 122, 47);
+}
+
+.studentInfo {
+    display: flex;
+}
+
+aside {
+    display: block;
+    justify-items: center;
+    align-items: center;
+}
+.cohortList {
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 20px;
+    
+}
+.cohortList h2 {
+    text-align: center;
+}
+
+.cohort span:hover {
+    cursor: pointer;
+    font-size: 24px;
+
+}
+
+
+footer {
+    justify-self: center;
+}
+
+.showMore {
+    margin-left: 40%;
+}
+
+.studentCohortLink {
+    color: rgb(33, 68, 144);
+    font-weight: bolder;
+}
+a {
+    text-decoration: underline;
+    color: rgb(61, 128, 61);
+    
+}
+a:hover{
+    cursor: pointer;
+}
+
+.studentStats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.studentStats div, .Notes div form {
+    margin-left: 10px;
+}
+.studentStats span {
+    color: rgb(61, 128, 61);
+}
+hr {
+    height: 1px;
+    color: rgb(61, 128, 61);
+    background: rgb(61, 128, 61);
+    width: 90%;
+}
+
+.Notes {
+    display: grid;
+    justify-items: flex-start;
+    margin-left: 20px;
+}
+.form {
+    border: 1px solid black;
+    width: 90%;
+}
+form {
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+}
+input {
+    margin-top: 10px;
+}
+.submitButton {
+    border-radius: 5px;
+    font-family: "serif";
+    border: 1px solid rgb(61, 128, 61) ;
+}
+.submitButton:hover {
+    cursor: pointer;
+}
+
+/* Graduation */
+.Graduate {
+    color: rgb(61, 128, 61) ;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.cohortButton {
+    background-color:rgb(108, 162, 108);
+    color: white;
+    margin-left: 35% ;
+    
+}
+
+.footer {
+    grid-row: 3;
+    display: flex;
+    background-color:  rgb(108, 162, 108) ;
+    color: white;
+    width: 100%;
+    margin:auto;
+    justify-content: center;
+
+}
+
+#searchbar {
+    width: 70%;
+    justify-self: center;
+    height: fit-content;
+}
+
+input:focus {
+    outline-color: green;
+}
+
+
+/* About Me Custom */
+.developer1990 {
+    margin-top: 10px;
+    background-image: url('../public/assets/jackpumpkin.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px dashed rgb(237, 102, 23) ;
+    font-family: shlop ;
+    font-size: 24px;
+    color: rgb(237, 102, 23);
+}
+.developer1990 hr {
+    height: 4px;
+    color: orange;
+    background: rgb(237, 102, 23);
+    width: 90%;
+}
+.developer1990 .studentStats  {
+    
+    font-family: shlop ;
+    font-size: 24px;
+    color: rgb(237, 102, 23);
+}
+.developer1990 .studentStats span {
+    /* color: rgb(230, 145, 9); */
+    color: white;
+    font-family: disney nightmare before christmas  ;
+    font-size: 20px;
+}
+.developer1990 form input {
+    background-color: rgb(237, 102, 23);
+    color: black;
+}
+
+.developer1990 .form {
+    border: 1px solid rgb(237, 102, 23);
+}
+
+#developer {
+    background-color: rgb(108, 162, 108);
+    border-radius: 5px;
+    font-family: the jacatra;
+    border: 2px solid black;
+    color: black;
+}
+#developer:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Season icons? */
+
+#Winter2026::before, #Winter2025::before{
+    content: "\00a0" url('../public/assets/Winter-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Fall2026::before, #Fall2025::before {
+    content: "\00a0" url('../public/assets/Fall-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Spring2026::before, #Spring2025::before {
+    content: "\00a0" url('../public/assets/Spring-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Summer2026::before, #Summer2025::before {
+    content: "\00a0" url('../public/assets/Summer-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#AllStudents::before {
+    content: "\00a0" url('../public/assets/Crowd-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+
+/* nav bar icons */
+
+
+nav a img {
+    width: 50px;
+    margin: 0;
+    margin-left: 15%;
+}
