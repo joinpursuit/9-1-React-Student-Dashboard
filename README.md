@@ -84,7 +84,7 @@ Update your cohort list so that when any of the cohorts are clicked the student 
 - The student count changes. (e.g. From "250" to "37".)
 - When you click on "All Students", all of the students are shown once again.
 
-### ✩ Improved student list (1 point)
+### ✩ Improved student list (1 point) !
 
 ![Improved student list.](./instruction-assets/improved-student-list.png)
 
@@ -137,7 +137,7 @@ Create a section in the student details section that contains information about 
 - The section should include a form with commenter name, comment, and a submit button.
 - The section should show a list of all previous notes that have been added.
 
-### ✩ Interactive 1-on-1 section (1 point)
+### ✩ Interactive 1-on-1 section (1 point) 
 
 Improve the 1-on-1 section with a working form. To complete this feature, the following should be true:
 

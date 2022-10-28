@@ -5,7 +5,6 @@ function Student ({student}) {
         name: "",
         content: "",
       })
-    const [notes, setNotes] = useState([])
     const [showMore, setShowMore] = useState(false);
     const goalPercent = Math.round((student.codewars.current.total / student.codewars.goal.total) * 100)
     const fullName = `${student.names.preferredName} ${student.names.middleName[0]}. ${student.names.surname}`
@@ -33,7 +32,9 @@ function Student ({student}) {
    
       function handleSubmit (event) {
         event.preventDefault();
-        handleNotes(submitInput)
+        const comment = document.createElement("li")
+        comment.innerHTML = `${submitInput.name} says, "${submitInput.content}"`
+        document.getElementById(student.id).append(comment)
         setSubmitInput(
           {
             name: "",
@@ -42,19 +43,14 @@ function Student ({student}) {
         )
       };
 
-      function handleNotes (input) {
-        // sets input.name to object key and input.content to object value
-        setNotes([[...notes], input])
-      }
-      let dob = student.dob
-      console.log(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(dob));
+     const fixedDate = new Date(student.dob)
 
     return (
         <div className="student" >
             <h3>{fullName}</h3>
             <p>{onTrack ? <span>On Track to Graduate</span> : null}</p>
             <p>{student.username}</p>
-            <p><span>Birthday:</span> {student.dob}</p>
+            <p><span>Birthday:</span> {fixedDate.toLocaleDateString()}</p>
             <img src={student.profilePhoto} alt="Picture of Student"/>
             <p className="showButton" onClick={() => setShowMore(!showMore)}>{showMore ? "Show less" : "Show more"}...</p>
             <div>
@@ -93,7 +89,7 @@ function Student ({student}) {
                     />
                     <input type="submit"/>
                 </form>
-                <ul className="notes">
+                <ul className="notes" id={student.id}>
                     {student.notes.length ?
                     student.notes.map((note) => {
                         return  (
