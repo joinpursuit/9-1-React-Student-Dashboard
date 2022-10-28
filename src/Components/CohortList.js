@@ -3,6 +3,7 @@ import filterStudentsByCode from '../utils/filter'
 import data from "../data/data.json";
 import "./CohortList.css"
 
+
 function CohortList({setDisplayedStudents, setDisplayCohort}) {
 const handleClick = (data, cohort, displayAllStudents = false) => {
     if(displayAllStudents) {

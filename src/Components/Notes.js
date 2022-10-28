@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Student.css"
 
 function Notes({ student, notes, setNotes }) {
   const [user, setUser] = useState({
@@ -28,10 +29,10 @@ function Notes({ student, notes, setNotes }) {
   };
 
   return (
-    <div>
+    <div className="notes-comp">
       <h3 className="notesh3">Leave a Note</h3>
       <form onSubmit={handleSubmit}>
-        <label html="commenterNameSubmit">Commenter Name</label>
+        <label html="commenterNameSubmit">Commenter Name </label>
         <input
           id="commenterNameSubmit"
           type="text"
@@ -39,7 +40,8 @@ function Notes({ student, notes, setNotes }) {
           onChange={handleChange}
         />
         <br/>
-        <label htmlFor="commentSubmit">Comment</label>
+        <br/>
+        <label htmlFor="commentSubmit">Comment </label>
         <input
           id="commentSubmit"
           type="text"
@@ -47,10 +49,10 @@ function Notes({ student, notes, setNotes }) {
           onChange={handleChange}
         />
         <div>
-          <input className="addBtn" type="submit" />
+          <input className="subnitBtn" type="submit" />
         </div>
       </form>
-      <ul>
+      <ul className="saysome">
         {notes
           .filter((note) => note.id === student.id)
           .map((note, i) => (

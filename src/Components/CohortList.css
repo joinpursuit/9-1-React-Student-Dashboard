@@ -28,7 +28,7 @@ display: grid;}
 li button {
   --b: 3px;   /* border thickness */
   --s: .45em; /* size of the corner */
-  --color: #3c3b3d;
+  --color: #0f0e0e;
   
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));
   color: var(--color);
@@ -56,6 +56,6 @@ li button:focus-visible{
 }
 
 li button:active {
-  background: var(--color);
-  color: #fff;
+  background-color: rgb(219, 158, 45);
+  color: rgb(235, 54, 54);
 }

@@ -1,9 +1,9 @@
 body {
   display: block;
-  background-image: url('https://i.pinimg.com/originals/20/ae/f2/20aef23d39a8dcb74bf663ed89ab08image.pngd6.gif');
+  /* background-image: url('https://www.naylor.com/wp-content/uploads/2017/07/learning-solutions_learning-management-system.gif'); */
 }
-/* body {
-	background: linear-gradient(-45deg, #f1967a, #cdaafb, #67edef, #128751);
+body {
+	background: linear-gradient(-45deg, #a9caf7, #cafeb7, #e5adf8, #f6f0b1);
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	height: 100vh;
@@ -19,7 +19,7 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-} */
+}
 
 
 .Wrapper {
@@ -41,6 +41,12 @@ font-size: larger;
   grid-row: header;
   text-align: center;
   display: block;
+}
+
+.navbar h1{
+    text-align: center;
+    text-decoration: underline;
+
 }
 
 /* .mainandaside{
@@ -70,4 +76,13 @@ main{
     width: 90%
 }
 
+.eachstudentinfo{
+    grid-column-gap: 25px;
+    border: 2px solid rgb(241, 155, 57);
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+    margin: 10px 0;
+    padding: 25px;
+}
 

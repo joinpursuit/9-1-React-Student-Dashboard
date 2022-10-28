@@ -15,20 +15,24 @@ function App() {
   return (
     <div className="Wrapper">
       <header className="navbar">
-        <h1>Student Dashboard</h1>
+        <h1> Student Dashboard</h1>
       </header>
 			<aside className="cohortlist">
          <CohortList setDisplayedStudents={setDisplayedStudents} setDisplayCohort={setDisplayCohort}/>
+
       </aside>			
 			<main className="allstudent">
 					<div>
 				   <h2>{displayCohort}</h2>
            <h3>Total Students: {displayedStudents.length}</h3>		
 					</div>
-          <section>
-            <AllStudents
+          <section className="allStudentCard">
+						<div className="eachstudentcard">
+						<AllStudents
               students={displayedStudents} notes={notes} setNotes={setNotes}
-            />
+            />	
+						</div>
+            
           </section>
         </main>
 			 </div>

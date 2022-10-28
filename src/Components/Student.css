@@ -2,20 +2,32 @@
     border-radius: 5px;
     width: 150px;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 
-.showmore {
-    display: flex;
-    padding-bottom: 10px;
-}
+/* .showmore {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+} */
 
 
-.notes{
-    border: 2px solid black;
+.notes-comp{
+    margin-top: 20px;
+    border-top: 2px solid rgb(235, 123, 32);
     padding-bottom: 5px;
     padding-left: 5px;
+    width: 700px;
 }
+
+.notesh3{
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;}
+
 
 .ontrack{
     display: flex;
@@ -24,4 +36,131 @@
 
 .ontrackimg{
     width: 150px;
+}
+
+
+.showbtn {
+  font-size: 15px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 5px;
+  width:200px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.showbtn:after {
+  content: "";
+  background-color: #de6b51;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.showbtn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .showbtn {
+    padding: 13px 50px 13px;
+  }
+}
+
+.studentinfo{
+display: block;}
+
+
+
+aside{
+ display: block;
+ margin: 0 auto;
+ 
+}
+
+.eachstudentinfo{
+    grid-column-gap: 25px;
+    border: 2px solid rgb(241, 155, 57);
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+    margin: 10px 0;
+    padding: 25px;
+}
+
+.birthday{
+    color: rgb(72, 73, 71);
+}
+
+.showmore {
+    display: grid;
+    grid-column: left;
+    grid-template-columns: repeat(3,3fr); 
+    width: 700px;
+    margin-right: 30px;
+    margin: 1rem;
+  text-align: center; 
+} 
+
+
+
+
+
+
+
+.subnitBtn {
+margin-top: 20px;
+width: 150px;
+  align-self: center;
+  background-color: rgb(236, 116, 79);
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 10px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.subnitBtn:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.subnitBtn:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+h3{
+    
 }
