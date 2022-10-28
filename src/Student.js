@@ -25,17 +25,45 @@ const Student = ({student}) => {
     //     }
     // }
 
+    // const [result, setResult]= useState("")
 
+    // function handleSubmit (e){
+    //     e.preventDefault()}
+
+    //   function imorovedStudentList(student){
+    //         if (student.codewars.current.total >=100){
+    //          return <p style="color:green"></p>
+    //         } else if (student.codewars.current.total > 50 && student.codewars.current.total < 100){
+    //             return <p style="color:yellow"></p>
+    //         } else {
+    //             return <p style="color:red"></p>
+    //         }
+    //         }
+    //     }
+    let goalPercentage = (
+        (student.codewars.current.total / student.codewars.goal.total) *
+        100
+      ).toFixed(0);
+    
+      function goalColor(goalPercentage) {
+        if (goalPercentage >= 100) {
+          return <span style={{ color: "green" }}>{goalPercentage}</span>;
+        } else if (goalPercentage > 49) {
+          return <span style={{ color: "yellow" }}>{goalPercentage}</span>;
+        } else if (goalPercentage < 50) {
+          return <span style={{ color: "red" }}>{goalPercentage}</span>;
+        }
+      }
 
     return (
-        <div className='entireProfile'>
+        <div className='studentList'>
 
             <img src={student.profilePhoto} alt="Profile "></img>
             <h4>{student.names.preferredName} {student.names.middleName} {student.names.surname}</h4>
             <h5>{student.username}</h5>
             <h5>Birthday: {student.dob} </h5>
             {/* <h6>{certifications}</h6> */}
-            <button onClick={toogleShowMore}>
+            <button className="showMore"onClick={()=>{toogleShowMore(); goalColor(goalPercentage)}}>
             {!showDetails ? "Show more" : "Show less"}
            </button>
            {
@@ -43,6 +71,7 @@ const Student = ({student}) => {
                 <div className='personDetails' >
                     <section id='codeWarsSection'>
                    <h3> CodeWars</h3>
+                   <p>  </p>
                     <p>
                    <span> Current:</span>
                     {student.codewars.current.total}
@@ -57,6 +86,10 @@ const Student = ({student}) => {
                     <span>Goal:</span>
                     {student.codewars.goal.total}
                 </p>
+                <p>
+                <span>Percentage of Goal Achieved:</span>
+                {goalColor(goalPercentage)}
+               </p>
                     </section>
 
                     <section id='scoresSection'>
@@ -67,39 +100,27 @@ const Student = ({student}) => {
                </p>
                <p>
                 <span>Projects:</span>
-                {student.cohort.scores.projects}%
+                {student.cohort.scores.projects * 100}%
                </p>
                <p>
                 <span>Assessments:</span>
-                {student.cohort.scores.assessments}%
+                {student.cohort.scores.assessments * 100}%
                </p>
                </section>
 
                <section id='certifications'>
-               <h3>Certifications</h3>
-               <p>
-                <span>Resume:</span>
-                {student.certifications.resume}
-               </p>
-               <p>
-                <span>LinkedIn</span>
-                {student.certifications.linkedin}
-               </p>
-               <p>
-                <span>
-                    Github:
-                </span>
-                {student.certifications.github}
-               </p>
-               <p>
-                <span>
-                    Mock Interview:
-                </span>
-                {student.certifications.mockInterview}
-               </p>
+               <h4>Certifications:</h4>
+                <p>Resume: 
+                    {student.certifications.resume ? "✅" : "❌"}</p>
+                <p>LinkedIn:
+                     {student.certifications.linkedin ? "✅" : "❌"}</p>
+                <p>Mock Interview: 
+                    {student.certifications.github ? "✅" : "❌"}</p>
+                <p>GitHub: 
+                    {student.certifications.mockInterview ? "✅" : "❌"}</p>
                </section>
                <section>
-                <form>
+                <form >
                     <h2>1-on-1 Notes</h2>
                     <label>Commenter Name</label>
                     <input name="commenter" type="text" value={student.notes.commenter} ></input>
@@ -116,3 +137,7 @@ const Student = ({student}) => {
 };
 
 export default Student;
+
+
+
+// onSubmit= {(event)=> {handleSubmit(event)}}setResult={setResult}

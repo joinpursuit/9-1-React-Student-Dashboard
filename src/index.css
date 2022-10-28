@@ -1,9 +1,34 @@
+*{
+    background-color: lightpink;
+}
+
+h3{
+    text-align: center;
+}
+.headerForStudents{
+   text-align: center;
+}
+.studentList{
+ 
+    display: grid;
+    float: right;
+}
+
+.showMore{
+    width: 500px;
+    transition-duration: 0.2;
+}
+
+.showMore:hover{
+    color: red;
+}
+
 header {
-    width: 95%;
-    margin: 20px auto;
+    display: grid;
+    grid-auto-rows: 80px;
+    border: 10px solid black;
     padding: 20px;
     text-align: center;
-background-color: cadetblue;
 
 }
 
@@ -11,25 +36,13 @@ img{
     height: 200px;
     width: 200px;
 }
-.semeseterAndYear{
-    text-decoration: underline;
-}
-.entireProfile{
-    text-align: right;
-    display: grid;
-    grid-auto-rows: 50px;
-}
-.personDetails{
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr 1fr;
+#listofSeason{
 
-}
-#codeWarsSection{
-    text-align: left;
+    list-style: none;
+    border: 10px;
+    grid-column: auto;
 }
 
-.grid {
-    display: grid;
-    gap: 1px;
-    grid-template-columns: repeat(3, 1fr);
-  }
+#listofSeason:hover{
+    color: blue;
+}

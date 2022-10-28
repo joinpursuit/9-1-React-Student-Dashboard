@@ -8,9 +8,10 @@ import Class from "./Class"
 // give props to componets 
 function App() {
   const [classSeason, setClassSeason] =useState(Data)
-
+  let cohort = [...new Set(Data.map((date)=>date.cohort.cohortCode))]
+  console.log(cohort)
   return (
-    <div>
+    <div className="entireApp">
       <header> <h1>Student Dashboard</h1></header>
       <Class Data={Data} classSeason={classSeason} setClassSeason={setClassSeason} />
       <Students Data={Data}classSeason={classSeason} setClassSeason={setClassSeason}/>
