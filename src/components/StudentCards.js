@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './StudentCards.css'
-export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes}){
+export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes, student}){
     //Code in all is a destructured method. I'm told there's other ways to do it but I liked this. 
     const [toggle, setToggle] = useState(false)
     const [commenter, setCommenter] = useState('')
     //Changed name to make readable 
     const [comment, setComment] = useState('')
     const [comments] = useState(notes)
+    const [yes, setYes] = useState(false)
  
     const handleClick = () => {
         if(toggle === false){
@@ -27,18 +28,20 @@ export default function StudentCards({names, profilePhoto, username, dob, certif
       const test = {...comments, commenter: commenter, comment: comment}
       comments.push(test)
     }
-    //Was not sure how to do this inline and make it work so made a helper. 
-     
 
-    const info = () =>{
-        if(certifications.resume && certifications.linkedin && certifications.mockInterview && certifications.github && codewars.current.total > 600) {
-            return (
-              <p className='onTrack'>On track to Graduate</p>
-            )
-        }
-    }
-    //info is not reading correctly. Fix to find if student is on track
-    
+  const onTrack = () => {
+        if (
+          certifications.resume === true &&
+          certifications.lindedin === true &&
+          certifications.github === true &&
+          certifications.mockInterview === true &&
+          codewars.current.total > 600
+        ) {
+         setYes(true)
+      }else{
+        setYes(false)
+      }
+  }
     const showMore = () =>{
         if(toggle){ 
             return(
@@ -77,7 +80,8 @@ export default function StudentCards({names, profilePhoto, username, dob, certif
          <img src={profilePhoto}></img>
         <h2 className='h2'><span>{`${names.preferredName} ${names.middleName} ${names.surname}`}</span>
         </h2>
-        <p className="graduate">{info()} On Track? </p>
+        <p className="onTrack">{!onTrack ? "On Track" : "Not On Track"}</p>
+        {/* When trying to style in line and in CSS would not apply or break the page. Also not working how it is meant to */}
         <p><span>{username}</span></p>
         <p>Birthday: <span>{dob}</span></p>
         <br/>

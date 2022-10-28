@@ -108,3 +108,8 @@ Form li{
     background-color:var(--darkPurple);
     color: azure;
 }
+
+main p{
+    color: gold
+    /*This isn't working but unsure why*/
+}
