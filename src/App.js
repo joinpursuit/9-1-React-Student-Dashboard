@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState } from 'react';
 import Cohorts from './Components/Cohorts';
@@ -8,23 +9,7 @@ function App() {
 
 const[students, setStudents] = useState(data)
 const total = students.length
-
 const[cohort, setCohort] = useState("allStudents")
-// const allStudents = students
-// console.log("allStudents = ", allStudents)
-
-// const bigList = document.querySelector(".studentCards")
-
-//  function handleClickAllStudents(){
-//   bigList.classList.remove("hidden")
-//  }
-   
-
-//  function handleClickW2026(){
-//     const studentsW2026 = students.filter(student => student.cohort.cohortCode = "Winter 2026") 
-//   setStudents(studentsW2026)
-//   bigList.classList.add("hidden")
-//  }
 
 
   return (

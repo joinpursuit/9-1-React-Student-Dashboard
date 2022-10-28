@@ -1,11 +1,19 @@
+
+
 import React from 'react';
+import { useState } from 'react';
 import data from "../data/data.json"
 
 // allStudents = data 
 const Students = ({students, setStudents, cohort}) => {
+const[toggle, setToggle] = useState(false)
+const selectedStudents = students.filter(student => student.cohort.cohortCode === cohort)
+ 
+function handleClickToggle(){
+    setToggle(!toggle)
+}
+// onClick={handleClickToggle}
 
-   const selectedStudents = students.filter(student => student.cohort.cohortCode === cohort)
-   
     return (
      <div className="studentCards">
        { 
@@ -19,7 +27,11 @@ const Students = ({students, setStudents, cohort}) => {
                     <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
                     <span className ="studentName">{student.names.surname}</span><br />
                     <span className ="studentName">{student.username} </span><br />
-                    <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br /><button className='showMoreButton'>Show More...</button>
+                    <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
+                    
+                    <button onClick={handleClickToggle} className='showMoreButton' > 
+                        {toggle ? "Show More..." : "Show less..."}
+                    </button>
                     </p>
                     
                 </div>  
@@ -33,7 +45,10 @@ const Students = ({students, setStudents, cohort}) => {
                         <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
                         <span className ="studentName">{student.names.surname}</span><br />
                         <span className ="studentName">{student.username} </span><br />
-                        <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br /><button className='showMoreButton'>Show More...</button>
+                        <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
+                        <button onClick={handleClickToggle} className='showMoreButton' > 
+                        {toggle ? "Show More..." : "Show less..."}
+                    </button>
                         </p>
                         
                     </div>  

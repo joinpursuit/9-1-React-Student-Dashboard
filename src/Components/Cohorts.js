@@ -8,6 +8,7 @@ const allStudents = data
 
 function handleClickUpdateCohort(e){
     setCohort(e.target.name)
+    
 }
 
 
@@ -25,10 +26,6 @@ return (
         <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Summer2025">Summer 2025</button></div>
         <div className='cohortButton'><button  onClick={handleClickUpdateCohort} name="Spring2025">Spring 2025</button></div>
     </>
-
-
-
-
 
     );
 }
