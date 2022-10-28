@@ -142,7 +142,6 @@ function Student({
                   notes.push({ commenter: commenter, comment: comment });
                   setCommenter("");
                   setComment("");
-                  console.log(notes[0])
                 }}
               >
                 <label>

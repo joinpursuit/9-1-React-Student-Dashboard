@@ -8,7 +8,7 @@ function Classes({ studentData, setStudents, setCohortName, setSearch }) {
       (a, b) => new Date(b.cohortStartDate) - new Date(a.cohortStartDate)
     );
 
-    let cohorts = cohortData.map((e) => e.cohortCode.split("20").join(" 20"));
+    let cohorts = cohortData.map((e) => e.cohortCode.replace("20", " 20"));
     cohorts = [...new Set(cohorts)];
     return cohorts;
   });
@@ -32,13 +32,13 @@ function Classes({ studentData, setStudents, setCohortName, setSearch }) {
         {classList.map((e) => {
           return (
             <li
-              key={e.split(" ").join("")}
+              key={e.replace(" ", "")}
               onClick={(event) => {
                 setStudents(
                   studentData.filter(
                     (e) =>
                       e.cohort.cohortCode ===
-                      event.target.textContent.split(" ").join("")
+                      event.target.textContent.replace(" ", "")
                   )
                 );
                 setCohortName(event.target.textContent);

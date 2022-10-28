@@ -37,12 +37,11 @@ function Students({
           setStudents(
             studentData.filter((el) => {
               const keywords = e.target.value.toLowerCase().split(" ");
-              let checkArr = [];
               if (
                 el.cohort.cohortCode === cohortName.replace(" ", "") ||
                 cohortName === "All Students"
               ) {
-                checkArr = keywords.map(
+                const checkArr = keywords.map(
                   (element) =>
                     el.names.preferredName.toLowerCase().includes(element) ||
                     el.names.surname.toLowerCase().includes(element)

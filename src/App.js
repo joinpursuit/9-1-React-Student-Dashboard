@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Classes from "./components/Classes";
 import Students from "./components/Students";
-
 import studentData from "./data/data.json";
 import "./App.css";
 
@@ -31,6 +30,7 @@ function App() {
           setSearch={setSearch}
         />
       </main>
+      <footer>Daniel Mazzilli - October 2022</footer>
     </div>
   );
 }
