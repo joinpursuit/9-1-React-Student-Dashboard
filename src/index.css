@@ -290,3 +290,11 @@ input:focus {
     margin-right: 10%;
 }
 
+/* nav bar icons */
+
+
+nav a img {
+    width: 50px;
+    margin: 0;
+    margin-left: 15%;
+}
