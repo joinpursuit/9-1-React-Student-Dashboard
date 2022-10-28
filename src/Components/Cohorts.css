@@ -28,14 +28,14 @@
 }
 
 .cohort:hover {
-    color: rgb(168, 0, 0);
+    color: rgb(255, 28, 28);
     /* background-color: beige; */
     border: 1px solid rgb(168, 0, 0);
     box-shadow: 3px 3px 3px 1px rgb(255, 28, 28);
 }
 
 .cohort:active {
-    color: darkred;
+    color: rgb(255, 28, 28);
     /* background-color: rgb(230, 230, 205); */
-    box-shadow: 2px 2px 3px 1px black inset;
+    box-shadow: 2px 2px 3px 1px white inset;
 }

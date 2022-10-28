@@ -14,3 +14,15 @@ form {
 .label {
     display: block;
 }
+
+div {
+    background: none;
+}
+
+div label {
+    background: none;
+}
+
+div input {
+    background: none;
+}

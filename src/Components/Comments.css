@@ -10,3 +10,7 @@
 
     font-family: monospace;
 }
+
+div ul {
+    background: none;
+}
