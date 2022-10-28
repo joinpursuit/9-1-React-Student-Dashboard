@@ -26,7 +26,7 @@ const Additionalinfo = ({info}) => {
         }
         if(percent < 100){
             if(percent >= 50){
-                return  <p style={{color: "yellow"}}>Percent of Goal Achieved: {percent}% </p>
+                return  <p style={{color: "Khaki"}}>Percent of Goal Achieved: {percent}% </p>
             }
         }
         if(percent < 50){
