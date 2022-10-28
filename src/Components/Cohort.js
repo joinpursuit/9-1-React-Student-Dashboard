@@ -13,6 +13,7 @@ export default function Cohort({
   };
   //?---------------
   //* Filter cohort list for students with those matching options --------
+  
   let filterCohort = Records.filter((el) => {
     return el.cohort.cohortCode === titleOption.split(" ").join("");
   });

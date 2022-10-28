@@ -30,7 +30,7 @@ export default function Student({ record, dateFormat, setShowMore, showMore, ind
           <span className="Ontrack">
             {handleOnTrack(record) ? (
               <p style={{ color: "green" }}>On Track to Graduate</p>
-            ) : <p style={{color: "black"}}>Progress Pending...</p> 
+            ) : <p style={{color: "orange"}}>Not On Track</p> 
             // null
             }{" "}
           </span>
