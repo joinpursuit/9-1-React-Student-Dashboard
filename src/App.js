@@ -6,23 +6,24 @@ import { useState } from "react"
 import ShowDetails from "./components/ShowDetails"
 
 function App() {
-  const [dataList, setData] = useState(data)
+  const [students, setStudent] = useState(data)
   const [selectCohort, setselectCohort] = useState("AllStudents")
+  const [selectshortCode, setselectedShortcode] = useState("All Students")
+  const [defaultStudents, setDefaultStudents] = useState(data)
 
   return (
     <div className="container">
       <Header />
       <aside className="cohortstartdate">
         <CohortStartDate
-          key={dataList.id}
-          dataList={dataList}
+          students={students}
           setselectCohort={setselectCohort}
         />
       </aside>
       <main>
         <StudentsList
-          key={dataList.id}
-          dataList={dataList}
+          key={students.id}
+          students={students}
           selectCohort={selectCohort}
           ShowDetails={ShowDetails}
         />

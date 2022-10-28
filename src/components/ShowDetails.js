@@ -1,8 +1,9 @@
 import React from "react"
 import { Form } from "react-bootstrap"
 import { useState } from "react"
+import StudentsList from "./StudentsList"
 
-function ShowDetails({ dataList, toggleSetShowMe }) {
+function ShowDetails({ students, toggleSetShowMe }) {
   const [select, setSelect] = useState("")
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
@@ -16,7 +17,7 @@ function ShowDetails({ dataList, toggleSetShowMe }) {
     <div>
       <button onClick={toggleSetShowMe}>
         Show me
-        {/* {!showMe ? "show me details" : "hide show me details"} */}
+        {!showMe ? "show me details" : "hide show me details"}
       </button>
 
       {showMe ? (
@@ -25,15 +26,15 @@ function ShowDetails({ dataList, toggleSetShowMe }) {
             <h3>Codewars</h3>
             <p>
               <span>Current Total:</span>
-              {dataList.codewars.current.total}
+              {students.codewars.current.total}
             </p>
             <p>
               <span>Last week:</span>
-              {dataList.codewars.lastweek}
+              {students.codewars.lastweek}
             </p>
             <p>
               <span>Goal:</span>
-              {dataList.codewars.goal.total}
+              {students.codewars.goal.total}
             </p>
             <p>
               <span>Percent of Goal Achieved:</span>
@@ -46,17 +47,17 @@ function ShowDetails({ dataList, toggleSetShowMe }) {
             <h3>Scores</h3>
             <p>
               <span>Assignments:</span>
-              {dataList.cohort.scores.assignments}
+              {students.cohort.scores.assignments}
               {"%"}
             </p>
             <p>
               <span>Projects:</span>
-              {dataList.cohort.scores.projects}
+              {students.cohort.scores.projects}
               {"%"}
             </p>
             <p>
               <span>Assessments:</span>
-              {dataList.cohort.scores.assesments}
+              {students.cohort.scores.assesments}
               {"%"}
             </p>
           </article>
@@ -64,22 +65,22 @@ function ShowDetails({ dataList, toggleSetShowMe }) {
             <h3>Certifications</h3>
             <p>
               <span>Resume:</span>
-              {dataList.certifications.resume}
+              {students.certifications.resume}
               {}
             </p>
             <p>
               <span>lindedin:</span>
-              {dataList.certifications.linkedin}
+              {students.certifications.linkedin}
               {}
             </p>
             <p>
               <span> Mock Interview:</span>
-              {dataList.certifications.mockInterview}
+              {students.certifications.mockInterview}
               {}
             </p>
             <p>
               <span>GitHub:</span>
-              {dataList.certifications.github}
+              {students.certifications.github}
               {}
             </p>
           </article>

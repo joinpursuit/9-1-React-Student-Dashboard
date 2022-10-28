@@ -1,62 +1,66 @@
 import ShowDetails from "./ShowDetails"
 
 function StudentsList({
-  dataList,
+  students,
   toggleSetNewShowMe,
   ShowDetails,
   selectCohort,
 }) {
-  function ontrack(dataList) {
+  function ontrack(students, ShowDetails) {
     if (
-      dataList.certifications.resume === true &&
-      dataList.certifications.lindedin === true &&
-      dataList.certifications.github === true &&
-      dataList.certifications.mockInterview === true &&
-      dataList.current.total > 600
+      students.certifications.resume === true &&
+      students.certifications.lindedin === true &&
+      students.certifications.github === true &&
+      students.certifications.mockInterview === true &&
+      students.current.total > 600
     ) {
       return "On track to Graduate"
     }
   }
-  const filteredStudents = dataList.filter(
+  const filteredStudents = students.filter(
     (students) => selectCohort === students.cohort.cohortCode
   )
 
   return (
-    <section className="students-list">
-      <button onClick={filteredStudents}>All Students</button>
-      <p>
-        Total Students:
-        <span>{dataList.length}</span>
-      </p>
-      <div className="student-card">
-        {dataList.map((dataLists) => {
-          return (
-            <article className="student-card">
-              <div key={dataLists.id}>
-                <img
-                  src={dataLists.profilePhoto}
-                  alt={dataLists.names.preferredName}
-                />
-                <div className="student-info">
-                  <aside>
-                    <h3>
-                      {dataLists.names.preferredName}{" "}
-                      {dataLists.names.middleName} {dataLists.names.surname}
-                    </h3>
-                    <p>{dataLists.username}</p>
-                    <p>
-                      <span>Birthday: </span>
-                      {dataLists.dob}
-                    </p>
-                  </aside>
+    <>
+      <section className="students-list">
+        <button onClick={filteredStudents}>All Students</button>
+        <p>
+          Total Students:
+          <span>{students.length}</span>
+        </p>
+        <div className="student-card">
+          {students.map((student) => {
+            return (
+              <article className="student-card">
+                <div key={student.id}>
+                  <img
+                    src={student.profilePhoto}
+                    alt={student.names.preferredName}
+                  />
+                  <div className="student-info">
+                    <aside>
+                      <h3>
+                        {student.names.preferredName}{" "}
+                        {student.names.middleName.slice(0, 1)}{" "}
+                        {student.names.surname}
+                      </h3>
+                      <p>{student.username}</p>
+                      <p>
+                        <span>Birthday: </span>
+                        {student.dob}
+                      </p>
+                      <ShowDetails students={students} />
+                    </aside>
+                  </div>
+                  <p className="on-track">{ontrack}</p>
                 </div>
-                <p className="on-track">{ontrack}</p>
-              </div>
-            </article>
-          )
-        })}
-      </div>
-    </section>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+    </>
   )
 }
 
