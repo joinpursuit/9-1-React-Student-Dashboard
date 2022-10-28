@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { middleName } from '../data/helperFunctions';
 
 function SearchBar({setStudents, search, setSearch,searchResult, setSearchResult}) {

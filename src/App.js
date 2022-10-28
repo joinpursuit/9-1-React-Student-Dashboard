@@ -73,7 +73,9 @@ function App() {
         setStudents = {setStudents}
         data = {data}
         setCohortName = {setCohortName}
-        setSearchResult = {setSearchResult} />
+        setSearchResult = {setSearchResult}
+        setSelect = {setSelect}
+        setSearch = {setSearch} />
         </div>
       
       </div>

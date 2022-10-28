@@ -4,7 +4,7 @@ import Birthday from './Birthday';
 import Graduate from './Graduate';
 import ShowMoreButton from './ShowMoreButton';
 import StudentCohortLink from './StudentCohortLink';
-function StudentList({students,setStudents,data,setCohortName, setSearchResult}) {
+function StudentList({students,setStudents,data,setCohortName, setSearchResult, setSelect, setSearch}) {
    
     return (
         <>
@@ -41,7 +41,9 @@ function StudentList({students,setStudents,data,setCohortName, setSearchResult})
                                     cohort = {cohort} 
                                     data = {data}
                                     setCohortName = {setCohortName}
-                                    setSearchResult = {setSearchResult}/>
+                                    setSearchResult = {setSearchResult}
+                                    setSelect = {setSelect}
+                                    setSearch = {setSearch}/>
                                     
                                 </div>
                                 <Graduate
