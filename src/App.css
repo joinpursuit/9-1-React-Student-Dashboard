@@ -1,0 +1,106 @@
+body {
+  display: block;
+  /* background-image: url('https://www.naylor.com/wp-content/uploads/2017/07/learning-solutions_learning-management-system.gif'); */
+}
+body {
+	background: linear-gradient(-45deg, #a9caf7, #cafeb7, #e5adf8, #f6f0b1);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.Wrapper {
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  -webkit-column-gap: 25px;
+  column-gap: 25px;
+  display: grid;
+  grid-template-columns: [left] 1fr [right] 2fr [end];
+  grid-template-rows: [header] 120px [main] auto [end];
+  row-gap: 25px;
+}
+
+.navbar {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 30px;
+  grid-column: left/end;
+  grid-row: header;
+  text-align: center;
+  display: block;
+  background-image: url('https://image.shutterstock.com/image-vector/group-diverse-people-silhouette-new-260nw-1928078039.jpg');
+}
+.braingif{
+    margin-left: 60px;
+    display: grid;
+    height: 200px;
+    width: 200px;
+}
+
+.navbar h1{
+  font-size: 50px;
+background-color: white;
+  text-emphasis: circle;
+text-emphasis-color: rgb(236, 172, 75);    
+text-align: right;
+margin-left: 60%;
+margin-right: 40px;
+    text-decoration: underline;
+
+}
+
+/* .mainandaside{
+    display: flex;
+    width: 100%;
+} */
+
+aside.cohortlist {
+  justify-content: center;
+  text-align: center;
+  display: block;
+  padding: 0 25px;
+  /* margin: 20px; */
+  width: 70%;
+}
+
+.allstudent {
+  display: grid;
+  padding-left: 10px;
+  margin-left: 60px;
+  width: 80%;
+}
+
+main{
+    grid-column: right;
+    margin: 0 auto;
+    width: 90%
+}
+
+.eachstudentinfo{
+    grid-column-gap: 25px;
+    border: 2px solid rgb(241, 155, 57);
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+    margin: 10px 0;
+    padding: 25px;
+}
+
+.gif{
+    display: grid;
+    justify-content: left;
+    width: 400px;
+}
