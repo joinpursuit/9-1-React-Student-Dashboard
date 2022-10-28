@@ -19,7 +19,6 @@ export default function Form({ record, notes, setNotes }) {
       commenter: commenter,
     };
     notes.push(createComment);
-
   }
 
   return (
@@ -36,7 +35,6 @@ export default function Form({ record, notes, setNotes }) {
             value={commenter}
           ></input>
         </label>
-
         <label htmlFor="comment">
           Comment:
           <input
@@ -47,7 +45,10 @@ export default function Form({ record, notes, setNotes }) {
             value={comment}
           ></input>
         </label>
-        <button type="submit">Add</button>
+        <br /> <br />
+        <button className="Add" type="submit">
+          Add
+        </button>
       </form>
       <section>
         {record.notes.map((note) => {
