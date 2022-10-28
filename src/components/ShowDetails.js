@@ -19,11 +19,11 @@ function ShowDetails({ student, toggleSetShowMe }) {
         onClick={toggleSetShowMe}
         style={{ color: `${!showMe ? "green" : "red"}` }}
       >
-        Show me...
+        Show me
         {!showMe ? (
-          <span className="show-hide-tag show" title="Show me..."></span>
+          <span className="show-hide-tag show" title="Show me"></span>
         ) : (
-          <span className="show-hide-tag hide" title="hide me..."></span>
+          <span className="show-hide-tag hide" title="hide me"></span>
         )}
       </button>
 
