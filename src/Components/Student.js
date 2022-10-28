@@ -35,11 +35,10 @@ export default function Student({ person, date, data }) {
           </p>
         </aside>
         {onTrack(person) ? (
-          <p className="onTrack">
+          <p className="onTrack" style={{ color: "fuchsia" }}>
             <em>On Track to Graduate</em>
           </p>
         ) : null}
-        {/* <button className="toggle-details">Show more...</button> */}
         <ShowMore person={person} />
       </div>
     </article>

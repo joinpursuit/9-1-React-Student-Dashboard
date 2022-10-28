@@ -22,8 +22,8 @@ export default function ShowMore({ person }) {
   function changeColor(percent) {
     if (percent >= 100) {
       return <span style={{ color: "green" }}>{percent}</span>;
-    } else if (100 > percent > 49) {
-      return <span style={{ color: "yellow" }}>{percent}</span>;
+    } else if (percent > 49) {
+      return <span style={{ color: "darkkhaki" }}>{percent}</span>;
     } else if (percent < 50) {
       return <span style={{ color: "red" }}>{percent}</span>;
     }
@@ -66,8 +66,7 @@ export default function ShowMore({ person }) {
               <span>
                 <em>Percentage of Goal Achieved: </em>
               </span>
-
-              {changeColor(percent)}
+              {changeColor(percent)}%
             </p>
           </article>
           <article>

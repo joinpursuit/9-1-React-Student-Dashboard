@@ -1,8 +1,6 @@
 import "./CohortList.css";
 
 export default function CohortList({ data, setSelected }) {
-  // const []
-
   let filtered = [
     ...new Set(
       data.map((item) => {
@@ -38,14 +36,6 @@ export default function CohortList({ data, setSelected }) {
           function cohortClicked() {
             setSelected(cohort.join(" "));
           }
-          //   let cohortName = cohort.split("");
-          //   let wordPortion = cohortName
-          //     .slice(cohortName[cohortName.length], -4)
-          //     .join("");
-          //   //   console.log("text", wordPortion);
-          //   let numPortion = cohortName.slice(-4).join("");
-          //   //   console.log("num", numPortion);
-          //   let cohortNameFormatted = wordPortion + " " + numPortion;
 
           return (
             <li key={i}>
@@ -55,30 +45,6 @@ export default function CohortList({ data, setSelected }) {
             </li>
           );
         })}
-        {/* <li>
-          <button>Winter 2026</button>
-        </li>
-        <li>
-          <button>Fall 2026</button>
-        </li>
-        <li>
-          <button>Summer 2026</button>
-        </li>
-        <li>
-          <button>Spring 2026</button>
-        </li>
-        <li>
-          <button>Winter 2025</button>
-        </li>
-        <li>
-          <button>Fall 2025</button>
-        </li>
-        <li>
-          <button>Summer 2025</button>
-        </li>
-        <li>
-          <button>Spring 2025</button>
-        </li> */}
       </ul>
     </div>
   );
