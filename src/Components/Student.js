@@ -3,6 +3,7 @@ import { useState } from "react";
 import StudentInfo from "./StudentInfo";
 import CommentsForm from "./CommentsForm";
 import Stats from "./Stats";
+import Comments from "./Comments";
 
 import "./Student.css";
 
@@ -21,17 +22,10 @@ export default function Student({ student, addComment }) {
         <>
           <section className="showMoreSection">
             <Stats student={student} />
-            <CommentsForm student={student} addComment={addComment} />
-            <h4>Comments</h4>
-            <ul className="comments">
-              {comments.map((comment, idx) => {
-                return (
-                  <li key={idx}>
-                    {comment.commenter} says, "{comment.comment}"
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="commentsContainer">
+              <CommentsForm student={student} addComment={addComment} />
+              <Comments comments={comments} />
+            </div>
           </section>
         </>
       )}
