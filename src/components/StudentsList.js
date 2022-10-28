@@ -20,9 +20,10 @@ function StudentsList({
   const filteredStudents = dataList.filter(
     (students) => selectCohort === students.cohort.cohortCode
   )
+
   return (
     <section className="students-list">
-      <button>All Students</button>
+      <button onClick={filteredStudents}>All Students</button>
       <p>
         Total Students:
         <span>{dataList.length}</span>
@@ -54,7 +55,6 @@ function StudentsList({
             </article>
           )
         })}
-        {/* <ShowDetails dataList={dataList} /> */}
       </div>
     </section>
   )

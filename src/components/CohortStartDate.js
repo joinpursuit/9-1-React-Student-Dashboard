@@ -9,6 +9,7 @@ function CohortStartDate({ dataList, setselectCohort }) {
     setselectCohort(e.target.innerText)
     console.log(e)
   }
+
   return (
     <div>
       <aside className="Class-selection">

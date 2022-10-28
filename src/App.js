@@ -3,6 +3,7 @@ import StudentsList from "./components/StudentsList"
 import CohortStartDate from "./components/CohortStartDate"
 import Header from "./components/Header"
 import { useState } from "react"
+import ShowDetails from "./components/ShowDetails"
 
 function App() {
   const [dataList, setData] = useState(data)
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <aside className="cohort">
+      <aside className="cohortstartdate">
         <CohortStartDate
           key={dataList.id}
           dataList={dataList}
@@ -23,6 +24,7 @@ function App() {
           key={dataList.id}
           dataList={dataList}
           selectCohort={selectCohort}
+          ShowDetails={ShowDetails}
         />
       </main>
     </div>

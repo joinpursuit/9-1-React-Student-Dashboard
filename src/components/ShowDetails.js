@@ -16,7 +16,7 @@ function ShowDetails({ dataList, toggleSetShowMe }) {
     <div>
       <button onClick={toggleSetShowMe}>
         Show me
-        {!showMe ? "show me details" : "hide show me details"}
+        {/* {!showMe ? "show me details" : "hide show me details"} */}
       </button>
 
       {showMe ? (
