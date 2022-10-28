@@ -5,13 +5,17 @@ import StudentList from "./StudentList"
 
 function ShowDetails({ student, toggleSetShowMe }) {
   const [select, setSelect] = useState("")
+
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
     setShowMe(!showMe)
   }
   function handleSelectChange(e) {
     setSelect(e.target.value)
-    alert("Form Submit done!!")
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    alert("submitted")
   }
 
   return (
@@ -76,28 +80,27 @@ function ShowDetails({ student, toggleSetShowMe }) {
             <h3>Certifications</h3>
             <p>
               <span>Resume:</span>
-              {student.certifications.resume}
+              {student.certifications.resume ? "✔" : "❌"}
             </p>
             <p>
               <span>lindedin:</span>
-              {student.certifications.linkedin}
-              {}
+              {student.certifications.linkedin ? "✔" : "❌"}
             </p>
             <p>
               <span> Mock Interview:</span>
-              {student.certifications.mockInterview}
+              {student.certifications.mockInterview ? "✔" : "❌"}
               {}
             </p>
             <p>
               <span>GitHub:</span>
-              {student.certifications.github}
+              {student.certifications.github ? "✔" : "❌"}
               {}
             </p>
           </article>
           <section cls>
             <article className="notes-list">
               <h4>1-on-1 Notes</h4>
-              <Form onSubmit={handleSelectChange}>
+              <Form onSubmit={handleSubmit}>
                 <label htmlFor="commenterName">
                   Commenter Name
                   <input type="text" name="tom" />
