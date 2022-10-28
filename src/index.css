@@ -267,4 +267,26 @@ input:focus {
     cursor: pointer;
 }
 
+/* Season icons? */
+
+#Winter2026::before, #Winter2025::before{
+    content: "\00a0" url('../public/assets/Winter-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Fall2026::before, #Fall2025::before {
+    content: "\00a0" url('../public/assets/Fall-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Spring2026::before, #Spring2025::before {
+    content: "\00a0" url('../public/assets/Spring-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
+#Summer2026::before, #Summer2025::before {
+    content: "\00a0" url('../public/assets/Summer-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
 
