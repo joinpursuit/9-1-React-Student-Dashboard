@@ -69,3 +69,20 @@
     margin-top: 20px;
     text-align: right;
 }
+.note-list {
+    border-top: 2px solid rosybrown;
+    grid-column: 1/4;
+    margin-top: 25px;
+    padding: 25px 0;
+}
+.notes-list {
+    border: 1px solid rosybrown;
+    padding: 20px;
+}
+.notes-list label {
+    display: block;
+    margin: 5px 0;
+}
+.notes-list input {
+    margin: 0 10px;
+}

@@ -61,9 +61,9 @@ export default function ShowMore({student, students,setStudents}) {
             </article>
             <article className="note-list">
                 <h4>1-on-1 Notes</h4>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='notes-list'>
                     <label>Commenter names<input id="commenter" type='text' name="commenter" value={notes.commenter} onChange={handleChange}></input>
-                    </label><br></br>
+                    </label>
                     <label>Comment<input id="comment" type='text' name="comment" value={notes.comment} onChange={handleChange}></input>
                     </label>
                     <button type="submit">Add Note</button>
