@@ -3,6 +3,7 @@
 import React from 'react';
 import { useState } from 'react';
 import data from "../data/data.json"
+import { StudentInfo } from './StudentInfo';
 
 // allStudents = data 
 const Students = ({students, setStudents, cohort}) => {
@@ -33,31 +34,30 @@ function handleClickToggle(){
                         {toggle ? "Show More..." : "Show less..."}
                     </button>
                     </p>
-                    
+                   { toggle ?  < StudentInfo student = {student}/> : null}
+                   
                 </div>  
             )})
             :
             selectedStudents.map((student) => {
-                return(
-                    <div className ="allStudentsList" key = {student.id}  >
-                        <img src = {student.profilePhoto}/>
-                        <p className='studentTag'>{student.names.preferredName}  
-                        <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
-                        <span className ="studentName">{student.names.surname}</span><br />
-                        <span className ="studentName">{student.username} </span><br />
-                        <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
-                        <button onClick={handleClickToggle} className='showMoreButton' > 
-                        {toggle ? "Show More..." : "Show less..."}
-                    </button>
-                        </p>
-                        
-                    </div>  
-                )})
-
-
+            return(
+                <div className ="studentInfo" key = {student.id}  >
+                    <img src = {student.profilePhoto}/>
+                    <p className='studentTag'>  
+                    <span  className = "studentName">  {student.names.preferredName}   </span>
+                    <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
+                    <span className ="studentName">{student.names.surname}</span><br />
+                    <span className ="studentName">{student.username} </span><br />
+                    <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
+                    <button onClick={handleClickToggle} className='showMoreButton' > 
+                    {toggle ? "Show More..." : "Show less..."}
+                </button>
+                    </p>
+                    { toggle ?  < StudentInfo student = {student}/> : null}
+                </div>  
+            )})
         }
      </div>
-     
      
     )
 };

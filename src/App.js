@@ -26,8 +26,7 @@ const[cohort, setCohort] = useState("allStudents")
                students = {students}
                setStudents={setStudents}
                setCohort={setCohort}
-              // handleClickAllStudents={handleClickAllStudents}
-              // handleClickW2026={handleClickW2026}
+      
               
               /></div>
             </aside>
