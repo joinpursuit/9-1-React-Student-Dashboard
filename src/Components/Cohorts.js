@@ -15,7 +15,7 @@ const Cohorts = ({
 
   return (
     <div className="aside" onLoad={cohortListAside}>
-      <h3 id="cohortH2">Classes by Start-Date</h3>
+      <h4 id="cohortH2">Classes by Start-Date</h4>
       <ul>
         <li id={"All Students"} onClick={searchCohort}>
           All Students

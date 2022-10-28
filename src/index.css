@@ -1,7 +1,21 @@
 .body{
     display: block;
+    background-image: url("./assets/images/Corporate-Wallpaper.jpeg"); 
+    
+
     
 }
+
+.page{
+    background-image: linear-gradient(to bottom right, rgba(78, 149, 196, 0.42),
+     rgb(75, 148, 217));
+     font-family: helvetica;
+     
+    
+}
+
+
+
 
 .profilePhoto{
    display: block;
@@ -33,23 +47,27 @@
     justify-content: center;
     height: 20vh;
     background-color: rgb(13, 86, 135);
-    font-family: sans-serif;
+    font-family: Helvetica;
     color: white;
     text-align: center;
     grid-column: left/end;
     grid-row: header;
+    box-shadow: 10px 10px 10px grey;
+    
 }
 
 .aside, .main {
     grid-row: main;
-     ;
+    
+    
 }
 .aside {
     display: block;
-    width: 10%;
+    width: 15%;
     grid-column: left;
-    
-   
+    /* position: fixed;
+        top: 150px; */
+       
 }
 
 .cohorts:hover {
@@ -59,7 +77,7 @@ color: blue;
 .main {
     display: block;
     grid-column: right;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -69,11 +87,12 @@ color: blue;
     grid-column-gap: 25px;
     padding: 25px;
     margin-bottom: 5%;
+    background-image: linear-gradient(180deg, rgba(226, 234, 239, 0.42),
+                rgb(193, 200, 207));
     border: 3px solid rgb(13, 86, 135);
     border-radius: 10px;
     box-shadow: 10px 10px 10px grey;
-    
-    
+   
 }
 
 .studentInfo{
@@ -87,7 +106,6 @@ color: blue;
 
 .studentDetails{
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: 3fr;
     grid-column: left/end;
    
@@ -120,9 +138,11 @@ article{
 }
 
 hr {
-    height: 1px;
+    height: 3px;
     width: 100px;
+    margin-bottom: 10px;
    background-color: rgb(13, 86, 135);
+box-shadow: 3px 3px 3px grey;
     
 }
 
