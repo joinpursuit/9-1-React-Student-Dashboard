@@ -6,16 +6,20 @@ import data from "./data/data";
 
 function App() {
   //********* STATES *********/
+
+  //array state that becomes the list of cohorts passed to Cohorts.js
   const [cohorts, setCohorts] = useState([]);
 
+  // string state that gets set to the id string from each individual cohort at the click event of each cohort li
   let [cohortClicked, setCohortClicked] = useState("All Students");
 
+  //boolean state passed to cohorts to be set at click and then passed down to student to reset the student details to show nothing when a cohort is changed
   const [resetStudentDetails, setResetStudentDetails] = useState(null);
 
   //********* NON-STATE VARS *********/
 
+  //colects all the cohort codes for each student -- will be turned into a list of unique cohortCodes
   let cohortArr = [];
-  const seasons = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
 
   //********* HELPERS *********/
 
@@ -24,7 +28,6 @@ function App() {
   //3. set is then converted back into array form (arrOfCohorts)
   //4. finally sets state of setCohorts to be the value of arrOfCohorts
   const cohortListAside = (e) => {
-    // e.preventDefault();
     data.forEach((el) => {
       cohortArr = [...cohortArr, el.cohort.cohortCode];
     });
@@ -36,6 +39,8 @@ function App() {
       setCohorts(arrOfCohorts);
     });
   };
+
+  //helper function that is propped down to cohorts and students to turn the cohortCode into a human readable string with space between season and year
 
   const splitString = (el) => {
     let sliceLetters = el.slice(0, -4);

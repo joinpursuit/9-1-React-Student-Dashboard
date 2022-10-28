@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import Student from "./Student";
 const Students = ({
   students,
@@ -17,10 +16,12 @@ const Students = ({
       <h3>Total Students: {filteredCohortInfoData.length} </h3>
 
       {filteredCohortInfoData.map((student) => {
+        //************ RETURN ***********/
         return (
           <>
             <Student
               student={student}
+              students={students}
               resetStudentDetails={resetStudentDetails}
             />
           </>

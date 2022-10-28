@@ -4,17 +4,15 @@ import StudentDetails from "./StudentDetails";
 const Student = ({ student, students, resetStudentDetails }) => {
   const [showStudentDetailsBool, setShowStudentDetailsBool] = useState(false);
 
+  //sets the bolean state propped down from app.js to trigger showing student details
   const showStudentDetails = () => {
     setShowStudentDetailsBool(!showStudentDetailsBool);
   };
 
-  //**********testing */
-
+  //resets the show student details boolean to be the value of the piece of "bridge" boolean state that is fired on click in cohorts to stop showing all student details each time a new cohort is clicked
   const resetStudent = () => {
     setShowStudentDetailsBool(resetStudentDetails);
   };
-
-  //************** */
 
   return (
     <div className="studentCard" id={student.id} onLoad={resetStudent}>

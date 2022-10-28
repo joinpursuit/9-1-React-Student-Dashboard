@@ -2,14 +2,12 @@ import { useState } from "react";
 // import Student from "./Student";
 
 const StudentDetails = ({ showStudentDetailsBool, student, students }) => {
-  console.log(students);
-  // State for Textbox
+  // State for two Textboxes
   const [notes, setNotes] = useState({ commenter: "", comment: "" });
-  // To add to the notes array
+  // To add new notes to the notes array -- default val is student.notes, the notes object in student
   const [newNotes, setNewNotes] = useState(student.notes);
 
-  let percentAchieved = document.querySelectorAll("p#percentAchieved");
-
+  // evalutes from student.certifications and student.codewars score if the studrnt is on track to graduate and displays it to user
   const onTrackToGraduate = (student) => {
     if (
       student.certifications.resume === true &&
@@ -24,16 +22,22 @@ const StudentDetails = ({ showStudentDetailsBool, student, students }) => {
     }
   };
 
+  //handles change event for text boxes to set state to value of user input in text boxes for writing a new note -- sets the empty object that will be injected into student.notes
   const inputChange = (e) => {
     setNotes({ ...notes, [e.target.id]: e.target.value });
   };
 
+  //handsles submit of new notes form
+  //1. prevents default browser refresh
+  //2.places the user notes into student.notes
+  //3.resets the user notes to an empty object to accept more notes
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewNotes([...newNotes, notes]);
     setNotes({ commenter: "", comment: "" });
   };
 
+  // converts student.codewar scores to percentages and applies a className based on that calculation for css display in red (for bad) yellow(for medium) and green(for good)
   const scoresDisplayColor = (student) => {
     if (
       Math.round(
@@ -41,7 +45,7 @@ const StudentDetails = ({ showStudentDetailsBool, student, students }) => {
       ) >= 99
     ) {
       return (
-        <p className="good">
+        <p className="high">
           Percent of Goal Achieved:{" "}
           {Math.round(
             (student.codewars.goal.total / student.codewars.current.total) * 100
@@ -74,7 +78,7 @@ const StudentDetails = ({ showStudentDetailsBool, student, students }) => {
       ) < 50
     ) {
       return (
-        <p className="bad">
+        <p className="low">
           Percent of Goal Achieved:{" "}
           {Math.round(
             (student.codewars.goal.total / student.codewars.current.total) * 100

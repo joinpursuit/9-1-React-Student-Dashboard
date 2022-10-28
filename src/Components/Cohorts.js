@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Cohorts = ({
   cohorts,
   cohortListAside,
@@ -8,6 +6,8 @@ const Cohorts = ({
   splitString,
   setResetStudentDetails,
 }) => {
+  // 1.fired by click event in each cohort li, sets the string state in app js. and passes it to the filter
+  //2. sets a piece of state to false to reset the student data output to not showing. Gets passed up to App.js to student
   let searchCohort = (e) => {
     setCohortClicked(e.target.id);
     setResetStudentDetails(false);
