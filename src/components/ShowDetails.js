@@ -32,24 +32,25 @@ function ShowDetails({ student, toggleSetShowMe }) {
           <article>
             <h3>Codewars</h3>
             <p>
-              <span>Current Total:</span>
+              <span>Current Total: </span>
+
               {student.codewars.current.total}
             </p>
             <p>
-              <span>Last week:</span>
-              {student.codewars.lastweek}
+              <span>Last week: </span>
+              {student.codewars.current.lastweek}
             </p>
             <p>
-              <span>Goal:</span>
+              <span>Goal: </span>
               {student.codewars.goal.total}
             </p>
             <p>
-              <span>Percent of Goal Achieved:</span>
+              <span>Percent of Goal Achieved: </span>
               {(
                 (Number(student.codewars.current.total) /
                   Number(student.codewars.goal.total)) *
                 100
-              ).toFixed(2)}
+              ).toFixed(2)}{" "}
               %
             </p>
           </article>
@@ -57,16 +58,17 @@ function ShowDetails({ student, toggleSetShowMe }) {
           <article>
             <h3>Scores</h3>
             <p>
-              <span>Assignments:</span>
-              {student.cohort.scores.assignments}%
+              <span>Assignments: </span>
+              {student.cohort.scores.assignments}
+              {}%
             </p>
             <p>
-              <span>Projects:</span>
-              {student.cohort.scores.projects}%
+              <span>Projects: </span>
+              {student.cohort.scores.projects} %
             </p>
             <p>
-              <span>Assessments:</span>
-              {student.cohort.scores.assesments}
+              <span>Assessments: </span>
+              {student.cohort.scores.assessments} %
             </p>
           </article>
           <article>
@@ -74,7 +76,6 @@ function ShowDetails({ student, toggleSetShowMe }) {
             <p>
               <span>Resume:</span>
               {student.certifications.resume}
-              {}
             </p>
             <p>
               <span>lindedin:</span>
