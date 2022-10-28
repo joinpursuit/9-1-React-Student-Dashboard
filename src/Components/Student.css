@@ -1,6 +1,5 @@
 .student {
     list-style: none;
-    border: 1px solid black;
     padding: 10px;
 }
 
@@ -16,7 +15,7 @@
 
 .commentsAndFormContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(300px, 350px) minmax(300px, 350px);
     gap: 10px;
     padding: 20px;
 }
