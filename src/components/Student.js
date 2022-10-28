@@ -10,6 +10,7 @@ function Student ({student}) {
     const fullName = `${student.names.preferredName} ${student.names.middleName[0]}. ${student.names.surname}`
     let onTrack = false
     let percentColor = ""
+    let star = ""
     if (student.certifications.resume && student.certifications.linkedin && student.certifications.github && student.certifications.mockInterview && (student.codewars.current.total > 600)) {
         onTrack = true
     } 
@@ -17,6 +18,7 @@ function Student ({student}) {
     //Share this in presentation
     if (goalPercent >= 100) {
         percentColor = "green"
+        star = "⭐"
     } else if (goalPercent >= 50) {
         percentColor = "yellow"
     } else if (goalPercent < 50) {
@@ -47,30 +49,36 @@ function Student ({student}) {
 
     return (
         <div className="student" >
-            <h3>{fullName}</h3>
-            <p>{onTrack ? <span>On Track to Graduate</span> : null}</p>
+            <h2 className="studentName">{fullName}</h2>
+            <p>{onTrack ? <span>On Track to Graduate ⭐⭐⭐⭐⭐</span> : null}</p>
             <p>{student.username}</p>
             <p><span>Birthday:</span> {fixedDate.toLocaleDateString()}</p>
             <img src={student.profilePhoto} alt="Picture of Student"/>
-            <p className="showButton" onClick={() => setShowMore(!showMore)}>{showMore ? "Show less" : "Show more"}...</p>
-            <div>
-                {showMore
-                ? <>
+            <p className="click" onClick={() => setShowMore(!showMore)}>{showMore ? "Show less" : "Show more"}...</p>
+            <div className="showMore" id={showMore ? "show" : "hidden"}>
+                <div className="grades">
+                <div className="grade">
                 <h3>Codewars:</h3>
                 <p><span>Current Total:</span> {student.codewars.current.total}</p>
                 <p><span>Last Week:</span> {student.codewars.current.lastWeek}</p>
                 <p><span>Goal:</span> {student.codewars.goal.total}</p>
-                <p><span>Percent of Goal Achieved:</span> <span className={percentColor}>{goalPercent}%</span></p>
+                <p><span>Percent of Goal Achieved:</span> <span className={percentColor}>{goalPercent}%{star}</span></p>
+                </div>
+                <div className="grade">
                 <h3>Scores</h3>
                 <p><span>Assignments:</span> {student.cohort.scores.assignments * 100}%</p>
                 <p><span>Projects:</span> {student.cohort.scores.projects * 100}%</p>
                 <p><span>Assessments:</span> {student.cohort.scores.assessments * 100}%</p>
+                </div>
+                <div className="grade">
                 <h3>Certifications</h3>
-                <p><span>Resume:</span>{student.certifications.resume === true ? "✅" : "❌"}</p>
-                <p><span>LinkedIN:</span>{student.certifications.linkedin === true ? "✅": "❌"}</p>
-                <p><span>Mock Interview:</span>{student.certifications.github === true ? "✅" : "❌"}</p>
-                <p><span>Github:</span>{student.certifications.mockInterview === true ? "✅": "❌"}</p>
-                <section className="reviews">
+                <p><span>Resume:</span>{student.certifications.resume === true ? "⭐" : "❌"}</p>
+                <p><span>LinkedIN:</span>{student.certifications.linkedin === true ? "⭐": "❌"}</p>
+                <p><span>Mock Interview:</span>{student.certifications.github === true ? "⭐" : "❌"}</p>
+                <p><span>Github:</span>{student.certifications.mockInterview === true ? "⭐": "❌"}</p>
+                </div>
+                </div>
+                <section className="notes">
                 <h2>1-on-1 Notes</h2>
                 <form onSubmit={handleSubmit}>
                     <p>Commenter Name</p>
@@ -99,9 +107,7 @@ function Student ({student}) {
                 : null }
                 </ul>
             </section>
-                </>
-                : null
-                }
+
             </div>
         </div>
     )

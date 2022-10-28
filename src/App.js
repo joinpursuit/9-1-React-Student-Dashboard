@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <h1>Good Noodles of Pursuit</h1>
       <Cohorts filteredYears={filteredYears} studentData={studentData} handleFilter={handleFilter}/>
       <Students studentData={filteredStudents} selectedClass={selectedClass}/>
     </div>
