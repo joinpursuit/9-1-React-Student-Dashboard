@@ -11,6 +11,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
   }
   function handleSelectChange(e) {
     setSelect(e.target.value)
+    alert("Form Submit done!!")
   }
 
   return (
