@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
+
+aside{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+header{
+    border: 1px black solid;
+    background-color: black;
+}
