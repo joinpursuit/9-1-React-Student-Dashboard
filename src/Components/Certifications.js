@@ -10,10 +10,10 @@ const gitHub = student.certifications.github ? `\u2705` : `\u274C`
     <div>
         <aside>
             <h3>Certifications</h3>
-            <p>Resume: {resume}</p>
-            <p>LinkedIn: {linkedIn}</p>
-            <p>Mock Interview: {mockInterview}</p>
-            <p>Github: {gitHub}</p>
+            <p><b>Resume: </b>{resume}</p>
+            <p><b>LinkedIn: </b>{linkedIn}</p>
+            <p><b>Mock Interview: </b>{mockInterview}</p>
+            <p><b>Github: </b>{gitHub}</p>
           </aside>
     </div>
   )

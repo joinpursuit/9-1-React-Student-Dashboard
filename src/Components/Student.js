@@ -25,16 +25,16 @@ function Student({ student, notes, setNotes }) {
         <div className="showmore">
           <article>
             <h3>Codewars</h3>
-            <p>Current Tototal: {student.codewars.current.total}</p>
-            <p>Last Week:{student.codewars.current.lastweek} </p>
-            <p>Goal: {student.codewars.goal.total}</p>
-            <p>Percent of Goal Achieved: {goalPercent} %</p>
+            <p><b>Current Total: </b>{student.codewars.current.total}</p>
+            <p><b>Last Week: </b>{student.codewars.current.lastWeek} </p>
+            <p><b>Goal: </b>{student.codewars.goal.total}</p>
+            <p><b>Percent of Goal Achieved: </b>{goalPercent} %</p>
           </article>
           <article>
             <h3>Scores</h3>
-            <p>Assignments: {student.cohort.scores.assignments * 100} %</p>
-            <p>Projects: {student.cohort.scores.projects * 100} %</p>
-            <p>Assessments: {student.cohort.scores.assessments * 100} %</p>
+            <p><b>Assignments: </b>{student.cohort.scores.assignments * 100} %</p>
+            <p><b>Projects: </b>{student.cohort.scores.projects * 100} %</p>
+            <p><b>Assessments: </b>{student.cohort.scores.assessments * 100} %</p>
           </article>
           <article>
             <Certifications student={student} />

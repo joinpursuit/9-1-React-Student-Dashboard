@@ -41,6 +41,13 @@ font-size: larger;
   grid-row: header;
   text-align: center;
   display: block;
+  /* background-image: url('https://inceptor.co.ke/wp-content/uploads/2020/12/School-Management-Software-Trends-in-Kenya-2021.gif'); */
+}
+.braingif{
+    margin-left: 60px;
+    display: grid;
+    height: 200px;
+    width: 200px;
 }
 
 .navbar h1{
@@ -86,3 +93,8 @@ main{
     padding: 25px;
 }
 
+.gif{
+    display: grid;
+    justify-content: left;
+    width: 400px;
+}
