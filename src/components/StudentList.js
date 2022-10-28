@@ -1,11 +1,6 @@
 import ShowDetails from "./ShowDetails"
 
-function StudentList({
-  students,
-  toggleSetNewShowMe,
-  ShowDetails,
-  selectedShortCode,
-}) {
+function StudentList({ students, ShowDetails, selectedShortCode }) {
   function ontrack(students) {
     if (
       students.certifications.resume === true &&
@@ -24,7 +19,7 @@ function StudentList({
         <button>{selectedShortCode}</button>
         <p>
           Total Students:
-          <span>{students.length}</span>
+          <span className="numchange"> {students.length}</span>
         </p>
         <div className="student-card">
           {students.map((student) => {

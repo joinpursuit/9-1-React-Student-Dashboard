@@ -15,7 +15,6 @@ function App() {
     const filteredStudents = defaultStudents.filter(
       (student) => student.cohort.cohortCode === formatted
     )
-
     setStudents((previous) => {
       return [...filteredStudents]
     })
