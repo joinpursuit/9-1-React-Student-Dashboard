@@ -1,0 +1,86 @@
+@import url(http://fonts.cdnfonts.com/css/spongebob-font-condensed);
+
+html {
+    background: url(https://media.istockphoto.com/photos/blank-blackboard-with-traces-of-erased-chalk-picture-id451986331?b=1&k=20&m=451986331&s=170667a&w=0&h=ziLvDOHgTOUH2pJZSecZluffjpTAtwC5ppIdad4HCgM=) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'SpongeBob Font Condensed', sans-serif;
+}
+
+#hidden {
+    display: none;
+}
+
+.years {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+}
+
+.students {
+    display: grid;
+    grid-template-columns: repeat(2, 125fr);
+    text-align: center;
+    border: brown;
+    border-radius: 15px;
+}
+
+.student {
+    height: 600px;
+}
+
+.showMore {
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+    z-index: 101;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 8px 5px 5px black;
+}
+
+
+.grades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.heading, h1, .showing, .totals, .flower {
+    text-align: center;
+}
+
+.year {
+    text-align: center;
+    margin: 20px;
+}
+
+.click {
+    transition: transform .2s;
+    display: inline;
+    width: 50px;
+}
+
+.click:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+img {
+    display: inline;
+}
+
+span, .showButton {
+    color: #DCC241;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.red {
+    color: red;
+}
