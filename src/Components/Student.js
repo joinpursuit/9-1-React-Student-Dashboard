@@ -22,7 +22,7 @@ export default function Student({ student, addComment }) {
         <>
           <section className="showMoreSection">
             <Stats student={student} />
-            <div className="commentsContainer">
+            <div className="commentsAndFormContainer">
               <CommentsForm student={student} addComment={addComment} />
               <Comments comments={comments} />
             </div>
