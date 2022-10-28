@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <header> <h1>Student Dashboard</h1></header>
       <Class Data={Data} classSeason={classSeason} setClassSeason={setClassSeason} />
       <Students Data={Data}classSeason={classSeason} setClassSeason={setClassSeason}/>
     </div>

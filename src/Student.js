@@ -8,6 +8,17 @@ const Student = ({student}) => {
         setShowDetails(!showDetails)
     }
 
+
+// find a way for certifications to show 
+
+
+    // 1-on-1 section
+// create a function to get the button to work and not refresh the page
+//      The section should show a list of all previous notes that have been added.
+//      The form can be filled out and submitted. On submit, the inputs are cleared.
+//      The submitted information is immediately shown in the list of notes.
+//      While the notes will not persist if the page is loaded, the new notes should be found if you interact with a new cohort in the cohort list and then find the student.
+
     // function certifications(){
     //     if (student.certifications.resume === true && student.certifications.linkedin === true && student.certifications.github === true && student.mockInterview === true && student.codewars.current.total >600 ){
     //         return "On Track to Graduate"
@@ -17,7 +28,7 @@ const Student = ({student}) => {
 
 
     return (
-        <div>
+        <div className='entireProfile'>
 
             <img src={student.profilePhoto} alt="Profile "></img>
             <h4>{student.names.preferredName} {student.names.middleName} {student.names.surname}</h4>
@@ -29,11 +40,12 @@ const Student = ({student}) => {
            </button>
            {
             showDetails &&
-                <div className='personDetails'>
+                <div className='personDetails' >
+                    <section id='codeWarsSection'>
                    <h3> CodeWars</h3>
                     <p>
                    <span> Current:</span>
-                    {student.codewars.current.total }
+                    {student.codewars.current.total}
                     </p>
                 <p>
                     <span>
@@ -45,6 +57,9 @@ const Student = ({student}) => {
                     <span>Goal:</span>
                     {student.codewars.goal.total}
                 </p>
+                    </section>
+
+                    <section id='scoresSection'>
                <h3>Scores</h3>
                <p>
                 <span>Assignments:</span>
@@ -58,6 +73,9 @@ const Student = ({student}) => {
                 <span>Assessments:</span>
                 {student.cohort.scores.assessments}%
                </p>
+               </section>
+
+               <section id='certifications'>
                <h3>Certifications</h3>
                <p>
                 <span>Resume:</span>
@@ -79,12 +97,15 @@ const Student = ({student}) => {
                 </span>
                 {student.certifications.mockInterview}
                </p>
-
+               </section>
                <section>
                 <form>
                     <h2>1-on-1 Notes</h2>
                     <label>Commenter Name</label>
-                    <input name="" type="text" ></input>
+                    <input name="commenter" type="text" value={student.notes.commenter} ></input>
+                    <label>Comment</label>
+                    <input name="comment" type="text" value={student.notes.comment}></input>
+                    <button>Add Note</button>
                 </form>
                </section>
                     </div>

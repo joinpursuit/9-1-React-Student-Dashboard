@@ -1,10 +1,35 @@
-h1 {
+header {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
 background-color: cadetblue;
+
 }
 
-.personDetails{
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    width: 120px;
+img{
+    height: 200px;
+    width: 200px;
 }
+.semeseterAndYear{
+    text-decoration: underline;
+}
+.entireProfile{
+    text-align: right;
+    display: grid;
+    grid-auto-rows: 50px;
+}
+.personDetails{
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+
+}
+#codeWarsSection{
+    text-align: left;
+}
+
+.grid {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+  }

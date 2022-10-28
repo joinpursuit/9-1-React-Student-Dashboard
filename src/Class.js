@@ -16,17 +16,20 @@ function Class({Data, setClassSeason}) {
 // Each cohort has a "human readable" name instead of the cohort code. (e.g. "Winter 2026" instead of "Winter2026".)
 // The cohorts are organized by date, either in ascending or descending order. "All Students" should remain at the top.
 
+
+
+// NEED TO DO A title, such as "All Students".
+
 let semester = [
     "All Students",
-    "Winter2025",
     "Winter2026",
+    "Fall2026",
     "Summer2026",
+    "Spring2026",
+    "Winter2025",
+    "Fall2025",
     "Summer2025",
     "Spring2025",
-    "Fall2025",
-    "Winter2026",
-    "Spring2026",
-    "Fall2026",
 ]
 
 let sortedSemester = semester.sort()

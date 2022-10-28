@@ -9,8 +9,8 @@ const AllStudents = ({Data, classSeason}) => {
 
    
     return (
-        <div>
-            <aside>
+        <div >
+            <aside className='semesterAndYear'>
             <h3> Total Students:{classSeason.length}</h3>
                 {
                     classSeason.map((student)=>{
