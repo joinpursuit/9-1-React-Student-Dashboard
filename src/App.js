@@ -16,20 +16,20 @@ function App() {
     <div className="Wrapper">
 			
       <header className="navbar">
-        <h1>Student Dashboard</h1>
+        <h1> Student Dashboard</h1>
       </header>
       <aside className="cohortlist">
-          <img
+         
+				<CohortList
+          setDisplayedStudents={setDisplayedStudents}
+          setDisplayCohort={setDisplayCohort}
+        /> 
+				<img
             className="gif"
             src="https://media4.giphy.com/media/kvazz2A4Pa2LHDMzwZ/giphy.gif"
             alt="extragif"
           />
-        
-				<CohortList
-          setDisplayedStudents={setDisplayedStudents}
-          setDisplayCohort={setDisplayCohort}
-        />
-        <img className="braingif" src="https://i0.wp.com/media3.giphy.com/media/bZmVvb3gFjtak149u1/source.gif" alt="braingif"/>
+        {/* <img className="braingif" src="https://i0.wp.com/media3.giphy.com/media/bZmVvb3gFjtak149u1/source.gif" alt="braingif"/> */}
 
       </aside>
 

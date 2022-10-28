@@ -34,14 +34,14 @@ body {
 }
 
 .navbar {
-font-size: larger;
   width: 100%;
-  margin: 10px;
+  height: 150px;
+  margin-bottom: 30px;
   grid-column: left/end;
   grid-row: header;
   text-align: center;
   display: block;
-  /* background-image: url('https://inceptor.co.ke/wp-content/uploads/2020/12/School-Management-Software-Trends-in-Kenya-2021.gif'); */
+  background-image: url('https://image.shutterstock.com/image-vector/group-diverse-people-silhouette-new-260nw-1928078039.jpg');
 }
 .braingif{
     margin-left: 60px;
@@ -51,7 +51,13 @@ font-size: larger;
 }
 
 .navbar h1{
-    text-align: center;
+  font-size: 50px;
+background-color: white;
+  text-emphasis: circle;
+text-emphasis-color: rgb(236, 172, 75);    
+text-align: right;
+margin-left: 60%;
+margin-right: 40px;
     text-decoration: underline;
 
 }
