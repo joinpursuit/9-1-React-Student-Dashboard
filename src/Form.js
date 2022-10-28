@@ -1,9 +1,7 @@
 import { useState } from 'react';
-// import Data from './data/data.json';
 import './Form.css';
 
 function Form({ el }) {
-  // console.log(Data.notes);
   const [comment, setComment] = useState('');
   const [commenter, setCommenter] = useState('');
   const [newComment, setNewComment] = useState(el.notes);

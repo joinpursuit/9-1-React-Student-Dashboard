@@ -1,6 +1,6 @@
 .individual-details {
   display: grid;
-  /* border: 2px solid blue; */
+
   grid-template-columns: repeat(3, 8fr);
   padding: 30px;
 }
