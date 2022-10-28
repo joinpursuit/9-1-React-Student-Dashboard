@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import './StudentCards.css'
-export default function Students({names, profilePhoto, username, dob, certifications, codewars, cohort, notes, setNote}){
+export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes}){
+    //Code in all is a destructured method. I'm told there's other ways to do it but I liked this. 
     const [toggle, setToggle] = useState(false)
-    const [input, setInput] = useState('')
+    const [commenter, setCommenter] = useState('')
+    //Changed name to make readable 
     const [comment, setComment] = useState('')
-    //This is ruining code and unsure why
-
-    //States Ruining code... Was working fine before hand unsure whats wrong. 
-
-
-
+    const [comments] = useState(notes)
+ 
     const handleClick = () => {
         if(toggle === false){
             setToggle(true)
@@ -20,20 +18,26 @@ export default function Students({names, profilePhoto, username, dob, certificat
 
     function handleComment(e){
         e.preventDefault()
-        setNote([...notes, {comment: comment, commenter: input}])
-        setInput('')
+        setCommenter('')
         setComment('')
+        commentEntry() 
     }
 
+    function commentEntry(){
+      const test = {...comments, commenter: commenter, comment: comment}
+      comments.push(test)
+    }
+    //Was not sure how to do this inline and make it work so made a helper. 
+     
+
     const info = () =>{
-        if(certifications.resume === true && certifications.linkedin === true && certifications.github === true && certifications.mockInterview === true){
+        if(certifications.resume && certifications.linkedin && certifications.mockInterview && certifications.github && codewars.current.total > 600) {
             return (
               <p className='onTrack'>On track to Graduate</p>
             )
         }
     }
-
-    //THIS IS NOT WORKING
+    //info is not reading correctly. Fix to find if student is on track
     
     const showMore = () =>{
         if(toggle){ 
@@ -73,29 +77,40 @@ export default function Students({names, profilePhoto, username, dob, certificat
          <img src={profilePhoto}></img>
         <h2 className='h2'><span>{`${names.preferredName} ${names.middleName} ${names.surname}`}</span>
         </h2>
-        <p>{info()}</p>
+        <p className="graduate">{info()} On Track? </p>
         <p><span>{username}</span></p>
         <p>Birthday: <span>{dob}</span></p>
         <br/>
         <button className="show" onClick={handleClick}>{!toggle ? "Show More": "Show Less"}</button>
         {/* My Favorite Line of Code because its cute and I barely comprehend how to create Tenerary */}
-        {/* <form onSubmit={handleComment}>
+        <br/>
+        <form className="form" onSubmit={handleComment}>
             <h2>1 On 1 Notes</h2>
+            <br/>
             <div>
                 <label>
-                    <div>Commenter</div>
+                    Commenter:
                     <input 
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}/>
-                </label>
-                <label>
-                    <div>Comment</div>
-                    <input 
-                    value={input}
-                    onChange={(e) => setComment(e.target.value)}/>
+                    type="text"
+                    value={commenter}
+                    onChange={(e) => setCommenter(e.target.value)}
+                    required/>
                 </label>
                 <br/>
-                <input type="submit" value="Add comment"/>
+                <br/>
+                <label>
+                    Comment:
+                    <input
+                    type='text' 
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                    required/>
+                </label>
+                <br/>
+                <br/>
+                <input className='commentButton'type="submit" value="Add comment"/>
+                <br/>
+                <br/>
                 <ul>
                     {notes.map((c) => {
                         return (
@@ -106,11 +121,11 @@ export default function Students({names, profilePhoto, username, dob, certificat
                     })}
                 </ul>
             </div>
-        </form> */}
-        <section>{showMore()}</section>
+        </form>
+             <section>{showMore()}</section>
         </div>
     </main>
     )
   
     
-}
+} 

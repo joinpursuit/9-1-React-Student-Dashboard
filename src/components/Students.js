@@ -1,6 +1,7 @@
-import Students from './StudentCards'
-import "./Students.css"
-export default function StudentCard ({student, cohorts}){
+import StudentCards from './StudentCards';
+import "./Students.css";
+export default function Students ({student, cohorts}){
+ //I don't know why this is red theres an error but should not be one. 
   const filteredStudents = student.filter(({cohort}) => {
     return cohort.cohortCode === cohorts
   })
@@ -11,10 +12,10 @@ export default function StudentCard ({student, cohorts}){
             <p>Total Students: 
               <div>{cohorts === 'All Students' ? student.length: filteredStudents.length}</div>
               </p>
-            {cohorts === 'All Students' ? student.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort}) => {
+            {cohorts === 'All Students' ? student.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort, notes}) => {
         return (
           <div key={id}>
-            <Students
+            <StudentCards
               names={names}
               profilePhoto={profilePhoto}
               username={username}
@@ -22,13 +23,14 @@ export default function StudentCard ({student, cohorts}){
               certifications={certifications}
               codewars={codewars}
               cohort={cohort}
+              notes={notes}
             />
           </div>
         );
-      }) : filteredStudents.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort}) => {
+      }) : filteredStudents.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort, notes}) => {
         return (
           <div key={id}>
-            <Students
+            <StudentCards
               names={names}
               profilePhoto={profilePhoto}
               username={username}
@@ -36,6 +38,7 @@ export default function StudentCard ({student, cohorts}){
               certifications={certifications}
               codewars={codewars}
               cohort={cohort}
+              notes={notes}
             />
           </div>
         );

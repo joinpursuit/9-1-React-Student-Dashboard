@@ -4,7 +4,8 @@ main{
     margin: 0 auto;
     width: 90%;
     grid-row: main; 
-    font-size:16px
+    font-size:16px;
+    text-overflow: inherit;
 }
 
 .card{
@@ -82,3 +83,28 @@ section{
     grid-row: middle;
 }
 
+Form{
+   padding: 5px;
+   margin: auto;
+   margin-left: 100%;
+}
+ 
+Form li::marker{
+   /*changes square color*/
+    color:rgb(195, 10, 103);
+}
+
+Form li{
+    list-style: square;
+    font-size: medium;
+    color:plum;
+    margin-bottom: 10%;
+    
+}
+
+
+.commentButton{
+    border-radius: 12%;
+    background-color:var(--darkPurple);
+    color: azure;
+}
