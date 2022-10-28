@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+div {
+  display: grid;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #60946c;
+  color: #ffffff;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+  padding: 20px;
+}
+
+.Classes {
+  height: fit-content;
+}
+
+.Classes ul {
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
+.Classes ul li {
+  list-style: none;
+  line-height: 10px;
+}
+
+.Classes ul li:hover {
+  list-style: none;
+  color: #60946c;
+  cursor: pointer;
+}
+
+/* p label {
+  margin-left: 10px;
+  padding: 0 10px;
+  color: blue;
+} */
+
+.Student {
+  border: 2px solid #60946c;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 2fr 1fr;
+  column-gap: 20px;
+  font-size: 18px;
+  line-height: 10px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+span,
+.on-track {
+  color: #60946c;
+}
+
+.more {
+  border: none;
+  background-color: #ffffff;
+  color: #60946c;
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.details {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  line-height: 0px;
+}
+
+.details div {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.details hr {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  width: 100%;
+}
+
+.details div p {
+  line-height: 20px;
+  height: 20px;
+  display: flex;
+  margin: 0;
+}
+
+.details div p span {
+  padding-right: 6px;
+}
+
+#notes {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+#notes form {
+  border: 2px solid black;
+  padding: 24px;
+  line-height: 36px;
+}
+
+#notes ul li {
+  line-height: 20px;
+}
+
+#add-note {
+  background-color: #60946c;
+  color: #ffffff;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+
+.more:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#add-note:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #ffffff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: darkcyan;
+  color: #ffffff;
+  text-align: center;
+  padding: 2px;
+}
