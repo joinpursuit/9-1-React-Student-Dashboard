@@ -13,7 +13,7 @@ function App() {
   function cohortHandler(cohortCode) {
     let formatted = cohortCode.replace(" ", "")
     const filteredStudents = defaultStudents.filter(
-      (student) => students.cohort.cohortCode === formatted
+      (student) => student.cohort.cohortCode === formatted
     )
 
     setStudents((previous) => {
@@ -26,7 +26,10 @@ function App() {
     <div className="container">
       <Header />
       <aside className="cohortstartdate">
-        <CohortStartDate students={students} cohortHandler={cohortHandler} />
+        <CohortStartDate
+          students={students}
+          onShortCodeChange={cohortHandler}
+        />
       </aside>
       <main>
         <StudentsList
