@@ -26,7 +26,7 @@ export default function Form({ record, notes, setNotes }) {
       <h4>1-on-1 Notes</h4>
       <form id="notes-form" onSubmit={handleSubmit}>
         <label htmlFor="commenter">
-          Commenter Name:
+          Commenter Name:{" "}
           <input
             onChange={(e) => setCommenter(e.target.value)}
             id="commenter"
@@ -35,8 +35,9 @@ export default function Form({ record, notes, setNotes }) {
             value={commenter}
           ></input>
         </label>
+        <br />
         <label htmlFor="comment">
-          Comment:
+          Comment:{" "} 
           <input
             onChange={(e) => setComment(e.target.value)}
             id="comment"
@@ -44,6 +45,7 @@ export default function Form({ record, notes, setNotes }) {
             name="comment"
             value={comment}
           ></input>
+    
         </label>
         <br /> <br />
         <button className="Add" type="submit">
