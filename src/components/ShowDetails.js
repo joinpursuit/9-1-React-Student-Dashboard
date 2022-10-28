@@ -20,7 +20,7 @@ function ShowDetails({ students, toggleSetShowMe }) {
         style={{ color: `${!showMe ? "green" : "red"}` }}
       >
         Show me
-        {/* {!showMe ? (
+        {!showMe ? (
           <span className="show-hide-tag show" title="Show me...">
             Details
           </span>
@@ -28,7 +28,7 @@ function ShowDetails({ students, toggleSetShowMe }) {
           <span className="show-hide-tag hide" title="hide me...">
             Hide
           </span>
-        )} */}
+        )}
       </button>
 
       {showMe ? (

@@ -6,21 +6,20 @@ import { useState } from "react"
 import ShowDetails from "./components/ShowDetails"
 
 function App() {
-  const [students, setStudent] = useState(data)
-  const [selectCohort, setSelectCohort] = useState("AllStudents")
-  const [selectCohortCode, setselectedCohortCode] = useState("All Students")
+  const [students, setStudents] = useState(data)
+  const [selectedShortCode, setSelectedShortCode] = useState("All Students")
   const [defaultStudents, setDefaultStudents] = useState(data)
 
   function cohortHandler(cohortCode) {
     let formatted = cohortCode.replace(" ", "")
     const filteredStudents = defaultStudents.filter(
-      (student) => formatted === students.cohort.cohortCode
+      (student) => students.cohort.cohortCode === formatted
     )
 
-    setStudent((previous) => {
+    setStudents((previous) => {
       return [...filteredStudents]
     })
-    setselectedCohortCode(cohortCode)
+    setSelectedShortCode(cohortCode)
   }
 
   return (
@@ -32,7 +31,7 @@ function App() {
       <main>
         <StudentsList
           students={students}
-          selectCohortCode={selectCohortCode}
+          selectedShortCode={selectedShortCode}
           ShowDetails={ShowDetails}
         />
       </main>

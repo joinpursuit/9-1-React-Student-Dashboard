@@ -4,9 +4,9 @@ function StudentsList({
   students,
   toggleSetNewShowMe,
   ShowDetails,
-  selectCohort,
+  selectedShortCode,
 }) {
-  function ontrack(students, ShowDetails, toggleSetNewShowMe, setselectCohort) {
+  function ontrack(students, ShowDetails) {
     if (
       students.certifications.resume === true &&
       students.certifications.lindedin === true &&
@@ -21,7 +21,7 @@ function StudentsList({
   return (
     <>
       <section className="students-list">
-        <button onClick={filteredStudents}>All Students</button>
+        <button>{selectedShortCode}</button>
         <p>
           Total Students:
           <span>{students.length}</span>
