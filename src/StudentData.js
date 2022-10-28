@@ -16,7 +16,7 @@ function StudentData({ el, birthday }) {
       el.certifications.github === true &&
       el.codewars.current.total > 600
     ) {
-      return <p className="grad">On Track to Graduate</p>;
+      return <p className="grad">On Track to Graduate 🎓</p>;
     }
   }
 

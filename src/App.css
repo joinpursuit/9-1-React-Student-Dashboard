@@ -64,6 +64,7 @@
 hr {
   background-color: rgb(66, 66, 234);
   height: 2px;
+  font-weight: bold;
 }
 
 .studentText {
