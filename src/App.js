@@ -9,7 +9,7 @@ function App() {
   const [student, setStudent] = useState(data)
   const [cohorts, setCohorts] = useState('All Students')
   const [notes, setNotes] = useState(data.notes)
-  //This is maybe working
+  
 
   return (
     <div className="wrap">

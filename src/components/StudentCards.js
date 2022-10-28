@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './StudentCards.css'
-export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes, student}){
+export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes}){
     //Code in all is a destructured method. I'm told there's other ways to do it but I liked this. 
     const [toggle, setToggle] = useState(false)
     const [commenter, setCommenter] = useState('')
-    //Changed name to make readable 
     const [comment, setComment] = useState('')
     const [comments] = useState(notes)
     const [yes, setYes] = useState(false)

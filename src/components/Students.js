@@ -1,7 +1,6 @@
 import StudentCards from './StudentCards';
 import "./Students.css";
 export default function Students ({student, cohorts}){
- //I don't know why this is red theres an error but should not be one. 
   const filteredStudents = student.filter(({cohort}) => {
     return cohort.cohortCode === cohorts
   })
