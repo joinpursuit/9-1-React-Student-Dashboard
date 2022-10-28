@@ -33,7 +33,6 @@ export default function StudentInfo({ student }) {
           alt="profile"
           width="100px"
         />
-
         {onTrackToGrad && <p className="onTrackToGrad">On Track to Graduate</p>}
       </div>
       <div>

@@ -1,12 +1,14 @@
 .student {
     list-style: none;
     padding: 10px;
+    text-align: center;
 }
 
 .showMoreButton {
     font-family: monospace;
     color: blue;
     width: 95px;
+    margin: auto;
 }
 
 .showMoreButton:hover {

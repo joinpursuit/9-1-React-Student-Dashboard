@@ -18,6 +18,7 @@ export default function Student({ student, addComment }) {
       <p className="showMoreButton" onClick={() => setShowMore(!showMore)}>
         {showMore ? "Show Less..." : "Show More..."}
       </p>
+      <br></br>
       {showMore && (
         <>
           <section className="showMoreSection">
