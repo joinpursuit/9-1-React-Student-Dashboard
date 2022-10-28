@@ -1,3 +1,5 @@
+import "./Comments.css";
+
 export default function Comments({ comments }) {
   return (
     <div>
