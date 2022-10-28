@@ -10,16 +10,17 @@ function App() {
 	const [displayCohort, setDisplayCohort] = useState('All Students')
   const [notes, setNotes] = useState(data.map((student) => ({...student.notes[0], id: student.id})));
 // console.log(notes)
+
+
   return (
     <div className="Wrapper">
       <header className="navbar">
         <h1>Student Dashboard</h1>
       </header>
-      <div className="mainandaside">
-        <aside className="cohortlist">
+			<aside className="cohortlist">
          <CohortList setDisplayedStudents={setDisplayedStudents} setDisplayCohort={setDisplayCohort}/>
-        </aside>
-        <main className="allstudent">
+      </aside>			
+			<main className="allstudent">
 					<div>
 				   <h2>{displayCohort}</h2>
            <h3>Total Students: {displayedStudents.length}</h3>		
@@ -30,8 +31,8 @@ function App() {
             />
           </section>
         </main>
-      </div>
-    </div>
+			 </div>
+        
   );
 }
 

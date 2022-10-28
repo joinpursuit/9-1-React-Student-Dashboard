@@ -8,7 +8,6 @@ function Studentdet({ student, Students }) {
   const day = date.getDate()
   const month = new Intl.DateTimeFormat('en-US', options).format(date)
   const year = date.getFullYear();
-
   return (
     <div>
       <div>

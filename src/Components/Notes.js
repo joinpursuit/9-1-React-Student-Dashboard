@@ -19,7 +19,7 @@ function Notes({ student, notes, setNotes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user.commenterNameSubmit, user.commentSubmit);
+    // console.log(user.commenterNameSubmit, user.commentSubmit);
     addNote(user.commenterNameSubmit, user.commentSubmit);
   };
 
@@ -29,7 +29,7 @@ function Notes({ student, notes, setNotes }) {
 
   return (
     <div>
-      <h3>1-on-1 Notes</h3>
+      <h3 className="notesh3">Leave a Note</h3>
       <form onSubmit={handleSubmit}>
         <label html="commenterNameSubmit">Commenter Name</label>
         <input
@@ -38,6 +38,7 @@ function Notes({ student, notes, setNotes }) {
           value={user.commenterNameSubmit}
           onChange={handleChange}
         />
+        <br/>
         <label htmlFor="commentSubmit">Comment</label>
         <input
           id="commentSubmit"
