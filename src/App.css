@@ -35,6 +35,12 @@ main {
   cursor: pointer;
 }
 
+p label {
+  margin-left: 10px;
+  padding: 0 10px;
+  color: blue;
+}
+
 .Student {
   border: 2px solid #60946c;
   margin-bottom: 10px;

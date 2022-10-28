@@ -1,15 +1,31 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Student from "./Student";
 
-function Students({ students, cohortName, setStudents, studentData }) {
-  const [search, setSearch] = useState("");
-
+function Students({
+  students,
+  cohortName,
+  setStudents,
+  studentData,
+  search,
+  setSearch,
+}) {
+  // const [boxVal, setBoxVal] = useState(false);
   return (
     <div className="Students">
       <h2>{cohortName}</h2>
       <p>
         {search ? "Search Results: " : "Total Students: "}
         <span>{students.length}</span>
+        {/* <label>
+          Students on track to graduate{" "}
+          <input
+            id="checkbox"
+            type="checkbox"
+            name="on-track"
+            checked={boxVal}
+            onChange={() => setBoxVal(!boxVal)}
+          />
+        </label> */}
       </p>
       <input
         type="text"

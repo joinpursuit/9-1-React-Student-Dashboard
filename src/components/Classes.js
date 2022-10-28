@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Classes({ studentData, setStudents, setCohortName }) {
+function Classes({ studentData, setStudents, setCohortName, setSearch }) {
   const [classList, setClassList] = useState(() => {
     const cohortData = studentData.map(({ cohort }) => cohort);
     // how to sort by date
@@ -22,6 +22,7 @@ function Classes({ studentData, setStudents, setCohortName }) {
             onClick={(event) => {
               setStudents(studentData);
               setCohortName(event.target.textContent);
+              setSearch("");
             }}
           >
             All Students
@@ -41,6 +42,7 @@ function Classes({ studentData, setStudents, setCohortName }) {
                   )
                 );
                 setCohortName(event.target.textContent);
+                setSearch("");
               }}
             >
               <h3>{e}</h3>
