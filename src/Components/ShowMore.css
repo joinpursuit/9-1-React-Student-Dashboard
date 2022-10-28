@@ -1,0 +1,36 @@
+.detailsButton {
+  background: none;
+  font-weight: 600px;
+  margin: 5px;
+  color: rgb(6, 7, 10);
+  padding: 4px;
+  border-radius: 20px;
+  background-color: rgb(243, 227, 240);
+}
+
+.detailsButton:hover {
+  color: rgb(123, 42, 119);
+  font-weight: 700;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 35px;
+  padding: 6px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
+  background-color: rgb(244, 244, 244);
+  border-radius: 12px;
+}
+
+article {
+  display: block;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+span {
+  color: rgb(96, 25, 96);
+}

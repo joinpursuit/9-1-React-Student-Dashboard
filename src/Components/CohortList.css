@@ -1,0 +1,21 @@
+ul {
+  display: block;
+  list-style: none;
+}
+.cohortButton {
+  background: none;
+  border: none;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px;
+  font-weight: 700;
+  border-bottom: 2px solid rgb(138, 76, 138);
+  width: 100%;
+}
+
+.cohortButton:hover {
+  border-bottom: 5px solid rgb(138, 76, 138);
+  font-size: 110%;
+  color: rgb(73, 81, 198);
+}

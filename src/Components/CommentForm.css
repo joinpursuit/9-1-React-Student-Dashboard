@@ -1,0 +1,28 @@
+.notes {
+  border-top: 2px solid rgb(167, 73, 167);
+  width: 100%;
+}
+
+form {
+  border: 1px solid rgb(73, 81, 198);
+  padding: 12px;
+  margin: 7px;
+}
+
+label {
+  color: rgb(73, 81, 198);
+  display: block;
+}
+
+input {
+  /* margin-top: 5px; */
+  margin-bottom: 8px;
+}
+
+.formButton {
+  background: none;
+  border-radius: 7px;
+  margin-top: 10px;
+  color: rgb(167, 73, 167);
+  font-size: 90%;
+}
