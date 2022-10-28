@@ -43,7 +43,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
             </p>
             <p>
               <span>Last week: </span>
-              {student.codewars.current.lastweek}
+              {student.codewars.current.lastWeek}
             </p>
             <p>
               <span>Goal: </span>
