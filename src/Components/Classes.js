@@ -11,8 +11,8 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
     let cohortCode = student.cohort.cohortCode
 
     if (!cohorts.includes(cohortDate)){
-      cohortInfo[cohortDate] = cohortCode
       cohorts.push(cohortDate)
+      cohortInfo[cohortDate] = cohortCode
     }
   })
 
