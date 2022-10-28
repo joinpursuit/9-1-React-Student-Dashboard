@@ -11,14 +11,14 @@ export default function Header({
   return (
     <div className="Header">
       <h1>Student Dashboard</h1>
-      <Cohort
+      {/* <Cohort
         Records={Records}
         titleOption={titleOption}
         totalOption={totalOption}
         setTotalOption={setTotalOption}
         setTitleOption={setTitleOption}
         setStudentListOption={setStudentListOption} 
-      />
+      /> */}
     </div>
   );
 }

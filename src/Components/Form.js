@@ -19,7 +19,7 @@ export default function Form({ record, notes, setNotes }) {
       commenter: commenter,
     };
     notes.push(createComment);
-    // setNotes(createComment);
+
   }
 
   return (

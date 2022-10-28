@@ -1,71 +1,56 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0%;
-}
-/* !----------- */
-
-body {
-  line-height: 25px;
-  /* background-color: #303032; */
+.Student-Information {
   display: grid;
-  text-align: justify;
-}
-/* //! _____________________________________ */
-
-.Main {
-  margin-top: 25px;
-  grid-template-columns: 1fr 2fr 40px;
+  background-color: #799be6;
+  margin-top: 10px;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 25px;
-  display: grid;
+  box-shadow: 3px 2px 0 4px grey;
 }
 /* //! _____________________________________ */
 
 .Header {
-  padding: 10px;
+  padding: 30px;
+  font-size: 169%;
   font-weight: 900;
   cursor: pointer;
   color: ghostwhite;
   text-align: center;
-  background-color: #5c946e;
+  background-color: #799be6;
 }
-/* //! _____________________________________ */
+.Header :hover {
+  letter-spacing: 20px;
+}
 #notes-list {
-  border-top: 3px solid #5c946e;
+  box-shadow: 5px 5px 0 4px black;
 }
 #showMoreBtn {
-  background-color: aqua;
   border-radius: 25px;
   font-weight: 900px;
-  /* padding: ; */
 }
-
-/* //! _____________________________________ */
-
-.StudentList {
-  /* text-transform: inherit; */
-  /* border: 3px solid #5c946e; */
-  margin-right: 30px;
-  /* background-color: red; */
+.ShowBtn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  color: black;
+  border-radius: 25px;
+  background-color: #799be6;
 }
 img {
-  width: 100px;
+  width: 150px;
   padding-left: 25px;
   padding-top: 25px;
   padding-bottom: 15px;
 }
-/* //! _____________________________________ */
 button {
-  background: none;
-  border: none;
-  border-bottom: 3px solid #5c946e;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #406ac6;
+  border-radius: 25px;
+  width: 120%;
 }
 .showMoreBtn {
-  background-color: aqua;
   border-radius: 25px;
   font-weight: 900px;
-  /* padding: ; */
 }
 
 li {
@@ -73,11 +58,8 @@ li {
   text-align: none;
 }
 
-/* //! _____________________________________ */
-#notes-list{
-  background-color: yellow;
+#notes-list {
+  margin-top: 15px;
+  background-color: #89bfec;
+  text-decoration: blue;
 }
-#notes-form{
-  background-color: aquamarine;
-}
-/* //! _____________________________________ */

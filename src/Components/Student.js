@@ -1,9 +1,5 @@
 import ShowBtn from "./ShowBtn";
-import Form from "./Form";
-import { useState } from "react";
-//
-export default function Student({ record, dateFormat }) {
-  const [onTrack, setOnTrack] = useState("");
+export default function Student({ record, dateFormat, setShowMore, showMore, index }) {
   const handleOnTrack = (record) => {
     if (
       record.certifications.resume &&
@@ -12,36 +8,41 @@ export default function Student({ record, dateFormat }) {
       record.certifications.mockInterview &&
       record.codewars.current.total > 600
     ) {
-      setOnTrack(true);
-      // setOnTrack(onTrack);
+      return true;
     } else {
-      setOnTrack(false);
+      return false;
     }
   };
   return (
-    <article className="UserInfo" key={record.id}>
-      <div className="Cards" key={record.id}>
-        <img src={record.profilePhoto} alt={record.names} />{" "}
-        <span className="Ontrack">
-          {onTrack ? <p>On Track to Graduate</p> : null}{" "}
-        </span>
+    <article
+      onClick={() => setShowMore(!showMore)}
+      className="Card"
+      key={index}
+    >
+      <div className="Front">
+        <img src={record.profilePhoto} alt={record.names.preferredName} />{" "}
         <p>
           <b>
             {" "}
             {record.names.preferredName} {record.names.middleName.charAt(0)}.{" "}
             {record.names.surname}{" "}
           </b>
+          <span className="Ontrack">
+            {handleOnTrack(record) ? (
+              <p style={{ color: "green" }}>On Track to Graduate</p>
+            ) : <p style={{color: "black"}}>Progress Pending...</p> 
+            // null
+            }{" "}
+          </span>
           <br />
           {record.username} <br /> Birthday:{" "}
           {new Intl.DateTimeFormat("en-US", {
             dateStyle: "long",
           }).format(dateFormat)}
         </p>
-        <br />
-        {/* showbtn */}
-        <ShowBtn record={record} />
       </div>
+      <br />
+          <ShowBtn record={record} />
     </article>
   );
-  //PASS student Component
 }

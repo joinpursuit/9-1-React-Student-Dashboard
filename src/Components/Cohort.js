@@ -16,11 +16,7 @@ export default function Cohort({
   let filterCohort = Records.filter((el) => {
     return el.cohort.cohortCode === titleOption.split(" ").join("");
   });
-  // console.log(filterCohort) //click to see result --> tot of students
-
-  //*---------------
-
-  //!-------------------- USED NEW SET to remove duplicates
+    //!-------------------- USED NEW SET to remove duplicates
   let newCohortList = [
     ...new Set(Records.map((record) => record.cohort.cohortCode)),
   ];
@@ -33,41 +29,41 @@ export default function Cohort({
   // });
   // console.log(sortList);
 
-  //!-------------------------------
   return (
     <div className="CohortList" key={Records.id}>
-      <h2>Choose a Class by Start Date</h2>
       {
-        <ul
-          key={Records.id}
-          style={{ textDecoration: "underline", border: "1px dashed red" }}
-        >
-          <li onClick={() => handleTitleClick()}>
-            <button value="All Students">All Students</button>
-          </li>
-          {newCohortList.map((record) => {
-            return (
-              <div className="Cohort" key={record.id}>
-                {
-                  <li
-                    onClick={() => {
-                      setStudentListOption(filterCohort);
-                      setTotalOption(filterCohort.length);
-                      //! Separating the dates using Slice by targeting years, years contain 4
-                      setTitleOption(
-                        record.slice(0, -4) + " " + record.slice(-4)
-                      );
-                    }}
-                  >
-                    <button>
-                      {record.slice(0, -4) + " " + record.slice(-4)}
-                    </button>
-                  </li>
-                }
-              </div>
-            );
-          })}
-        </ul>
+        <div key={Records.id}>
+          <h4>Choose a Class by Start Date:</h4>
+          <p onClick={() => handleTitleClick()}>
+            <button className="All" value="All Students">
+              All Students
+            </button>
+          </p>
+          <span>
+            {newCohortList.map((record, index) => {
+              return (
+                <ul className="Cohort" key={index}>
+                  {
+                    <li
+                      onClick={() => {
+                        setStudentListOption(filterCohort);
+                        setTotalOption(filterCohort.length);
+                      
+                        setTitleOption(
+                          record.slice(0, -4) + " " + record.slice(-4)
+                        );
+                      }}
+                    >
+                      <button>
+                        {record.slice(0, -4) + " " + record.slice(-4)}
+                      </button>
+                    </li>
+                  }
+                </ul>
+              );
+            })}
+          </span>
+        </div>
       }
     </div>
   );
