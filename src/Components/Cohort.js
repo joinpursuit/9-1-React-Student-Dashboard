@@ -16,11 +16,12 @@ export default function Cohort({
   let filterCohort = Records.filter((el) => {
     return el.cohort.cohortCode === titleOption.split(" ").join("");
   });
+  
     //!-------------------- USED NEW SET to remove duplicates
   let newCohortList = [
     ...new Set(Records.map((record) => record.cohort.cohortCode)),
   ];
-  // console.log(newCohortList);
+
   //!Sorting cohorts list
   // let sortList = newCohortList.sort((a, b) => {
   //   var aa = a.split(" "),
@@ -45,15 +46,17 @@ export default function Cohort({
                 <ul className="Cohort" key={index}>
                   {
                     <li
-                      onClick={() => {
-                        setStudentListOption(filterCohort);
-                        setTotalOption(filterCohort.length);
+                    onClick={() => {
+                      setStudentListOption(filterCohort);
+                      setTotalOption(filterCohort.length);
                       
-                        setTitleOption(
-                          record.slice(0, -4) + " " + record.slice(-4)
+                      setTitleOption(
+                        record.slice(0, -4) + " " + record.slice(-4)
                         );
-                      }}
+                      }
+                    }
                     >
+                
                       <button>
                         {record.slice(0, -4) + " " + record.slice(-4)}
                       </button>
