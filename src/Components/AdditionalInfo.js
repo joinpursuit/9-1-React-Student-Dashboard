@@ -22,15 +22,15 @@ const Additionalinfo = ({info}) => {
      
     function handleColor(){
         if(percent >= 100){
-            return  <p style={{color: "green"}}>Percent of Goal Achieved: {percent}% </p>
+            return  <p>Percent of Goal Achieved: <span style={{color: "green"}}>{percent}%</span></p>
         }
         if(percent < 100){
             if(percent >= 50){
-                return  <p style={{color: "Khaki"}}>Percent of Goal Achieved: {percent}% </p>
+                return  <p>Percent of Goal Achieved: <span style={{color: "khaki"}}>{percent}%</span></p>
             }
         }
         if(percent < 50){
-            return  <p style={{color: "red"}}>Percent of Goal Achieved: {percent}% </p>
+            return  <p>Percent of Goal Achieved: <span style={{color: "red"}}>{percent}%</span></p>
         }
     }
     
