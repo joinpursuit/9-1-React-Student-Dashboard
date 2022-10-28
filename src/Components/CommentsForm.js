@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./CommentsForm.css";
+
 export default function CommentsForm({ student, addComment }) {
   const [inputComment, setInputComment] = useState({
     commenter: "",
@@ -22,22 +24,33 @@ export default function CommentsForm({ student, addComment }) {
   }
 
   return (
-    <form className="form" onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <h4>1-on-1 Notes</h4>
-      <label htmlFor="commenterName">Commenter Name </label>
-      <input
-        id="commenter"
-        type="text"
-        value={commenter}
-        onChange={(e) => handleInputChange(e)}
-      />
-      <label htmlFor="inputComments">Comments </label>
-      <input
-        id="comment"
-        type="text"
-        value={comment}
-        onChange={(e) => handleInputChange(e)}
-      />
+      <div>
+        <label className="label" htmlFor="commenter">
+          Commenter Name:{" "}
+        </label>
+        <input
+          id="commenter"
+          type="text"
+          value={commenter}
+          onChange={(e) => handleInputChange(e)}
+        />
+      </div>
+      <br></br>
+      <div>
+        <label className="label" htmlFor="comment">
+          Comment:{" "}
+        </label>
+        <textarea
+          id="comment"
+          rows="5"
+          cols="auto"
+          value={comment}
+          onChange={(e) => handleInputChange(e)}
+        />
+      </div>
+      <br></br>
       <button type="submit">Add Note</button>
     </form>
   );
