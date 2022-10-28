@@ -31,9 +31,8 @@ function App() {
       </aside>
       <main>
         <StudentsList
-          key={students.id}
           students={students}
-          selectCohort={selectCohort}
+          selectCohortCode={selectCohortCode}
           ShowDetails={ShowDetails}
         />
       </main>

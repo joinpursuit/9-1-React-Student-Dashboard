@@ -47,11 +47,11 @@ function StudentsList({
                         <span>Birthday: </span>
                         {student.dob}
                       </p>
-                      <ShowDetails students={students} />
                     </aside>
                   </div>
                   <p className="on-track">{ontrack}</p>
                 </div>
+                <ShowDetails student={student} />
               </article>
             )
           })}
