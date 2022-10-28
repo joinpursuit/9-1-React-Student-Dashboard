@@ -1,0 +1,48 @@
+*{
+    background-color: lightpink;
+}
+
+h3{
+    text-align: center;
+}
+.headerForStudents{
+   text-align: center;
+}
+.studentList{
+ 
+    display: grid;
+    float: right;
+}
+
+.showMore{
+    width: 500px;
+    transition-duration: 0.2;
+}
+
+.showMore:hover{
+    color: red;
+}
+
+header {
+    display: grid;
+    grid-auto-rows: 80px;
+    border: 10px solid black;
+    padding: 20px;
+    text-align: center;
+
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+#listofSeason{
+
+    list-style: none;
+    border: 10px;
+    grid-column: auto;
+}
+
+#listofSeason:hover{
+    color: blue;
+}
