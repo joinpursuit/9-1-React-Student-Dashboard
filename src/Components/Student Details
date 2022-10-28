@@ -1,0 +1,8 @@
+import { useState } from 'react'
+import MoreDetails from './MoreDetails'
+
+
+export default function StudentDetails ({data,MoreDetails}) {
+    
+
+}
