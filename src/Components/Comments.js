@@ -2,9 +2,9 @@ import "./Comments.css";
 
 export default function Comments({ comments }) {
   return (
-    <div>
+    <div className="commentsContainer">
       <h4>Comments</h4>
-      <ul className="comments">
+      <ul className="">
         {comments.map((comment, idx) => {
           return (
             <li key={idx}>
