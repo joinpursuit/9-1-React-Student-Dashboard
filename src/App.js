@@ -73,7 +73,6 @@ function App() {
 
     const setMode = () => {
       setDarkMode(!darkMode)
-      console.log(darkMode)
     }
 
   //Rendering of App component

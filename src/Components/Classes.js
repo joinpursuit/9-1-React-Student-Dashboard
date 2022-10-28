@@ -20,7 +20,7 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
   cohorts.sort((a, b)=> {
     a = a.split('/')
     b = b.split('/')
-    return b[2] - a[2] || b[1] - a[1] || b[0] - a[0];
+    return b[2] - a[2] || b[0] - a[0] || b[1] - a[1];
   })
 
   //Using new cohortCodes array to store unique cohort codes in descending order based on sorted cohort array
