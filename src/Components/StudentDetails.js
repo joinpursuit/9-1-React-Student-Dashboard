@@ -87,9 +87,17 @@ const StudentDetails = ({ showStudentDetailsBool, student }) => {
             </article>
             <article>
               <h4>Scores</h4>
-              <p>Assignments: {student.cohort.scores.assignments}%</p>
-              <p>Projects: {student.cohort.scores.projects}%</p>
-              <p>Assesments: {student.cohort.scores.assessments}%</p>
+              <p>
+                Assignments:{" "}
+                {Math.round(student.cohort.scores.assignments * 100)}%
+              </p>
+              <p>
+                Projects: {Math.round(student.cohort.scores.projects * 100)}%
+              </p>
+              <p>
+                Assesments:{" "}
+                {Math.round(student.cohort.scores.assessments * 100)}%
+              </p>
             </article>
             <article>
               <h4>Certifications</h4>
