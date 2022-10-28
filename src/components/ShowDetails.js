@@ -15,9 +15,20 @@ function ShowDetails({ students, toggleSetShowMe }) {
 
   return (
     <div>
-      <button onClick={toggleSetShowMe}>
+      <button
+        onClick={toggleSetShowMe}
+        style={{ color: `${!showMe ? "green" : "red"}` }}
+      >
         Show me
-        {!showMe ? "show me details" : "hide show me details"}
+        {!showMe ? (
+          <span className="show-hide-tag show" title="Show me...">
+            Details
+          </span>
+        ) : (
+          <span className="show-hide-tag hide" title="hide me...">
+            Hide
+          </span>
+        )}
       </button>
 
       {showMe ? (

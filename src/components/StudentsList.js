@@ -6,7 +6,7 @@ function StudentsList({
   ShowDetails,
   selectCohort,
 }) {
-  function ontrack(students, ShowDetails) {
+  function ontrack(students, ShowDetails, toggleSetNewShowMe, setselectCohort) {
     if (
       students.certifications.resume === true &&
       students.certifications.lindedin === true &&
@@ -17,9 +17,6 @@ function StudentsList({
       return "On track to Graduate"
     }
   }
-  const filteredStudents = students.filter(
-    (students) => selectCohort === students.cohort.cohortCode
-  )
 
   return (
     <>

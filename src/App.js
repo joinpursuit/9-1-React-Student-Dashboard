@@ -7,18 +7,27 @@ import ShowDetails from "./components/ShowDetails"
 
 function App() {
   const [students, setStudent] = useState(data)
-  const [selectCohort, setselectCohort] = useState("AllStudents")
-  const [selectshortCode, setselectedShortcode] = useState("All Students")
+  const [selectCohort, setSelectCohort] = useState("AllStudents")
+  const [selectCohortCode, setselectedCohortCode] = useState("All Students")
   const [defaultStudents, setDefaultStudents] = useState(data)
+
+  function cohortHandler(cohortCode) {
+    let formatted = cohortCode.replace(" ", "")
+    const filteredStudents = defaultStudents.filter(
+      (student) => formatted === students.cohort.cohortCode
+    )
+
+    setStudent((previous) => {
+      return [...filteredStudents]
+    })
+    setselectedCohortCode(cohortCode)
+  }
 
   return (
     <div className="container">
       <Header />
       <aside className="cohortstartdate">
-        <CohortStartDate
-          students={students}
-          setselectCohort={setselectCohort}
-        />
+        <CohortStartDate students={students} cohortHandler={cohortHandler} />
       </aside>
       <main>
         <StudentsList

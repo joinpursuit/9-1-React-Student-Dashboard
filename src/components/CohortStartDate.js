@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-function CohortStartDate({ students, setselectCohort }) {
+function CohortStartDate({ students, setselectCohortHandler }) {
   let years = [
     "Winter 2025",
     "Fall 2025",
@@ -14,7 +14,7 @@ function CohortStartDate({ students, setselectCohort }) {
   ]
 
   function cohortClick(e) {
-    setselectCohort(e.target.innerText)
+    setselectCohortHandler(e.target.innerText)
   }
 
   return (
