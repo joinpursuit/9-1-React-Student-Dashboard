@@ -1,5 +1,5 @@
 import data from "./data/data.json"
-import StudentsList from "./components/StudentsList"
+import StudentList from "./components/StudentList"
 import CohortStartDate from "./components/CohortStartDate"
 import Header from "./components/Header"
 import { useState } from "react"
@@ -32,7 +32,7 @@ function App() {
         />
       </aside>
       <main>
-        <StudentsList
+        <StudentList
           students={students}
           selectedShortCode={selectedShortCode}
           ShowDetails={ShowDetails}

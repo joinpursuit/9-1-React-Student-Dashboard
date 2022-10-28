@@ -1,9 +1,9 @@
 import React from "react"
 import { Form } from "react-bootstrap"
 import { useState } from "react"
-import StudentsList from "./StudentsList"
+import StudentList from "./StudentList"
 
-function ShowDetails({ students, toggleSetShowMe }) {
+function ShowDetails({ student, toggleSetShowMe }) {
   const [select, setSelect] = useState("")
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
@@ -37,15 +37,15 @@ function ShowDetails({ students, toggleSetShowMe }) {
             <h3>Codewars</h3>
             <p>
               <span>Current Total:</span>
-              {students.codewars.current.total}
+              {student.codewars.current.total}
             </p>
             <p>
               <span>Last week:</span>
-              {students.codewars.lastweek}
+              {student.codewars.lastweek}
             </p>
             <p>
               <span>Goal:</span>
-              {students.codewars.goal.total}
+              {student.codewars.goal.total}
             </p>
             <p>
               <span>Percent of Goal Achieved:</span>
@@ -58,17 +58,17 @@ function ShowDetails({ students, toggleSetShowMe }) {
             <h3>Scores</h3>
             <p>
               <span>Assignments:</span>
-              {students.cohort.scores.assignments}
+              {student.cohort.scores.assignments}
               {"%"}
             </p>
             <p>
               <span>Projects:</span>
-              {students.cohort.scores.projects}
+              {student.cohort.scores.projects}
               {"%"}
             </p>
             <p>
               <span>Assessments:</span>
-              {students.cohort.scores.assesments}
+              {student.cohort.scores.assesments}
               {"%"}
             </p>
           </article>
@@ -76,22 +76,22 @@ function ShowDetails({ students, toggleSetShowMe }) {
             <h3>Certifications</h3>
             <p>
               <span>Resume:</span>
-              {students.certifications.resume}
+              {student.certifications.resume}
               {}
             </p>
             <p>
               <span>lindedin:</span>
-              {students.certifications.linkedin}
+              {student.certifications.linkedin}
               {}
             </p>
             <p>
               <span> Mock Interview:</span>
-              {students.certifications.mockInterview}
+              {student.certifications.mockInterview}
               {}
             </p>
             <p>
               <span>GitHub:</span>
-              {students.certifications.github}
+              {student.certifications.github}
               {}
             </p>
           </article>
