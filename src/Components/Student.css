@@ -15,3 +15,12 @@
     padding-bottom: 5px;
     padding-left: 5px;
 }
+
+.ontrack{
+    display: flex;
+
+}
+
+.ontrackimg{
+    width: 150px;
+}

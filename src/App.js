@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import data from "./data/data.json";
 import AllStudents from "./Components/AllStudents";
-import Student from "./Components/Student";
 import CohortList from "./Components/CohortList";
-import filterStudentsByCode from "./utils/filter";
 import "./App.css";
 
 

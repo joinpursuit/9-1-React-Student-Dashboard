@@ -26,16 +26,18 @@ body{
 
 .mainandaside{
     display: flex;
+    width: 100%;
 }
 .cohortlist{
-  display: grid;
+  display: block;
   padding: 10px;
-  height: 50px;
   margin: 20px;
+  width: 30%;
 }
 
 .allstudent{
     display: grid;
     padding-left: 10px;
-    margin: 20px;
+    margin-left: 60px;
+    width: 80%;
 }

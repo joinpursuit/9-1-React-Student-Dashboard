@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function Notes({ student, notes, setNotes }) {
-  // const [notes, setNotes] = useState([...student.notes]);
   const [user, setUser] = useState({
     commenterNameSubmit: "",
     commentSubmit: "",
@@ -17,13 +16,12 @@ function Notes({ student, notes, setNotes }) {
       },
     ]);
   };
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user.commenterNameSubmit, user.commentSubmit)
+    console.log(user.commenterNameSubmit, user.commentSubmit);
     addNote(user.commenterNameSubmit, user.commentSubmit);
-  }
+  };
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
@@ -52,11 +50,19 @@ function Notes({ student, notes, setNotes }) {
         </div>
       </form>
       <ul>
-        {notes.filter((note) => note.id === student.id).map((note, i) => (
-          <li key={i}>
-            <p>{note.commenter} says {note.comment}</p>
-          </li>
-        ))}
+        {notes
+          .filter((note) => note.id === student.id)
+          .map((note, i) => (
+            <div>
+              {note.commenter && (
+                <li key={i}>
+                  <p>
+                    {note.commenter} says {note.comment}
+                  </p>
+                </li>
+              )}
+            </div>
+          ))}
       </ul>
     </div>
   );

@@ -5,7 +5,9 @@ import Certifications from "./Certifications";
 import Notes from "./Notes";
 
 function Student({ student, notes, setNotes }) {
+
   const [show, setShow] = useState(false);
+  
   let goalPercent = (
     (student.codewars.current.total / student.codewars.goal.total) *
     100
