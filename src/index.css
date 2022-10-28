@@ -289,6 +289,11 @@ input:focus {
     zoom: 5%;
     margin-right: 10%;
 }
+#AllStudents::before {
+    content: "\00a0" url('../public/assets/Crowd-icon.png');
+    zoom: 5%;
+    margin-right: 10%;
+}
 
 /* nav bar icons */
 
