@@ -1,3 +1,11 @@
 .comments{
     list-style: none;
 }
+
+ .name:hover, .notes:hover{
+    background-color: lightblue
+}
+
+.button:hover{
+background-color: gray;
+}

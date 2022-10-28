@@ -1,7 +1,7 @@
 
 import "./Classes.css"
 
-const Classes = ({handleCohort, cohort, student, handleStudents, }) => {
+const Classes = ({handleCohort, cohort, student, handleStudents}) => {
 
     student.forEach((students) => {
         let cohorts = students.cohort.cohortCode.replace(/\d+/g, '') + " " + students.cohort.cohortCode.replace(/\D/g,'')
@@ -16,8 +16,6 @@ const Classes = ({handleCohort, cohort, student, handleStudents, }) => {
     }
 
 let sort = cohort.sort(new Intl.Collator().localeCompare)
-
-
 
 
 

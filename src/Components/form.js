@@ -23,7 +23,7 @@ const [newForm, setNewForm] = useState({
 
 function reset(){
     setNewForm({
-        commenter: "",
+    commenter: "",
     comment: ""
     })
 }
@@ -42,6 +42,7 @@ function handleSubmit(event){
         onChange={handleText}
         type="text"
         placeholder="Name"
+        className="name"
         ></input>
         <br></br>
         <input 
@@ -50,9 +51,10 @@ function handleSubmit(event){
         onChange={handleText}
         type="text"
         placeholder="Comment"
+        className="notes"
         ></input>
         <br></br>
-        <button>Submit</button>
+        <button className="button">Submit</button>
     </form>
  )
 

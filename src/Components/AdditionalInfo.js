@@ -1,22 +1,27 @@
 import { useState } from "react"
 import "./Additionalinfo.css"
 import Comments from "./comments"
-
 import Form from "./form"
 
+
 const Additionalinfo = ({info}) => {
-
-     const [comment, setComment] = useState(info.notes)
-
-     function handleComment(comments){
+    const percent = Number(((info.codewars.current.total /info.codewars.goal.total) * 100).toFixed(2))
+    
+    const [comment, setComment] = useState(info.notes)
+    
+    function handleComment(comments){
         setComment([...comment, comments])
-     }
-     
-    const [showInfo, setShowInfo] = useState(false)
+    }
+    
 
+    const [showInfo, setShowInfo] = useState(false)
+    
     function toggleInfo(){
         setShowInfo(!showInfo)
     }
+     
+    
+    
     return(
         <div>
         <button className="show-more"onClick={toggleInfo}>{!showInfo ? "Show More...": "Show Less..."}</button>
@@ -27,7 +32,7 @@ const Additionalinfo = ({info}) => {
                     <p>Current Total: {info.codewars.current.total}</p>
                     <p>Last Week: {info.codewars.current.lastWeek}</p>
                     <p>Goal: {info.codewars.goal.total}</p>
-                    <p>Percent of Goal Achieved: {((info.codewars.current.total /info.codewars.goal.total) * 100).toFixed(2)}% </p>
+                    <p>Percent of Goal Achieved: {percent}% </p>
                     </section>
                     <section className="scores">
                         <h4>Scores:</h4>

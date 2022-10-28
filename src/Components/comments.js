@@ -5,7 +5,7 @@ const comments = ({comment}) => {
     <div>
     {comment.map(({comment, commenter}) => {
       return(
-        <li>{commenter} says, "{comment}"</li>
+        <li key={comment}className="comments">{commenter} says, "{comment}"</li>
       )
     })}
     </div>

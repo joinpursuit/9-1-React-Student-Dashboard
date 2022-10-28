@@ -1,11 +1,14 @@
 import "./student.css"
+import Additionalinfo from "./AdditionalInfo"
 
-const students = ({studentClass, Additionalinfo}) => {
+const Students = ({student, studentClass}) => {
  
+    
+    
     return (
         <section>
             <div className="total">
-             <h2>{studentClass.length === 250 ? "All Students" : 
+             <h2>{studentClass.length === student.length ? "All Students" : 
              studentClass.map((map , i) => {
                 if(i === 0){
                     return (
@@ -41,4 +44,4 @@ const students = ({studentClass, Additionalinfo}) => {
         </section>
     )
 }
-export default students
+export default Students
