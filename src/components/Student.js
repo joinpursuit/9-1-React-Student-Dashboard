@@ -1,3 +1,4 @@
+import { v1 as generateUniqueID } from "uuid";
 import { useState } from "react";
 
 import Check from "./Check";
@@ -168,8 +169,10 @@ function Student({
                 <input id="add-note" type="submit" value="Add Note" />
               </form>
               <ul>
-                {notes.map((e, i) => (
-                  <li key={i}>{e.commenter + ' says, "' + e.comment + '"'}</li>
+                {notes.map((e) => (
+                  <li key={generateUniqueID()}>
+                    {e.commenter + ' says, "' + e.comment + '"'}
+                  </li>
                 ))}
               </ul>
             </section>
