@@ -3,6 +3,7 @@ import StudentDetails from "./StudentDetails";
 
 function Students({data, studentData}) {
     const [showMore, setShowMore] = useState(false);
+    const [category, setCategory] = useState("All Students")
 
         return (
             <div>
