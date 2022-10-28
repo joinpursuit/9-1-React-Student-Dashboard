@@ -19,15 +19,11 @@ function ShowDetails({ student, toggleSetShowMe }) {
         onClick={toggleSetShowMe}
         style={{ color: `${!showMe ? "green" : "red"}` }}
       >
-        Show me
+        Show me...
         {!showMe ? (
-          <span className="show-hide-tag show" title="Show me...">
-            Details
-          </span>
+          <span className="show-hide-tag show" title="Show me..."></span>
         ) : (
-          <span className="show-hide-tag hide" title="hide me...">
-            Hide
-          </span>
+          <span className="show-hide-tag hide" title="hide me..."></span>
         )}
       </button>
 
@@ -49,8 +45,12 @@ function ShowDetails({ student, toggleSetShowMe }) {
             </p>
             <p>
               <span>Percent of Goal Achieved:</span>
-              {}
-              {}
+              {(
+                (Number(student.codewars.current.total) /
+                  Number(student.codewars.goal.total)) *
+                100
+              ).toFixed(2)}
+              %
             </p>
           </article>
 
@@ -58,18 +58,15 @@ function ShowDetails({ student, toggleSetShowMe }) {
             <h3>Scores</h3>
             <p>
               <span>Assignments:</span>
-              {student.cohort.scores.assignments}
-              {"%"}
+              {student.cohort.scores.assignments}%
             </p>
             <p>
               <span>Projects:</span>
-              {student.cohort.scores.projects}
-              {"%"}
+              {student.cohort.scores.projects}%
             </p>
             <p>
               <span>Assessments:</span>
               {student.cohort.scores.assesments}
-              {"%"}
             </p>
           </article>
           <article>
