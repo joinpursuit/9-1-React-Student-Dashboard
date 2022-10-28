@@ -20,7 +20,19 @@ const Additionalinfo = ({info}) => {
         setShowInfo(!showInfo)
     }
      
-    
+    function handleColor(){
+        if(percent >= 100){
+            return  <p style={{color: "green"}}>Percent of Goal Achieved: {percent}% </p>
+        }
+        if(percent < 100){
+            if(percent >= 50){
+                return  <p style={{color: "yellow"}}>Percent of Goal Achieved: {percent}% </p>
+            }
+        }
+        if(percent < 50){
+            return  <p style={{color: "red"}}>Percent of Goal Achieved: {percent}% </p>
+        }
+    }
     
     return(
         <div>
@@ -32,7 +44,7 @@ const Additionalinfo = ({info}) => {
                     <p>Current Total: {info.codewars.current.total}</p>
                     <p>Last Week: {info.codewars.current.lastWeek}</p>
                     <p>Goal: {info.codewars.goal.total}</p>
-                    <p>Percent of Goal Achieved: {percent}% </p>
+                    {handleColor()}
                     </section>
                     <section className="scores">
                         <h4>Scores:</h4>

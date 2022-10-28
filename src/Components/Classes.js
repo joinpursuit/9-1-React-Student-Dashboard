@@ -1,4 +1,3 @@
-
 import "./Classes.css"
 
 const Classes = ({handleCohort, cohort, student, handleStudents}) => {
