@@ -46,7 +46,7 @@ export default function StudentInfo({ student }) {
 
         <p>
           User Name:{" "}
-          <a href={`mailto: ${student.username}`} target="blank">
+          <a id="email" href={`mailto: ${student.username}`} target="blank">
             {student.username}
           </a>
         </p>

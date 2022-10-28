@@ -10,7 +10,7 @@ import "./Student.css";
 export default function Student({ student, addComment }) {
   const comments = [...student.notes];
 
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   return (
     <li className="student">

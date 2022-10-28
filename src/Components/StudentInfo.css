@@ -9,7 +9,7 @@ margin: auto;
 
 img {
     border-radius: 5px;
-    box-shadow: 5px 5px black;
+    box-shadow: 0px 0px 10px 5px white;
 
     margin-right: 10px;
 }
@@ -30,5 +30,14 @@ img {
 
 #fullName {
     color: red;
+}
+
+#email {
+    text-decoration: none;
+    color: rgb(68, 124, 255)
+}
+
+#email:hover {
+    text-decoration: underline;
 }
 
