@@ -2,6 +2,7 @@ import Cohort from "./Cohort"
 
 function Cohorts({filteredYears, handleFilter}) {
 
+
     return (
         <div className="heading">
         <h2>Choose a Class by Start Date</h2>

@@ -70,6 +70,7 @@ function Student ({student}) {
                 <p><span>Assignments:</span> {student.cohort.scores.assignments * 100}%</p>
                 <p><span>Projects:</span> {student.cohort.scores.projects * 100}%</p>
                 <p><span>Assessments:</span> {student.cohort.scores.assessments * 100}%</p>
+                <p><span>Attendance:</span>100% ⭐</p>
                 </div>
                 <div className="grade">
                 <h3>Certifications</h3>

@@ -21,9 +21,11 @@ function App() {
       filtered = studentData
     } else {
     let classYear = event.target.textContent.replace(" ","")
-    filtered = studentData.filter((student) => {
-      return student.cohort.cohortCode === classYear
-    })
+    for (const student of studentData) {
+      if (student.cohort.cohortCode === classYear) {
+        filtered.push(student)
+      }
+    }
   }
     setSelectedClass(event.target.textContent)
     setFilteredStudents([...filtered])
@@ -46,10 +48,13 @@ function App() {
     })
     return sortedYears
   }
+  sortYears(filteredYears)
 
- sortYears(filteredYears)
-
-
+ filteredYears.sort((a, b) => {
+  let aa = a.split(' ');
+  let bb = b.split(' ');
+  return aa[1] - bb[1] || seasons[aa[0]] - seasons[bb[0]];
+});
 
   return (
     <div>
