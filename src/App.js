@@ -55,8 +55,19 @@ function App() {
     setStudents(updatedStudents);
   }
 
+  function searchAlg(student, input) {
+    const { names } = student;
+    const alpha = input.toLowerCase();
+    const fullName =
+      `${names.preferredName} ${names.middleName} ${names.surname}`.toLowerCase();
+    if (fullName.includes(alpha)) {
+      return student;
+    }
+  }
+
   function handleSubmit(e) {
     e.eventPreventDefault();
+
     setSearch("");
   }
 
@@ -91,13 +102,15 @@ function App() {
           />
           <div className="studentListContainer">
             {!cohort
-              ? students.map((student) => (
-                  <Student
-                    key={student.id}
-                    student={student}
-                    addComment={addComment}
-                  />
-                ))
+              ? students
+                  .filter((student) => searchAlg(student, search)) // SearchBar filters here
+                  .map((student) => (
+                    <Student
+                      key={student.id}
+                      student={student}
+                      addComment={addComment}
+                    />
+                  ))
               : students
                   .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
                   .map((student) => (

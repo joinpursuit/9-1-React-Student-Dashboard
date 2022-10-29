@@ -1,6 +1,4 @@
 export default function SearchBar({ handleSubmit, search, saveSearch }) {
-  function handleChange(e) {}
-
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="search"></label>
