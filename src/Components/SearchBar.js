@@ -1,6 +1,6 @@
 export default function SearchBar({ handleSubmit, search, saveSearch }) {
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <label htmlFor="search"></label>
       <input
         id="search"

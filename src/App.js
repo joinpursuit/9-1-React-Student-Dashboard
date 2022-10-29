@@ -65,12 +65,6 @@ function App() {
     }
   }
 
-  function handleSubmit(e) {
-    e.eventPreventDefault();
-
-    setSearch("");
-  }
-
   function saveSearch(e) {
     setSearch(e.target.value);
   }
@@ -95,11 +89,7 @@ function App() {
             </h2>
             <p id="totalStudentsDisplayed">Total Students: {totalStudents}</p>
           </div>
-          <SearchBar
-            handleSubmit={handleSubmit}
-            search={search}
-            saveSearch={saveSearch}
-          />
+          <SearchBar search={search} saveSearch={saveSearch} />
           <div className="studentListContainer">
             {!cohort
               ? students
