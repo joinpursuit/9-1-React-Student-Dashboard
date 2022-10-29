@@ -24,7 +24,7 @@ export default function CommentsForm({ student, addComment }) {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form className="commentsForm" onSubmit={(e) => handleSubmit(e)}>
       <h4>1-on-1 Notes</h4>
       <div>
         <label className="label" htmlFor="commenter">
