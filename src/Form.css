@@ -1,0 +1,14 @@
+hr {
+  margin-bottom: 10px;
+}
+
+.form-article {
+  color: aqua;
+  margin: auto;
+  padding: 10px;
+}
+
+.add-note :hover {
+  color: darkblue;
+  background-color: beige;
+}

@@ -1,0 +1,30 @@
+.article {
+  padding: 2 rem;
+  display: flex;
+  border: 1px solid gold;
+  margin-top: 10px;
+}
+
+.individual-card {
+  color: blue;
+}
+
+.student-cards {
+  padding: 20px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.student-show-more {
+  color: greenyellow;
+  font-size: 20px;
+  border: none;
+  background: none;
+}
+
+.student-show-more:hover {
+  color: lightgoldenrodyellow;
+}

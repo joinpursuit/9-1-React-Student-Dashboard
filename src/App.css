@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+}
+
+.app {
+  font-family: cursive;
+  background: url('./orange-squares.png');
+}
+
+.header header {
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  display: block;
+  text-align: center;
+  color: olivedrab;
+  margin: 0px;
+  padding: 20px;
+  font-weight: 700;
+  padding: 1rem;
+  border: 2px solid red;
+  margin-bottom: 10px;
+}
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  color: blueviolet;
+}
+
+.aside-div {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+.aside-div header {
+  color: deepskyblue;
+}
+.main-div {
+  text-align: left;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.status {
+  padding: 10px;
+  padding-top: 20px;
+  text-align: center;
+  color: mediumvioletred;
+  font-size: large;
+}
