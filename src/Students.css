@@ -1,0 +1,64 @@
+.studentsArticle {
+  display: grid;
+  grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+  grid-column-gap: 25px;
+  border: 3px dashed rgb(66, 66, 234);
+  padding: 2rem;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: rgb(245, 245, 245);
+  transition: background-color 1s ease-out 100ms;
+}
+
+.studentsArticle:hover {
+  background-color: rgb(162, 162, 234);
+}
+
+.divReturn {
+  padding: 20px;
+}
+
+.studentCards {
+  margin-left: 50px;
+  /* border: 2px solid black; */
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+span {
+  color: rgb(66, 66, 234);
+}
+
+#showMoreButton {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: rgb(66, 66, 234);
+  padding-left: 0;
+  font-size: 20px;
+}
+
+#showMoreButton:hover {
+  color: rgb(255, 255, 255);
+}
+
+button {
+  background: none;
+  border: none;
+  color: rgb(66, 66, 234);
+  font-size: 30px;
+  padding-left: 20px;
+  text-align: center;
+  font-size: 23px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+button:hover {
+  color: rgb(0, 0, 0);
+}
