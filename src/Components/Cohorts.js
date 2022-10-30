@@ -18,7 +18,7 @@ function handleClickUpdateCohort(e){
 return (
     <>
         <div className='cohortButton' > 
-            <button onClick={handleClickUpdateAllCohorts} name="allStudents" className ="allStudentsButton cohortButton" > All Students</button></div>
+            <button onClick={handleClickUpdateAllCohorts} name="allStudents" className ="allStudentsButton cohortButton" > All Students</button></div>< br/>
         <div className='cohortButton'>
             <button onClick={handleClickUpdateCohort} name="Winter2026" >Winter 2026</button></div>
         <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Fall2026">Fall 2026</button></div>

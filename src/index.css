@@ -31,7 +31,7 @@ header{
 .second-container{
     display:grid;
     grid-template-columns: 1fr 2fr;
-    /* background-image: url("graduation.png"); */
+    background-image: url("graduation.png");
 }
 
 .allStudentsList{
@@ -41,28 +41,36 @@ header{
     border:2px solid purple
 }
 
-.studentInfoContainer{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-.studentInfo{
-  /* grid-column-start: 1;
-  grid-column-end: 3;
-  display:grid; */
-  /* grid-template-columns: .2fr 1fr; */
-  margin: 10px 10px 10px 10px;
-  /* border:2px solid purple; */
-  grid-row: 2;
-  
-}
-
 .studentTag{
   display: grid;
   grid-template-columns: .3fr 1fr; 
+  margin-left: 2.2vw;
+  margin-top: 5vh;
+  background-color:rgba(221, 160, 221, .05) ;
 }
 
+.studentTag:hover{
+  background-image:linear-gradient(to right bottom, rgba(109, 254, 254, .4),white, pink);
+  border: 1px solid palevioletred;
+}
+
+
+.studentInfoContainer{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.studentInfoContainer:hover{
+  background-image:linear-gradient(to right bottom,  pink, white, rgba(109, 254, 254, .4));
+}
+
+.studentInfo{
+  margin: 10px 10px 10px 10px;
+  border:2px solid purple;
+  grid-row: 2;
+  
+}
 
 .studentName{
   color: navy;
@@ -73,7 +81,7 @@ header{
 }
 
 .birthday{
-    color: goldenrod;
+    color: rgb(215, 20, 3);
     grid-column: 2/3;
 }
 .cohortButton{
@@ -102,6 +110,7 @@ button, .allStudentsButton, .showMoreButton {
   button:hover, .allStudentsButton:hover{
     /* color: rgb(86, 152, 106); */
     color: blue;
+    background-color:rgba(255,235,205);
   }
 
   .showMoreButton{
@@ -124,22 +133,6 @@ img:hover{
     border: 2px solid gold
 }
     
-
-
-
-
-.studentTag{
-    margin-left: 2.2vw;
-    margin-top: 5vh;
-    background-color:rgba(221, 160, 221, .05) ;
-}
-
-.studentTag:hover{
-  background-color: rgba(255,255,0,.5);
-  border: 1px solid palevioletred;
-}
-
-
   span{
    line-height: 1.5em;
   }

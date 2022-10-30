@@ -22,7 +22,7 @@ function handleClickToggle(){
       <> 
      <div className="studentCards">
 
-     <h3>Total:{cohort === "allStudents" ? students.length :selectedStudents.length} </h3> 
+     <h3>Total: {cohort === "allStudents" ? students.length :selectedStudents.length} </h3> 
      
        { 
        
