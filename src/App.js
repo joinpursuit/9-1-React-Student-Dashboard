@@ -10,7 +10,11 @@ function App() {
 const[students, setStudents] = useState(data)
 const total = students.length
 const[cohort, setCohort] = useState("allStudents")
+// const[total, setTotal] = useState(totalAll)
+// console.log("total from Appjs =", total)
 
+// total={total}
+// setTotal={setTotal}
 
   return (
     <div>
@@ -26,17 +30,19 @@ const[cohort, setCohort] = useState("allStudents")
                students = {students}
                setStudents={setStudents}
                setCohort={setCohort}
-      
+               total={total}
+                // setTotal={setTotal}
+               
               
               /></div>
             </aside>
             <main className="selected-students">
               <div> <h2>All Students</h2></div>
-              <h3>Total: {total}</h3>
               <div> <Students 
                           students={students}  
                           setStudents={setStudents}
                           cohort={cohort}
+
                           /></div>
             </main>
           </div>

@@ -2,20 +2,23 @@ import React from 'react'
 import data from "../data/data.json"
 import Students from "./Students"
 
-export default function Cohorts({students, setStudents, setCohort}) {
+export default function Cohorts({setCohort}) {
 
 const allStudents = data
 
-function handleClickUpdateCohort(e){
+function handleClickUpdateAllCohorts(e){
     setCohort(e.target.name)
-    
+}
+
+function handleClickUpdateCohort(e){
+    setCohort(e.target.name) 
 }
 
 
 return (
     <>
         <div className='cohortButton' > 
-            <button onClick={handleClickUpdateCohort} name="allStudents" className ="allStudentsButton cohortButton" > All Students</button></div>
+            <button onClick={handleClickUpdateAllCohorts} name="allStudents" className ="allStudentsButton cohortButton" > All Students</button></div>
         <div className='cohortButton'>
             <button onClick={handleClickUpdateCohort} name="Winter2026" >Winter 2026</button></div>
         <div className='cohortButton'><button onClick={handleClickUpdateCohort} name="Fall2026">Fall 2026</button></div>
