@@ -8,9 +8,21 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
 // {student.codewars.current.goal.total}
     //Number{student.codewars.current.total}/Number{student.codewars.current.total }* 100.Fixed(2)
 
+    function getResumeValue(){
+    let resumeValue
+    // student.resume ? resumeValue = student.resume : resumeValue = "X"
+    if(student.resume === false){
+        resumeValue = "X";
+        resumeValue.style ="red";
+    } else {
+        resumeValue = student.resume
+    }
+    return resumeValue
+}
+
+
   return (
-    <div>
-        {/* <section studentInfoContainer>      */}
+    <div className='studentInfoContainer'>
             <ul className='codewars'>
                 <li> <h4>Code Wars</h4></li>
                 <li>Current Total: {student.codewars.current.total}</li>
@@ -27,15 +39,11 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
             </ul>
             <ul className='certifications'>
                 <li><h4>Certifications</h4></li>
-                
-
-                <li>Resume: {student.resume} ? {student.resume} :<span className="x" >X </span></li>
-
-                <li>LinkedIn: {student.linkedin} ? {student.linkedin} :<span className="x" >X </span></li>
-                <li>Mock Interview: {student.github} ?{student.github} : <span className="x" >"X" </span></li>
-                <li>GitHub: {student.github}</li>
+                <li>Resume: {(student.resume === true) ? <span>True</span> : <span className="x" >X </span> }</li>
+                <li>LinkedIn: {(student.linkedin === true) ? <span>True</span> : <span className="x" >X </span> }</li>
+                <li>Mock Interview: {(student.github === true) ? <span>True</span> : <span className="x" >X </span> }</li>
+                <li>GitHub: {(student.github === true) ? <span>True</span> : <span className="x" >X </span>  }</li>
             </ul>
-            {/* </section>  */}
 </div>
   );
 };

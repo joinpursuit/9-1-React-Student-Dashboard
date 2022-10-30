@@ -12,7 +12,7 @@ const selectedStudents = students.filter(student => student.cohort.cohortCode ==
 // const[total, setTotal] = useState(students.length)
 // setTotal(selectedStudents.length <- should have been a ternary expression to work)
 //console.log("total from Studentsjs =", total)
-
+{/* <br /><br /> */}
 function handleClickToggle(){
     setToggle(!toggle)
 }
@@ -26,7 +26,6 @@ function handleClickToggle(){
      
        { 
        
-
        cohort === "allStudents" ? 
         
     <div>
@@ -34,18 +33,20 @@ function handleClickToggle(){
 
         students.map((student) => {
             return(
-                <div className ="allStudentsList" key = {student.id}  >
-                    
-                    <img src = {student.profilePhoto}/>
-                    <p className='studentTag'>{student.names.preferredName}  
-                    <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
-                    <span className ="studentName">{student.names.surname}</span><br />
-                    <span className ="studentName">{student.username} </span><br />
-                    <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
-                    
-                    <button onClick={handleClickToggle} className='showMoreButton' > 
-                        {toggle ? "Show Less..." : "Show More..."}
-                    </button>
+                <div className ="allStudentsList" key = {student.id}  >                 
+                    <p className='studentTag'>
+                        <img src = {student.profilePhoto}/>   
+                        <span className ="studentName"> 
+                        <span className='fName'>  {student.names.preferredName} </span> 
+                            {student.names.middleName.slice(0,1)+"."} <br />  
+                            {student.names.surname}<br /> 
+                            {student.username} <br /> 
+                            <span className='birthday'>Birthday:</span> {student.dob}<br /> 
+                        
+                        <button onClick={handleClickToggle} className='showMoreButton' > 
+                            {toggle ? "Show Less..." : "Show More..."}
+                        </button>
+                        </span>
                     </p>
                    { toggle ?  < StudentInfo student = {student}/> : null}
                    
@@ -57,20 +58,25 @@ function handleClickToggle(){
             
             selectedStudents.map((student) => {
             return(
-                <div className ="studentInfo" key = {student.id}  >
-                    <img src = {student.profilePhoto}/>
-                    <p className='studentTag'>  
-                    <span  className = "studentName">  {student.names.preferredName}   </span>
-                    <span className ="studentName"> {student.names.middleName.slice(0,1)+"."}  </span> 
-                    <span className ="studentName">{student.names.surname}</span><br />
-                    <span className ="studentName">{student.username} </span><br />
-                    <span className='birthday'>Birthday:</span> <span>{student.dob}</span><br /><br />
+                <div className ="allStudentsList" key = {student.id}  >                 
+                <p className='studentTag'>
+                    <img src = {student.profilePhoto}/>   
+                    <span className ="studentName"> 
+                    <span className='fName'>  {student.names.preferredName} </span> 
+                        {student.names.middleName.slice(0,1)+"."} <br />  
+                        {student.names.surname}<br /> 
+                        {student.username} <br /> 
+                        <span className='birthday'>Birthday:</span> {student.dob}<br /> 
+                    
                     <button onClick={handleClickToggle} className='showMoreButton' > 
-                    {toggle ? "Show Less..." : "Show More..."}
-                </button>
-                    </p>
-                    { toggle ?  < StudentInfo student = {student}/> : null}
-                </div>  
+                        {toggle ? "Show Less..." : "Show More..."}
+                    </button>
+                    </span>
+                </p>
+               { toggle ?  < StudentInfo student = {student}/> : null}
+               
+            </div> 
+           
             )})
 
             
