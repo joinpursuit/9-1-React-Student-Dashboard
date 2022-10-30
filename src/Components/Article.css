@@ -1,0 +1,7 @@
+.stu {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin: 3rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 3px 10px, rgb(0, 0, 0, 0.1) -1px -3px 10px;
+  z-index: 10;
+}

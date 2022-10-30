@@ -1,0 +1,52 @@
+.card {
+  display: grid;
+  grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+  grid-column-gap: 25px;
+  margin: 10px 0;
+  padding: 25px;
+  column-gap: 25px;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  transition: ease-in-out 1s;
+}
+
+.card img:hover {
+  animation: fadeIn 1s;
+  width: 120px;
+  height: 120px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card .details {
+  grid-column: left/end;
+}
+
+.notes {
+  grid-column: span 3;
+  border-top: 2px solid var(--yellow);
+}
+
+.form {
+  border: 1px solid var(--yellow);
+  padding: 20px;
+}
+
+.form label {
+  display: block;
+  margin: 8px 0;
+}
+
+.form label input {
+  margin: 0 10px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5em;
+}
