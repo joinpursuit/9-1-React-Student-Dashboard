@@ -1,0 +1,33 @@
+.cohort {
+    border: 1px solid black;
+    margin: 10px;
+    height: auto;
+    text-align: left;
+    text-indent: 1em;
+}
+ 
+li {
+    list-style: none;
+    border: 1px solid black;
+    margin: 20px 20px 20px 0px;
+    
+    
+ }
+
+ .cohort button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid skyblue;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+
+ }
+
+ .cohort button:hover {
+    color: blue;
+  }
