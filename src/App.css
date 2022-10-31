@@ -1,0 +1,88 @@
+
+.wrapper {
+    background-color: rgb(249, 231, 210);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    -webkit-column-gap: 25px;
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: [left] 1fr [right] 2fr [end];
+    grid-template-rows: [header] 120px [main] auto [end];
+    row-gap: 25px;
+}
+.header {
+    grid-column: 2/2;
+    grid-column: left/end;
+    grid-row: header;
+    text-align: center;
+    background-color: rosybrown;
+}
+.aside button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rosybrown;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+.main{
+    /* grid-column: right; */
+    margin: 0 auto;
+    width: 90%;
+}
+.student-card {
+    grid-column-gap: 25px;
+    border: 2px solid rosybrown;
+    -webkit-column-gap: 25px;
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+    margin: 10px 0;
+    padding: 25px;
+}
+.student-card img {
+    border: 2px solid rosybrown;
+    border-radius: 5px;
+    width: 100%;
+}
+.student-card button {
+    background: none;
+    border: none;
+    color: rosybrown;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.student-detail {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column:left/end;
+}
+.student-card .on-track {
+    color: rosybrown;
+    margin-top: 20px;
+    text-align: right;
+}
+.note-list {
+    border-top: 2px solid rosybrown;
+    grid-column: 1/4;
+    margin-top: 25px;
+    padding: 25px 0;
+}
+.notes-list {
+    border: 1px solid rosybrown;
+    padding: 20px;
+}
+.notes-list label {
+    display: block;
+    margin: 5px 0;
+}
+.notes-list input {
+    margin: 0 10px;
+}
