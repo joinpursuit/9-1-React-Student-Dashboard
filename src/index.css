@@ -1,0 +1,65 @@
+.Student-Information {
+  display: grid;
+  background-color: #799be6;
+  margin-top: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 25px;
+  box-shadow: 3px 2px 0 4px grey;
+}
+/* //! _____________________________________ */
+
+.Header {
+  padding: 30px;
+  font-size: 169%;
+  font-weight: 900;
+  cursor: pointer;
+  color: ghostwhite;
+  text-align: center;
+  background-color: #799be6;
+}
+.Header :hover {
+  letter-spacing: 20px;
+}
+#notes-list {
+  box-shadow: 5px 5px 0 4px black;
+}
+#showMoreBtn {
+  border-radius: 25px;
+  font-weight: 900px;
+}
+.ShowBtn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  color: black;
+  border-radius: 25px;
+  background-color: #799be6;
+}
+img {
+  width: 150px;
+  padding-left: 25px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+button {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #406ac6;
+  border-radius: 25px;
+  width: 120%;
+}
+.showMoreBtn {
+  border-radius: 25px;
+  font-weight: 900px;
+}
+
+li {
+  list-style: none;
+  text-align: none;
+}
+
+#notes-list {
+  margin-top: 15px;
+  background-color: #89bfec;
+  text-decoration: blue;
+}
