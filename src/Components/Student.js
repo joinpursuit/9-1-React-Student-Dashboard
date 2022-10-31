@@ -1,26 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Data from '../data/data.json'
 import StudentDetails from './StudentDetails';
 
+
 const Student = () => {
-
-    const [showDetails, setShowDetails] = useState(false)
-
-    function toggleStudentDetails() {
-        setShowDetails(!showDetails);
-      }
-
-    function percentScore(num1,num2) {
-        return Math.round((num1/num2) *100)
-    }
-
-    function checkCertificate(x) {
-        if (x === true) {
-            return "❌"
-        } else {
-            return "✅"
-        }
-    }
 
     function getBirthday() {
         const date = new Date()
