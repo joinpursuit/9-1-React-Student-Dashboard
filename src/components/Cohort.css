@@ -1,0 +1,43 @@
+.classDate{
+    display:block;
+    grid-column: left;
+    grid-row: main;
+    /*JD showed me these yesterday basically its telling them okay go here line up here.*/
+}
+
+div button{
+    display: block; 
+    background:none;
+    border: none; 
+    border-bottom: 2px solid var(--darkPurple);
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width:100%;
+    word-spacing: 5px;
+}
+
+button:hover{
+    color: var(--lightPurple);
+}
+
+div.classDate ul{
+    list-style: none;
+    padding-left: 0;
+    /*It will look crazy without this*/
+}
+
+
+li{
+    display: list-item;
+   
+}
+
+div.classDate{
+    padding: 0 25px
+}
+
+div.other{
+    text-align: center
+}
+

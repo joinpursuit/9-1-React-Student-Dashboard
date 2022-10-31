@@ -1,0 +1,25 @@
+header{
+    display: block;
+    background: var(--testing);
+    height: 100px;
+    text-align: center;
+    color:white;
+    font-size: 16px;
+    padding:16px;
+    grid-column: left/end;
+    grid-row: header; 
+    grid-row-start: header;
+    grid-row-end: header;
+    /* box-shadow:  */
+}
+
+header h1{
+    display: block;
+    padding:1%;
+}
+
+
+
+
+
+
