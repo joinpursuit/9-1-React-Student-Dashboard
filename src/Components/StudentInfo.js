@@ -56,8 +56,8 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
                                         name="name"
                                         type="text" 
                                         id= "commenter" 
-                                        onChange=""
-                                        value=""
+                                        // onChange=""
+                                        // value=""
                                  />
                         </label>
                 < br/>< br/>
@@ -66,14 +66,21 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
                                         name="comment"
                                         type="text" 
                                         id= "comment"
-                                        onChange=""
-                                        value=""
+                                        // onChange=""
+                                        // value=""
                                  />
                         </label> < br/>< br/>
                         <input className="addNoteButton" type="submit" value="Add Note"/>  
                      </form> 
+                     < br/>
+                     {(student.notes.length > 0) 
+                     ?
+                     <li>  {student.notes[0].commenter } says "{student.notes[0].comment}"</li>
+                     :  null 
+                     }
 
             </ul>
+           
 
             {/* */}
 
