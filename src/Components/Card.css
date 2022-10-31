@@ -1,0 +1,47 @@
+.fellow-card {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 2fr 2fr 2fr;
+    
+   
+}
+
+.fellow-card img {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .fellow-card .fellow-details {
+    grid-column: left / end;
+  }
+
+  .fellow-card {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 2fr  2fr  2fr;
+    column-gap: 25px;
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+  }
+  
+  .fellow-card img {
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .fellow-card .fellow-details-toggle {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+  }
+  
+  .fellow-card .fellow-details-toggle:hover {
+    color: blue;
+  }
+  
+ 
+

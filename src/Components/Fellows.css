@@ -1,0 +1,16 @@
+.cohort-count {
+    border: 1px solid black;
+    margin: 10px
+}
+
+.cohort-count h2 {
+    margin: 10px 10px 10px 10px 
+}
+
+.cohort-count p {
+    margin: 10px 10px 10px 10px 
+}
+
+.cohort-count span {
+    color: blue
+}
