@@ -11,21 +11,20 @@ function ShowDetails({ student, toggleSetShowMe }) {
   function toggleSetShowMe() {
     setShowMe(!showMe)
   }
-  function handleSelectChange(e) {
-    setCommenter(e.target.value)
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
     alert("submitted")
+    addNotes()
   }
   function addNotes() {
     setSelectNotes({...selectNotes, })
-    
   }
 
+
   function formReset() {
-    set
+    setCommenter("")
+    setCommentName("")
   }
   return (
     <div>
@@ -112,13 +111,13 @@ function ShowDetails({ student, toggleSetShowMe }) {
               <Form onSubmit={handleSubmit}>
                 <label htmlFor="commenterName">
                   Commenter Name
-                  <input type="text" name="tom" onChange={} value={} />
+                  <input type="text" name="tom" onChange={()=>setCommentName(el.target.value)} value={} />
                 </label>
                 <label htmlFor="commenter">
                   Commenter
-                  <input type="text" name="tom" onChange={} value={}/>
+                  <input type="text" name="tom" onChange={()=>setCommenter(e.target.value)} value={}/>
                 </label>
-                <button onClick={handleSubmit}type='submit'>Add Notes</button>
+                <button onClick={handleSubmit} type='submit'>Add Notes</button>
               </Form>
               <ul>
                 <li className="note"></li>
