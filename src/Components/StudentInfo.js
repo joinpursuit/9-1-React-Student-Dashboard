@@ -1,28 +1,48 @@
-import React from 'react';
-import Notes from './Notes';
+import React, {useState} from 'react';
+
 
 
 export function StudentInfo({student}) {
 
 const percentAchieved = ((Number(student.codewars.current.total)/ Number(student.codewars.goal.total)) * 100).toFixed(2)
-// {student.codewars.current.goal.total}
-    //Number{student.codewars.current.total}/Number{student.codewars.current.total }* 100.Fixed(2)
+// const[commenter, setCommenter] = useState("") 
+// const[comment, setComment] = useState("")   
 
-    function getResumeValue(){
-    let resumeValue
-    // student.resume ? resumeValue = student.resume : resumeValue = "X"
-    if(student.resume === false){
-        resumeValue = "X";
-        resumeValue.style ="red";
-    } else {
-        resumeValue = student.resume
+const[newNote, setNewNote] = useState({
+    commenter: "",
+    comment: "",
+})
+
+    function addNote(e){
+       const createNote = {
+        commenter: newNote.commenter, 
+        comment: newNote.comment,
+       }
     }
-    return resumeValue
-}
 
+    function handleTextChange(e){
+        setNewNote({
+            // ...newNote,
+            [e.target.commenter]: e.target.value,
+            [e.target.comment]: e.target.value,
+        });
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        addNote()
+        resetForm()
+    }
 
+    function resetForm(){
+        setNewNote({
+            commenter: "",
+            comment: "",
+        })
+    }
 
-
+    // {(student.notes.length > 0) ?
+    // <li>  {newNote.commenter} says "{newNote.comment}"</li>
+    // :  null }
 
   return (
     <div className='studentInfoContainer'>
@@ -50,14 +70,15 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
 
             <ul className='notes'>
                 <h4> 1-on-1 Notes</h4>
-                    <form className='note'>
+
+                    <form className='note' onSubmit={handleSubmit}>
                         <label className="oneCommenter" htmlFor="commenter">Commenter Name:    
                                 <input  
-                                        name="name"
+                                        name="commenter"
                                         type="text" 
                                         id= "commenter" 
-                                        // onChange=""
-                                        // value=""
+                                        onChange={handleTextChange}
+                                        value={newNote.commenter}
                                  />
                         </label>
                 < br/>< br/>
@@ -66,23 +87,20 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
                                         name="comment"
                                         type="text" 
                                         id= "comment"
-                                        // onChange=""
-                                        // value=""
+                                        onChange={handleTextChange}
+                                        value ={newNote.comment}
                                  />
                         </label> < br/>< br/>
-                        <input className="addNoteButton" type="submit" value="Add Note"/>  
+                        <input className="addNoteButton" type="submit" value="Add Note"
+                        onClick={()=>{ <ul>{addNote(newNote.commenter, newNote.comment)} </ul>
+
+                        }}
+                        
+                        />  
                      </form> 
-                     < br/>
-                     {(student.notes.length > 0) 
-                     ?
-                     <li>  {student.notes[0].commenter } says "{student.notes[0].comment}"</li>
-                     :  null 
-                     }
+                    
 
             </ul>
-           
-
-            {/* */}
 
             
 </div>

@@ -4,25 +4,22 @@ import { StudentInfo } from './StudentInfo';
 
 function Notes(student) {
 
-    const studentID = student.id
-    const[commenter, setCommenter] = useState({
-        id: {studentID},
-        name: "",
-        comment: "",
-    })  
+    
+    const[commenter, setCommenter] = useState("") 
+    const[comment, setComment] = useState("")   
 
-    function addComment(e){
-     setCommenter({
-        name: e.target.name,
-        id: studentID,
-        comment: e.target.value
-
-     })
+    function addNewCommenter(e){
+     setCommenter(e.target.value)
+     }
+    
+    function addNewComment(e){
+     setComment(e.target.value)
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        addComment()
+        addNewCommenter()
+        addNewComment()
         resetForm()
     }
 
@@ -31,18 +28,15 @@ function Notes(student) {
        }
 
     function resetForm(){
-        setCommenter({
-            id: student.id,
-            name: "",
-            comment: "",
-        })
+        setCommenter("")
+        setComment("")
     }
     return (
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Commenter Name:</label>
            <input 
                    type="text" 
-                   id= {studentID}
+                 
                    onChange={handleTextChange} 
                    value= {commenter.name}
             />
@@ -70,3 +64,15 @@ export default Notes;
   <input type="submit" value="Add Note">  
 </form>
 </section> */}
+
+
+    let newListedNotation
+    function handleOnClick(e){
+        let newListedCommenter =newNote.commenter
+        let newListedComment = newNote.comment
+        newListedNotation = newListedCommenter + " says " + '"' + newListedComment + '"'
+        
+        student.notes.length > 0 ?
+            newListedNotation : null 
+        }
+    }
