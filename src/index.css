@@ -153,6 +153,29 @@ img:hover{
   .certifications{
     grid-column: 3/4;
   }
+
+.notes{
+  grid-column: 1/4;
+  border: 2px solid purple;
+  margin: 5vh 3vh 5vh 3vh;
+  padding: 2vh 2vh 2vh 2vh;
+}
+
+/* .oneComment{
+  margin-right: 2em;
+} */
+
+input{
+  margin-left: 1em;
+}
+.addNoteButton {
+  margin-left: 0em;
+  background-color: rgb(161, 77, 184) ;
+  color: white;
+  width: 14vw;
+  border-radius: 10px;
+  height: 4vh;
+}
   ul, li{
     text-decoration: none;
     list-style: none;

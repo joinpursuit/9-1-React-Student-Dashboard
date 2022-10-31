@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Notes from './Notes';
 
 
 export function StudentInfo({student}) {
@@ -19,6 +19,9 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
     }
     return resumeValue
 }
+
+
+
 
 
   return (
@@ -42,8 +45,39 @@ const percentAchieved = ((Number(student.codewars.current.total)/ Number(student
                 <li>Resume: {(student.resume === true) ? <span>True</span> : <span className="x" >X </span> }</li>
                 <li>LinkedIn: {(student.linkedin === true) ? <span>True</span> : <span className="x" >X </span> }</li>
                 <li>Mock Interview: {(student.github === true) ? <span>True</span> : <span className="x" >X </span> }</li>
-                <li>GitHub: {(student.github === true) ? <span>True</span> : <span className="x" >X </span>  }</li>
+                
             </ul>
+
+            <ul className='notes'>
+                <h4> 1-on-1 Notes</h4>
+                    <form className='note'>
+                        <label className="oneCommenter" htmlFor="commenter">Commenter Name:    
+                                <input  
+                                        name="name"
+                                        type="text" 
+                                        id= "commenter" 
+                                        onChange=""
+                                        value=""
+                                 />
+                        </label>
+                < br/>< br/>
+                        <label className="oneComment" htmlFor="comment">Comment:    
+                                <input  
+                                        name="comment"
+                                        type="text" 
+                                        id= "comment"
+                                        onChange=""
+                                        value=""
+                                 />
+                        </label> < br/>< br/>
+                        <input className="addNoteButton" type="submit" value="Add Note"/>  
+                     </form> 
+
+            </ul>
+
+            {/* */}
+
+            
 </div>
   );
 };

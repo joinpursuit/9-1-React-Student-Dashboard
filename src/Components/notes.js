@@ -1,3 +1,64 @@
+import React from 'react';
+import { useState } from 'react';
+import { StudentInfo } from './StudentInfo';
+
+function Notes(student) {
+
+    const studentID = student.id
+    const[commenter, setCommenter] = useState({
+        id: {studentID},
+        name: "",
+        comment: "",
+    })  
+
+    function addComment(e){
+     setCommenter({
+        name: e.target.name,
+        id: studentID,
+        comment: e.target.value
+
+     })
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        addComment()
+        resetForm()
+    }
+
+    function handleTextChange(e){
+        let value = (e.target.value)
+       }
+
+    function resetForm(){
+        setCommenter({
+            id: student.id,
+            name: "",
+            comment: "",
+        })
+    }
+    return (
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Commenter Name:</label>
+           <input 
+                   type="text" 
+                   id= {studentID}
+                   onChange={handleTextChange} 
+                   value= {commenter.name}
+            />
+                <label for="comment">Comment:</label>
+                <input 
+                type="text" 
+                id= "comment"
+                name="comment" value="commenter.comment"
+                />
+                <input type="submit" value="Add Note"/>   
+            </form>
+    );
+}
+
+export default Notes;
+
 
 {/* <section>
 <h4>1-on-1 Note</h4>
@@ -9,27 +70,3 @@
   <input type="submit" value="Add Note">  
 </form>
 </section> */}
-
-
-//Student Info for Show More... Button
-
-                <div>
-                        <ul><li> <h4>Code Wars</h4></li>
-                            <li>Current</li>
-                            <li>Last Week</li>
-                            <li>Goal</li>
-                            <li>Percent of Goal Achieved</li>
-                        </ul>
-                        <ul><li><h4>Scores</h4></li>
-                            <li>Assignments</li>
-                            <li>Projects</li>
-                            <li>Assessments</li>
-                            <li>Percent of Goal Achieved</li>
-                        </ul>
-                        <ul><li><h4>Certifications</h4></li>
-                            <li>Resume</li>
-                            <li>LinkedIn</li>
-                            <li>Mock Interview</li>
-                            <li>GitHub</li>
-                        </ul>
-                </div>  
