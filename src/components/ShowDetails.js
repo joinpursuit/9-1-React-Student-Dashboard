@@ -5,8 +5,8 @@ import StudentList from "./StudentList"
 
 function ShowDetails({ student, toggleSetShowMe }) {
   const [selectNotes, setSelectNotes] = useState(student.notes)
-  const [commenter, setCommenter]=useState("")
-  const [commenterName, setCommentName]=useState()
+  const [commenter, setCommenter] = useState("")
+  const [commenterName, setCommentName] = useState()
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
     setShowMe(!showMe)
@@ -16,11 +16,12 @@ function ShowDetails({ student, toggleSetShowMe }) {
     event.preventDefault()
     alert("submitted")
     addNotes()
-  }
-  function addNotes() {
-    setSelectNotes({...selectNotes, })
+    formReset()
   }
 
+  function addNotes() {
+    setSelectNotes({ ...selectNotes })
+  }
 
   function formReset() {
     setCommenter("")
@@ -111,13 +112,25 @@ function ShowDetails({ student, toggleSetShowMe }) {
               <Form onSubmit={handleSubmit}>
                 <label htmlFor="commenterName">
                   Commenter Name
-                  <input type="text" name="tom" onChange={()=>setCommentName(el.target.value)} value={} />
+                  <input
+                    type="text"
+                    name="tom"
+                    onChange={(el) => setCommentName(el.target.value)}
+                    value={commenterName}
+                  />
                 </label>
                 <label htmlFor="commenter">
                   Commenter
-                  <input type="text" name="tom" onChange={()=>setCommenter(e.target.value)} value={}/>
+                  <input
+                    type="text"
+                    name="tom"
+                    onChange={(e) => setCommenter(e.target.value)}
+                    value={commenter}
+                  />
                 </label>
-                <button onClick={handleSubmit} type='submit'>Add Notes</button>
+                <button onClick={handleSubmit} type="submit">
+                  Add Notes
+                </button>
               </Form>
               <ul>
                 <li className="note"></li>
