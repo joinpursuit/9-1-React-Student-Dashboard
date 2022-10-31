@@ -136,8 +136,8 @@ function ShowDetails({ student, toggleSetShowMe }) {
                   Add Notes
                 </button>
               </Form>
-              <ul>
-                <li className="note"></li>
+              <ul className="note">
+                <li></li>
               </ul>
             </article>
           </section>
