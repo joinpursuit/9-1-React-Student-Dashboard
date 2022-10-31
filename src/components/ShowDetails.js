@@ -22,8 +22,8 @@ function ShowDetails({ student, toggleSetShowMe }) {
   function addNotes() {
     setSelectNotes({
       ...selectNotes,
-      setComment: comment,
-      setCommenterName: commenterName,
+      Comments: comment,
+      CommenterNames: commenterName,
     })
   }
 
