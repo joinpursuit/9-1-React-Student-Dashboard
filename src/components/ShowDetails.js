@@ -6,7 +6,7 @@ import StudentList from "./StudentList"
 function ShowDetails({ student, toggleSetShowMe }) {
   const [selectNotes, setSelectNotes] = useState(student.notes)
   const [comment, setComment] = useState("")
-  const [commenterName, setCommentName] = useState()
+  const [commenterName, setCommenterName] = useState()
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
     setShowMe(!showMe)
@@ -23,7 +23,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
     setSelectNotes({
       ...selectNotes,
       setComment: comment,
-      setCommentName: commenterName,
+      setCommenterName: commenterName,
     })
   }
 
@@ -119,7 +119,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                   <input
                     type="text"
                     name="commenter name"
-                    onChange={(el) => setCommentName(el.target.value)}
+                    onChange={(el) => setCommenterName(el.target.value)}
                     value={commenterName}
                   />
                 </label>
