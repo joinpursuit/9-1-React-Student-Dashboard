@@ -29,7 +29,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
 
   function formReset() {
     setComment("")
-    setCommentName("")
+    setCommenterName("")
   }
   return (
     <div>
