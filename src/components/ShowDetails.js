@@ -4,20 +4,29 @@ import { useState } from "react"
 import StudentList from "./StudentList"
 
 function ShowDetails({ student, toggleSetShowMe }) {
-  const [select, setSelect] = useState("")
-
+  const [selectNotes, setSelectNotes] = useState(student.notes)
+  const [commenter, setCommenter]=useState("")
+  const [commenterName, setCommentName]=useState()
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
     setShowMe(!showMe)
   }
   function handleSelectChange(e) {
-    setSelect(e.target.value)
+    setCommenter(e.target.value)
   }
+
   const handleSubmit = (event) => {
     event.preventDefault()
     alert("submitted")
   }
+  function addNotes() {
+    setSelectNotes({...selectNotes, })
+    
+  }
 
+  function formReset() {
+    set
+  }
   return (
     <div>
       <button
@@ -97,19 +106,19 @@ function ShowDetails({ student, toggleSetShowMe }) {
               {}
             </p>
           </article>
-          <section cls>
+          <section className="">
             <article className="notes-list">
               <h4>1-on-1 Notes</h4>
               <Form onSubmit={handleSubmit}>
                 <label htmlFor="commenterName">
                   Commenter Name
-                  <input type="text" name="tom" />
+                  <input type="text" name="tom" onChange={} value={} />
                 </label>
                 <label htmlFor="commenter">
                   Commenter
-                  <input type="text" name="tom" />
+                  <input type="text" name="tom" onChange={} value={}/>
                 </label>
-                <button>Add Notes</button>
+                <button onClick={handleSubmit}type='submit'>Add Notes</button>
               </Form>
               <ul>
                 <li className="note"></li>
