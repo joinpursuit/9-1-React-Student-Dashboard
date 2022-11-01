@@ -1,0 +1,74 @@
+* {
+    color: white;
+    background-color: black;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin: auto;
+    width: 1000px;
+
+    border-left: 5px solid rgb(96, 96, 96);
+    border-right: 5px solid rgb(96, 96, 96);
+}
+
+header {
+    top: 0%;
+    position: sticky;
+    border-bottom: 5px solid rgb(96, 96, 96);
+    border-top: 5px solid rgb(96, 96, 96);
+}
+
+header h1 {
+    padding: 30px;
+    margin: auto;;
+
+    text-align: center;
+    background-color: red;
+    color: white;
+    opacity: 0.9;
+    font-family: monospace;
+    font-size: 40px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) minmax(700px, 750px);
+    gap: 10px;
+    padding: 10px;
+    padding-top: 0px;;
+}
+
+.studentsMainContainer {
+    margin-top: 18.185px;
+}
+
+.studentListTitle {
+    top: 140px;
+    margin-bottom: 30px;
+}
+
+#chosenCohort {
+    margin-bottom: 0px;
+
+    font-family: monospace;
+    color: white
+}
+
+#totalStudentsDisplayed {
+    margin-top: 2px;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.studentListContainer {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px;
+}

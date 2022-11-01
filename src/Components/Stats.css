@@ -1,0 +1,54 @@
+.red {
+    color: red;
+    padding: 4px;
+    
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.yellow {
+    color: yellow;
+    padding: 4px;
+    
+    border: 2px solid yellow;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.green {
+    color: rgb(0, 255, 0);
+    padding: 4px;
+    
+    border: 2px solid rgb(0, 255, 0);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.statsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 250px));
+    gap: 10px;
+
+    font-family: monospace;
+}
+
+.stats {
+    border: 3px solid black;
+
+    padding: 10px;
+
+    box-shadow: inset 10px 10px 20px;
+
+    text-align: center;
+    font-weight: bold;;
+    border-radius: 80px;
+}
+
+section h4 {
+    background: none;
+}
+
+section p {
+    background: none;
+}
