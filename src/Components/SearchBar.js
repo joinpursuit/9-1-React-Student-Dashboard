@@ -1,4 +1,4 @@
-export default function SearchBar({ handleSubmit, search, saveSearch }) {
+export default function SearchBar({ search, saveSearch }) {
   return (
     <form>
       <label htmlFor="search"></label>

@@ -55,6 +55,12 @@ function App() {
     setStudents(updatedStudents);
   }
 
+  /**
+   *
+   * @param {} student
+   * @param {*} input
+   * @returns
+   */
   function searchAlg(student, input) {
     const { names } = student;
     const alpha = input.toLowerCase();
@@ -103,6 +109,7 @@ function App() {
                   ))
               : students
                   .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
+                  .filter((student) => searchAlg(student, search)) // SearchBar filters here too
                   .map((student) => (
                     <Student
                       key={student.id}
