@@ -1,0 +1,131 @@
+div {
+    display: grid;
+    background-color: #dcd4cb;
+    margin: 1px;
+    padding: 1px;
+    
+  }
+  
+  header {
+    background-color: #94608d;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: #3ed6a3;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    column-gap: 30px;
+    padding: 30px;
+  }
+  
+  .Classes ul {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  .Classes {
+    height: fit-content;
+  }
+  
+
+  .Classes ul li {
+    list-style: none;
+    line-height: 30px;
+
+  }
+  
+  .Student {
+    border: 3px solid #94608d;
+    margin-bottom: 20px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto 3fr 2fr;
+    column-gap: 30px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  span,
+  .on-track {
+    color: #6d63c1;
+  }
+  img {
+    border-radius: 30px;
+  }
+  
+  .more {
+    border: none;
+    background-color: #ffffff;
+    color: #d96565;
+    text-decoration: underline;
+    padding-left: 0;
+  }
+  
+  .details {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    line-height: 1px;
+  }
+  
+  .details div {
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+  }
+  
+  .details hr {
+    grid-row: 1/2;
+    grid-column: 1/3;
+    width: 100%;
+  }
+  
+  .details div p {
+    line-height: 40px;
+    height: 30px;
+    display: flex;
+    margin: 0;
+  }
+  
+  
+  #notes {
+    grid-row: 2/4;
+    grid-column: 1/4;
+  }
+  .details div p span {
+    padding-right: 7px;
+  }
+  
+
+  #notes form {
+    border: 2px solid black;
+    padding: 22px;
+    line-height: 40px;
+  }
+  
+  #notes ul li {
+    line-height: 20px;
+  }
+  
+  #add-note {
+    background-color: #dc828d;
+    color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+  .more:hover {
+    color: rgb(40, 236, 89);
+    cursor: pointer;
+  }
+  
+  #add-note:hover {
+    cursor: pointer;
+    color: black;
+    background-color: rosybrown;
+
+  }
+  .Classes ul li:hover {
+    list-style: none;
+    color: #d63ed1;
+    cursor: pointer;
+  }
