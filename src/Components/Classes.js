@@ -12,7 +12,7 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
 
     if (!cohorts.includes(cohortDate)){
       cohorts.push(cohortDate)
-      cohortInfo[cohortDate] = cohortCode
+      return cohortInfo[cohortDate] = cohortCode
     }
   })
 

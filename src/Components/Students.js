@@ -19,7 +19,7 @@ export default function Students ({ students, cohort, comments, newComment, hand
                         return(
                             <div className="student" key={student.id}>
                                 <div className="info">
-                                    <img src={student.profilePhoto} alt="profile photo"/>
+                                    <img src={student.profilePhoto} alt={`${fullName}`}/>
                                     <section>
                                         <h3>{fullName}</h3>
                                         <p id="email">{student.username}</p>
