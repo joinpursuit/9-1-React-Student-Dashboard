@@ -29,10 +29,13 @@ export default function Notes ({ student, comments, newComment, handleChange, ha
                 }
                 {
                     comments.map((comment, i) => {
-                        if (comment.id === student.id)
+                        if (comment.id === student.id){
                             return (
                                 <li key={i}><span>{comment.name}</span> says "{comment.comment}"</li>
                             )
+                        } else {
+                            return null
+                        }
                     })
                 }
             </ul>
