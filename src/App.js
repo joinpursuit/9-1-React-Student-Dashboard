@@ -33,10 +33,10 @@ function App() {
   const updateStudents = (cohort) => {
     allStudents.map((student) => {
       if (student.cohort.cohortCode === cohort){
-        return studentArr.push(student)
+        studentArr.push(student)
       }
     
-    setStudents(studentArr)
+    return setStudents(studentArr)
     })
   }
 

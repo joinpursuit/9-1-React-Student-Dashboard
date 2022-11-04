@@ -12,8 +12,8 @@ export default function Classes ({ allStudents, handleClick, showAll }) {
 
     if (!cohorts.includes(cohortDate)){
       cohorts.push(cohortDate)
-      return cohortInfo[cohortDate] = cohortCode
     }
+    return cohortInfo[cohortDate] = cohortCode
   })
 
   //Sorting cohorts by date in descending order
