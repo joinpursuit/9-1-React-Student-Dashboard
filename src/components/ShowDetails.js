@@ -97,18 +97,16 @@ function ShowDetails({ student, toggleSetShowMe }) {
               {student.certifications.resume ? "✔" : "❌"}
             </p>
             <p>
-              <span>lindedin:</span>
+              <span>linkedin:</span>
               {student.certifications.linkedin ? "✔" : "❌"}
             </p>
             <p>
               <span> Mock Interview:</span>
               {student.certifications.mockInterview ? "✔" : "❌"}
-              {}
             </p>
             <p>
               <span>GitHub:</span>
               {student.certifications.github ? "✔" : "❌"}
-              {}
             </p>
           </article>
           <section className="">

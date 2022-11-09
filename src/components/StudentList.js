@@ -4,7 +4,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
   function ontrack(students) {
     if (
       students.certifications.resume === true &&
-      students.certifications.lindedin === true &&
+      students.certifications.linkedin === true &&
       students.certifications.github === true &&
       students.certifications.mockInterview === true &&
       students.current.total > 600
