@@ -3,6 +3,7 @@ import data from "./data/data.json";
 
 import Student from "./Components/Student";
 import Cohorts from "./Components/Cohorts";
+import SearchBar from "./Components/SearchBar";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
   const [students, setStudents] = useState([...data]);
   const [cohort, setCohort] = useState(null);
   const [totalStudents, setTotalStudents] = useState(numOfStudentsDisplayed);
+  const [search, setSearch] = useState("");
 
   /**
    * Sets a chosen cohort, from the <Cohorts /> component, to <App /> state in order to map out the corresponding students
@@ -53,6 +55,26 @@ function App() {
     setStudents(updatedStudents);
   }
 
+  /**
+   *
+   * @param {} student
+   * @param {*} input
+   * @returns
+   */
+  function searchAlg(student, input) {
+    const { names } = student;
+    const alpha = input.toLowerCase();
+    const fullName =
+      `${names.preferredName} ${names.middleName} ${names.surname}`.toLowerCase();
+    if (fullName.includes(alpha)) {
+      return student;
+    }
+  }
+
+  function saveSearch(e) {
+    setSearch(e.target.value);
+  }
+
   return (
     <div className="app">
       <header>
@@ -73,17 +95,21 @@ function App() {
             </h2>
             <p id="totalStudentsDisplayed">Total Students: {totalStudents}</p>
           </div>
+          <SearchBar search={search} saveSearch={saveSearch} />
           <div className="studentListContainer">
             {!cohort
-              ? students.map((student) => (
-                  <Student
-                    key={student.id}
-                    student={student}
-                    addComment={addComment}
-                  />
-                ))
+              ? students
+                  .filter((student) => searchAlg(student, search)) // SearchBar filters here
+                  .map((student) => (
+                    <Student
+                      key={student.id}
+                      student={student}
+                      addComment={addComment}
+                    />
+                  ))
               : students
                   .filter((student) => student.cohort.cohortCode === cohort) // filter applied only when a cohort is selected
+                  .filter((student) => searchAlg(student, search)) // SearchBar filters here too
                   .map((student) => (
                     <Student
                       key={student.id}
