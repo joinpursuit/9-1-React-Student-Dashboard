@@ -1,17 +1,22 @@
 import ShowDetails from "./ShowDetails"
 
 function StudentList({ students, ShowDetails, selectedShortCode }) {
-  function onTrack() {
-    if (
-      students.certifications.resume === true &&
-      students.certifications.linkedin === true &&
-      students.certifications.github === true &&
-      students.certifications.mockInterview === true &&
-      students.current.total > 600
+  function onTrack(students) {
+    const graduate = students.map(
+      (student) =>
+        students.certifications.resume &&
+        students.certification.linkedin &&
+        students.certifications.github &&
+        students.certifications.mockInterview
     )
-      return <p>on Track to Graduate</p>
+    if (graduate && students.current.total > 600) {
+      return "On track to Graduate"
+    } else {
+      return null
+    }
   }
 
+  console.log(students)
   return (
     <>
       <section className="students-list">
@@ -30,10 +35,6 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                     src={student.profilePhoto}
                     alt={student.names.preferredName}
                   />
-                  <section
-                    className="Graduate_track"
-                    style={{ color: "green" }}
-                  ></section>
                   <div className="student-info">
                     <aside>
                       <h3>
@@ -52,6 +53,12 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                   </div>
                 </div>
                 <ShowDetails student={student} />
+                <section
+                  className="Graduate_track"
+                  style={{ color: "green", backgroundColor: " blue" }}
+                >
+                  {!onTrack ? "On Track to Graduate" : null}
+                </section>
               </article>
             )
           })}
