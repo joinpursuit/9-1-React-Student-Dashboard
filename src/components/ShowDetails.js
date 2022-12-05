@@ -1,5 +1,4 @@
 import React from "react"
-import { Form } from "react-bootstrap"
 import { useState } from "react"
 import StudentList from "./StudentList"
 
@@ -115,7 +114,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
           <section className="">
             <article className="notes-list">
               <h4>1-on-1 Notes</h4>
-              <Form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <label htmlFor="commenterName">
                   Commenter Name
                   <input
@@ -137,7 +136,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 <button onClick={handleSubmit} type="submit">
                   Add Notes
                 </button>
-              </Form>
+              </form>
               <ul className="note">
                 {selectNotes.map(({ commenter, comment }) => (
                   <li>

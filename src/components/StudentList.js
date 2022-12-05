@@ -27,6 +27,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
         </p>
         <div className="student-card">
           {students.map((student) => {
+            let birthDay = new Date(student.dob)
             return (
               <article className="student-card">
                 <div key={student.id}>
@@ -44,7 +45,9 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                       <p>{student.username}</p>
                       <p>
                         <span>Birthday: </span>
-                        {birthDay}
+                        {new Intl.DateTimeFormat("en-us", {
+                          dateStyle: "long",
+                        }).format(birthDay)}
                       </p>
                       <section className="Graduate_track"></section>
                     </aside>
