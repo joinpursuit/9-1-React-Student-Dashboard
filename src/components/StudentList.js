@@ -13,10 +13,6 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
     }
   }
 
-  let birthDay = new Intl.DateTimeFormat(`en-us`, { dateStyle: `long` }).format(
-    students.dob
-  )
-
   return (
     <>
       <section className="students-list">
