@@ -6,21 +6,22 @@ function ShowDetails({ student, toggleSetShowMe }) {
   const [selectNotes, setSelectNotes] = useState(student.notes)
   const [comment, setComment] = useState("")
   const [commenter, setCommenter] = useState("")
-
   const [showMe, setShowMe] = useState(false)
+
   function toggleSetShowMe() {
     setShowMe(!showMe)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    console.log(selectNotes)
     addNotes()
     formReset()
   }
 
   function addNotes() {
     const dash = {
-      ...selectNotes,
+      // ...selectNotes,
       Commenter: commenter,
       Comments: comment,
     }
@@ -121,7 +122,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                   <input
                     type="text"
                     name="commenter name"
-                    onChange={(el) => setCommenter(el.target.value)}
+                    onChange={(e) => setCommenter(e.target.value)}
                     value={commenter}
                   />
                 </label>
@@ -149,10 +150,10 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 </button>
               </form>
               <ul className="note">
-                {selectNotes.map((note) => {
+                {selectNotes.map((notes) => {
                   return (
-                    <li key={note.id}>
-                      {note.commenter} {note.comment}
+                    <li key={notes.id}>
+                      {notes.Commenter} says, "{notes.Comments}"
                     </li>
                   )
                 })}
