@@ -26,8 +26,9 @@ function App() {
       <Header />
       <aside className="cohortstartdate">
         <CohortStartDate
-          students={students}
           onShortCodeChange={cohortHandler}
+          setStudents={setStudents}
+          data={data}
         />
       </aside>
       <main>

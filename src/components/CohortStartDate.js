@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-function CohortStartDate({ students, onShortCodeChange }) {
+function CohortStartDate({ data, setStudents, onShortCodeChange }) {
   let years = [
     "Winter 2025",
     "Fall 2025",
@@ -17,11 +17,19 @@ function CohortStartDate({ students, onShortCodeChange }) {
     onShortCodeChange(e.target.innerText)
   }
 
+  function handleAllCohort(e) {
+    onShortCodeChange(e.target.innerText)
+    setStudents(data)
+  }
+
   return (
     <div>
       <aside className="Class-selection">
         <h2>Choose a Class by Start Date</h2>
-        <button onClick={cohortClick}> All Students </button>
+        <button onClick={handleAllCohort} name="all students">
+          {" "}
+          All Students{" "}
+        </button>
         <ul className="button-list">
           {years.map((year) => {
             return (

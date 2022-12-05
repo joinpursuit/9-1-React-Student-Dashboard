@@ -1,7 +1,7 @@
 import ShowDetails from "./ShowDetails"
 
 function StudentList({ students, ShowDetails, selectedShortCode }) {
-  function ontrack(students) {
+  function onTrack(students) {
     if (
       students.certifications.resume === true &&
       students.certifications.linkedin === true &&
@@ -9,9 +9,10 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
       students.certifications.mockInterview === true &&
       students.current.total > 600
     ) {
-      return "On track to Graduate"
+      return <h2>On track to Graduate</h2>
     }
   }
+  function ConvertDOB() {}
 
   return (
     <>
@@ -34,7 +35,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                     <aside>
                       <h3>
                         {student.names.preferredName}{" "}
-                        {student.names.middleName.slice(0, 1)}{" "}
+                        {student.names.middleName.slice(0, 1)}.{" "}
                         {student.names.surname}
                       </h3>
                       <p>{student.username}</p>
@@ -42,9 +43,9 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                         <span>Birthday: </span>
                         {student.dob}
                       </p>
+                      <section className="Graduate_track"></section>
                     </aside>
                   </div>
-                  <p className="on-track">{ontrack}</p>
                 </div>
                 <ShowDetails student={student} />
               </article>
