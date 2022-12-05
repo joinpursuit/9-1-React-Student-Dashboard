@@ -12,7 +12,10 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
       return <h2>On track to Graduate</h2>
     }
   }
-  function ConvertDOB() {}
+
+  let birthDay = new Intl.DateTimeFormat(`en-us`, { dateStyle: `long` }).format(
+    students.dob
+  )
 
   return (
     <>
@@ -41,7 +44,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
                       <p>{student.username}</p>
                       <p>
                         <span>Birthday: </span>
-                        {student.dob}
+                        {birthDay}
                       </p>
                       <section className="Graduate_track"></section>
                     </aside>
