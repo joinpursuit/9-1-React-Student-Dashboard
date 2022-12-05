@@ -6,7 +6,8 @@ import StudentList from "./StudentList"
 function ShowDetails({ student, toggleSetShowMe }) {
   const [selectNotes, setSelectNotes] = useState(student.notes)
   const [comment, setComment] = useState("")
-  const [commenterName, setCommenterName] = useState()
+  const [commenter, setCommenterName] = useState("")
+
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
     setShowMe(!showMe)
@@ -22,7 +23,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
   function addNotes() {
     setSelectNotes({
       ...selectNotes,
-      CommenterNames: commenterName,
+      CommenterNames: commenter,
       Comments: comment,
     })
   }
@@ -38,11 +39,14 @@ function ShowDetails({ student, toggleSetShowMe }) {
         onClick={toggleSetShowMe}
         style={{ color: `${!showMe ? "green" : "red"}` }}
       >
-        Show me
         {!showMe ? (
-          <span className="show-hide-tag show" title="Show me"></span>
+          <span className="show-hide-tag show" title="Show More....">
+            Show More....
+          </span>
         ) : (
-          <span className="show-hide-tag hide" title="hide me"></span>
+          <span className="show-hide-tag hide" title="Show Less..">
+            Show Less....
+          </span>
         )}
       </button>
 
@@ -69,7 +73,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 (Number(student.codewars.current.total) /
                   Number(student.codewars.goal.total)) *
                 100
-              ).toFixed(2)}{" "}
+              ).toFixed(0)}
               %
             </p>
           </article>
@@ -78,16 +82,15 @@ function ShowDetails({ student, toggleSetShowMe }) {
             <h3>Scores</h3>
             <p>
               <span>Assignments: </span>
-              {student.cohort.scores.assignments}
-              {}%
+              {student.cohort.scores.assignments * 100}%
             </p>
             <p>
               <span>Projects: </span>
-              {student.cohort.scores.projects} %
+              {student.cohort.scores.projects * 100}%
             </p>
             <p>
               <span>Assessments: </span>
-              {student.cohort.scores.assessments} %
+              {student.cohort.scores.assessments * 100}%
             </p>
           </article>
           <article>
@@ -119,7 +122,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                     type="text"
                     name="commenter name"
                     onChange={(el) => setCommenterName(el.target.value)}
-                    value={commenterName}
+                    value={commenter}
                   />
                 </label>
                 <label htmlFor="comment">
@@ -136,7 +139,11 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 </button>
               </Form>
               <ul className="note">
-                <li></li>
+                {selectNotes.map(({ commenter, comment }) => (
+                  <li>
+                    {commenter}says,"{comment}"
+                  </li>
+                ))}
               </ul>
             </article>
           </section>
@@ -145,5 +152,4 @@ function ShowDetails({ student, toggleSetShowMe }) {
     </div>
   )
 }
-
 export default ShowDetails
