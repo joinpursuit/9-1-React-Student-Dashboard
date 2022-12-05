@@ -5,7 +5,7 @@ import StudentList from "./StudentList"
 function ShowDetails({ student, toggleSetShowMe }) {
   const [selectNotes, setSelectNotes] = useState(student.notes)
   const [comment, setComment] = useState("")
-  const [commenter, setCommenterName] = useState("")
+  const [commenter, setCommenter] = useState("")
 
   const [showMe, setShowMe] = useState(false)
   function toggleSetShowMe() {
@@ -14,24 +14,25 @@ function ShowDetails({ student, toggleSetShowMe }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert("submitted")
     addNotes()
     formReset()
   }
 
   function addNotes() {
-    setSelectNotes({
+    const dash = {
       ...selectNotes,
-      CommenterNames: commenter,
+      Commenter: commenter,
       Comments: comment,
-    })
+    }
+    selectNotes.push(dash)
   }
 
   function formReset() {
     setComment("")
-    setCommenterName("")
+    setCommenter("")
   }
 
+  const [button, setButton] = useState(false)
   return (
     <div>
       <button
@@ -120,10 +121,11 @@ function ShowDetails({ student, toggleSetShowMe }) {
                   <input
                     type="text"
                     name="commenter name"
-                    onChange={(el) => setCommenterName(el.target.value)}
+                    onChange={(el) => setCommenter(el.target.value)}
                     value={commenter}
                   />
                 </label>
+                <br></br>
                 <label htmlFor="comment">
                   Comment
                   <input
@@ -133,16 +135,27 @@ function ShowDetails({ student, toggleSetShowMe }) {
                     value={comment}
                   />
                 </label>
-                <button onClick={handleSubmit} type="submit">
+                <br></br>
+                <button
+                  className="button"
+                  onClick={handleSubmit}
+                  type="submit"
+                  style={{
+                    color: button ? "blue" : "white",
+                    backgroundColor: button ? "red" : "green",
+                  }}
+                >
                   Add Notes
                 </button>
               </form>
               <ul className="note">
-                {selectNotes.map(({ commenter, comment }) => (
-                  <li>
-                    {commenter}says,"{comment}"
-                  </li>
-                ))}
+                {selectNotes.map((note) => {
+                  return (
+                    <li key={note.id}>
+                      {note.commenter} {note.comment}
+                    </li>
+                  )
+                })}
               </ul>
             </article>
           </section>
