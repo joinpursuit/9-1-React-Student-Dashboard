@@ -17,6 +17,8 @@ function CohortStartDate({ data, setStudents, onShortCodeChange }) {
     onShortCodeChange(e.target.innerText)
   }
 
+  //resetted All Students using original state from app.js
+
   function handleAllCohort(e) {
     onShortCodeChange(e.target.innerText)
     setStudents(data)

@@ -34,6 +34,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
   }
 
   const [button, setButton] = useState(false)
+
   return (
     <div>
       <button
@@ -146,6 +147,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                     backgroundColor: button ? "red" : "green",
                   }}
                 >
+                  {/* add hide and show to make red and green appear */}
                   Add Notes
                 </button>
               </form>
@@ -153,6 +155,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 {selectNotes.map((notes) => {
                   return (
                     <li key={notes.id}>
+                      {/* say appears on the first student but no else gotta figure out why when redoing css */}
                       {notes.Commenter} says, "{notes.Comments}"
                     </li>
                   )

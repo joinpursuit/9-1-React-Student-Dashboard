@@ -1,6 +1,7 @@
 import ShowDetails from "./ShowDetails"
 
 function StudentList({ students, ShowDetails, selectedShortCode }) {
+  // come back to this doing css later to figure out how to make appear
   function onTrack(students) {
     const graduate = students.map(
       (student) =>
@@ -27,6 +28,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
         </p>
         <div className="student-card">
           {students.map((student) => {
+            //  not best logic function might be better
             let birthDay = new Date(student.dob)
             return (
               <article className="student-card">
