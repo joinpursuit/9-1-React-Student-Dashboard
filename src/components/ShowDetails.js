@@ -38,6 +38,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
   return (
     <div>
       <button
+        className="showButton"
         onClick={toggleSetShowMe}
         style={{ color: `${!showMe ? "green" : "red"}` }}
       >
@@ -53,7 +54,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
       </button>
 
       {showMe ? (
-        <section>
+        <section className="info">
           <article>
             <h3>Codewars</h3>
             <p>
@@ -139,7 +140,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 </label>
                 <br></br>
                 <button
-                  className="button"
+                  className="button_notes"
                   onClick={handleSubmit}
                   type="submit"
                   style={{

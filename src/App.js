@@ -23,21 +23,25 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <aside className="cohortstartdate">
-        <CohortStartDate
-          onShortCodeChange={cohortHandler}
-          setStudents={setStudents}
-          data={data}
-        />
-      </aside>
-      <main>
-        <StudentList
-          students={students}
-          selectedShortCode={selectedShortCode}
-          ShowDetails={ShowDetails}
-        />
-      </main>
+      <header>
+        <Header />
+      </header>
+      <div className="dashbody">
+        <aside className="cohortstartdate">
+          <CohortStartDate
+            onShortCodeChange={cohortHandler}
+            setStudents={setStudents}
+            data={data}
+          />
+        </aside>
+        <main>
+          <StudentList
+            students={students}
+            selectedShortCode={selectedShortCode}
+            ShowDetails={ShowDetails}
+          />
+        </main>
+      </div>
     </div>
   )
 }

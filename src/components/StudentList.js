@@ -2,7 +2,7 @@ import ShowDetails from "./ShowDetails"
 
 function StudentList({ students, ShowDetails, selectedShortCode }) {
   // come back to this doing css later to figure out how to make appear
-  function onTrack(students) {
+  function onTrack(Students) {
     const graduate = students.map(
       (student) =>
         students.certifications.resume &&
@@ -22,6 +22,8 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
     <>
       <section className="students-list">
         <button>{selectedShortCode}</button>
+        <br></br>
+        <br></br>
         <p>
           Total Students:
           <span className="numchange"> {students.length}</span>
@@ -31,7 +33,7 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
             //  not best logic function might be better
             let birthDay = new Date(student.dob)
             return (
-              <article className="student-card">
+              <article className="students-card">
                 <div key={student.id}>
                   <img
                     src={student.profilePhoto}
