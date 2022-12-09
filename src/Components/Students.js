@@ -1,8 +1,9 @@
 import StudentCards from './StudentCards';
 
+import "../css/Students.css";
 
 export default function Students ({student, cohorts}){
-  const filteredStudents = student.filter(({cohort}) => {
+  const Students = student.filter(({cohort}) => {
     return cohort.cohortCode === cohorts
   })
 
@@ -10,7 +11,7 @@ export default function Students ({student, cohorts}){
         <ul className='card'>
             <h2>{cohorts}</h2>
             <p>Total Students: 
-              <div>{cohorts === 'All Students' ? student.length: filteredStudents.length}</div>
+              <div>{cohorts === 'All Students' ? student.length: Students.length}</div>
               </p>
             {cohorts === 'All Students' ? student.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort, notes}) => {
         return (
@@ -27,7 +28,7 @@ export default function Students ({student, cohorts}){
             />
           </div>
         );
-      }) : filteredStudents.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort, notes}) => {
+      }) : Students.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort, notes}) => {
         return (
           <div key={id}>
             <StudentCards

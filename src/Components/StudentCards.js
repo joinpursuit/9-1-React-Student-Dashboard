@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+import "../css/StudentCards.css"
 
 export default function StudentCards({names, profilePhoto, username, dob, certifications, codewars, cohort, notes}){
 
@@ -26,8 +27,8 @@ const [cert, setCerts] = useState(false)
     }
 
     function commentEntry(){
-      const test = {...comments, commenter: commenter, comment: comment}
-      comments.push(test)
+      const post = {...comments, commenter: commenter, comment: comment}
+      comments.push(post)
     }
 
   const onTrack = () => {
@@ -55,7 +56,8 @@ const [cert, setCerts] = useState(false)
                 </span></p>
                 <p>Last Week:<span>{codewars.current.lastWeek}</span></p>
                 <p>Goal: <span>{codewars.goal.total}</span></p>
-                <p>Percent of Goal Achieved:  <span>{((codewars.current.total/codewars.goal.total)*100).toFixed(0)}%</span></p>
+                <p>Percent of Goal Achieved:  <span>{((codewars.current.total/codewars.goal.total)*100).toFixed(0)}%</span>
+                </p>
                 </section>
                 <section className='2'>
                 <h3><span>Scores</span></h3>

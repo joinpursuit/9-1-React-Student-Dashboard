@@ -1,9 +1,7 @@
-
+import "../css/Cohort.css"
 
 export default function Cohort({data, setCohort}) {
-    const cohortList = [
-        ...new Set(data.map((students) => students.cohort.cohortCode))
-    ]
+    const list = [...new Set(data.map((students) => students.cohort.cohortCode))]
 
     const handleClick = (e) =>{
          setCohort(e.target.value)
@@ -15,7 +13,7 @@ export default function Cohort({data, setCohort}) {
             <h2>Choose a Class by Start Date</h2>
             <ul>
                 <button value="All Students" onClick={handleClick}>All Students</button>
-                {cohortList.map((year) => {
+                {list.map((year) => {
                     return (
                         <div>
                             <button 

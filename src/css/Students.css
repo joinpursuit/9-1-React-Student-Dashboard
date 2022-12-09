@@ -1,0 +1,12 @@
+.card{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card p{
+  margin: 5px 0 25px;
+  padding: 0;
+}
+
+.card h2{
+    margin-bottom: 0
+}
