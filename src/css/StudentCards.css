@@ -1,0 +1,106 @@
+main{
+    display:block;
+    grid-column: right;
+    margin: 0 auto;
+    width: 90%;
+    grid-row: main; 
+    font-size:16px;
+    text-overflow: inherit;
+}
+
+.card{
+    grid-column-gap: 25px;
+    column-gap: 25px;
+    margin:10px;
+    padding: 25px
+}
+
+.student-cards{
+  border: 4px solid maroon;
+  border-radius: 10px;
+  display: grid;
+  margin: 10px 0;
+  padding: 25px;
+  column-gap: 20px;
+  grid-template-columns:  100px, 2fr, 1fr;
+}
+
+.student-cards .student-details h2{
+ margin: 0;
+}
+
+.student-cards section{
+    margin:20px 0;
+}
+
+.student-cards img{
+    width: 90px;
+    height:80px;
+    border-radius:5px;
+}
+
+.student-cards p{
+    color: mintcream
+}
+
+
+span{
+    color:black;
+}
+
+.student-cards .student-details{
+    grid-column: left/end;
+}
+
+.student-details{
+    display: grid;
+    column-gap: 60px;
+    grid-template-columns: repeat(3 1fr);
+}
+
+.show{
+    border:none;
+    background:none;
+    padding: 0;
+    text-align: left;
+    text-decoration:underline;
+    color: whitesmoke;
+}
+
+.show:hover{
+    color:black
+}
+
+.onTrack{
+    color: whitesmoke;
+    margin-top:15px;
+    text-align: right;
+}
+
+section{
+    grid-row: middle;
+}
+
+Form{
+   padding: 5px;
+   margin: auto;
+   margin-left: 100%;
+}
+ 
+Form li::marker{
+    color:rgb(145, 17, 81);
+}
+
+Form li{
+    list-style: square;
+    font-size: medium;
+    color:rosybrown;
+    margin-bottom: 10%; 
+}
+
+
+.commentButton{
+    border-radius: 12%;
+    background-color:slategrey;
+    color: azure;
+}
