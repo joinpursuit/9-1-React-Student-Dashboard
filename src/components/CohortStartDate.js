@@ -28,11 +28,16 @@ function CohortStartDate({ data, setStudents, onShortCodeChange }) {
     <div>
       <aside className="Class-selection">
         <h2>Choose a Class by Start Date</h2>
-        <button onClick={handleAllCohort} name="all students">
+        <br></br>
+        <button
+          onClick={handleAllCohort}
+          name="all students"
+          className="allstudent"
+        >
           {" "}
           All Students{" "}
         </button>
-
+        <br></br>
         <ul className="button-list">
           {years.map((year) => {
             return (
