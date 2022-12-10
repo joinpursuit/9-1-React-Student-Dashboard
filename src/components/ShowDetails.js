@@ -115,12 +115,13 @@ function ShowDetails({ student, toggleSetShowMe }) {
               {student.certifications.github ? "✔" : "❌"}
             </p>
           </article>
-          <section className="">
+          <section>
             <article className="notes-list">
               <h4>1-on-1 Notes</h4>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="form">
+                {" "}
                 <label htmlFor="commenterName">
-                  Commenter Name
+                  Commenter:{" "}
                   <input
                     type="text"
                     name="commenter name"
@@ -130,7 +131,7 @@ function ShowDetails({ student, toggleSetShowMe }) {
                 </label>
                 <br></br>
                 <label htmlFor="comment">
-                  Comment
+                  Comment: <br></br>
                   <input
                     type="text"
                     name="comment"
@@ -138,7 +139,6 @@ function ShowDetails({ student, toggleSetShowMe }) {
                     value={comment}
                   />
                 </label>
-                <br></br>
                 <button
                   className="button_notes"
                   onClick={handleSubmit}
