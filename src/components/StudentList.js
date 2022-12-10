@@ -20,9 +20,9 @@ function StudentList({ students, ShowDetails, selectedShortCode }) {
   console.log(students)
   return (
     <>
+      <br></br>
       <section className="students-list">
         <button>{selectedShortCode}</button>
-        <br></br>
         <br></br>
         <p>
           Total Students:
