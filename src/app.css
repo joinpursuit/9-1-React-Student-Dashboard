@@ -1,0 +1,276 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+
+header {
+    color: white;  
+    text-shadow: 2px 2px red;  
+    background-color: #4242EA;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    border-left: 30px solid rgb(67, 42, 180);
+    border-right: 30px solid rgb(67, 42, 180);
+}
+
+h1 {
+    font-size: 35px
+}
+
+main {
+    display: grid;
+    grid-template-columns: 400px auto;
+    column-gap: 40px;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/594478db5016e1bc631eee7a/1600371577746-1Z1NAW1A6HPM0PQG2YL3/source.gif?format=750w");
+}
+
+span {
+    font-weight: bold;
+}
+
+/* CSS for Classes section */
+#classes {
+    position: fixed;
+    margin-left: 80px;
+    margin-top: 30px;
+    background-color: rgb(246, 246, 142);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.classes h2 {
+    text-align: center;
+}
+
+ul {
+    margin-top: 50px;
+    margin-left: -25px
+}
+
+.allStudents{
+    font-weight: bold;
+}
+
+.classes li {
+    list-style: none; 
+    text-align: left;
+    font-size: 18px;
+}
+
+.classes li:hover {
+    font-size: 18px;
+    text-shadow: 3px 3px white;
+    font-weight: bold;
+    transform: translate(40px);
+}
+
+/* CSS for Students section */
+#students {
+    padding: 20px 50px;
+}
+
+#total {
+    font-size: 20px;
+    font-weight: lighter;
+}    
+
+.student {
+    border: 4px dashed rgb(59, 59, 228);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto;
+    margin-bottom: 30px;
+    margin-right: 40px;
+    padding: 20px;
+    background-image: linear-gradient(lightblue, white );
+}    
+
+img {
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin: 10px 20px 5px 20px;
+    border: 3px solid white;
+}   
+
+#email {
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.info aside {
+    font-size: 17px;
+    font-weight: bold;
+}    
+
+#status {
+    color: green;
+    animation: blinker 1s step-start infinite
+}
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+.student div {
+    padding-left: 20px;
+    padding-right: 20px;
+}    
+
+#detailButton {
+    margin: 20px 30px 0px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CSS for Student Details */
+h4 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 38% 33% auto;
+    font-size: 14px;
+    margin: 20px 30px;
+}
+
+/* CSS for text color based on grade/completion */
+.true {
+    color: rgb(31, 125, 31);
+}
+
+.false {
+    color: red;
+}
+
+.yellow {
+    color: rgb(223, 168, 17);
+}
+
+/* CSS for Notes section */
+form {
+    position: relative;
+}
+
+fieldset {
+    margin-top: 30px;
+    background-image: linear-gradient(white, lightblue);
+    margin-bottom: -10px;
+}
+
+#submit {
+    margin: 15px 300px 10px 300px;
+}
+
+input {
+    display: block; 
+    margin-top: 5px;
+}
+
+#commenter {
+    display: inline-block;
+    margin: 15px;
+    background-color: none;
+}
+
+#comment {
+    width: 600px;
+    height: 50px;
+    display: block;    
+}
+
+legend {
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+    padding: 0px 5px;
+}
+
+/* CSS for toggle switch */
+  #slider {
+    background-color: white;
+    height: 30px;
+    width: 60px;
+    border-radius: 40px;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+  }
+
+  #bar {
+    position: absolute;
+    top: 49px;
+    right: 110px;
+    background-color: rgb(189, 189, 189);
+    height: 24px;
+    width: 24px;
+    border-radius: 40px;
+    z-index: 1;
+    cursor: pointer;
+    transition: .4s;
+  }
+
+  /* CSS for dark mode */
+  .dark #slider {
+    background-color: rgb(66, 66, 66);
+  }
+
+  .dark #bar {
+    color: beige;
+    transform: translate(24px);
+    transition: .4s
+  }
+
+ .dark main {
+    background-image: url("https://i.giphy.com/media/zh1CiotVYB1DO2k8Ep/giphy.webp");
+    background-repeat: repeat; 
+ }
+
+ .dark #sidebar {
+    background-image: url("https://i.giphy.com/media/zh1CiotVYB1DO2k8Ep/giphy.webp");
+    background-repeat: repeat; 
+ }
+
+ .dark h1 {
+    text-shadow: 2px 2px rgb(0, 0, 0);
+ }
+
+ .dark .student {
+    border: 4px dashed lightslategray;
+    background-image: linear-gradient(rgb(61, 26, 95), rgb(117, 113, 177));
+}  
+
+.dark p,
+.dark h2,
+.dark h3, 
+.dark h4 {
+    color: white;
+}
+
+.dark .classes h2 {
+    color: black;
+}
+
+.dark fieldset {
+    color: white;
+    background-image: linear-gradient(rgb(117, 113, 177), rgb(61, 26, 95));
+}
+
+.dark #email {
+    color: yellow;
+}
+
+.dark #status {
+    color: rgb(153, 255, 0);
+}
